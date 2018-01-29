@@ -13,9 +13,6 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
-#pragma mark - CLApplication
-#import "CLApplication.h"
-
 #pragma mark - CLTitleView
 #import "CLTextField.h"
 
