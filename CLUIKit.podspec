@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "CainLuo" => "350116542@qq.com" }
   spec.platform     = :ios, '8.0'
   spec.source       = { :git => "https://github.com/CainLuo/CLUIKit.git", :tag => "v#{spec.version}" }
-  spec.source_files = 'CLUKit/*.{h,m}'
+  spec.source_files = 'CLUKit/CLUKit/**/*.{h,m}'
   spec.requires_arc = true
   spec.frameworks   = 'UIKit', 'Foundation'
   spec.dependency "MJRefresh"
