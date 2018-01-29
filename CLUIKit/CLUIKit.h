@@ -19,9 +19,6 @@
 #pragma mark - CLTitleView
 #import "CLTextField.h"
 
-#pragma mark - CLTitleView
-#import "CLTitleView.h"
-
 #pragma mark - CLButton
 #import "CLButton.h"
 

@@ -3,125 +3,292 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		A4329AC81DF039F40012DB71 /* CLUIKit-Aggregate */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = A4329AC91DF039F40012DB71 /* Build configuration list for PBXAggregateTarget "CLUIKit-Aggregate" */;
-			buildPhases = (
-				A4329ACC1DF039F80012DB71 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "CLUIKit-Aggregate";
-			productName = "CLUIKit-Aggregate";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		A43299F31DF038870012DB71 /* CLUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43299E91DF038870012DB71 /* CLUIKit.framework */; };
-		A43299F81DF038870012DB71 /* CLUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A43299F71DF038870012DB71 /* CLUIKitTests.m */; };
-		A43299FA1DF038870012DB71 /* CLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A43299EC1DF038870012DB71 /* CLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A215201F223600BB92BA /* CLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A213201F223600BB92BA /* CLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A252201F227400BB92BA /* CLApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A21C201F227400BB92BA /* CLApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A253201F227400BB92BA /* CLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A21D201F227400BB92BA /* CLApplication.m */; };
+		0421A254201F227400BB92BA /* CLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A21E201F227400BB92BA /* CLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A255201F227400BB92BA /* CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A21F201F227400BB92BA /* CLButton.m */; };
+		0421A256201F227400BB92BA /* CLNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A220201F227400BB92BA /* CLNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A257201F227400BB92BA /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A221201F227400BB92BA /* CLNavigationController.m */; };
+		0421A258201F227400BB92BA /* CLTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A222201F227400BB92BA /* CLTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A259201F227400BB92BA /* CLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A223201F227400BB92BA /* CLTextField.m */; };
+		0421A25A201F227400BB92BA /* CLToolBarListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A224201F227400BB92BA /* CLToolBarListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A25B201F227400BB92BA /* CLToolBarListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A225201F227400BB92BA /* CLToolBarListView.m */; };
+		0421A25C201F227400BB92BA /* CLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A227201F227400BB92BA /* CLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A25D201F227400BB92BA /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A228201F227400BB92BA /* CLViewController.m */; };
+		0421A25E201F227400BB92BA /* CLViewControllerViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A229201F227400BB92BA /* CLViewControllerViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A25F201F227400BB92BA /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A22A201F227400BB92BA /* CLViewControllerViewModel.m */; };
+		0421A260201F227400BB92BA /* CLCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A22C201F227400BB92BA /* CLCollectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A261201F227400BB92BA /* CLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A22D201F227400BB92BA /* CLCollectionViewController.m */; };
+		0421A262201F227400BB92BA /* CLCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A22E201F227400BB92BA /* CLCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A263201F227400BB92BA /* CLCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A22F201F227400BB92BA /* CLCollectionViewDataSource.m */; };
+		0421A264201F227400BB92BA /* CLCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A230201F227400BB92BA /* CLCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A265201F227400BB92BA /* CLCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A231201F227400BB92BA /* CLCollectionViewDelegate.m */; };
+		0421A266201F227400BB92BA /* CLCollectionViewViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A232201F227400BB92BA /* CLCollectionViewViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A267201F227400BB92BA /* CLCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A233201F227400BB92BA /* CLCollectionViewViewModel.m */; };
+		0421A268201F227400BB92BA /* UIButton+CLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A235201F227400BB92BA /* UIButton+CLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A269201F227400BB92BA /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A236201F227400BB92BA /* UIButton+CLButton.m */; };
+		0421A26A201F227400BB92BA /* UICollectionView+CLCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A237201F227400BB92BA /* UICollectionView+CLCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A26B201F227400BB92BA /* UICollectionView+CLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A238201F227400BB92BA /* UICollectionView+CLCollectionView.m */; };
+		0421A26C201F227400BB92BA /* UIColor+CLColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A239201F227400BB92BA /* UIColor+CLColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A26D201F227400BB92BA /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A23A201F227400BB92BA /* UIColor+CLColor.m */; };
+		0421A26E201F227400BB92BA /* UIDevice+CLDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A23B201F227400BB92BA /* UIDevice+CLDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A26F201F227400BB92BA /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A23C201F227400BB92BA /* UIDevice+CLDevice.m */; };
+		0421A270201F227400BB92BA /* UIFont+CLFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A23D201F227400BB92BA /* UIFont+CLFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A271201F227400BB92BA /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A23E201F227400BB92BA /* UIFont+CLFont.m */; };
+		0421A272201F227400BB92BA /* UIImage+CLImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A23F201F227400BB92BA /* UIImage+CLImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A273201F227400BB92BA /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A240201F227400BB92BA /* UIImage+CLImage.m */; };
+		0421A274201F227400BB92BA /* UIScreen+CLScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A241201F227400BB92BA /* UIScreen+CLScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A275201F227400BB92BA /* UIScreen+CLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A242201F227400BB92BA /* UIScreen+CLScreen.m */; };
+		0421A276201F227400BB92BA /* UITableView+CLTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A243201F227400BB92BA /* UITableView+CLTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A277201F227400BB92BA /* UITableView+CLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A244201F227400BB92BA /* UITableView+CLTableView.m */; };
+		0421A278201F227400BB92BA /* UIViewController+CLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A245201F227400BB92BA /* UIViewController+CLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A279201F227400BB92BA /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A246201F227400BB92BA /* UIViewController+CLViewController.m */; };
+		0421A27A201F227400BB92BA /* CLTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A248201F227400BB92BA /* CLTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A27B201F227400BB92BA /* CLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A249201F227400BB92BA /* CLTableViewCell.m */; };
+		0421A27C201F227400BB92BA /* CLTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A24A201F227400BB92BA /* CLTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A27D201F227400BB92BA /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A24B201F227400BB92BA /* CLTableViewController.m */; };
+		0421A27E201F227400BB92BA /* CLTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A24C201F227400BB92BA /* CLTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A27F201F227400BB92BA /* CLTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A24D201F227400BB92BA /* CLTableViewDataSource.m */; };
+		0421A280201F227400BB92BA /* CLTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A24E201F227400BB92BA /* CLTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A281201F227400BB92BA /* CLTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A24F201F227400BB92BA /* CLTableViewDelegate.m */; };
+		0421A282201F227400BB92BA /* CLTableViewViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A250201F227400BB92BA /* CLTableViewViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0421A283201F227400BB92BA /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A251201F227400BB92BA /* CLTableViewViewModel.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A43299F41DF038870012DB71 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A43299E01DF038870012DB71 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A43299E81DF038870012DB71;
-			remoteInfo = CLUIKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		A43299E91DF038870012DB71 /* CLUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A43299EC1DF038870012DB71 /* CLUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLUIKit.h; sourceTree = "<group>"; };
-		A43299ED1DF038870012DB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A43299F21DF038870012DB71 /* CLUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A43299F71DF038870012DB71 /* CLUIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLUIKitTests.m; sourceTree = "<group>"; };
-		A43299F91DF038870012DB71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0421A210201F223600BB92BA /* CLUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0421A213201F223600BB92BA /* CLUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLUIKit.h; sourceTree = "<group>"; };
+		0421A214201F223600BB92BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0421A21C201F227400BB92BA /* CLApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLApplication.h; sourceTree = "<group>"; };
+		0421A21D201F227400BB92BA /* CLApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLApplication.m; sourceTree = "<group>"; };
+		0421A21E201F227400BB92BA /* CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLButton.h; sourceTree = "<group>"; };
+		0421A21F201F227400BB92BA /* CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLButton.m; sourceTree = "<group>"; };
+		0421A220201F227400BB92BA /* CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNavigationController.h; sourceTree = "<group>"; };
+		0421A221201F227400BB92BA /* CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNavigationController.m; sourceTree = "<group>"; };
+		0421A222201F227400BB92BA /* CLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTextField.h; sourceTree = "<group>"; };
+		0421A223201F227400BB92BA /* CLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTextField.m; sourceTree = "<group>"; };
+		0421A224201F227400BB92BA /* CLToolBarListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLToolBarListView.h; sourceTree = "<group>"; };
+		0421A225201F227400BB92BA /* CLToolBarListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLToolBarListView.m; sourceTree = "<group>"; };
+		0421A227201F227400BB92BA /* CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
+		0421A228201F227400BB92BA /* CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
+		0421A229201F227400BB92BA /* CLViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerViewModel.h; sourceTree = "<group>"; };
+		0421A22A201F227400BB92BA /* CLViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerViewModel.m; sourceTree = "<group>"; };
+		0421A22C201F227400BB92BA /* CLCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewController.h; sourceTree = "<group>"; };
+		0421A22D201F227400BB92BA /* CLCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewController.m; sourceTree = "<group>"; };
+		0421A22E201F227400BB92BA /* CLCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDataSource.h; sourceTree = "<group>"; };
+		0421A22F201F227400BB92BA /* CLCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDataSource.m; sourceTree = "<group>"; };
+		0421A230201F227400BB92BA /* CLCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDelegate.h; sourceTree = "<group>"; };
+		0421A231201F227400BB92BA /* CLCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDelegate.m; sourceTree = "<group>"; };
+		0421A232201F227400BB92BA /* CLCollectionViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewViewModel.h; sourceTree = "<group>"; };
+		0421A233201F227400BB92BA /* CLCollectionViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewViewModel.m; sourceTree = "<group>"; };
+		0421A235201F227400BB92BA /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
+		0421A236201F227400BB92BA /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
+		0421A237201F227400BB92BA /* UICollectionView+CLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CLCollectionView.h"; sourceTree = "<group>"; };
+		0421A238201F227400BB92BA /* UICollectionView+CLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CLCollectionView.m"; sourceTree = "<group>"; };
+		0421A239201F227400BB92BA /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
+		0421A23A201F227400BB92BA /* UIColor+CLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CLColor.m"; sourceTree = "<group>"; };
+		0421A23B201F227400BB92BA /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
+		0421A23C201F227400BB92BA /* UIDevice+CLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CLDevice.m"; sourceTree = "<group>"; };
+		0421A23D201F227400BB92BA /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
+		0421A23E201F227400BB92BA /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
+		0421A23F201F227400BB92BA /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
+		0421A240201F227400BB92BA /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
+		0421A241201F227400BB92BA /* UIScreen+CLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CLScreen.h"; sourceTree = "<group>"; };
+		0421A242201F227400BB92BA /* UIScreen+CLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CLScreen.m"; sourceTree = "<group>"; };
+		0421A243201F227400BB92BA /* UITableView+CLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CLTableView.h"; sourceTree = "<group>"; };
+		0421A244201F227400BB92BA /* UITableView+CLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CLTableView.m"; sourceTree = "<group>"; };
+		0421A245201F227400BB92BA /* UIViewController+CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLViewController.h"; sourceTree = "<group>"; };
+		0421A246201F227400BB92BA /* UIViewController+CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLViewController.m"; sourceTree = "<group>"; };
+		0421A248201F227400BB92BA /* CLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewCell.h; sourceTree = "<group>"; };
+		0421A249201F227400BB92BA /* CLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewCell.m; sourceTree = "<group>"; };
+		0421A24A201F227400BB92BA /* CLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewController.h; sourceTree = "<group>"; };
+		0421A24B201F227400BB92BA /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
+		0421A24C201F227400BB92BA /* CLTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDataSource.h; sourceTree = "<group>"; };
+		0421A24D201F227400BB92BA /* CLTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDataSource.m; sourceTree = "<group>"; };
+		0421A24E201F227400BB92BA /* CLTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDelegate.h; sourceTree = "<group>"; };
+		0421A24F201F227400BB92BA /* CLTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDelegate.m; sourceTree = "<group>"; };
+		0421A250201F227400BB92BA /* CLTableViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewViewModel.h; sourceTree = "<group>"; };
+		0421A251201F227400BB92BA /* CLTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A43299E51DF038870012DB71 /* Frameworks */ = {
+		0421A20C201F223600BB92BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A43299EF1DF038870012DB71 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A43299F31DF038870012DB71 /* CLUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A43299DF1DF038870012DB71 = {
+		0421A206201F223600BB92BA = {
 			isa = PBXGroup;
 			children = (
-				A43299EB1DF038870012DB71 /* CLUIKit */,
-				A43299F61DF038870012DB71 /* CLUIKitTests */,
-				A43299EA1DF038870012DB71 /* Products */,
+				0421A212201F223600BB92BA /* CLUIKit */,
+				0421A211201F223600BB92BA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A43299EA1DF038870012DB71 /* Products */ = {
+		0421A211201F223600BB92BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A43299E91DF038870012DB71 /* CLUIKit.framework */,
-				A43299F21DF038870012DB71 /* CLUIKitTests.xctest */,
+				0421A210201F223600BB92BA /* CLUIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A43299EB1DF038870012DB71 /* CLUIKit */ = {
+		0421A212201F223600BB92BA /* CLUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A43299EC1DF038870012DB71 /* CLUIKit.h */,
-				A43299ED1DF038870012DB71 /* Info.plist */,
+				0421A234201F227400BB92BA /* CLCategory */,
+				0421A22B201F227400BB92BA /* CLCollectionViewController */,
+				0421A247201F227400BB92BA /* CLTableViewController */,
+				0421A21B201F227400BB92BA /* CLUIKits */,
+				0421A226201F227400BB92BA /* CLViewController */,
+				0421A213201F223600BB92BA /* CLUIKit.h */,
+				0421A214201F223600BB92BA /* Info.plist */,
 			);
 			path = CLUIKit;
 			sourceTree = "<group>";
 		};
-		A43299F61DF038870012DB71 /* CLUIKitTests */ = {
+		0421A21B201F227400BB92BA /* CLUIKits */ = {
 			isa = PBXGroup;
 			children = (
-				A43299F71DF038870012DB71 /* CLUIKitTests.m */,
-				A43299F91DF038870012DB71 /* Info.plist */,
+				0421A21C201F227400BB92BA /* CLApplication.h */,
+				0421A21D201F227400BB92BA /* CLApplication.m */,
+				0421A21E201F227400BB92BA /* CLButton.h */,
+				0421A21F201F227400BB92BA /* CLButton.m */,
+				0421A220201F227400BB92BA /* CLNavigationController.h */,
+				0421A221201F227400BB92BA /* CLNavigationController.m */,
+				0421A222201F227400BB92BA /* CLTextField.h */,
+				0421A223201F227400BB92BA /* CLTextField.m */,
+				0421A224201F227400BB92BA /* CLToolBarListView.h */,
+				0421A225201F227400BB92BA /* CLToolBarListView.m */,
 			);
-			path = CLUIKitTests;
+			path = CLUIKits;
+			sourceTree = "<group>";
+		};
+		0421A226201F227400BB92BA /* CLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0421A227201F227400BB92BA /* CLViewController.h */,
+				0421A228201F227400BB92BA /* CLViewController.m */,
+				0421A229201F227400BB92BA /* CLViewControllerViewModel.h */,
+				0421A22A201F227400BB92BA /* CLViewControllerViewModel.m */,
+			);
+			path = CLViewController;
+			sourceTree = "<group>";
+		};
+		0421A22B201F227400BB92BA /* CLCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0421A22C201F227400BB92BA /* CLCollectionViewController.h */,
+				0421A22D201F227400BB92BA /* CLCollectionViewController.m */,
+				0421A22E201F227400BB92BA /* CLCollectionViewDataSource.h */,
+				0421A22F201F227400BB92BA /* CLCollectionViewDataSource.m */,
+				0421A230201F227400BB92BA /* CLCollectionViewDelegate.h */,
+				0421A231201F227400BB92BA /* CLCollectionViewDelegate.m */,
+				0421A232201F227400BB92BA /* CLCollectionViewViewModel.h */,
+				0421A233201F227400BB92BA /* CLCollectionViewViewModel.m */,
+			);
+			path = CLCollectionViewController;
+			sourceTree = "<group>";
+		};
+		0421A234201F227400BB92BA /* CLCategory */ = {
+			isa = PBXGroup;
+			children = (
+				0421A235201F227400BB92BA /* UIButton+CLButton.h */,
+				0421A236201F227400BB92BA /* UIButton+CLButton.m */,
+				0421A237201F227400BB92BA /* UICollectionView+CLCollectionView.h */,
+				0421A238201F227400BB92BA /* UICollectionView+CLCollectionView.m */,
+				0421A239201F227400BB92BA /* UIColor+CLColor.h */,
+				0421A23A201F227400BB92BA /* UIColor+CLColor.m */,
+				0421A23B201F227400BB92BA /* UIDevice+CLDevice.h */,
+				0421A23C201F227400BB92BA /* UIDevice+CLDevice.m */,
+				0421A23D201F227400BB92BA /* UIFont+CLFont.h */,
+				0421A23E201F227400BB92BA /* UIFont+CLFont.m */,
+				0421A23F201F227400BB92BA /* UIImage+CLImage.h */,
+				0421A240201F227400BB92BA /* UIImage+CLImage.m */,
+				0421A241201F227400BB92BA /* UIScreen+CLScreen.h */,
+				0421A242201F227400BB92BA /* UIScreen+CLScreen.m */,
+				0421A243201F227400BB92BA /* UITableView+CLTableView.h */,
+				0421A244201F227400BB92BA /* UITableView+CLTableView.m */,
+				0421A245201F227400BB92BA /* UIViewController+CLViewController.h */,
+				0421A246201F227400BB92BA /* UIViewController+CLViewController.m */,
+			);
+			path = CLCategory;
+			sourceTree = "<group>";
+		};
+		0421A247201F227400BB92BA /* CLTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0421A248201F227400BB92BA /* CLTableViewCell.h */,
+				0421A249201F227400BB92BA /* CLTableViewCell.m */,
+				0421A24A201F227400BB92BA /* CLTableViewController.h */,
+				0421A24B201F227400BB92BA /* CLTableViewController.m */,
+				0421A24C201F227400BB92BA /* CLTableViewDataSource.h */,
+				0421A24D201F227400BB92BA /* CLTableViewDataSource.m */,
+				0421A24E201F227400BB92BA /* CLTableViewDelegate.h */,
+				0421A24F201F227400BB92BA /* CLTableViewDelegate.m */,
+				0421A250201F227400BB92BA /* CLTableViewViewModel.h */,
+				0421A251201F227400BB92BA /* CLTableViewViewModel.m */,
+			);
+			path = CLTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A43299E61DF038870012DB71 /* Headers */ = {
+		0421A20D201F223600BB92BA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43299FA1DF038870012DB71 /* CLUIKit.h in Headers */,
+				0421A282201F227400BB92BA /* CLTableViewViewModel.h in Headers */,
+				0421A26C201F227400BB92BA /* UIColor+CLColor.h in Headers */,
+				0421A278201F227400BB92BA /* UIViewController+CLViewController.h in Headers */,
+				0421A26E201F227400BB92BA /* UIDevice+CLDevice.h in Headers */,
+				0421A25C201F227400BB92BA /* CLViewController.h in Headers */,
+				0421A268201F227400BB92BA /* UIButton+CLButton.h in Headers */,
+				0421A27A201F227400BB92BA /* CLTableViewCell.h in Headers */,
+				0421A27C201F227400BB92BA /* CLTableViewController.h in Headers */,
+				0421A280201F227400BB92BA /* CLTableViewDelegate.h in Headers */,
+				0421A25A201F227400BB92BA /* CLToolBarListView.h in Headers */,
+				0421A276201F227400BB92BA /* UITableView+CLTableView.h in Headers */,
+				0421A274201F227400BB92BA /* UIScreen+CLScreen.h in Headers */,
+				0421A27E201F227400BB92BA /* CLTableViewDataSource.h in Headers */,
+				0421A264201F227400BB92BA /* CLCollectionViewDelegate.h in Headers */,
+				0421A252201F227400BB92BA /* CLApplication.h in Headers */,
+				0421A270201F227400BB92BA /* UIFont+CLFont.h in Headers */,
+				0421A25E201F227400BB92BA /* CLViewControllerViewModel.h in Headers */,
+				0421A272201F227400BB92BA /* UIImage+CLImage.h in Headers */,
+				0421A256201F227400BB92BA /* CLNavigationController.h in Headers */,
+				0421A215201F223600BB92BA /* CLUIKit.h in Headers */,
+				0421A260201F227400BB92BA /* CLCollectionViewController.h in Headers */,
+				0421A26A201F227400BB92BA /* UICollectionView+CLCollectionView.h in Headers */,
+				0421A262201F227400BB92BA /* CLCollectionViewDataSource.h in Headers */,
+				0421A254201F227400BB92BA /* CLButton.h in Headers */,
+				0421A258201F227400BB92BA /* CLTextField.h in Headers */,
+				0421A266201F227400BB92BA /* CLCollectionViewViewModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A43299E81DF038870012DB71 /* CLUIKit */ = {
+		0421A20F201F223600BB92BA /* CLUIKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A43299FD1DF038870012DB71 /* Build configuration list for PBXNativeTarget "CLUIKit" */;
+			buildConfigurationList = 0421A218201F223600BB92BA /* Build configuration list for PBXNativeTarget "CLUIKit" */;
 			buildPhases = (
-				A43299E41DF038870012DB71 /* Sources */,
-				A43299E51DF038870012DB71 /* Frameworks */,
-				A43299E61DF038870012DB71 /* Headers */,
-				A43299E71DF038870012DB71 /* Resources */,
+				0421A20B201F223600BB92BA /* Sources */,
+				0421A20C201F223600BB92BA /* Frameworks */,
+				0421A20D201F223600BB92BA /* Headers */,
+				0421A20E201F223600BB92BA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -129,79 +296,43 @@
 			);
 			name = CLUIKit;
 			productName = CLUIKit;
-			productReference = A43299E91DF038870012DB71 /* CLUIKit.framework */;
+			productReference = 0421A210201F223600BB92BA /* CLUIKit.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		A43299F11DF038870012DB71 /* CLUIKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4329A001DF038870012DB71 /* Build configuration list for PBXNativeTarget "CLUIKitTests" */;
-			buildPhases = (
-				A43299EE1DF038870012DB71 /* Sources */,
-				A43299EF1DF038870012DB71 /* Frameworks */,
-				A43299F01DF038870012DB71 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A43299F51DF038870012DB71 /* PBXTargetDependency */,
-			);
-			name = CLUIKitTests;
-			productName = CLUIKitTests;
-			productReference = A43299F21DF038870012DB71 /* CLUIKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A43299E01DF038870012DB71 /* Project object */ = {
+		0421A207201F223600BB92BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = Cain;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = CainLuo;
 				TargetAttributes = {
-					A43299E81DF038870012DB71 = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = M67UHY3N8U;
-						ProvisioningStyle = Automatic;
-					};
-					A43299F11DF038870012DB71 = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-					};
-					A4329AC81DF039F40012DB71 = {
-						CreatedOnToolsVersion = 8.1;
+					0421A20F201F223600BB92BA = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = A43299E31DF038870012DB71 /* Build configuration list for PBXProject "CLUIKit" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 0421A20A201F223600BB92BA /* Build configuration list for PBXProject "CLUIKit" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A43299DF1DF038870012DB71;
-			productRefGroup = A43299EA1DF038870012DB71 /* Products */;
+			mainGroup = 0421A206201F223600BB92BA;
+			productRefGroup = 0421A211201F223600BB92BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A43299E81DF038870012DB71 /* CLUIKit */,
-				A43299F11DF038870012DB71 /* CLUIKitTests */,
-				A4329AC81DF039F40012DB71 /* CLUIKit-Aggregate */,
+				0421A20F201F223600BB92BA /* CLUIKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A43299E71DF038870012DB71 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A43299F01DF038870012DB71 /* Resources */ = {
+		0421A20E201F223600BB92BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,59 +341,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		A4329ACC1DF039F80012DB71 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${ACTION}\" = \"build\" ]\nthen\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}.framework\n\nDEVICE_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\n\nSIMULATOR_DIR=${BUILD_ROOT}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\n\n\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n#ditto \"${DEVICE_DIR}/Headers\" \"${INSTALL_DIR}/Headers\"\n\nlipo -create \"${DEVICE_DIR}/${PROJECT_NAME}\" \"${SIMULATOR_DIR}/${PROJECT_NAME}\" -output \"${INSTALL_DIR}/${PROJECT_NAME}\"\n\n#open \"${DEVICE_DIR}\"\nopen \"${SRCROOT}/Products\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		A43299E41DF038870012DB71 /* Sources */ = {
+		0421A20B201F223600BB92BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A43299EE1DF038870012DB71 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A43299F81DF038870012DB71 /* CLUIKitTests.m in Sources */,
+				0421A275201F227400BB92BA /* UIScreen+CLScreen.m in Sources */,
+				0421A273201F227400BB92BA /* UIImage+CLImage.m in Sources */,
+				0421A277201F227400BB92BA /* UITableView+CLTableView.m in Sources */,
+				0421A27F201F227400BB92BA /* CLTableViewDataSource.m in Sources */,
+				0421A27B201F227400BB92BA /* CLTableViewCell.m in Sources */,
+				0421A271201F227400BB92BA /* UIFont+CLFont.m in Sources */,
+				0421A265201F227400BB92BA /* CLCollectionViewDelegate.m in Sources */,
+				0421A25B201F227400BB92BA /* CLToolBarListView.m in Sources */,
+				0421A261201F227400BB92BA /* CLCollectionViewController.m in Sources */,
+				0421A259201F227400BB92BA /* CLTextField.m in Sources */,
+				0421A279201F227400BB92BA /* UIViewController+CLViewController.m in Sources */,
+				0421A27D201F227400BB92BA /* CLTableViewController.m in Sources */,
+				0421A26D201F227400BB92BA /* UIColor+CLColor.m in Sources */,
+				0421A26B201F227400BB92BA /* UICollectionView+CLCollectionView.m in Sources */,
+				0421A255201F227400BB92BA /* CLButton.m in Sources */,
+				0421A263201F227400BB92BA /* CLCollectionViewDataSource.m in Sources */,
+				0421A25F201F227400BB92BA /* CLViewControllerViewModel.m in Sources */,
+				0421A253201F227400BB92BA /* CLApplication.m in Sources */,
+				0421A257201F227400BB92BA /* CLNavigationController.m in Sources */,
+				0421A267201F227400BB92BA /* CLCollectionViewViewModel.m in Sources */,
+				0421A283201F227400BB92BA /* CLTableViewViewModel.m in Sources */,
+				0421A269201F227400BB92BA /* UIButton+CLButton.m in Sources */,
+				0421A281201F227400BB92BA /* CLTableViewDelegate.m in Sources */,
+				0421A26F201F227400BB92BA /* UIDevice+CLDevice.m in Sources */,
+				0421A25D201F227400BB92BA /* CLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A43299F51DF038870012DB71 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A43299E81DF038870012DB71 /* CLUIKit */;
-			targetProxy = A43299F41DF038870012DB71 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		A43299FB1DF038870012DB71 /* Debug */ = {
+		0421A216201F223600BB92BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -270,18 +397,22 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -295,27 +426,28 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		A43299FC1DF038870012DB71 /* Release */ = {
+		0421A217201F223600BB92BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -323,18 +455,22 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -342,24 +478,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		A43299FE1DF038870012DB71 /* Debug */ = {
+		0421A219201F223600BB92BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M67UHY3N8U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -367,18 +500,19 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cainLuo.CLUIKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.CLUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A43299FF1DF038870012DB71 /* Release */ = {
+		0421A21A201F223600BB92BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = M67UHY3N8U;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -386,88 +520,35 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cainLuo.CLUIKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.CLUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A4329A011DF038870012DB71 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CLUIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cainLuo.CLUIKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		A4329A021DF038870012DB71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CLUIKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cainLuo.CLUIKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		A4329ACA1DF039F40012DB71 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_BITCODE = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		A4329ACB1DF039F40012DB71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_BITCODE = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A43299E31DF038870012DB71 /* Build configuration list for PBXProject "CLUIKit" */ = {
+		0421A20A201F223600BB92BA /* Build configuration list for PBXProject "CLUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A43299FB1DF038870012DB71 /* Debug */,
-				A43299FC1DF038870012DB71 /* Release */,
+				0421A216201F223600BB92BA /* Debug */,
+				0421A217201F223600BB92BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A43299FD1DF038870012DB71 /* Build configuration list for PBXNativeTarget "CLUIKit" */ = {
+		0421A218201F223600BB92BA /* Build configuration list for PBXNativeTarget "CLUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A43299FE1DF038870012DB71 /* Debug */,
-				A43299FF1DF038870012DB71 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4329A001DF038870012DB71 /* Build configuration list for PBXNativeTarget "CLUIKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4329A011DF038870012DB71 /* Debug */,
-				A4329A021DF038870012DB71 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4329AC91DF039F40012DB71 /* Build configuration list for PBXAggregateTarget "CLUIKit-Aggregate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4329ACA1DF039F40012DB71 /* Debug */,
-				A4329ACB1DF039F40012DB71 /* Release */,
+				0421A219201F223600BB92BA /* Debug */,
+				0421A21A201F223600BB92BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A43299E01DF038870012DB71 /* Project object */;
+	rootObject = 0421A207201F223600BB92BA /* Project object */;
 }

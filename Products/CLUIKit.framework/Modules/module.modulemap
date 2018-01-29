@@ -1,6 +1,0 @@
-framework module CLUIKit {
-  umbrella header "CLUIKit.h"
-
-  export *
-  module * { export * }
-}
