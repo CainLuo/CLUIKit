@@ -22,7 +22,7 @@ static void *CLPlaceholderView = &CLPlaceholderView;
 
 - (void)cl_checkEmpty {
     
-    BOOL isEmpty = YES;
+    BOOL cl_isEmpty = YES;
     
     id<UITableViewDataSource> cl_dataSource = self.dataSource;
     
@@ -40,20 +40,35 @@ static void *CLPlaceholderView = &CLPlaceholderView;
         
         if (rows) {
             
-            isEmpty = NO;
+            cl_isEmpty = NO;
         }
     }
     
-    if (isEmpty) {
+    if (!cl_isEmpty != !self.cl_placeholderView) {
         
-        self.cl_placeholderView.frame = self.frame;
+        if (cl_isEmpty) {
+                        
+            [self cl_responseTableViewPlaceholderView];
+            
+            self.cl_placeholderView.hidden = NO;
+            self.cl_placeholderView.frame = self.frame;
+            
+            [self addSubview:self.cl_placeholderView];
+        } else {
+            
+            [self cl_hiddenPlaceholderView];
+        }
         
-        [self addSubview:self.cl_placeholderView];
+    } else if (cl_isEmpty){
         
-    } else {
-        
-        [self.cl_placeholderView removeFromSuperview];
+        self.cl_placeholderView.hidden = NO;
     }
+}
+
+- (void)cl_hiddenPlaceholderView {
+    
+    self.scrollEnabled = YES;
+    self.cl_placeholderView.hidden = YES;
 }
 
 #pragma mark - CLPlaceholderView
@@ -65,6 +80,18 @@ static void *CLPlaceholderView = &CLPlaceholderView;
 - (UIView *)cl_placeholderView {
     
     return objc_getAssociatedObject(self, CLPlaceholderView);
+}
+
+#pragma mark - Response Delegate Method
+- (void)cl_responseTableViewPlaceholderView {
+    
+    if ([self performSelector:@selector(cl_placeholderView)]) {
+        
+        self.cl_placeholderView = [self performSelector:@selector(cl_placeholderView)];
+    } else if ([self.delegate performSelector:@selector(cl_placeholderView)]) {
+        
+        self.cl_placeholderView = [self.delegate performSelector:@selector(cl_placeholderView)];
+    }
 }
 
 @end

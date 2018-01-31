@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol UITableViewPlaceholderDelegate <NSObject>
+
+@required
+
+/**
+ 设置一个UITableView占位图
+
+ @return UIView
+ */
+- (UIView *)cl_placeholderView;
+
+@end
+
 @interface UITableView (CLTableView)
 
 /**
