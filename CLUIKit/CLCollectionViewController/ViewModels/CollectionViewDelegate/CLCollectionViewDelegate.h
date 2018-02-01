@@ -18,7 +18,7 @@
 
 @interface CLCollectionViewDelegate : NSObject <UICollectionViewDelegate>
 
-@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_collectionViewBaseModel;
+@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
 
 - (instancetype)initCollectionViewDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
 

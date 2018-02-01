@@ -16,7 +16,7 @@
 
 @interface CLCollectionViewDelegate ()
 
-@property (nonatomic, weak, readwrite) CLCollectionViewViewModel *cl_collectionViewBaseModel;
+@property (nonatomic, weak, readwrite) CLCollectionViewViewModel *cl_viewModel;
 
 @end
 
@@ -27,7 +27,7 @@
     self = [super init];
     
     if (self) {
-        self.cl_collectionViewBaseModel = viewModel;
+        self.cl_viewModel = viewModel;
     }
     
     return self;

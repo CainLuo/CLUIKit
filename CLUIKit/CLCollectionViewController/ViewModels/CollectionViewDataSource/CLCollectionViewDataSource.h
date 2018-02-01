@@ -17,7 +17,7 @@
 
 @interface CLCollectionViewDataSource : NSObject <UICollectionViewDataSource>
 
-@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_collectionViewBaseModel;
+@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
 
 - (instancetype)initCollectionViewDataSourceWithViewModel:(CLCollectionViewViewModel *)viewModel;
 

@@ -8,8 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CLTableViewPlaceholderDelegate <NSObject>
+
+@required
+
+/**
+ 设置一个UICollectionView占位图
+ 
+ @return UIView
+ */
+- (UIView *)cl_placeholderView;
+
+@optional
+
+/**
+ 出现占位图的时候是否允许滑动
+ 
+ @return BOOL
+ */
+- (BOOL)cl_scrollEnabledWithShowPlaceholderView;
+
+@end
+
 @interface UICollectionView (CLCollectionView)
 
-@property (nonatomic, strong) UIView *cl_placeholderView;
+- (void)cl_reloadData;
 
 @end

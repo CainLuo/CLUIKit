@@ -16,7 +16,7 @@
 
 @interface CLCollectionViewDataSource ()
 
-@property (nonatomic, weak, readwrite) CLCollectionViewViewModel *cl_collectionViewBaseModel;
+@property (nonatomic, weak, readwrite) CLCollectionViewViewModel *cl_viewModel;
 
 @end
 
@@ -28,7 +28,7 @@
     
     if (self) {
         
-        self.cl_collectionViewBaseModel = viewModel;
+        self.cl_viewModel = viewModel;
     }
     
     return self;
@@ -37,12 +37,14 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
     
-    return self.cl_collectionViewBaseModel.cl_dataSource.count;
+    return self.cl_viewModel.cl_dataSource.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell"
+                                                                           forIndexPath:indexPath];
     
     return cell;
 }
