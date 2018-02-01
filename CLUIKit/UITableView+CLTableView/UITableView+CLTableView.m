@@ -13,6 +13,18 @@ static void *CLPlaceholderView = &CLPlaceholderView;
 
 @implementation UITableView (CLTableView)
 
+#pragma mark - CLPlaceholderView
+- (void)setCl_placeholderView:(UIView *)cl_placeholderView {
+
+    objc_setAssociatedObject(self, CLPlaceholderView, cl_placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIView *)cl_placeholderView {
+
+    return objc_getAssociatedObject(self, CLPlaceholderView);
+}
+
+#pragma mark - TableView Reload Data
 - (void)cl_reloadData {
     
     [self reloadData];
@@ -20,6 +32,7 @@ static void *CLPlaceholderView = &CLPlaceholderView;
     [self cl_checkEmpty];
 }
 
+#pragma mark - Check Empty
 - (void)cl_checkEmpty {
     
     BOOL cl_isEmpty = YES;
@@ -47,50 +60,85 @@ static void *CLPlaceholderView = &CLPlaceholderView;
     if (!cl_isEmpty != !self.cl_placeholderView) {
         
         if (cl_isEmpty) {
-                        
-            [self cl_responseTableViewPlaceholderView];
             
-            self.cl_placeholderView.hidden = NO;
-            self.cl_placeholderView.frame = self.frame;
+            self.scrollEnabled = [self cl_responseScrollEnabledWithShowPlaceholderView];
+            
+            self.cl_placeholderView = [self cl_responseTableViewPlaceholderView];
+            
+            self.cl_placeholderView.frame = [self cl_responsePlaceholderViewFrame];
             
             [self addSubview:self.cl_placeholderView];
         } else {
             
-            [self cl_hiddenPlaceholderView];
+            [self.cl_placeholderView removeFromSuperview];
+            
+            self.cl_placeholderView = nil;
         }
         
     } else if (cl_isEmpty){
         
-        self.cl_placeholderView.hidden = NO;
+        self.scrollEnabled = [self cl_responseScrollEnabledWithShowPlaceholderView];
+
+        [self.cl_placeholderView removeFromSuperview];
+        
+        [self addSubview:self.cl_placeholderView];
     }
 }
 
-- (void)cl_hiddenPlaceholderView {
-    
-    self.scrollEnabled = YES;
-    self.cl_placeholderView.hidden = YES;
-}
+#pragma mark - Response Delegate Method
+- (UIView *)cl_responseTableViewPlaceholderView {
 
-#pragma mark - CLPlaceholderView
-- (void)setCl_placeholderView:(UIView *)cl_placeholderView {
-    
-    objc_setAssociatedObject(self, CLPlaceholderView, cl_placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIView *)cl_placeholderView {
-    
-    return objc_getAssociatedObject(self, CLPlaceholderView);
+    if ([self.delegate respondsToSelector:@selector(cl_placeholderView)]) {
+        
+        return [self.delegate performSelector:@selector(cl_placeholderView)];
+        
+    } else if ([self respondsToSelector:@selector(cl_placeholderView)]) {
+        
+        return [self performSelector:@selector(cl_placeholderView)];
+    } else {
+        
+        return nil;
+    }
 }
 
 #pragma mark - Response Delegate Method
-- (void)cl_responseTableViewPlaceholderView {
+- (BOOL)cl_responseScrollEnabledWithShowPlaceholderView {
     
-    if ([self performSelector:@selector(cl_placeholderView)]) {
+    if ([self.delegate respondsToSelector:@selector(cl_scrollEnabledWithShowPlaceholderView)]) {
         
-        self.cl_placeholderView = [self performSelector:@selector(cl_placeholderView)];
-    } else if ([self.delegate performSelector:@selector(cl_placeholderView)]) {
+        return [self.delegate performSelector:@selector(cl_scrollEnabledWithShowPlaceholderView)];
         
-        self.cl_placeholderView = [self.delegate performSelector:@selector(cl_placeholderView)];
+    } else if ([self respondsToSelector:@selector(cl_scrollEnabledWithShowPlaceholderView)]) {
+
+        return [self performSelector:@selector(cl_scrollEnabledWithShowPlaceholderView)];
+
+    } else {
+
+        return YES;
+    }
+}
+
+#pragma mark - Response Placeholder View Frame
+- (CGRect)cl_responsePlaceholderViewFrame {
+
+    BOOL cl_selfHeaderViewResponse     = [self respondsToSelector:@selector(cl_calculateTableViewHeaderViewFrame)];
+    BOOL cl_delegateHeaderViewResponse = [self.delegate respondsToSelector:@selector(cl_calculateTableViewHeaderViewFrame)];
+
+    BOOL cl_tableHeaderViewResponse = self.tableHeaderView && (cl_selfHeaderViewResponse || cl_delegateHeaderViewResponse);
+    
+    if (cl_tableHeaderViewResponse) {
+
+        CGFloat cl_placeholderViewY = CGRectGetHeight(self.tableHeaderView.frame);
+        CGFloat cl_placeholderViewHeight = self.frame.size.height - CGRectGetHeight(self.tableHeaderView.frame);
+
+        CGRect cl_placeholderViewFrame = CGRectMake(0, cl_placeholderViewY, self.frame.size.width, cl_placeholderViewHeight);
+
+        return cl_placeholderViewFrame;
+
+    } else {
+
+
+        return self.frame;
     }
 }
 
