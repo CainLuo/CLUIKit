@@ -1,6 +1,6 @@
 # CLUIKit介绍文档
 
-> pod 'CLUIKit', '~> 1.5.2'
+> pod 'CLUIKit', '~> 1.5.5'
 
 ## CLCollectionViewController
 
