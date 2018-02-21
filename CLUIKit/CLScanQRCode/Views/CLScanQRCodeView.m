@@ -7,6 +7,8 @@
 //
 
 #import "CLScanQRCodeView.h"
+#import "UIScreen+CLScreen.h"
+#import "UIColor+CLColor.h"
 
 @interface CLScanQRCodeView ()
 
