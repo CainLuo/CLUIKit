@@ -16,8 +16,28 @@
 
 @interface UIFont (CLFont)
 
+/**
+ 自适应设备系统文字大小
+
+ @param fontSize 文字大小
+ @return UIFont
+ */
 + (UIFont *)cl_fitSystemFontOfSize:(CGFloat)fontSize;
-+ (UIFont *)cl_fitBoldSysteFontOfSize:(CGFloat)fontSize;
+
+/**
+ 自适应设备系统加粗文字大小
+ 
+ @param fontSize 文字大小
+ @return UIFont
+ */
++ (UIFont *)cl_fitBoldSystemFontOfSize:(CGFloat)fontSize;
+
+/**
+ 自适应设备系统斜体文字大小
+ 
+ @param fontSize 文字大小
+ @return UIFont
+ */
 + (UIFont *)cl_fitItalicSystemFontOfSize:(CGFloat)fontSize;
 
 + (UIFont *)cl_fitSystemFontOfSize:(CGFloat)fontSize

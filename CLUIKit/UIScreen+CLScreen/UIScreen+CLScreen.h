@@ -40,17 +40,24 @@
 + (CGFloat)cl_fitScreen:(CGFloat)value;
 
 /**
- *  获取状态栏的高度
+ *  获取UIStatusBar的高度
  *
- *  @return 返回状态栏的高度
+ *  @return 返回UIStatusBar的高度
  */
 + (CGFloat)cl_getStatusBarHeight;
 
 /**
- *  获取导航栏的高度
+ *  获取UINavigationBar的高度
  *
- *  @return 返回导航栏的高度
+ *  @return 返回UINavigationBar的高度
  */
 + (CGFloat)cl_getNavigationBarHeight;
+
+/**
+ 获取UITabBar的高度
+
+ @return 返回UITabBar的高度
+ */
++ (CGFloat)cl_getTabBarHeight;
 
 @end

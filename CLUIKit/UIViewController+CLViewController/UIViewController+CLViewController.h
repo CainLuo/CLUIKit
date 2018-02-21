@@ -63,7 +63,7 @@
 - (void)cl_showSheetViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                actionTitles:(NSArray<NSString *> *)actionTitles
-                                    handler:(void (^ __nullable)(UIAlertAction *action))handler;
+                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler;
 
 /**
  自定义调用UIAlertController

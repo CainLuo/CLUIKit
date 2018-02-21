@@ -268,33 +268,31 @@
 #pragma mark - Init Bottom Line Layer
 - (CALayer *)cl_bottomLineLayer {
     
-    if (!_cl_bottomLineLayer) {
-        
-        _cl_bottomLineLayer = [CALayer layer];
-        
-        _cl_bottomLineLayer.frame = CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5);
-        
-        _cl_bottomLineLayer.backgroundColor = [UIColor grayColor].CGColor;
-    }
+    CL_GET_METHOD_RETURN_OBJC(_cl_bottomLineLayer);
+
+    _cl_bottomLineLayer = [CALayer layer];
     
+    _cl_bottomLineLayer.frame = CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5);
+    
+    _cl_bottomLineLayer.backgroundColor = [UIColor grayColor].CGColor;
+
     return _cl_bottomLineLayer;
 }
 
 #pragma mark - Init Selected Line Layer
 - (CALayer *)cl_selectedLineLayer {
     
-    if (!_cl_selectedLineLayer) {
-        
-        _cl_selectedLineLayer = [CALayer layer];
-        
-        _cl_selectedLineLayer.frame = CGRectMake(_cl_buttonSpacing / 2,
-                                                 self.frame.size.height - SELECTED_LINE_LAYER_HEIGHT,
-                                                 self.frame.size.width / _cl_titleArray.count - _cl_buttonSpacing,
-                                                 SELECTED_LINE_LAYER_HEIGHT);
-        
-        _cl_selectedLineLayer.backgroundColor = [UIColor blueColor].CGColor;
-    }
+    CL_GET_METHOD_RETURN_OBJC(_cl_selectedLineLayer);
+
+    _cl_selectedLineLayer = [CALayer layer];
     
+    _cl_selectedLineLayer.frame = CGRectMake(_cl_buttonSpacing / 2,
+                                             self.frame.size.height - SELECTED_LINE_LAYER_HEIGHT,
+                                             self.frame.size.width / _cl_titleArray.count - _cl_buttonSpacing,
+                                             SELECTED_LINE_LAYER_HEIGHT);
+    
+    _cl_selectedLineLayer.backgroundColor = [UIColor blueColor].CGColor;
+
     return _cl_selectedLineLayer;
 }
 
@@ -313,10 +311,10 @@
 #pragma mark - Init Button Array
 - (NSMutableArray *)cl_buttonArray {
     
-    if (!_cl_buttonArray) {
-        _cl_buttonArray = [NSMutableArray array];
-    }
-    
+    CL_GET_METHOD_RETURN_OBJC(_cl_buttonArray);
+
+    _cl_buttonArray = [NSMutableArray array];
+
     return _cl_buttonArray;
 }
 

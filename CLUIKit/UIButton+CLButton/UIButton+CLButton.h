@@ -14,7 +14,13 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+typedef NS_ENUM(NSInteger, CLButtonStarStyle) {
+    CLButtonStarStyleBegin = 0,
+    CLButtonStarStyleFinish
+};
+
+typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time);
+
 @interface UIButton (CLButton)
 
 /**
@@ -23,36 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
 /**
- Button倒计时方法
+ 倒计时方法
 
- @param time 倒计时的时间
+ @param time 倒计时时间
+ @param complete 倒计时的回调
  */
-- (void)cl_startButtonWithTime:(NSInteger)time;
-
-/**
- Button倒计时方法
-
- @param time 倒计时的时间
- @param disableImage 倒计时时的背景图
- */
-- (void)cl_startButtonWithTime:(NSInteger)time
-                   normalImage:(UIImage *)normalImage
-                  disableImage:(UIImage *)disableImage;
-
-/**
- Button倒计时方法
-
- @param time 倒计时的时间
- @param title 初始化的标题
- @param suffixTitle 时间的尾缀, 比如: 10s
- @param normalColor 正常按钮的颜色
- @param timingColor 正在倒计时的颜色
- */
-- (void)cl_startButtonWithTime:(NSInteger)time
-                         title:(NSString *)title
-                   suffixTitle:(NSString *)suffixTitle
-                   normalColor:(UIColor *)normalColor
-                    timingColor:(UIColor *)timingColor;
+- (void)cl_starButtonWithTime:(NSInteger)time
+                     complete:(CLButtonStar)complete;
 
 @end
-NS_ASSUME_NONNULL_END
+

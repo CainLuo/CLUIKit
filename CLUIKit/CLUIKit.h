@@ -13,12 +13,18 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - 控制UINavigationBarItem是否显示标题
+#import "UIView+CLView.h"
+#import "UINavigationItem+CLNavigationItem.h"
 
 #pragma mark - CLTitleView
 #import "CLTextField.h"
 
 #pragma mark - CLButton
 #import "CLButton.h"
+
+#pragma mark - CLScanQRCodeController
+#import "CLScanQRCodeController.h"
 
 #pragma mark - CLTableViewController
 #import "CLTableViewController.h"

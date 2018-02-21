@@ -32,4 +32,28 @@
                      animated:animated];
 }
 
+- (void)setCl_backgroundImage:(UIImage *)cl_backgroundImage {
+    
+    _cl_backgroundImage = cl_backgroundImage;
+    
+    [self.navigationBar setBackgroundImage:cl_backgroundImage
+                             forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)setCl_tintColor:(UIColor *)cl_tintColor {
+    
+    _cl_tintColor = cl_tintColor;
+    
+    [self.navigationBar setTintColor:cl_tintColor];
+}
+
+- (void)setCl_foregroundColor:(UIColor *)cl_foregroundColor {
+    
+    _cl_foregroundColor = cl_foregroundColor;
+    
+    NSDictionary *cl_dictionary = @{NSForegroundColorAttributeName : cl_foregroundColor};
+    
+    [self.navigationBar setTitleTextAttributes:cl_dictionary];
+}
+
 @end

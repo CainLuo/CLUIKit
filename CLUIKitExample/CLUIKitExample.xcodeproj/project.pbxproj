@@ -1,0 +1,1395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A42FEFE1203D017C0054C8A3 /* EXScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE0203D017C0054C8A3 /* EXScanQRCodeController.m */; };
+		A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE3203DC44C0054C8A3 /* UIView+CLView.m */; };
+		A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */; };
+		A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CB7203AD1C8005026E8 /* EXTableViewDelegate.m */; };
+		A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CBA203AD1D2005026E8 /* EXTableViewDataSource.m */; };
+		A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CBD203AD1EA005026E8 /* EXTableViewViewModel.m */; };
+		A4AB1CC2203BD4C8005026E8 /* EXColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CC1203BD4C8005026E8 /* EXColorController.m */; };
+		A4AB1CC6203BF09B005026E8 /* EXImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CC5203BF09B005026E8 /* EXImageController.m */; };
+		A4AB1CCA203BF9A9005026E8 /* gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = A4AB1CC9203BF9A9005026E8 /* gif.gif */; };
+		A4AB1CCE203C19B2005026E8 /* EXScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CCD203C19B2005026E8 /* EXScreenController.m */; };
+		A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CD1203C276A005026E8 /* EXDeviceController.m */; };
+		A4AB1CD6203C2DCF005026E8 /* EXFontController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CD5203C2DCF005026E8 /* EXFontController.m */; };
+		A4AB1CDF203C34BC005026E8 /* EXFontBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CDE203C34BC005026E8 /* EXFontBaseModel.m */; };
+		A4AB1CE2203C34D1005026E8 /* EXFontDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CE1203C34D1005026E8 /* EXFontDelegate.m */; };
+		A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CE4203C34DB005026E8 /* EXFontDateSource.m */; };
+		A4AB1CE8203C34E5005026E8 /* EXFontViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CE7203C34E5005026E8 /* EXFontViewModel.m */; };
+		A4AB1CEC203C46BB005026E8 /* EXTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CEB203C46BB005026E8 /* EXTextFieldController.m */; };
+		A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1D16203CEAB1005026E8 /* CLScanQRCodeController.m */; };
+		A4AB1D19203CEE9D005026E8 /* CLResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4AB1D18203CEE9C005026E8 /* CLResource.bundle */; };
+		A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */; };
+		A4DB712A203800530015964F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7129203800530015964F /* AppDelegate.m */; };
+		A4DB7132203800530015964F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7131203800530015964F /* Assets.xcassets */; };
+		A4DB7135203800530015964F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7133203800530015964F /* LaunchScreen.storyboard */; };
+		A4DB7138203800530015964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7137203800530015964F /* main.m */; };
+		A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */; };
+		A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */; };
+		A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB714B203802FC0015964F /* CLToolBarListView.m */; };
+		A4DB7194203802FC0015964F /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB714E203802FC0015964F /* UIButton+CLButton.m */; };
+		A4DB7195203802FC0015964F /* CLCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */; };
+		A4DB7196203802FC0015964F /* CLCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7155203802FC0015964F /* CLCollectionViewDataSource.m */; };
+		A4DB7197203802FC0015964F /* CLCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7158203802FC0015964F /* CLCollectionViewDelegate.m */; };
+		A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB715B203802FC0015964F /* CLCollectionViewController.m */; };
+		A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7160203802FC0015964F /* CLTableViewDelegate.m */; };
+		A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7164203802FC0015964F /* CLTableViewDataSource.m */; };
+		A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7167203802FC0015964F /* CLTableViewViewModel.m */; };
+		A4DB719C203802FC0015964F /* CLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB716A203802FC0015964F /* CLTableViewCell.m */; };
+		A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB716D203802FC0015964F /* CLTableViewController.m */; };
+		A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7170203802FC0015964F /* UIFont+CLFont.m */; };
+		A4DB719F203802FC0015964F /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7173203802FC0015964F /* UIImage+CLImage.m */; };
+		A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7176203802FC0015964F /* CLNavigationController.m */; };
+		A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7179203802FC0015964F /* UIColor+CLColor.m */; };
+		A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */; };
+		A4DB71A3203802FC0015964F /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717F203802FC0015964F /* CLViewController.m */; };
+		A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7183203802FC0015964F /* UIScreen+CLScreen.m */; };
+		A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7185203802FC0015964F /* UITableView+CLTableView.m */; };
+		A4DB71A6203802FC0015964F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7187203802FC0015964F /* Info.plist */; };
+		A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7189203802FC0015964F /* UICollectionView+CLCollectionView.m */; };
+		A4DB71A8203802FC0015964F /* CLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB718D203802FC0015964F /* CLTextField.m */; };
+		A4DB71A9203802FC0015964F /* CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7190203802FC0015964F /* CLButton.m */; };
+		A4DB71B2203806D10015964F /* EXRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71B1203806D10015964F /* EXRootController.m */; };
+		A4DB71B5203812060015964F /* EXRootBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71B4203812060015964F /* EXRootBaseModel.m */; };
+		A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71B8203812340015964F /* EXRootViewModel.m */; };
+		A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71BD203812630015964F /* EXRootDelegate.m */; };
+		A4DB71C1203812700015964F /* EXRootDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71C0203812700015964F /* EXRootDataSource.m */; };
+		A4DB71CB20381A2A0015964F /* EXAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71CA20381A2A0015964F /* EXAlertController.m */; };
+		A4DB71D120381AA80015964F /* EXAlertBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71D020381AA80015964F /* EXAlertBaseModel.m */; };
+		A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71D620381AD20015964F /* EXAlertViewModel.m */; };
+		A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71D920381ADD0015964F /* EXAlertDelegate.m */; };
+		A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71DC20381AE90015964F /* EXAlertDataSource.m */; };
+		A4DB71E120386F180015964F /* EXButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71E020386F180015964F /* EXButtonController.m */; };
+		A4DB71EA203A86060015964F /* EXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71E9203A86060015964F /* EXCollectionViewController.m */; };
+		A4DB71ED203A86170015964F /* EXCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71EC203A86170015964F /* EXCollectionViewDataSource.m */; };
+		A4DB71F0203A86250015964F /* EXCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71EF203A86250015964F /* EXCollectionViewDelegate.m */; };
+		A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */; };
+		A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F6203ACFD10015964F /* EXTableViewController.m */; };
+		BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8652A3610B935120B79F2F9E /* Pods-CLUIKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLUIKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A42FEFDF203D017C0054C8A3 /* EXScanQRCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScanQRCodeController.h; sourceTree = "<group>"; };
+		A42FEFE0203D017C0054C8A3 /* EXScanQRCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScanQRCodeController.m; sourceTree = "<group>"; };
+		A42FEFE3203DC44C0054C8A3 /* UIView+CLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLView.m"; sourceTree = "<group>"; };
+		A42FEFE4203DC44C0054C8A3 /* UIView+CLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLView.h"; sourceTree = "<group>"; };
+		A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CLNavigationItem.m"; sourceTree = "<group>"; };
+		A42FEFEC203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CLNavigationItem.h"; sourceTree = "<group>"; };
+		A4AB1CB6203AD1C8005026E8 /* EXTableViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewDelegate.h; sourceTree = "<group>"; };
+		A4AB1CB7203AD1C8005026E8 /* EXTableViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewDelegate.m; sourceTree = "<group>"; };
+		A4AB1CB9203AD1D2005026E8 /* EXTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewDataSource.h; sourceTree = "<group>"; };
+		A4AB1CBA203AD1D2005026E8 /* EXTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewDataSource.m; sourceTree = "<group>"; };
+		A4AB1CBC203AD1EA005026E8 /* EXTableViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewViewModel.h; sourceTree = "<group>"; };
+		A4AB1CBD203AD1EA005026E8 /* EXTableViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewViewModel.m; sourceTree = "<group>"; };
+		A4AB1CC0203BD4C8005026E8 /* EXColorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXColorController.h; sourceTree = "<group>"; };
+		A4AB1CC1203BD4C8005026E8 /* EXColorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXColorController.m; sourceTree = "<group>"; };
+		A4AB1CC4203BF09B005026E8 /* EXImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXImageController.h; sourceTree = "<group>"; };
+		A4AB1CC5203BF09B005026E8 /* EXImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXImageController.m; sourceTree = "<group>"; };
+		A4AB1CC9203BF9A9005026E8 /* gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif.gif; sourceTree = "<group>"; };
+		A4AB1CCC203C19B2005026E8 /* EXScreenController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScreenController.h; sourceTree = "<group>"; };
+		A4AB1CCD203C19B2005026E8 /* EXScreenController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScreenController.m; sourceTree = "<group>"; };
+		A4AB1CD0203C276A005026E8 /* EXDeviceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDeviceController.h; sourceTree = "<group>"; };
+		A4AB1CD1203C276A005026E8 /* EXDeviceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDeviceController.m; sourceTree = "<group>"; };
+		A4AB1CD4203C2DCF005026E8 /* EXFontController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontController.h; sourceTree = "<group>"; };
+		A4AB1CD5203C2DCF005026E8 /* EXFontController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontController.m; sourceTree = "<group>"; };
+		A4AB1CDD203C34BC005026E8 /* EXFontBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontBaseModel.h; sourceTree = "<group>"; };
+		A4AB1CDE203C34BC005026E8 /* EXFontBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontBaseModel.m; sourceTree = "<group>"; };
+		A4AB1CE0203C34D1005026E8 /* EXFontDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontDelegate.h; sourceTree = "<group>"; };
+		A4AB1CE1203C34D1005026E8 /* EXFontDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontDelegate.m; sourceTree = "<group>"; };
+		A4AB1CE3203C34DB005026E8 /* EXFontDateSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontDateSource.h; sourceTree = "<group>"; };
+		A4AB1CE4203C34DB005026E8 /* EXFontDateSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontDateSource.m; sourceTree = "<group>"; };
+		A4AB1CE6203C34E5005026E8 /* EXFontViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFontViewModel.h; sourceTree = "<group>"; };
+		A4AB1CE7203C34E5005026E8 /* EXFontViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFontViewModel.m; sourceTree = "<group>"; };
+		A4AB1CEA203C46BB005026E8 /* EXTextFieldController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTextFieldController.h; sourceTree = "<group>"; };
+		A4AB1CEB203C46BB005026E8 /* EXTextFieldController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTextFieldController.m; sourceTree = "<group>"; };
+		A4AB1D15203CEAB1005026E8 /* CLScanQRCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScanQRCodeController.h; sourceTree = "<group>"; };
+		A4AB1D16203CEAB1005026E8 /* CLScanQRCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScanQRCodeController.m; sourceTree = "<group>"; };
+		A4AB1D18203CEE9C005026E8 /* CLResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLResource.bundle; sourceTree = "<group>"; };
+		A4AB1D1A203CEF16005026E8 /* CLScanQRCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScanQRCodeView.h; sourceTree = "<group>"; };
+		A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScanQRCodeView.m; sourceTree = "<group>"; };
+		A4DB7125203800530015964F /* CLUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4DB7128203800530015964F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A4DB7129203800530015964F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A4DB7131203800530015964F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4DB7134203800530015964F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4DB7136203800530015964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4DB7137203800530015964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4DB7140203802C80015964F /* CLUIKitExample-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLUIKitExample-PrefixHeader.pch"; sourceTree = "<group>"; };
+		A4DB7142203802FC0015964F /* CLUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUIKit.h; sourceTree = "<group>"; };
+		A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLViewController.m"; sourceTree = "<group>"; };
+		A4DB7145203802FC0015964F /* UIViewController+CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLViewController.h"; sourceTree = "<group>"; };
+		A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CLDevice.m"; sourceTree = "<group>"; };
+		A4DB7148203802FC0015964F /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
+		A4DB714A203802FC0015964F /* CLToolBarListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLToolBarListView.h; sourceTree = "<group>"; };
+		A4DB714B203802FC0015964F /* CLToolBarListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLToolBarListView.m; sourceTree = "<group>"; };
+		A4DB714D203802FC0015964F /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
+		A4DB714E203802FC0015964F /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
+		A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewViewModel.m; sourceTree = "<group>"; };
+		A4DB7153203802FC0015964F /* CLCollectionViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewViewModel.h; sourceTree = "<group>"; };
+		A4DB7155203802FC0015964F /* CLCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDataSource.m; sourceTree = "<group>"; };
+		A4DB7156203802FC0015964F /* CLCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDataSource.h; sourceTree = "<group>"; };
+		A4DB7158203802FC0015964F /* CLCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDelegate.m; sourceTree = "<group>"; };
+		A4DB7159203802FC0015964F /* CLCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDelegate.h; sourceTree = "<group>"; };
+		A4DB715B203802FC0015964F /* CLCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewController.m; sourceTree = "<group>"; };
+		A4DB715C203802FC0015964F /* CLCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewController.h; sourceTree = "<group>"; };
+		A4DB7160203802FC0015964F /* CLTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDelegate.m; sourceTree = "<group>"; };
+		A4DB7161203802FC0015964F /* CLTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDelegate.h; sourceTree = "<group>"; };
+		A4DB7163203802FC0015964F /* CLTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDataSource.h; sourceTree = "<group>"; };
+		A4DB7164203802FC0015964F /* CLTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDataSource.m; sourceTree = "<group>"; };
+		A4DB7166203802FC0015964F /* CLTableViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewViewModel.h; sourceTree = "<group>"; };
+		A4DB7167203802FC0015964F /* CLTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewViewModel.m; sourceTree = "<group>"; };
+		A4DB7169203802FC0015964F /* CLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewCell.h; sourceTree = "<group>"; };
+		A4DB716A203802FC0015964F /* CLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewCell.m; sourceTree = "<group>"; };
+		A4DB716C203802FC0015964F /* CLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewController.h; sourceTree = "<group>"; };
+		A4DB716D203802FC0015964F /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
+		A4DB716F203802FC0015964F /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
+		A4DB7170203802FC0015964F /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
+		A4DB7172203802FC0015964F /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
+		A4DB7173203802FC0015964F /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
+		A4DB7175203802FC0015964F /* CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNavigationController.h; sourceTree = "<group>"; };
+		A4DB7176203802FC0015964F /* CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNavigationController.m; sourceTree = "<group>"; };
+		A4DB7178203802FC0015964F /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
+		A4DB7179203802FC0015964F /* UIColor+CLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CLColor.m"; sourceTree = "<group>"; };
+		A4DB717C203802FC0015964F /* CLViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerViewModel.h; sourceTree = "<group>"; };
+		A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerViewModel.m; sourceTree = "<group>"; };
+		A4DB717F203802FC0015964F /* CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
+		A4DB7180203802FC0015964F /* CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
+		A4DB7182203802FC0015964F /* UIScreen+CLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CLScreen.h"; sourceTree = "<group>"; };
+		A4DB7183203802FC0015964F /* UIScreen+CLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CLScreen.m"; sourceTree = "<group>"; };
+		A4DB7185203802FC0015964F /* UITableView+CLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CLTableView.m"; sourceTree = "<group>"; };
+		A4DB7186203802FC0015964F /* UITableView+CLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CLTableView.h"; sourceTree = "<group>"; };
+		A4DB7187203802FC0015964F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4DB7189203802FC0015964F /* UICollectionView+CLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CLCollectionView.m"; sourceTree = "<group>"; };
+		A4DB718A203802FC0015964F /* UICollectionView+CLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CLCollectionView.h"; sourceTree = "<group>"; };
+		A4DB718C203802FC0015964F /* CLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTextField.h; sourceTree = "<group>"; };
+		A4DB718D203802FC0015964F /* CLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTextField.m; sourceTree = "<group>"; };
+		A4DB718F203802FC0015964F /* CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLButton.h; sourceTree = "<group>"; };
+		A4DB7190203802FC0015964F /* CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLButton.m; sourceTree = "<group>"; };
+		A4DB71B0203806D10015964F /* EXRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootController.h; sourceTree = "<group>"; };
+		A4DB71B1203806D10015964F /* EXRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootController.m; sourceTree = "<group>"; };
+		A4DB71B3203812060015964F /* EXRootBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootBaseModel.h; sourceTree = "<group>"; };
+		A4DB71B4203812060015964F /* EXRootBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootBaseModel.m; sourceTree = "<group>"; };
+		A4DB71B7203812340015964F /* EXRootViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootViewModel.h; sourceTree = "<group>"; };
+		A4DB71B8203812340015964F /* EXRootViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootViewModel.m; sourceTree = "<group>"; };
+		A4DB71BC203812630015964F /* EXRootDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootDelegate.h; sourceTree = "<group>"; };
+		A4DB71BD203812630015964F /* EXRootDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootDelegate.m; sourceTree = "<group>"; };
+		A4DB71BF203812700015964F /* EXRootDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootDataSource.h; sourceTree = "<group>"; };
+		A4DB71C0203812700015964F /* EXRootDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootDataSource.m; sourceTree = "<group>"; };
+		A4DB71C920381A2A0015964F /* EXAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAlertController.h; sourceTree = "<group>"; };
+		A4DB71CA20381A2A0015964F /* EXAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAlertController.m; sourceTree = "<group>"; };
+		A4DB71CF20381AA80015964F /* EXAlertBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAlertBaseModel.h; sourceTree = "<group>"; };
+		A4DB71D020381AA80015964F /* EXAlertBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAlertBaseModel.m; sourceTree = "<group>"; };
+		A4DB71D520381AD20015964F /* EXAlertViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAlertViewModel.h; sourceTree = "<group>"; };
+		A4DB71D620381AD20015964F /* EXAlertViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAlertViewModel.m; sourceTree = "<group>"; };
+		A4DB71D820381ADD0015964F /* EXAlertDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAlertDelegate.h; sourceTree = "<group>"; };
+		A4DB71D920381ADD0015964F /* EXAlertDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAlertDelegate.m; sourceTree = "<group>"; };
+		A4DB71DB20381AE90015964F /* EXAlertDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAlertDataSource.h; sourceTree = "<group>"; };
+		A4DB71DC20381AE90015964F /* EXAlertDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAlertDataSource.m; sourceTree = "<group>"; };
+		A4DB71DF20386F180015964F /* EXButtonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXButtonController.h; sourceTree = "<group>"; };
+		A4DB71E020386F180015964F /* EXButtonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXButtonController.m; sourceTree = "<group>"; };
+		A4DB71E8203A86060015964F /* EXCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCollectionViewController.h; sourceTree = "<group>"; };
+		A4DB71E9203A86060015964F /* EXCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewController.m; sourceTree = "<group>"; };
+		A4DB71EB203A86170015964F /* EXCollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCollectionViewDataSource.h; sourceTree = "<group>"; };
+		A4DB71EC203A86170015964F /* EXCollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewDataSource.m; sourceTree = "<group>"; };
+		A4DB71EE203A86250015964F /* EXCollectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCollectionViewDelegate.h; sourceTree = "<group>"; };
+		A4DB71EF203A86250015964F /* EXCollectionViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewDelegate.m; sourceTree = "<group>"; };
+		A4DB71F1203A86320015964F /* EXCollectionViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXCollectionViewViewModel.h; sourceTree = "<group>"; };
+		A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewViewModel.m; sourceTree = "<group>"; };
+		A4DB71F5203ACFD10015964F /* EXTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewController.h; sourceTree = "<group>"; };
+		A4DB71F6203ACFD10015964F /* EXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewController.m; sourceTree = "<group>"; };
+		E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4DB7122203800530015964F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D175041727141B34A6D5DBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CBE48AFFF57EA29435C3452 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8652A3610B935120B79F2F9E /* Pods-CLUIKitExample.debug.xcconfig */,
+				E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A42FEFDE203D01640054C8A3 /* EXScanQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				A42FEFDF203D017C0054C8A3 /* EXScanQRCodeController.h */,
+				A42FEFE0203D017C0054C8A3 /* EXScanQRCodeController.m */,
+			);
+			path = EXScanQRCode;
+			sourceTree = "<group>";
+		};
+		A42FEFE2203DC44C0054C8A3 /* UIView+CLView */ = {
+			isa = PBXGroup;
+			children = (
+				A42FEFE4203DC44C0054C8A3 /* UIView+CLView.h */,
+				A42FEFE3203DC44C0054C8A3 /* UIView+CLView.m */,
+			);
+			path = "UIView+CLView";
+			sourceTree = "<group>";
+		};
+		A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */,
+				A42FEFEC203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.h */,
+			);
+			path = "UINavigationItem+CLNavigationItem";
+			sourceTree = "<group>";
+		};
+		A4AB1CB1203AD12C005026E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71F5203ACFD10015964F /* EXTableViewController.h */,
+				A4DB71F6203ACFD10015964F /* EXTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4AB1CB2203AD134005026E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CB5203AD155005026E8 /* EXTableViewDelegate */,
+				A4AB1CB4203AD14C005026E8 /* EXTableViewDataSource */,
+				A4AB1CB3203AD142005026E8 /* EXTableViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4AB1CB3203AD142005026E8 /* EXTableViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CBC203AD1EA005026E8 /* EXTableViewViewModel.h */,
+				A4AB1CBD203AD1EA005026E8 /* EXTableViewViewModel.m */,
+			);
+			path = EXTableViewViewModel;
+			sourceTree = "<group>";
+		};
+		A4AB1CB4203AD14C005026E8 /* EXTableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CB9203AD1D2005026E8 /* EXTableViewDataSource.h */,
+				A4AB1CBA203AD1D2005026E8 /* EXTableViewDataSource.m */,
+			);
+			path = EXTableViewDataSource;
+			sourceTree = "<group>";
+		};
+		A4AB1CB5203AD155005026E8 /* EXTableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CB6203AD1C8005026E8 /* EXTableViewDelegate.h */,
+				A4AB1CB7203AD1C8005026E8 /* EXTableViewDelegate.m */,
+			);
+			path = EXTableViewDelegate;
+			sourceTree = "<group>";
+		};
+		A4AB1CBF203BD4B6005026E8 /* EXColor */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CC0203BD4C8005026E8 /* EXColorController.h */,
+				A4AB1CC1203BD4C8005026E8 /* EXColorController.m */,
+			);
+			path = EXColor;
+			sourceTree = "<group>";
+		};
+		A4AB1CC3203BF081005026E8 /* EXImage */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CC4203BF09B005026E8 /* EXImageController.h */,
+				A4AB1CC5203BF09B005026E8 /* EXImageController.m */,
+			);
+			path = EXImage;
+			sourceTree = "<group>";
+		};
+		A4AB1CCB203C19A3005026E8 /* EXScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CCC203C19B2005026E8 /* EXScreenController.h */,
+				A4AB1CCD203C19B2005026E8 /* EXScreenController.m */,
+			);
+			path = EXScreen;
+			sourceTree = "<group>";
+		};
+		A4AB1CCF203C2756005026E8 /* EXDevice */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CD0203C276A005026E8 /* EXDeviceController.h */,
+				A4AB1CD1203C276A005026E8 /* EXDeviceController.m */,
+			);
+			path = EXDevice;
+			sourceTree = "<group>";
+		};
+		A4AB1CD3203C2DAE005026E8 /* EXFont */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CD7203C345E005026E8 /* Controller */,
+				A4AB1CDC203C34AF005026E8 /* Models */,
+				A4AB1CD8203C3466005026E8 /* ViewModels */,
+			);
+			path = EXFont;
+			sourceTree = "<group>";
+		};
+		A4AB1CD7203C345E005026E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CD4203C2DCF005026E8 /* EXFontController.h */,
+				A4AB1CD5203C2DCF005026E8 /* EXFontController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4AB1CD8203C3466005026E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CDA203C34A1005026E8 /* EXFontDateSource */,
+				A4AB1CDB203C34A8005026E8 /* EXFontDelegate */,
+				A4AB1CD9203C349A005026E8 /* EXFontViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4AB1CD9203C349A005026E8 /* EXFontViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CE6203C34E5005026E8 /* EXFontViewModel.h */,
+				A4AB1CE7203C34E5005026E8 /* EXFontViewModel.m */,
+			);
+			path = EXFontViewModel;
+			sourceTree = "<group>";
+		};
+		A4AB1CDA203C34A1005026E8 /* EXFontDateSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CE3203C34DB005026E8 /* EXFontDateSource.h */,
+				A4AB1CE4203C34DB005026E8 /* EXFontDateSource.m */,
+			);
+			path = EXFontDateSource;
+			sourceTree = "<group>";
+		};
+		A4AB1CDB203C34A8005026E8 /* EXFontDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CE0203C34D1005026E8 /* EXFontDelegate.h */,
+				A4AB1CE1203C34D1005026E8 /* EXFontDelegate.m */,
+			);
+			path = EXFontDelegate;
+			sourceTree = "<group>";
+		};
+		A4AB1CDC203C34AF005026E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CDD203C34BC005026E8 /* EXFontBaseModel.h */,
+				A4AB1CDE203C34BC005026E8 /* EXFontBaseModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4AB1CE9203C46AA005026E8 /* EXTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CEA203C46BB005026E8 /* EXTextFieldController.h */,
+				A4AB1CEB203C46BB005026E8 /* EXTextFieldController.m */,
+			);
+			path = EXTextField;
+			sourceTree = "<group>";
+		};
+		A4AB1D12203CEA80005026E8 /* CLScanQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1D13203CEA8D005026E8 /* Controller */,
+				A4AB1D14203CEA94005026E8 /* Views */,
+			);
+			path = CLScanQRCode;
+			sourceTree = "<group>";
+		};
+		A4AB1D13203CEA8D005026E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1D15203CEAB1005026E8 /* CLScanQRCodeController.h */,
+				A4AB1D16203CEAB1005026E8 /* CLScanQRCodeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4AB1D14203CEA94005026E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1D1A203CEF16005026E8 /* CLScanQRCodeView.h */,
+				A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4DB711C203800530015964F = {
+			isa = PBXGroup;
+			children = (
+				A4DB7127203800530015964F /* CLUIKitExample */,
+				A4DB7126203800530015964F /* Products */,
+				5CBE48AFFF57EA29435C3452 /* Pods */,
+				3D175041727141B34A6D5DBB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A4DB7126203800530015964F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7125203800530015964F /* CLUIKitExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4DB7127203800530015964F /* CLUIKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB713F203802530015964F /* AppDelegate */,
+				A4DB7141203802FC0015964F /* CLUIKit */,
+				A4DB71AA203805A70015964F /* Module */,
+				A4DB713E203802490015964F /* Resource */,
+			);
+			path = CLUIKitExample;
+			sourceTree = "<group>";
+		};
+		A4DB713E203802490015964F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CC9203BF9A9005026E8 /* gif.gif */,
+				A4DB7131203800530015964F /* Assets.xcassets */,
+				A4DB7133203800530015964F /* LaunchScreen.storyboard */,
+				A4DB7136203800530015964F /* Info.plist */,
+				A4DB7137203800530015964F /* main.m */,
+				A4DB7140203802C80015964F /* CLUIKitExample-PrefixHeader.pch */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A4DB713F203802530015964F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7128203800530015964F /* AppDelegate.h */,
+				A4DB7129203800530015964F /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A4DB7141203802FC0015964F /* CLUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB718E203802FC0015964F /* CLButton */,
+				A4DB714F203802FC0015964F /* CLCollectionViewController */,
+				A4DB7174203802FC0015964F /* CLNavigationController */,
+				A4AB1D18203CEE9C005026E8 /* CLResource.bundle */,
+				A4AB1D12203CEA80005026E8 /* CLScanQRCode */,
+				A4DB715D203802FC0015964F /* CLTableViewController */,
+				A4DB718B203802FC0015964F /* CLTextField */,
+				A4DB7149203802FC0015964F /* CLToolBarListView */,
+				A4DB7142203802FC0015964F /* CLUIKit.h */,
+				A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */,
+				A4DB717A203802FC0015964F /* CLViewController */,
+				A4DB7187203802FC0015964F /* Info.plist */,
+				A4DB714C203802FC0015964F /* UIButton+CLButton */,
+				A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */,
+				A4DB7177203802FC0015964F /* UIColor+CLColor */,
+				A4DB7146203802FC0015964F /* UIDevice+CLDevice */,
+				A4DB716E203802FC0015964F /* UIFont+CLFont */,
+				A4DB7171203802FC0015964F /* UIImage+CLImage */,
+				A4DB7181203802FC0015964F /* UIScreen+CLScreen */,
+				A4DB7184203802FC0015964F /* UITableView+CLTableView */,
+				A42FEFE2203DC44C0054C8A3 /* UIView+CLView */,
+				A4DB7143203802FC0015964F /* UIViewController+CLViewController */,
+			);
+			name = CLUIKit;
+			path = ../../CLUIKit;
+			sourceTree = "<group>";
+		};
+		A4DB7143203802FC0015964F /* UIViewController+CLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7145203802FC0015964F /* UIViewController+CLViewController.h */,
+				A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */,
+			);
+			path = "UIViewController+CLViewController";
+			sourceTree = "<group>";
+		};
+		A4DB7146203802FC0015964F /* UIDevice+CLDevice */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7148203802FC0015964F /* UIDevice+CLDevice.h */,
+				A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */,
+			);
+			path = "UIDevice+CLDevice";
+			sourceTree = "<group>";
+		};
+		A4DB7149203802FC0015964F /* CLToolBarListView */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB714A203802FC0015964F /* CLToolBarListView.h */,
+				A4DB714B203802FC0015964F /* CLToolBarListView.m */,
+			);
+			path = CLToolBarListView;
+			sourceTree = "<group>";
+		};
+		A4DB714C203802FC0015964F /* UIButton+CLButton */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB714D203802FC0015964F /* UIButton+CLButton.h */,
+				A4DB714E203802FC0015964F /* UIButton+CLButton.m */,
+			);
+			path = "UIButton+CLButton";
+			sourceTree = "<group>";
+		};
+		A4DB714F203802FC0015964F /* CLCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB715A203802FC0015964F /* Controller */,
+				A4DB7150203802FC0015964F /* ViewModels */,
+			);
+			path = CLCollectionViewController;
+			sourceTree = "<group>";
+		};
+		A4DB7150203802FC0015964F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7154203802FC0015964F /* CLCollectionViewDataSource */,
+				A4DB7157203802FC0015964F /* CLCollectionViewDelegate */,
+				A4DB7151203802FC0015964F /* CLCollectionViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4DB7151203802FC0015964F /* CLCollectionViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7153203802FC0015964F /* CLCollectionViewViewModel.h */,
+				A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */,
+			);
+			path = CLCollectionViewViewModel;
+			sourceTree = "<group>";
+		};
+		A4DB7154203802FC0015964F /* CLCollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7156203802FC0015964F /* CLCollectionViewDataSource.h */,
+				A4DB7155203802FC0015964F /* CLCollectionViewDataSource.m */,
+			);
+			path = CLCollectionViewDataSource;
+			sourceTree = "<group>";
+		};
+		A4DB7157203802FC0015964F /* CLCollectionViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7159203802FC0015964F /* CLCollectionViewDelegate.h */,
+				A4DB7158203802FC0015964F /* CLCollectionViewDelegate.m */,
+			);
+			path = CLCollectionViewDelegate;
+			sourceTree = "<group>";
+		};
+		A4DB715A203802FC0015964F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB715C203802FC0015964F /* CLCollectionViewController.h */,
+				A4DB715B203802FC0015964F /* CLCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4DB715D203802FC0015964F /* CLTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB716B203802FC0015964F /* Controller */,
+				A4DB715E203802FC0015964F /* ViewModels */,
+				A4DB7168203802FC0015964F /* Views */,
+			);
+			path = CLTableViewController;
+			sourceTree = "<group>";
+		};
+		A4DB715E203802FC0015964F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7162203802FC0015964F /* CLTableViewDataSource */,
+				A4DB715F203802FC0015964F /* CLTableViewDelegate */,
+				A4DB7165203802FC0015964F /* CLTableViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4DB715F203802FC0015964F /* CLTableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7161203802FC0015964F /* CLTableViewDelegate.h */,
+				A4DB7160203802FC0015964F /* CLTableViewDelegate.m */,
+			);
+			path = CLTableViewDelegate;
+			sourceTree = "<group>";
+		};
+		A4DB7162203802FC0015964F /* CLTableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7163203802FC0015964F /* CLTableViewDataSource.h */,
+				A4DB7164203802FC0015964F /* CLTableViewDataSource.m */,
+			);
+			path = CLTableViewDataSource;
+			sourceTree = "<group>";
+		};
+		A4DB7165203802FC0015964F /* CLTableViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7166203802FC0015964F /* CLTableViewViewModel.h */,
+				A4DB7167203802FC0015964F /* CLTableViewViewModel.m */,
+			);
+			path = CLTableViewViewModel;
+			sourceTree = "<group>";
+		};
+		A4DB7168203802FC0015964F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7169203802FC0015964F /* CLTableViewCell.h */,
+				A4DB716A203802FC0015964F /* CLTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4DB716B203802FC0015964F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB716C203802FC0015964F /* CLTableViewController.h */,
+				A4DB716D203802FC0015964F /* CLTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4DB716E203802FC0015964F /* UIFont+CLFont */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB716F203802FC0015964F /* UIFont+CLFont.h */,
+				A4DB7170203802FC0015964F /* UIFont+CLFont.m */,
+			);
+			path = "UIFont+CLFont";
+			sourceTree = "<group>";
+		};
+		A4DB7171203802FC0015964F /* UIImage+CLImage */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7172203802FC0015964F /* UIImage+CLImage.h */,
+				A4DB7173203802FC0015964F /* UIImage+CLImage.m */,
+			);
+			path = "UIImage+CLImage";
+			sourceTree = "<group>";
+		};
+		A4DB7174203802FC0015964F /* CLNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7175203802FC0015964F /* CLNavigationController.h */,
+				A4DB7176203802FC0015964F /* CLNavigationController.m */,
+			);
+			path = CLNavigationController;
+			sourceTree = "<group>";
+		};
+		A4DB7177203802FC0015964F /* UIColor+CLColor */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7178203802FC0015964F /* UIColor+CLColor.h */,
+				A4DB7179203802FC0015964F /* UIColor+CLColor.m */,
+			);
+			path = "UIColor+CLColor";
+			sourceTree = "<group>";
+		};
+		A4DB717A203802FC0015964F /* CLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB717E203802FC0015964F /* Controller */,
+				A4DB717B203802FC0015964F /* ViewModels */,
+			);
+			path = CLViewController;
+			sourceTree = "<group>";
+		};
+		A4DB717B203802FC0015964F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB717C203802FC0015964F /* CLViewControllerViewModel.h */,
+				A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4DB717E203802FC0015964F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7180203802FC0015964F /* CLViewController.h */,
+				A4DB717F203802FC0015964F /* CLViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4DB7181203802FC0015964F /* UIScreen+CLScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7182203802FC0015964F /* UIScreen+CLScreen.h */,
+				A4DB7183203802FC0015964F /* UIScreen+CLScreen.m */,
+			);
+			path = "UIScreen+CLScreen";
+			sourceTree = "<group>";
+		};
+		A4DB7184203802FC0015964F /* UITableView+CLTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB7186203802FC0015964F /* UITableView+CLTableView.h */,
+				A4DB7185203802FC0015964F /* UITableView+CLTableView.m */,
+			);
+			path = "UITableView+CLTableView";
+			sourceTree = "<group>";
+		};
+		A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB718A203802FC0015964F /* UICollectionView+CLCollectionView.h */,
+				A4DB7189203802FC0015964F /* UICollectionView+CLCollectionView.m */,
+			);
+			path = "UICollectionView+CLCollectionView";
+			sourceTree = "<group>";
+		};
+		A4DB718B203802FC0015964F /* CLTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB718C203802FC0015964F /* CLTextField.h */,
+				A4DB718D203802FC0015964F /* CLTextField.m */,
+			);
+			path = CLTextField;
+			sourceTree = "<group>";
+		};
+		A4DB718E203802FC0015964F /* CLButton */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB718F203802FC0015964F /* CLButton.h */,
+				A4DB7190203802FC0015964F /* CLButton.m */,
+			);
+			path = CLButton;
+			sourceTree = "<group>";
+		};
+		A4DB71AA203805A70015964F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71C820381A0A0015964F /* EXAlert */,
+				A4DB71DE20386EFE0015964F /* EXButton */,
+				A4DB71E2203A7E9F0015964F /* EXCollection */,
+				A4AB1CBF203BD4B6005026E8 /* EXColor */,
+				A4AB1CCF203C2756005026E8 /* EXDevice */,
+				A4AB1CD3203C2DAE005026E8 /* EXFont */,
+				A4AB1CC3203BF081005026E8 /* EXImage */,
+				A4DB71AB203805B00015964F /* EXRoot */,
+				A42FEFDE203D01640054C8A3 /* EXScanQRCode */,
+				A4AB1CCB203C19A3005026E8 /* EXScreen */,
+				A4DB71F4203ACFBD0015964F /* EXTableView */,
+				A4AB1CE9203C46AA005026E8 /* EXTextField */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A4DB71AB203805B00015964F /* EXRoot */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71AC203805B70015964F /* Controller */,
+				A4DB71AF203805C70015964F /* Models */,
+				A4DB71AE203805BF0015964F /* ViewModels */,
+			);
+			path = EXRoot;
+			sourceTree = "<group>";
+		};
+		A4DB71AC203805B70015964F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71B0203806D10015964F /* EXRootController.h */,
+				A4DB71B1203806D10015964F /* EXRootController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4DB71AE203805BF0015964F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71BA2038124B0015964F /* EXRootDataSource */,
+				A4DB71BB203812560015964F /* EXRootDelegate */,
+				A4DB71B6203812240015964F /* EXRootViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4DB71AF203805C70015964F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71B3203812060015964F /* EXRootBaseModel.h */,
+				A4DB71B4203812060015964F /* EXRootBaseModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4DB71B6203812240015964F /* EXRootViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71B7203812340015964F /* EXRootViewModel.h */,
+				A4DB71B8203812340015964F /* EXRootViewModel.m */,
+			);
+			path = EXRootViewModel;
+			sourceTree = "<group>";
+		};
+		A4DB71BA2038124B0015964F /* EXRootDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71BF203812700015964F /* EXRootDataSource.h */,
+				A4DB71C0203812700015964F /* EXRootDataSource.m */,
+			);
+			path = EXRootDataSource;
+			sourceTree = "<group>";
+		};
+		A4DB71BB203812560015964F /* EXRootDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71BC203812630015964F /* EXRootDelegate.h */,
+				A4DB71BD203812630015964F /* EXRootDelegate.m */,
+			);
+			path = EXRootDelegate;
+			sourceTree = "<group>";
+		};
+		A4DB71C820381A0A0015964F /* EXAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71CC20381A360015964F /* Controller */,
+				A4DB71CE20381A480015964F /* Models */,
+				A4DB71CD20381A430015964F /* ViewModels */,
+			);
+			path = EXAlert;
+			sourceTree = "<group>";
+		};
+		A4DB71CC20381A360015964F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71C920381A2A0015964F /* EXAlertController.h */,
+				A4DB71CA20381A2A0015964F /* EXAlertController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4DB71CD20381A430015964F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71D220381AAF0015964F /* EXAlertDataSource */,
+				A4DB71D320381AB80015964F /* EXAlertDelegate */,
+				A4DB71D420381AC10015964F /* EXAlertViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4DB71CE20381A480015964F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71CF20381AA80015964F /* EXAlertBaseModel.h */,
+				A4DB71D020381AA80015964F /* EXAlertBaseModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4DB71D220381AAF0015964F /* EXAlertDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71DB20381AE90015964F /* EXAlertDataSource.h */,
+				A4DB71DC20381AE90015964F /* EXAlertDataSource.m */,
+			);
+			path = EXAlertDataSource;
+			sourceTree = "<group>";
+		};
+		A4DB71D320381AB80015964F /* EXAlertDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71D820381ADD0015964F /* EXAlertDelegate.h */,
+				A4DB71D920381ADD0015964F /* EXAlertDelegate.m */,
+			);
+			path = EXAlertDelegate;
+			sourceTree = "<group>";
+		};
+		A4DB71D420381AC10015964F /* EXAlertViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71D520381AD20015964F /* EXAlertViewModel.h */,
+				A4DB71D620381AD20015964F /* EXAlertViewModel.m */,
+			);
+			path = EXAlertViewModel;
+			sourceTree = "<group>";
+		};
+		A4DB71DE20386EFE0015964F /* EXButton */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71DF20386F180015964F /* EXButtonController.h */,
+				A4DB71E020386F180015964F /* EXButtonController.m */,
+			);
+			path = EXButton;
+			sourceTree = "<group>";
+		};
+		A4DB71E2203A7E9F0015964F /* EXCollection */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71E3203A7EAC0015964F /* Controller */,
+				A4DB71E4203A7EB00015964F /* ViewModels */,
+			);
+			path = EXCollection;
+			sourceTree = "<group>";
+		};
+		A4DB71E3203A7EAC0015964F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71E8203A86060015964F /* EXCollectionViewController.h */,
+				A4DB71E9203A86060015964F /* EXCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4DB71E4203A7EB00015964F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71E6203A7F270015964F /* EXCollectionViewDataSource */,
+				A4DB71E7203A7F310015964F /* EXCollectionViewDelegate */,
+				A4DB71E5203A7EBC0015964F /* EXCollectionViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4DB71E5203A7EBC0015964F /* EXCollectionViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71F1203A86320015964F /* EXCollectionViewViewModel.h */,
+				A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */,
+			);
+			path = EXCollectionViewViewModel;
+			sourceTree = "<group>";
+		};
+		A4DB71E6203A7F270015964F /* EXCollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71EB203A86170015964F /* EXCollectionViewDataSource.h */,
+				A4DB71EC203A86170015964F /* EXCollectionViewDataSource.m */,
+			);
+			path = EXCollectionViewDataSource;
+			sourceTree = "<group>";
+		};
+		A4DB71E7203A7F310015964F /* EXCollectionViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB71EE203A86250015964F /* EXCollectionViewDelegate.h */,
+				A4DB71EF203A86250015964F /* EXCollectionViewDelegate.m */,
+			);
+			path = EXCollectionViewDelegate;
+			sourceTree = "<group>";
+		};
+		A4DB71F4203ACFBD0015964F /* EXTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB1CB1203AD12C005026E8 /* Controller */,
+				A4AB1CB2203AD134005026E8 /* ViewModels */,
+			);
+			path = EXTableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4DB7124203800530015964F /* CLUIKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4DB713B203800530015964F /* Build configuration list for PBXNativeTarget "CLUIKitExample" */;
+			buildPhases = (
+				4BCFC2E5D471DE5AD8CA1CB1 /* [CP] Check Pods Manifest.lock */,
+				A4DB7121203800530015964F /* Sources */,
+				A4DB7122203800530015964F /* Frameworks */,
+				A4DB7123203800530015964F /* Resources */,
+				2AACA567227F4D4DA1A5D8F3 /* [CP] Embed Pods Frameworks */,
+				0C2D9A1BBC25F6698F7C860B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLUIKitExample;
+			productName = CLUIKitExample;
+			productReference = A4DB7125203800530015964F /* CLUIKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4DB711D203800530015964F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Cain Luo";
+				TargetAttributes = {
+					A4DB7124203800530015964F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A4DB7120203800530015964F /* Build configuration list for PBXProject "CLUIKitExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4DB711C203800530015964F;
+			productRefGroup = A4DB7126203800530015964F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4DB7124203800530015964F /* CLUIKitExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4DB7123203800530015964F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4DB71A6203802FC0015964F /* Info.plist in Resources */,
+				A4DB7135203800530015964F /* LaunchScreen.storyboard in Resources */,
+				A4DB7132203800530015964F /* Assets.xcassets in Resources */,
+				A4AB1D19203CEE9D005026E8 /* CLResource.bundle in Resources */,
+				A4AB1CCA203BF9A9005026E8 /* gif.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C2D9A1BBC25F6698F7C860B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AACA567227F4D4DA1A5D8F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CLFoundation/CLFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BCFC2E5D471DE5AD8CA1CB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CLUIKitExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4DB7121203800530015964F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4AB1CCE203C19B2005026E8 /* EXScreenController.m in Sources */,
+				A4DB7197203802FC0015964F /* CLCollectionViewDelegate.m in Sources */,
+				A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */,
+				A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */,
+				A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */,
+				A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */,
+				A4DB71ED203A86170015964F /* EXCollectionViewDataSource.m in Sources */,
+				A4AB1CDF203C34BC005026E8 /* EXFontBaseModel.m in Sources */,
+				A4DB7195203802FC0015964F /* CLCollectionViewViewModel.m in Sources */,
+				A4DB71B5203812060015964F /* EXRootBaseModel.m in Sources */,
+				A42FEFE1203D017C0054C8A3 /* EXScanQRCodeController.m in Sources */,
+				A4DB71F0203A86250015964F /* EXCollectionViewDelegate.m in Sources */,
+				A4DB71EA203A86060015964F /* EXCollectionViewController.m in Sources */,
+				A4DB71D120381AA80015964F /* EXAlertBaseModel.m in Sources */,
+				A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */,
+				A4DB7138203800530015964F /* main.m in Sources */,
+				A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */,
+				A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */,
+				A4DB71C1203812700015964F /* EXRootDataSource.m in Sources */,
+				A4DB71CB20381A2A0015964F /* EXAlertController.m in Sources */,
+				A4DB7196203802FC0015964F /* CLCollectionViewDataSource.m in Sources */,
+				A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */,
+				A4AB1CEC203C46BB005026E8 /* EXTextFieldController.m in Sources */,
+				A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */,
+				A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */,
+				A4DB7194203802FC0015964F /* UIButton+CLButton.m in Sources */,
+				A4DB71A8203802FC0015964F /* CLTextField.m in Sources */,
+				A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */,
+				A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */,
+				A4DB71A9203802FC0015964F /* CLButton.m in Sources */,
+				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
+				A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */,
+				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
+				A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */,
+				A4AB1CE8203C34E5005026E8 /* EXFontViewModel.m in Sources */,
+				A4AB1CD6203C2DCF005026E8 /* EXFontController.m in Sources */,
+				A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */,
+				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
+				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
+				A4DB719C203802FC0015964F /* CLTableViewCell.m in Sources */,
+				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
+				A4DB719F203802FC0015964F /* UIImage+CLImage.m in Sources */,
+				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
+				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,
+				A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */,
+				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
+				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
+				A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */,
+				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
+				A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */,
+				A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */,
+				A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */,
+				A4AB1CC6203BF09B005026E8 /* EXImageController.m in Sources */,
+				A4AB1CE2203C34D1005026E8 /* EXFontDelegate.m in Sources */,
+				A4DB71B2203806D10015964F /* EXRootController.m in Sources */,
+				A4AB1CC2203BD4C8005026E8 /* EXColorController.m in Sources */,
+				A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */,
+				A4DB712A203800530015964F /* AppDelegate.m in Sources */,
+				A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */,
+				A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A4DB7133203800530015964F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4DB7134203800530015964F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4DB7139203800530015964F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A4DB713A203800530015964F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4DB713C203800530015964F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8652A3610B935120B79F2F9E /* Pods-CLUIKitExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DA59678JQE;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CLUIKitExample/Resource/CLUIKitExample-PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/CLUIKitExample/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.SimpleProjects;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4DB713D203800530015964F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DA59678JQE;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CLUIKitExample/Resource/CLUIKitExample-PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/CLUIKitExample/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.SimpleProjects;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4DB7120203800530015964F /* Build configuration list for PBXProject "CLUIKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4DB7139203800530015964F /* Debug */,
+				A4DB713A203800530015964F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4DB713B203800530015964F /* Build configuration list for PBXNativeTarget "CLUIKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4DB713C203800530015964F /* Debug */,
+				A4DB713D203800530015964F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4DB711D203800530015964F /* Project object */;
+}

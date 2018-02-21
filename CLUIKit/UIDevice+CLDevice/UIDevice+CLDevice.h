@@ -16,28 +16,7 @@
 
 @interface UIDevice (CLDevice)
 
-#pragma mark - Application相关
-/**
- 获取App的名字
- 
- @return App的名字
- */
-+ (NSString *)cl_getApplicationName;
-
-/**
- 获取App的版本号
- 
- @return App版本号
- */
-+ (NSString *)cl_getApplicationVersion;
-
-/**
- 获取App的Build号
- 
- @return App版本号
- */
-+ (NSString *)cl_getApplicationBundleVersion;
-
+#pragma mark - 设备相关
 /**
  获取系统版本号
  
@@ -45,7 +24,6 @@
  */
 + (NSString *)cl_getSystemVersion;
 
-#pragma mark - 设备相关
 /**
  获取设备名称
  
@@ -73,7 +51,6 @@
  @return NSString
  */
 + (NSString *)cl_getCurrentDeviceModelName;
-
 
 #pragma mark - CPU相关
 /**

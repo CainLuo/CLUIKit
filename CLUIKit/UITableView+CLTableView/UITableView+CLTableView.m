@@ -11,12 +11,6 @@
 
 static void *CLPlaceholderView = &CLPlaceholderView;
 
-@interface UITableView (CLTableView)
-
-@property (nonatomic, strong) UIView *cl_placeholderView;
-
-@end
-
 @implementation UITableView (CLTableView)
 
 #pragma mark - CLPlaceholderView

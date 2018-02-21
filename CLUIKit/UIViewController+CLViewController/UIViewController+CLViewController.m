@@ -101,7 +101,7 @@ static void *AlertControllerKey = &AlertControllerKey;
 - (void)cl_showSheetViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                actionTitles:(NSArray<NSString *> *)actionTitles
-                                    handler:(void (^ __nullable)(UIAlertAction *action))handler {
+                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler {
     
     self.cl_alertController = [UIAlertController alertControllerWithTitle:title
                                                                   message:message
@@ -115,7 +115,7 @@ static void *AlertControllerKey = &AlertControllerKey;
                                                                    
                                                                    if (handler) {
                                                                        
-                                                                       handler(action);
+                                                                       handler(action, idx);
                                                                    }
                                                                }];
         

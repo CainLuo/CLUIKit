@@ -12,12 +12,6 @@
 
 static void *CLPlaceholderView = &CLPlaceholderView;
 
-@interface UICollectionView (CLCollectionView)
-
-@property (nonatomic, strong) UIView *cl_placeholderView;
-
-@end
-
 @implementation UICollectionView (CLCollectionView)
 
 #pragma mark - CLPlaceholderView

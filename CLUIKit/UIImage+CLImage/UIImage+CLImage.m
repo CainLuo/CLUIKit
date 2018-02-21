@@ -13,6 +13,8 @@
 //
 
 #import "UIImage+CLImage.h"
+#import "UIScreen+CLScreen.h"
+
 #import <ImageIO/ImageIO.h>
 #import <Accelerate/Accelerate.h>
 
@@ -24,29 +26,29 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+        CGRect cl_rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
         
-        UIGraphicsBeginImageContext(rect.size);
+        UIGraphicsBeginImageContext(cl_rect.size);
         
-        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextRef cl_context = UIGraphicsGetCurrentContext();
         
-        CGContextSetFillColorWithColor(context, color.CGColor);
+        CGContextSetFillColorWithColor(cl_context, color.CGColor);
         
-        CGContextFillRect(context, rect);
+        CGContextFillRect(cl_context, cl_rect);
         
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIImage *cl_image = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
         
-        NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+        NSData *cl_imageData = UIImageJPEGRepresentation(cl_image, 1.0f);
         
-        image = [UIImage imageWithData:imageData];
+        cl_image = [UIImage imageWithData:cl_imageData];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (completion != nil) {
                 
-                completion(image);
+                completion(cl_image);
             }
         });
     });
@@ -60,49 +62,42 @@
                 
         UIGraphicsBeginImageContext(rect.size);
         
-        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextRef cl_context = UIGraphicsGetCurrentContext();
         
-        CGContextSetFillColorWithColor(context, color.CGColor);
+        CGContextSetFillColorWithColor(cl_context, color.CGColor);
         
-        CGContextFillRect(context, rect);
+        CGContextFillRect(cl_context, rect);
         
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIImage *cl_image = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
         
-        NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+        NSData *cl_imageData = UIImageJPEGRepresentation(cl_image, 1.0f);
         
-        image = [UIImage imageWithData:imageData];
+        cl_image = [UIImage imageWithData:cl_imageData];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (completion != nil) {
                 
-                completion(image);
+                completion(cl_image);
             }
         });
     });
 }
 
 #pragma mark - 截取指定视图大小的截图
-+ (void)cl_asyncGetImageForView:(UIView *)view
-                     completion:(CLImage)completion {
++ (UIImage *)cl_getImageForView:(UIView *)view {
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
     
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
-        
-        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-        
-        UIImage *imageRet = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *cl_imageRet = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            completion(imageRet);
-        });
-    });
+    return cl_imageRet;
 }
 
 #pragma mark - 缩放指定比例的图片
@@ -116,7 +111,7 @@
         
         [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
         
-        UIImage *drawImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIImage *cl_drawImage = UIGraphicsGetImageFromCurrentImageContext();
         
         UIGraphicsEndImageContext();
         
@@ -124,7 +119,7 @@
             
             if (completion) {
                 
-                completion(drawImage);
+                completion(cl_drawImage);
             }
         });
     });
@@ -136,20 +131,20 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        CGFloat scale = [UIScreen mainScreen].scale;
+        CGFloat cl_scale = [UIScreen mainScreen].scale;
         
-        if (scale > 1.0f) {
+        if (cl_scale > 1.0f) {
             
-            NSString *retinaPath = [[NSBundle mainBundle] pathForResource:[name stringByAppendingString:@"@2x"]
-                                                                   ofType:@"gif"];
+            NSString *cl_retinaPath = [[NSBundle mainBundle] pathForResource:[name stringByAppendingString:@"@2x"]
+                                                                      ofType:@"gif"];
             
-            NSData *data = [NSData dataWithContentsOfFile:retinaPath];
+            NSData *cl_data = [NSData dataWithContentsOfFile:cl_retinaPath];
 
             if (completion) {
 
-                if (data) {
+                if (cl_data) {
                     
-                    [UIImage cl_asyncLoadGIFImageWithData:data
+                    [UIImage cl_asyncLoadGIFImageWithData:cl_data
                                                completion:^(UIImage *image) {
                                                    
                                                    completion(image);
@@ -157,18 +152,18 @@
                 }
             }
             
-            NSString *path = [[NSBundle mainBundle] pathForResource:name
+            NSString *cl_path = [[NSBundle mainBundle] pathForResource:name
                                                              ofType:@"gif"];
             
-            data = [NSData dataWithContentsOfFile:path];
+            cl_data = [NSData dataWithContentsOfFile:cl_path];
             
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 if (completion) {
 
-                    if (data) {
+                    if (cl_data) {
                         
-                        [UIImage cl_asyncLoadGIFImageWithData:data
+                        [UIImage cl_asyncLoadGIFImageWithData:cl_data
                                                    completion:^(UIImage *image) {
                                                        
                                                        completion(image);
@@ -183,18 +178,18 @@
             
         } else {
             
-            NSString *path = [[NSBundle mainBundle] pathForResource:name
-                                                             ofType:@"gif"];
+            NSString *cl_path = [[NSBundle mainBundle] pathForResource:name
+                                                                ofType:@"gif"];
             
-            NSData *data = [NSData dataWithContentsOfFile:path];
+            NSData *cl_data = [NSData dataWithContentsOfFile:cl_path];
             
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 if (completion) {
                     
-                    if (data) {
+                    if (cl_data) {
                         
-                        [UIImage cl_asyncLoadGIFImageWithData:data
+                        [UIImage cl_asyncLoadGIFImageWithData:cl_data
                                                    completion:^(UIImage *image) {
                             
                                                        completion(image);
@@ -218,56 +213,56 @@
         }
         
         //获取数据源
-        CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data,
-                                                              NULL);
+        CGImageSourceRef cl_source = CGImageSourceCreateWithData((__bridge CFDataRef)data,
+                                                                 NULL);
         
         // 获取图片数量(如果传入的是gif图的二进制，那么获取的是图片帧数)
-        size_t count = CGImageSourceGetCount(source);
+        size_t cl_count = CGImageSourceGetCount(cl_source);
         
-        UIImage *animatedImage;
+        UIImage *cl_animatedImage;
         
-        if (count <= 1) {
-            animatedImage = [[UIImage alloc] initWithData:data];
+        if (cl_count <= 1) {
+            cl_animatedImage = [[UIImage alloc] initWithData:data];
             
         } else {
             
-            NSMutableArray *images = [NSMutableArray array];
+            NSMutableArray *cl_images = [NSMutableArray array];
             
-            NSTimeInterval duration = 0.0f;
+            NSTimeInterval cl_duration = 0.0f;
             
-            for (size_t i = 0; i < count; i++) {
+            for (size_t i = 0; i < cl_count; i++) {
                 
-                CGImageRef image = CGImageSourceCreateImageAtIndex(source,
-                                                                   i,
-                                                                   NULL);
+                CGImageRef cl_image = CGImageSourceCreateImageAtIndex(cl_source,
+                                                                      i,
+                                                                      NULL);
                 
-                duration += [self cl_frameDurationAtIndex:i
-                                                   source:source];
+                cl_duration += [self cl_frameDurationAtIndex:i
+                                                      source:cl_source];
                 
-                [images addObject:[UIImage imageWithCGImage:image
-                                                      scale:[UIScreen mainScreen].scale
-                                                orientation:UIImageOrientationUp]];
+                [cl_images addObject:[UIImage imageWithCGImage:cl_image
+                                                         scale:[UIScreen mainScreen].scale
+                                                   orientation:UIImageOrientationUp]];
                 
-                CGImageRelease(image);
+                CGImageRelease(cl_image);
             }
             
             // 如果上面的计算播放时间方法没有成功，就按照下面方法计算
             // 计算一次播放的总时间：每张图播放1/10秒 * 图片总数
-            if (!duration) {
-                duration = (1.0f / 10.0f) * count;
+            if (!cl_duration) {
+                cl_duration = (1.0f / 10.0f) * cl_count;
             }
             
-            animatedImage = [UIImage animatedImageWithImages:images
-                                                    duration:duration];
+            cl_animatedImage = [UIImage animatedImageWithImages:cl_images
+                                                       duration:cl_duration];
         }
         
-        CFRelease(source);
+        CFRelease(cl_source);
 
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (completion) {
                 
-                completion(animatedImage);
+                completion(cl_animatedImage);
             }
         });
     });
@@ -283,30 +278,30 @@
 + (CGFloat)cl_frameDurationAtIndex:(NSUInteger)index
                             source:(CGImageSourceRef)source {
     
-    CGFloat frameDuration = 0.1f;
+    CGFloat cl_frameDuration = 0.1f;
     
     // 获取这一帧的属性字典
-    CFDictionaryRef cfFrameProperties = CGImageSourceCopyPropertiesAtIndex(source,
-                                                                           index,
-                                                                           nil);
+    CFDictionaryRef cl_cfFrameProperties = CGImageSourceCopyPropertiesAtIndex(source,
+                                                                              index,
+                                                                              nil);
     
-    NSDictionary *frameProperties = (__bridge NSDictionary *)cfFrameProperties;
-    NSDictionary *gifProperties = frameProperties[(NSString *)kCGImagePropertyGIFDictionary];
+    NSDictionary *cl_frameProperties = (__bridge NSDictionary *)cl_cfFrameProperties;
+    NSDictionary *cl_gifProperties = cl_frameProperties[(NSString *)kCGImagePropertyGIFDictionary];
     
     // 从字典中获取这一帧持续的时间
-    NSNumber *delayTimeUnclampedProp = gifProperties[(NSString *)kCGImagePropertyGIFUnclampedDelayTime];
+    NSNumber *cl_delayTimeUnclampedProp = cl_gifProperties[(NSString *)kCGImagePropertyGIFUnclampedDelayTime];
     
-    if (delayTimeUnclampedProp) {
+    if (cl_delayTimeUnclampedProp) {
         
-        frameDuration = [delayTimeUnclampedProp floatValue];
+        cl_frameDuration = [cl_delayTimeUnclampedProp floatValue];
         
     } else {
         
-        NSNumber *delayTimeProp = gifProperties[(NSString *)kCGImagePropertyGIFDelayTime];
+        NSNumber *cl_delayTimeProp = cl_gifProperties[(NSString *)kCGImagePropertyGIFDelayTime];
         
-        if (delayTimeProp) {
+        if (cl_delayTimeProp) {
             
-            frameDuration = [delayTimeProp floatValue];
+            cl_frameDuration = [cl_delayTimeProp floatValue];
         }
     }
     
@@ -315,14 +310,14 @@
     // a duration of <= 10 ms. See <rdar://problem/7689300> and <http://webkit.org/b/36082>
     // for more information.
     
-    if (frameDuration < 0.011f) {
+    if (cl_frameDuration < 0.011f) {
         
-        frameDuration = 0.100f;
+        cl_frameDuration = 0.100f;
     }
     
-    CFRelease(cfFrameProperties);
+    CFRelease(cl_cfFrameProperties);
     
-    return frameDuration;
+    return cl_frameDuration;
 }
 
 #pragma mark - 异步生成一个二维码
@@ -331,124 +326,132 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-        CIFilter *QRCodeImageFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+        CIFilter *cl_QRCodeImageFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
         
-        [QRCodeImageFilter setDefaults];
+        [cl_QRCodeImageFilter setDefaults];
         
         NSData *QRCodeImageData = [string dataUsingEncoding:NSUTF8StringEncoding];
         
-        [QRCodeImageFilter setValue:QRCodeImageData
-                             forKey:@"inputMessage"];
-        [QRCodeImageFilter setValue:@"H"
-                             forKey:@"inputCorrectionLevel"];
+        [cl_QRCodeImageFilter setValue:QRCodeImageData
+                                forKey:@"inputMessage"];
+        [cl_QRCodeImageFilter setValue:@"H"
+                                forKey:@"inputCorrectionLevel"];
         
-        CIImage *QRCodeCIImage = [QRCodeImageFilter outputImage];
+        CIImage *cl_QRCodeCIImage = [cl_QRCodeImageFilter outputImage];
         
-        QRCodeCIImage = [QRCodeCIImage imageByApplyingTransform:CGAffineTransformMakeScale(20, 20)];
+        cl_QRCodeCIImage = [cl_QRCodeCIImage imageByApplyingTransform:CGAffineTransformMakeScale(20, 20)];
         
-        UIImage *QRCodeUIImage = [UIImage imageWithCIImage:QRCodeCIImage];
+        UIImage *cl_QRCodeUIImage = [UIImage imageWithCIImage:cl_QRCodeCIImage];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (completion != nil) {
                 
-                completion(QRCodeUIImage);
+                completion(cl_QRCodeUIImage);
             }
         });
     });
 }
 
 + (void)cl_asyncCreateQRCodeImageWithString:(NSString *)string
-                                       logo:(NSString *)logoName
+                                  logoImage:(UIImage *)logoImage
                                  completion:(CLImage)completion {
+        
+    [self cl_asyncCreateQRCodeImageWithString:string
+                                   completion:^(UIImage *image) {
+                                       
+                                       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                           
+                                           UIGraphicsBeginImageContext(image.size);
+                                           
+                                           [image drawInRect:CGRectMake(0,
+                                                                        0,
+                                                                        image.size.width,
+                                                                        image.size.height)];
+                                           
+                                           CGFloat cl_imageW = 150;
+                                           CGFloat cl_imageH = cl_imageW;
+                                           CGFloat cl_imageX = (image.size.width - cl_imageW) * 0.5;
+                                           CGFloat cl_imgaeY = (image.size.height - cl_imageH) * 0.5;
+                                           
+                                           [logoImage drawInRect:CGRectMake(cl_imageX, cl_imgaeY, cl_imageW, cl_imageH)];
+                                           
+                                           UIImage *cl_finalyImage = UIGraphicsGetImageFromCurrentImageContext();
+                                           
+                                           UIGraphicsEndImageContext();
+                                           
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               
+                                               if (completion) {
+                                                   
+                                                   completion(cl_finalyImage);
+                                               }
+                                           });
+                                       });
+                                   }];
+}
+
+#pragma mark - 生成条形码
++ (void)cl_asyncCreate128BarcodeImageWithString:(NSString *)string
+                                     completion:(CLImage)completion {
     
+    [self cl_asyncCreate128BarcodeImageWithString:string
+                                       imageSpace:[UIScreen cl_fitScreen:14]
+                                       completion:completion];
+}
+
++ (void)cl_asyncCreate128BarcodeImageWithString:(NSString *)string
+                                     imageSpace:(CGFloat)imageSpace
+                                     completion:(CLImage)completion {
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-       
-        __block UIImage *QRCodeImage = [[UIImage alloc] init];
         
-        [self cl_asyncCreateQRCodeImageWithString:string
-                                       completion:^(UIImage *image) {
-                                              
-                                           QRCodeImage = image;
-                                       }];
+        CIFilter *cl_code128Filter = [CIFilter filterWithName:@"CICode128BarcodeGenerator"];
         
-        UIGraphicsBeginImageContext(QRCodeImage.size);
+        NSData *cl_contentData = [string dataUsingEncoding:NSUTF8StringEncoding];
         
-        [QRCodeImage drawInRect:CGRectMake(0,
-                                           0,
-                                           QRCodeImage.size.width,
-                                           QRCodeImage.size.height)];
+        [cl_code128Filter setValue:cl_contentData
+                            forKey:@"inputMessage"];
+        [cl_code128Filter setValue:@(imageSpace)
+                            forKey:@"inputQuietSpace"];
         
-        UIImage *sImage = [UIImage imageNamed:logoName];
+        CIImage *cl_code128Image = cl_code128Filter.outputImage;
         
-        CGFloat sImageW = 150;
-        CGFloat sImageH = sImageW;
-        CGFloat sImageX = (QRCodeImage.size.width - sImageW) * 0.5;
-        CGFloat sImgaeY = (QRCodeImage.size.height - sImageH) * 0.5;
+        cl_code128Image = [cl_code128Image imageByApplyingTransform:CGAffineTransformMakeScale(20, 20)];
         
-        [sImage drawInRect:CGRectMake(sImageX, sImgaeY, sImageW, sImageH)];
-        
-        UIImage *finalyImage = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();
+        UIImage *cl_code128UIImage = [UIImage imageWithCIImage:cl_code128Image];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            if (completion != nil) {
+            if (completion) {
                 
-                completion(finalyImage);
+                completion(cl_code128UIImage);
             }
         });
     });
 }
 
-#pragma mark - 生成条形码
-- (UIImage *)cl_create128BarcodeImageWithString:(NSString *)string {
-    
-    return [self cl_create128BarcodeImageWithString:string
-                                              space:7];
-}
-
-- (UIImage *)cl_create128BarcodeImageWithString:(NSString *)string
-                                          space:(CGFloat)space {
-    
-    CIFilter *qrFilter = [CIFilter filterWithName:@"CICode128BarcodeGenerator"];
-    
-    NSData *contentData = [string dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [qrFilter setValue:contentData
-                forKey:@"inputMessage"];
-    [qrFilter setValue:@(space)
-                forKey:@"inputQuietSpace"];
-    
-    CIImage *barCodeImage = qrFilter.outputImage;
-    
-    barCodeImage = [barCodeImage imageByApplyingTransform:CGAffineTransformMakeScale(20, 20)];
-    
-    UIImage *barCodeUIImage = [UIImage imageWithCIImage:barCodeImage];
-    
-    return barCodeUIImage;
-} 
-
 #pragma mark - 获取指定Bundle文件里的图片
 + (UIImage *)cl_getImageWithBundleName:(NSString *)bundle
                              imageName:(NSString *)imageName {
     
-    NSBundle *mainBundle = [NSBundle bundleForClass:NSClassFromString(bundle)];
+    NSBundle *cl_mainBundle = [NSBundle bundleForClass:NSClassFromString(bundle)];
     
-    NSBundle *resourcesBundle = [NSBundle bundleWithPath:[mainBundle pathForResource:bundle
-                                                                              ofType:@"bundle"]];
+    NSString *cl_pathString = [cl_mainBundle pathForResource:bundle
+                                                      ofType:@"bundle"];
     
-    if (!resourcesBundle) {
+    NSBundle *cl_resourcesBundle = [NSBundle bundleWithPath:cl_pathString];
+    
+    if (!cl_resourcesBundle) {
         
-        resourcesBundle = mainBundle;
+        cl_resourcesBundle = cl_mainBundle;
     }
     
-    UIImage *image = [UIImage imageNamed:imageName
-                                inBundle:resourcesBundle
-           compatibleWithTraitCollection:nil];
+    UIImage *cl_image = [UIImage imageNamed:imageName
+                                   inBundle:cl_resourcesBundle
+              compatibleWithTraitCollection:nil];
     
-    return image;
+    return cl_image;
 }
 
 #pragma mark - 图片高斯模糊处理
@@ -456,134 +459,134 @@
                             image:(UIImage *)image
                        completion:(CLImage)completion {
     
-    __block CGFloat blurValue = blur;
+    __block CGFloat cl_blurValue = blur;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        NSData *imageData  = UIImageJPEGRepresentation(image, 1); // convert to jpeg
-        UIImage *destImage = [UIImage imageWithData:imageData];
+        NSData *cl_imageData  = UIImageJPEGRepresentation(image, 1); // convert to jpeg
+        UIImage *cl_destImage = [UIImage imageWithData:cl_imageData];
         
-        if (blurValue < 0.f || blurValue > 1.f) {
-            blurValue = 0.5f;
+        if (cl_blurValue < 0.f || cl_blurValue > 1.f) {
+            cl_blurValue = 0.5f;
         }
         
-        int boxSize = (int)(blur * 40);
+        int cl_boxSize = (int)(blur * 40);
         
-        boxSize = boxSize - (boxSize % 2) + 1;
+        cl_boxSize = cl_boxSize - (cl_boxSize % 2) + 1;
         
-        CGImageRef img = destImage.CGImage;
+        CGImageRef cl_imageRef = cl_destImage.CGImage;
         
-        vImage_Buffer inBuffer, outBuffer;
+        vImage_Buffer cl_inBuffer, cl_outBuffer;
         
-        vImage_Error error;
+        vImage_Error cl_error;
         
-        void *pixelBuffer;
+        void *cl_pixelBuffer;
         
         //create vImage_Buffer with data from CGImageRef
         
-        CGDataProviderRef inProvider = CGImageGetDataProvider(img);
-        CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+        CGDataProviderRef cl_inProvider = CGImageGetDataProvider(cl_imageRef);
+        CFDataRef cl_inBitmapData = CGDataProviderCopyData(cl_inProvider);
         
-        inBuffer.width    = CGImageGetWidth(img);
-        inBuffer.height   = CGImageGetHeight(img);
-        inBuffer.rowBytes = CGImageGetBytesPerRow(img);
-        
-        inBuffer.data = (void *)CFDataGetBytePtr(inBitmapData);
+        cl_inBuffer.width    = CGImageGetWidth(cl_imageRef);
+        cl_inBuffer.height   = CGImageGetHeight(cl_imageRef);
+        cl_inBuffer.rowBytes = CGImageGetBytesPerRow(cl_imageRef);
+        cl_inBuffer.data     = (void *)CFDataGetBytePtr(cl_inBitmapData);
         
         //create vImage_Buffer for output
         
-        pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+        cl_pixelBuffer = malloc(CGImageGetBytesPerRow(cl_imageRef) * CGImageGetHeight(cl_imageRef));
         
-        if(pixelBuffer == NULL) {
+        if(cl_pixelBuffer == NULL) {
             
             NSLog(@"No pixelbuffer");
         }
         
-        outBuffer.data     = pixelBuffer;
-        outBuffer.width    = CGImageGetWidth(img);
-        outBuffer.height   = CGImageGetHeight(img);
-        outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+        cl_outBuffer.data     = cl_pixelBuffer;
+        cl_outBuffer.width    = CGImageGetWidth(cl_imageRef);
+        cl_outBuffer.height   = CGImageGetHeight(cl_imageRef);
+        cl_outBuffer.rowBytes = CGImageGetBytesPerRow(cl_imageRef);
         
         // Create a third buffer for intermediate processing
-        void *pixelBuffer2 = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+        void *cl_pixelBuffer2 = malloc(CGImageGetBytesPerRow(cl_imageRef) * CGImageGetHeight(cl_imageRef));
         
-        vImage_Buffer outBuffer2;
+        vImage_Buffer cl_outBuffer2;
         
-        outBuffer2.data     = pixelBuffer2;
-        outBuffer2.width    = CGImageGetWidth(img);
-        outBuffer2.height   = CGImageGetHeight(img);
-        outBuffer2.rowBytes = CGImageGetBytesPerRow(img);
+        cl_outBuffer2.data     = cl_pixelBuffer2;
+        cl_outBuffer2.width    = CGImageGetWidth(cl_imageRef);
+        cl_outBuffer2.height   = CGImageGetHeight(cl_imageRef);
+        cl_outBuffer2.rowBytes = CGImageGetBytesPerRow(cl_imageRef);
         
         //perform convolution
-        error = vImageBoxConvolve_ARGB8888(&inBuffer,
-                                           &outBuffer2,
-                                           NULL,
-                                           0,
-                                           0,
-                                           boxSize,
-                                           boxSize,
-                                           NULL,
-                                           kvImageEdgeExtend);
+        cl_error = vImageBoxConvolve_ARGB8888(&cl_inBuffer,
+                                              &cl_outBuffer2,
+                                              NULL,
+                                              0,
+                                              0,
+                                              cl_boxSize,
+                                              cl_boxSize,
+                                              NULL,
+                                              kvImageEdgeExtend);
         
-        if (error) {
-            NSLog(@"error from convolution %ld", error);
+        if (cl_error) {
+            NSLog(@"error from convolution %ld", cl_error);
         }
         
-        error = vImageBoxConvolve_ARGB8888(&outBuffer2,
-                                           &inBuffer,
-                                           NULL,
-                                           0,
-                                           0,
-                                           boxSize,
-                                           boxSize,
-                                           NULL,
-                                           kvImageEdgeExtend);
+        cl_error = vImageBoxConvolve_ARGB8888(&cl_outBuffer2,
+                                              &cl_inBuffer,
+                                              NULL,
+                                              0,
+                                              0,
+                                              cl_boxSize,
+                                              cl_boxSize,
+                                              NULL,
+                                              kvImageEdgeExtend);
         
-        if (error) {
-            NSLog(@"error from convolution %ld", error);
+        if (cl_error) {
+            NSLog(@"error from convolution %ld", cl_error);
         }
         
-        error = vImageBoxConvolve_ARGB8888(&inBuffer,
-                                           &outBuffer,
-                                           NULL,
-                                           0,
-                                           0,
-                                           boxSize,
-                                           boxSize,
-                                           NULL,
-                                           kvImageEdgeExtend);
+        cl_error = vImageBoxConvolve_ARGB8888(&cl_inBuffer,
+                                              &cl_outBuffer,
+                                              NULL,
+                                              0,
+                                              0,
+                                              cl_boxSize,
+                                              cl_boxSize,
+                                              NULL,
+                                              kvImageEdgeExtend);
         
-        if (error) {
-            NSLog(@"error from convolution %ld", error);
+        if (cl_error) {
+            NSLog(@"error from convolution %ld", cl_error);
         }
         
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        CGContextRef ctx = CGBitmapContextCreate(outBuffer.data,
-                                                 outBuffer.width,
-                                                 outBuffer.height,
-                                                 8,
-                                                 outBuffer.rowBytes,
-                                                 colorSpace,
-                                                 (CGBitmapInfo)kCGImageAlphaNoneSkipLast);
+        CGColorSpaceRef cl_colorSpaceRef = CGColorSpaceCreateDeviceRGB();
         
-        CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
-        UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+        CGContextRef cl_ontextRef = CGBitmapContextCreate(cl_outBuffer.data,
+                                                          cl_outBuffer.width,
+                                                          cl_outBuffer.height,
+                                                          8,
+                                                          cl_outBuffer.rowBytes,
+                                                          cl_colorSpaceRef,
+                                                          (CGBitmapInfo)kCGImageAlphaNoneSkipLast);
+        
+        CGImageRef cl_imageRef2 = CGBitmapContextCreateImage(cl_ontextRef);
+        UIImage *cl_image = [UIImage imageWithCGImage:cl_imageRef2];
         
         //clean up
-        CGContextRelease(ctx);
-        CGColorSpaceRelease(colorSpace);
+        CGContextRelease(cl_ontextRef);
+        CGColorSpaceRelease(cl_colorSpaceRef);
         
-        free(pixelBuffer);
-        free(pixelBuffer2);
-        CFRelease(inBitmapData);
+        free(cl_pixelBuffer);
+        free(cl_pixelBuffer2);
+        CFRelease(cl_inBitmapData);
         
-        CGImageRelease(imageRef);
+        CGImageRelease(cl_imageRef2);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (completion) {
                 
-                completion(returnImage);
+                completion(cl_image);
             }
         });
     });

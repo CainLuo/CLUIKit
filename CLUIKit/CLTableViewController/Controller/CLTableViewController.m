@@ -13,9 +13,10 @@
 //
 
 #import "CLTableViewController.h"
-#import "MJRefresh.h"
 #import "CLTableViewDelegate.h"
 #import "CLTableViewViewModel.h"
+
+#import "MJRefresh.h"
 
 @interface CLTableViewController ()
 
@@ -24,7 +25,7 @@
 @property (nonatomic, strong, readwrite) UITableView *cl_tableView;
 
 @property (nonatomic, strong) CLTableViewDelegate *cl_tableViewDelegate;
-@property (nonatomic, strong) CLTableViewViewModel *cl_ableViewBaseModel;
+@property (nonatomic, strong) CLTableViewViewModel *cl_tableViewBaseModel;
 
 @end
 
@@ -46,9 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.opaque = YES;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
+    self.view.opaque          = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self cl_addRefresh];
@@ -56,19 +55,18 @@
 
 - (UITableView *)cl_tableView {
     
-    if (!_cl_tableView) {
+    CL_GET_METHOD_RETURN_OBJC(_cl_tableView);
+    
+    _cl_tableView = [[UITableView alloc] initWithFrame:self.view.frame
+                                                 style:self.tableViewStyle];
+    
+    if (self.tableViewStyle == UITableViewStylePlain) {
         
-        _cl_tableView = [[UITableView alloc] initWithFrame:self.view.frame
-                                                     style:self.tableViewStyle];
-        
-        if (self.tableViewStyle == UITableViewStylePlain) {
-            
-            _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        }
-        
-        _cl_tableView.opaque = YES;
+        _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     
+    _cl_tableView.opaque = YES;
+
     return _cl_tableView;
 }
 
@@ -82,22 +80,21 @@
 #pragma mark - Table View Delegate
 - (CLTableViewDelegate *)cl_tableViewDelegate {
     
-    if (!_cl_tableViewDelegate) {
-        
-        _cl_tableViewDelegate = [[CLTableViewDelegate alloc] initTableViewDelegateWithViewModel:self.cl_ableViewBaseModel];
-    }
-    
+    CL_GET_METHOD_RETURN_OBJC(_cl_tableViewDelegate);
+
+    _cl_tableViewDelegate = [[CLTableViewDelegate alloc] initTableViewDelegateWithViewModel:self.cl_tableViewBaseModel];
+
     return _cl_tableViewDelegate;
 }
 
 #pragma mark - Table View Base Model
-- (CLTableViewViewModel *)cl_ableViewBaseModel {
+- (CLTableViewViewModel *)cl_tableViewBaseModel {
     
-    if (!_cl_ableViewBaseModel) {
-        _cl_ableViewBaseModel = [[CLTableViewViewModel alloc] initTableViewBaseModelWithController:self];
-    }
-    
-    return _cl_ableViewBaseModel;
+    CL_GET_METHOD_RETURN_OBJC(_cl_tableViewBaseModel);
+
+    _cl_tableViewBaseModel = [[CLTableViewViewModel alloc] initTableViewBaseModelWithController:self];
+
+    return _cl_tableViewBaseModel;
 }
 
 #pragma mark - Refresh

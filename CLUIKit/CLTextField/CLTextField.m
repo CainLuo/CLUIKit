@@ -20,6 +20,8 @@
 
 - (void)setCl_textFieldType:(CLTextFieldType)cl_textFieldType {
     
+    _cl_textFieldType = cl_textFieldType;
+    
     if (cl_textFieldType == CLTextFieldBottomLineType) {
         
         [self cl_addConstraintsWithSuperView];
@@ -33,14 +35,13 @@
 
 - (UIImageView *)cl_lineImageView {
     
-    if (!_cl_lineImageView) {
-        
-        _cl_lineImageView = [[UIImageView alloc] init];
-        
-        _cl_lineImageView.backgroundColor = [UIColor cl_colorWithHex:0xf0f0f0];
-        _cl_lineImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    }
+    CL_GET_METHOD_RETURN_OBJC(_cl_lineImageView);
     
+    _cl_lineImageView = [[UIImageView alloc] init];
+    
+    _cl_lineImageView.backgroundColor = [UIColor cl_colorWithHex:0xf0f0f0];
+    _cl_lineImageView.translatesAutoresizingMaskIntoConstraints = NO;
+
     return _cl_lineImageView;
 }
 

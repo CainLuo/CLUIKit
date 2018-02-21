@@ -16,4 +16,10 @@
 
 @interface CLNavigationController : UINavigationController
 
+@property (nonatomic, strong) UIImage *cl_backgroundImage;
+
+@property (nonatomic, strong) UIColor *cl_tintColor;
+
+@property (nonatomic, strong) UIColor *cl_foregroundColor;
+
 @end

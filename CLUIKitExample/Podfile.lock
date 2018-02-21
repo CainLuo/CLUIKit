@@ -1,0 +1,21 @@
+PODS:
+  - CLFoundation (1.4.1)
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.15.3)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - CLFoundation
+  - Masonry
+  - MJRefresh
+  - YYModel
+
+SPEC CHECKSUMS:
+  CLFoundation: a19034b66e03eab8c90314e809a577f5cbe07e12
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 7bb1c2dac981a3484c8335bc0f0795595f0fa608
+
+COCOAPODS: 1.4.0

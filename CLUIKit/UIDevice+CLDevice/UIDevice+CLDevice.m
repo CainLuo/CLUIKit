@@ -31,33 +31,11 @@
 
 @implementation UIDevice (CLDevice)
 
-#pragma mark - Application相关
-+ (NSString *)cl_getApplicationName {
-    
-    NSDictionary *cl_infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    
-    return cl_infoDictionary[@"CFBundleDisplayName"];
-}
-
-+ (NSString *)cl_getApplicationVersion {
-    
-    NSDictionary *cl_infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    
-    return cl_infoDictionary[@"CFBundleShortVersionString"];
-}
-
-+ (NSString *)cl_getApplicationBundleVersion {
-    
-    NSDictionary *cl_infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    
-    return cl_infoDictionary[@"CFBundleVersion"];
-}
-
+#pragma mark - 设备相关
 + (NSString *)cl_getSystemVersion {
     return [[UIDevice currentDevice] systemVersion];
 }
 
-#pragma mark - 设备相关
 + (NSString *)cl_getDeviceName {
     
     return [[UIDevice currentDevice] name];
@@ -70,15 +48,6 @@
 + (NSString *)cl_getUUIDString {
     
     return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-}
-
-+ (NSString *)cl_getCarrierName {
-    
-    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
-    
-    CTCarrier *carrier = [info subscriberCellularProvider];
-    
-    return [NSString stringWithFormat:@"%@", [carrier carrierName]];
 }
 
 + (NSString *)cl_getCurrentDeviceModelName {
@@ -309,6 +278,15 @@
 }
 
 #pragma mark - 网络相关
++ (NSString *)cl_getCarrierName {
+    
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+    
+    CTCarrier *carrier = [info subscriberCellularProvider];
+    
+    return [NSString stringWithFormat:@"%@", [carrier carrierName]];
+}
+
 + (NSString *)cl_getCurrentRadioAccessTechnology {
     
     CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
@@ -448,7 +426,7 @@
     
     freeifaddrs(addrs);
     
-    return address ? address : @"该设备不存在该ip地址";
+    return address ? address : @"The Device Don't Have IP Address";
 }
 
 @end

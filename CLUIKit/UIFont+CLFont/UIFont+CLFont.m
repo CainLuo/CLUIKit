@@ -22,7 +22,7 @@
     return [UIFont systemFontOfSize:[UIScreen cl_fitScreen:fontSize]];
 }
 
-+ (UIFont *)cl_fitBoldSysteFontOfSize:(CGFloat)fontSize {
++ (UIFont *)cl_fitBoldSystemFontOfSize:(CGFloat)fontSize {
     
     return [UIFont boldSystemFontOfSize:[UIScreen cl_fitScreen:fontSize]];
 }

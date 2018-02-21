@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @protocol CLTableViewPlaceholderDelegate <NSObject>
 
 @required

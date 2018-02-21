@@ -17,13 +17,13 @@
 
 @implementation UIButton (CLButton)
 
+#pragma mark - 修改点击区域
 - (void)setCl_clickAreaEdgeInsets:(UIEdgeInsets)cl_clickAreaEdgeInsets {
     
     NSValue *value = [NSValue valueWithUIEdgeInsets:cl_clickAreaEdgeInsets];
     
     objc_setAssociatedObject(self, @selector(cl_clickAreaEdgeInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 
 - (UIEdgeInsets)cl_clickAreaEdgeInsets {
     
@@ -55,51 +55,9 @@
 }
 
 #pragma mark - 倒计时方法
-- (void)cl_startButtonWithTime:(NSInteger)time {
-    
-    [self cl_startButtonWithTime:time
-                           title:self.titleLabel.text
-                     suffixTitle:@""
-                     normalColor:self.backgroundColor
-                     timingColor:self.backgroundColor];
-}
+- (void)cl_starButtonWithTime:(NSInteger)time
+                     complete:(CLButtonStar)complete {
 
-- (void)cl_startButtonWithTime:(NSInteger)time
-                   normalImage:(UIImage *)normalImage
-                  disableImage:(UIImage *)disableImage {
-
-    [self cl_startButtonWithTime:time
-                           title:self.titleLabel.text
-                     suffixTitle:@""
-                     normalColor:self.backgroundColor
-                     timingColor:self.backgroundColor
-                    disableImage:disableImage
-                     normalImage:normalImage];
-}
-
-- (void)cl_startButtonWithTime:(NSInteger)time
-                         title:(NSString *)title
-                   suffixTitle:(NSString *)suffixTitle
-                   normalColor:(UIColor *)normalColor
-                   timingColor:(UIColor *)timingColor {
-    
-    [self cl_startButtonWithTime:time
-                           title:self.titleLabel.text
-                     suffixTitle:@""
-                     normalColor:self.backgroundColor
-                     timingColor:self.backgroundColor
-                    disableImage:[[UIImage alloc] init]
-                     normalImage:[[UIImage alloc] init]];
-}
-
-- (void)cl_startButtonWithTime:(NSInteger)time
-                         title:(NSString *)title
-                   suffixTitle:(NSString *)suffixTitle
-                   normalColor:(UIColor *)normalColor
-                   timingColor:(UIColor *)timingColor
-                  disableImage:(UIImage *)disableImage
-                   normalImage:(UIImage *)normalImage {
-    
     //倒计时时间
     __block NSInteger timeOut = time;
     
@@ -118,40 +76,15 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                [self setBackgroundImage:normalImage
-                                forState:UIControlStateNormal];
-                
-                self.backgroundColor = normalColor;
-                
-                [self setTitle:title
-                      forState:UIControlStateNormal];
-                [self setTitleColor:[UIColor whiteColor]
-                           forState:UIControlStateNormal];
-                self.enabled = YES;
+                complete(self, CLButtonStarStyleFinish, -1);
             });
-            
+
         } else {
-            
-            NSInteger allTime = (NSInteger)time + 1;
-            NSInteger seconds = timeOut % allTime;
-            
-            NSString *timeString = [NSString stringWithFormat:@"%ld", (long)seconds];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                self.backgroundColor = timingColor;
-                
-                [self setBackgroundImage:disableImage
-                                forState:UIControlStateNormal];
-                [self setTitleColor:[UIColor blackColor]
-                           forState:UIControlStateNormal];
-                [self setTitle:[NSString stringWithFormat:@"%@%@", timeString, suffixTitle]
-                      forState:UIControlStateNormal];
-                
-                self.enabled = NO;
+                complete(self, CLButtonStarStyleBegin, timeOut--);
             });
-            
-            timeOut--;
         }
     });
     
