@@ -35,9 +35,10 @@
 
 - (NSMutableArray *)cl_dataSource {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_dataSource);
-    
-    _cl_dataSource = [NSMutableArray array];
+    if (!_cl_dataSource) {
+        
+        _cl_dataSource = [NSMutableArray array];
+    }
     
     return _cl_dataSource;
 }

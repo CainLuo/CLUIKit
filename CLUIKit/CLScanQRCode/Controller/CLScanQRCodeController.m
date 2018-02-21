@@ -9,6 +9,7 @@
 #import "CLScanQRCodeController.h"
 #import "UIScreen+CLScreen.h"
 #import "UIImage+CLImage.h"
+#import "UIViewController+CLViewController.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -48,67 +49,72 @@
 
 - (AVCaptureDevice *)captureDevice {
     
-    CL_GET_METHOD_RETURN_OBJC(_captureDevice);
+    if (!_captureDevice) {
 
-    _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
     
     return _captureDevice;
 }
 
 - (AVCaptureDeviceInput *)captureDeviceInput {
     
-    CL_GET_METHOD_RETURN_OBJC(_captureDeviceInput);
-    
-    _captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice
-                                                                error:nil];
+    if (!_captureDeviceInput) {
+
+        _captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:self.captureDevice
+                                                                    error:nil];
+        
+    }
     
     return _captureDeviceInput;
 }
 
 - (AVCaptureMetadataOutput *)captureMetadataOutPut {
     
-    CL_GET_METHOD_RETURN_OBJC(_captureMetadataOutPut);
+    if (!_captureMetadataOutPut) {
     
-    _captureMetadataOutPut                = [[AVCaptureMetadataOutput alloc] init];
-    _captureMetadataOutPut.rectOfInterest = CGRectMake(0,
-                                                       0,
-                                                       [UIScreen cl_getScreenWidth],
-                                                       [UIScreen cl_getScreenHeight]);
-    
-    [_captureMetadataOutPut setMetadataObjectsDelegate:self
-                                                 queue:dispatch_get_main_queue()];
+        _captureMetadataOutPut                = [[AVCaptureMetadataOutput alloc] init];
+        _captureMetadataOutPut.rectOfInterest = CGRectMake(0,
+                                                           0,
+                                                           [UIScreen cl_getScreenWidth],
+                                                           [UIScreen cl_getScreenHeight]);
+        
+        [_captureMetadataOutPut setMetadataObjectsDelegate:self
+                                                     queue:dispatch_get_main_queue()];
+    }
     
     return _captureMetadataOutPut;
 }
 
 - (AVCaptureSession *)captureSession {
     
-    CL_GET_METHOD_RETURN_OBJC(_captureSession);
-    
-    _captureSession = [[AVCaptureSession alloc] init];
-    
-    [_captureSession setSessionPreset:AVCaptureSessionPresetHigh];
-    
-    if ([_captureSession canAddInput:self.captureDeviceInput]) {
-        [_captureSession addInput:self.captureDeviceInput];
-    }
-    
-    if ([_captureSession canAddOutput:self.captureMetadataOutPut]) {
-        [_captureSession addOutput:self.captureMetadataOutPut];
+    if (!_captureSession) {
         
-        self.captureMetadataOutPut.metadataObjectTypes = @[AVMetadataObjectTypeUPCECode,
-                                                           AVMetadataObjectTypeCode39Code,
-                                                           AVMetadataObjectTypeCode39Mod43Code,
-                                                           AVMetadataObjectTypeEAN13Code,
-                                                           AVMetadataObjectTypeEAN8Code,
-                                                           AVMetadataObjectTypeCode93Code,
-                                                           AVMetadataObjectTypeCode128Code,
-                                                           AVMetadataObjectTypePDF417Code,
-                                                           AVMetadataObjectTypeQRCode,
-                                                           AVMetadataObjectTypeAztecCode,
-                                                           AVMetadataObjectTypeInterleaved2of5Code,
-                                                           AVMetadataObjectTypeITF14Code,
-                                                           AVMetadataObjectTypeDataMatrixCode];
+        _captureSession = [[AVCaptureSession alloc] init];
+        
+        [_captureSession setSessionPreset:AVCaptureSessionPresetHigh];
+        
+        if ([_captureSession canAddInput:self.captureDeviceInput]) {
+            [_captureSession addInput:self.captureDeviceInput];
+        }
+        
+        if ([_captureSession canAddOutput:self.captureMetadataOutPut]) {
+            [_captureSession addOutput:self.captureMetadataOutPut];
+            
+            self.captureMetadataOutPut.metadataObjectTypes = @[AVMetadataObjectTypeUPCECode,
+                                                               AVMetadataObjectTypeCode39Code,
+                                                               AVMetadataObjectTypeCode39Mod43Code,
+                                                               AVMetadataObjectTypeEAN13Code,
+                                                               AVMetadataObjectTypeEAN8Code,
+                                                               AVMetadataObjectTypeCode93Code,
+                                                               AVMetadataObjectTypeCode128Code,
+                                                               AVMetadataObjectTypePDF417Code,
+                                                               AVMetadataObjectTypeQRCode,
+                                                               AVMetadataObjectTypeAztecCode,
+                                                               AVMetadataObjectTypeInterleaved2of5Code,
+                                                               AVMetadataObjectTypeITF14Code,
+                                                               AVMetadataObjectTypeDataMatrixCode];
+        }
     }
     
     return _captureSession;
@@ -116,20 +122,22 @@
 
 - (AVCaptureVideoPreviewLayer *)captureVideoPreviewLayer {
     
-    CL_GET_METHOD_RETURN_OBJC(_captureVideoPreviewLayer);
+    if (!_captureVideoPreviewLayer) {
     
-    _captureVideoPreviewLayer              = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
-    _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _captureVideoPreviewLayer.frame        = self.view.frame;
-
+        _captureVideoPreviewLayer              = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
+        _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        _captureVideoPreviewLayer.frame        = self.view.frame;
+    }
+    
     return _captureVideoPreviewLayer;
 }
 
 - (CLScanQRCodeView *)cl_scanQRCodeView {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_scanQRCodeView);
+    if (!_cl_scanQRCodeView) {
     
-    _cl_scanQRCodeView = [[CLScanQRCodeView alloc] initWithFrame:self.view.frame];
+        _cl_scanQRCodeView = [[CLScanQRCodeView alloc] initWithFrame:self.view.frame];
+    }
     
     return _cl_scanQRCodeView;
 }

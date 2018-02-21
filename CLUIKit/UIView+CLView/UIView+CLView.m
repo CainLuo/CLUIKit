@@ -7,6 +7,7 @@
 //
 
 #import "UIView+CLView.h"
+#import "NSObject+CLObject.h"
 
 @implementation UIView (CLView)
 

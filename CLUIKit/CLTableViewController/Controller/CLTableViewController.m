@@ -55,17 +55,18 @@
 
 - (UITableView *)cl_tableView {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_tableView);
-    
-    _cl_tableView = [[UITableView alloc] initWithFrame:self.view.frame
-                                                 style:self.tableViewStyle];
-    
-    if (self.tableViewStyle == UITableViewStylePlain) {
+    if (!_cl_tableView) {
+
+        _cl_tableView = [[UITableView alloc] initWithFrame:self.view.frame
+                                                     style:self.tableViewStyle];
         
-        _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        if (self.tableViewStyle == UITableViewStylePlain) {
+            
+            _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+        
+        _cl_tableView.opaque = YES;
     }
-    
-    _cl_tableView.opaque = YES;
 
     return _cl_tableView;
 }
@@ -80,9 +81,10 @@
 #pragma mark - Table View Delegate
 - (CLTableViewDelegate *)cl_tableViewDelegate {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_tableViewDelegate);
+    if (!_cl_tableViewDelegate) {
 
-    _cl_tableViewDelegate = [[CLTableViewDelegate alloc] initTableViewDelegateWithViewModel:self.cl_tableViewBaseModel];
+        _cl_tableViewDelegate = [[CLTableViewDelegate alloc] initTableViewDelegateWithViewModel:self.cl_tableViewBaseModel];
+    }
 
     return _cl_tableViewDelegate;
 }
@@ -90,10 +92,11 @@
 #pragma mark - Table View Base Model
 - (CLTableViewViewModel *)cl_tableViewBaseModel {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_tableViewBaseModel);
-
-    _cl_tableViewBaseModel = [[CLTableViewViewModel alloc] initTableViewBaseModelWithController:self];
-
+    if (!_cl_tableViewBaseModel) {
+    
+        _cl_tableViewBaseModel = [[CLTableViewViewModel alloc] initTableViewBaseModelWithController:self];
+    }
+    
     return _cl_tableViewBaseModel;
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "UINavigationItem+CLNavigationItem.h"
-#import <objc/runtime.h>
+#import "NSObject+CLObject.h"
 
 static void *cl_backButtonItemKey = &cl_backButtonItemKey;
 

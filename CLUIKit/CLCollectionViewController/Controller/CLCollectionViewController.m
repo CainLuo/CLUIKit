@@ -52,16 +52,18 @@
 #pragma mark - Collection View
 - (UICollectionView *)cl_collectionView {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_collectionView);
-    
-    _cl_collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
-                                            collectionViewLayout:self.cl_collectionViewFlowLayout];
-    
-    _cl_collectionView.opaque          = YES;
-    _cl_collectionView.backgroundColor = [UIColor whiteColor];
+    if (!_cl_collectionView) {
 
-    [_cl_collectionView registerClass:[UICollectionViewCell class]
-           forCellWithReuseIdentifier:@"UICollectionViewCell"];
+        _cl_collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
+                                                collectionViewLayout:self.cl_collectionViewFlowLayout];
+        
+        _cl_collectionView.opaque          = YES;
+        _cl_collectionView.backgroundColor = [UIColor whiteColor];
+        
+        [_cl_collectionView registerClass:[UICollectionViewCell class]
+               forCellWithReuseIdentifier:@"UICollectionViewCell"];
+
+    }
 
     return _cl_collectionView;
 }
@@ -75,28 +77,31 @@
 
 - (CLCollectionViewViewModel *)cl_collectionViewBaseModel {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_collectionViewBaseModel);
-
-    _cl_collectionViewBaseModel = [[CLCollectionViewViewModel alloc] initCollectionViewBaseModelWithController:self];
+    if (!_cl_collectionViewBaseModel) {
+     
+        _cl_collectionViewBaseModel = [[CLCollectionViewViewModel alloc] initCollectionViewBaseModelWithController:self];
+    }
 
     return _cl_collectionViewBaseModel;
 }
 
 - (CLCollectionViewDelegate *)cl_collectionViewDelegate {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_collectionViewDelegate);
+    if (!_cl_collectionViewDelegate) {
 
-    _cl_collectionViewDelegate = [[CLCollectionViewDelegate alloc] initCollectionViewDelegateWithViewModel:self.cl_collectionViewBaseModel];
-
+        _cl_collectionViewDelegate = [[CLCollectionViewDelegate alloc] initCollectionViewDelegateWithViewModel:self.cl_collectionViewBaseModel];
+    }
+    
     return _cl_collectionViewDelegate;
 }
 
 #pragma mark - Collection View Flow Layout
 - (UICollectionViewFlowLayout *)cl_collectionViewFlowLayout {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_collectionViewFlowLayout);
+    if (!_cl_collectionViewFlowLayout) {
 
-    _cl_collectionViewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+        _cl_collectionViewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+    }
 
     return _cl_collectionViewFlowLayout;
 }

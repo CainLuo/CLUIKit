@@ -35,13 +35,14 @@
 
 - (UIImageView *)cl_lineImageView {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_lineImageView);
+    if (!_cl_lineImageView) {
+        
+        _cl_lineImageView = [[UIImageView alloc] init];
+        
+        _cl_lineImageView.backgroundColor = [UIColor cl_colorWithHex:0xf0f0f0];
+        _cl_lineImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
     
-    _cl_lineImageView = [[UIImageView alloc] init];
-    
-    _cl_lineImageView.backgroundColor = [UIColor cl_colorWithHex:0xf0f0f0];
-    _cl_lineImageView.translatesAutoresizingMaskIntoConstraints = NO;
-
     return _cl_lineImageView;
 }
 
