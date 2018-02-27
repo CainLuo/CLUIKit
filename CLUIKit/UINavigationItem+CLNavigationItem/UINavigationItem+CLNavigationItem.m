@@ -13,14 +13,14 @@ static void *cl_backButtonItemKey = &cl_backButtonItemKey;
 
 @implementation UINavigationItem (CLNavigationItem)
 
-+ (void)load {
-    
++ (void)initialize {
+
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{        
+    dispatch_once(&onceToken, ^{
         
         [self cl_exchangeImplementationsWithClass:[self class]
                                  originalSelector:@selector(backBarButtonItem)
-                                 swizzledSelector:@selector(cl_backBarButtonItem)];        
+                                 swizzledSelector:@selector(cl_backBarButtonItem)];
     });
 }
 

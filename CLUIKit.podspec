@@ -14,5 +14,6 @@ Pod::Spec.new do |spec|
 
   spec.dependency "MJRefresh"
   spec.dependency "CLFoundation"
+  spec.dependency "Masonry"
 
 end

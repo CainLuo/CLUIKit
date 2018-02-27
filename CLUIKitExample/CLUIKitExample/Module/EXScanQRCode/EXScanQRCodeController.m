@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     self.cl_scanQRCodeControllerDelegate = self;
     
     self.cl_autoStopCaptureSessionRunning = YES;

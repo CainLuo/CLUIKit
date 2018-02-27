@@ -28,8 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.cl_scanQRCodeView];
-    
 #if TARGET_IPHONE_SIMULATOR
     self.view.backgroundColor = [UIColor blackColor];
     
@@ -39,12 +37,21 @@
     
 #elif TARGET_OS_IPHONE
     
-    [self.view.layer insertSublayer:self.captureVideoPreviewLayer
-                            atIndex:0];
-    
-    [self cl_startCaptureSessionRunning];
+    [self performSelector:@selector(cl_configCaptureVideoPreviewLayer)
+               withObject:nil
+               afterDelay:1.0];
     
 #endif
+}
+
+- (void)cl_configCaptureVideoPreviewLayer {
+    
+    [self.view addSubview:self.cl_scanQRCodeView];
+
+    [self.view.layer insertSublayer:self.captureVideoPreviewLayer
+                                         atIndex:0];
+    
+    [self cl_startCaptureSessionRunning];
 }
 
 - (AVCaptureDevice *)captureDevice {
@@ -126,7 +133,7 @@
     
         _captureVideoPreviewLayer              = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
         _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        _captureVideoPreviewLayer.frame        = self.view.frame;
+        _captureVideoPreviewLayer.frame        = self.view.bounds;
     }
     
     return _captureVideoPreviewLayer;
@@ -136,7 +143,7 @@
     
     if (!_cl_scanQRCodeView) {
     
-        _cl_scanQRCodeView = [[CLScanQRCodeView alloc] initWithFrame:self.view.frame];
+        _cl_scanQRCodeView = [[CLScanQRCodeView alloc] initWithFrame:self.view.bounds];
     }
     
     return _cl_scanQRCodeView;

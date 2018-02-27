@@ -11,14 +11,18 @@
 
 @implementation UIView (CLView)
 
-+ (void)load {
++ (void)initialize {
     
-    if (@available(iOS 11, *)) {
-        
-        [self cl_exchangeImplementationsWithClass:NSClassFromString(@"_UIBackButtonContainerView")
-                                 originalSelector:@selector(addSubview:)
-                                 swizzledSelector:@selector(backButtonTitle_addSubview:)];
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+
+        if (@available(iOS 11, *)) {
+
+            [self cl_exchangeImplementationsWithClass:NSClassFromString(@"_UIBackButtonContainerView")
+                                     originalSelector:@selector(addSubview:)
+                                     swizzledSelector:@selector(backButtonTitle_addSubview:)];
+        }
+    });
 }
 
 - (void)backButtonTitle_addSubview:(UIView *)view {
@@ -30,9 +34,9 @@
         UIButton *button = (UIButton *)view;
         
         [button setTitle:@""
-                forState:UIControlStateNormal | UIControlStateHighlighted | UIControlStateDisabled | UIControlStateSelected];
+                forState:UIControlStateNormal];
     }
-
+    
     [self backButtonTitle_addSubview:view];
 }
 

@@ -259,8 +259,8 @@
 		A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */ = {
 			isa = PBXGroup;
 			children = (
-				A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */,
 				A42FEFEC203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.h */,
+				A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */,
 			);
 			path = "UINavigationItem+CLNavigationItem";
 			sourceTree = "<group>";

@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self cl_addConstraintsWithSuperView];
+    
     [self cl_setTableViewDelegate:self.ex_fontDelegate
                        dataSource:self.ex_fontDateSource];
     
@@ -65,6 +67,24 @@
     _ex_fontViewModel = [[EXFontViewModel alloc] initTableViewBaseModelWithController:self];
     
     return _ex_fontViewModel;
+}
+
+- (void)cl_addConstraintsWithSuperView {
+    
+    [self.cl_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            
+        } else {
+            
+            (void)make.top.bottom;
+        }
+        
+        (void)make.left.right;
+    }];
 }
 
 @end
