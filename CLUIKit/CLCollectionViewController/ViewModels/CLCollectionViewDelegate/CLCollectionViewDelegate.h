@@ -18,8 +18,17 @@
 
 @interface CLCollectionViewDelegate : NSObject <UICollectionViewDelegate>
 
+/**
+ 只读的CLCollectionViewViewModel
+ */
 @property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
 
+/**
+ CLCollectionViewViewModel自定义初始化
+ 
+ @param viewModel CLCollectionViewViewModel
+ @return self
+ */
 - (instancetype)initCollectionViewDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
 
 @end

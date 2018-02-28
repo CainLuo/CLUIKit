@@ -17,25 +17,76 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface CLCollectionViewController : CLViewController
 
+/**
+ UICollectionView
+ */
 @property (nonatomic, strong, readonly) UICollectionView *cl_collectionView;
+
+/**
+ UICollectionViewFlowLayout, 默认不实现任何东西
+ */
 @property (nonatomic, strong, readonly) UICollectionViewFlowLayout *cl_collectionViewFlowLayout;
 
+/**
+ 删除刷新控件
+ */
 - (void)cl_removeRefresh;
+
+/**
+ 删除下拉加载控件
+ */
 - (void)cl_removeHeaderRefresh;
+
+/**
+ 删除上拉加载控件
+ */
 - (void)cl_removeFooterRefresh;
 
+/**
+ 下拉刷新时调用的方法, 需要重载, 默认不实现任何东西
+ */
 - (void)cl_dropDownRefresh;
-- (void)cl_pullUpRefresh;
 
+/**
+ 开始下拉刷新
+ */
 - (void)cl_dropDownBeginRefresh;
+
+/**
+ 结束下拉刷新
+ */
 - (void)cl_dropDownEndRefresh;
 
+/**
+ 上拉加载时调用的方法, 需要重载, 默认不实现任何东西
+ */
+- (void)cl_pullUpRefresh;
+
+/**
+ 开始上拉加载
+ */
 - (void)cl_pullUpBeginRefresh;
+
+/**
+ 结束上拉加载
+ */
 - (void)cl_pullUpEndRefresh;
 
+/**
+ 设置UICollectionView的代理与数据源
+
+ @param delegate UICollectionViewDelegate
+ @param dataSource UICollectionViewDataSource
+ */
 - (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
                           dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
 
+/**
+ 给UICollectionView注册类
+
+ @param cellClass Class
+ @param identifier NSString
+ */
 - (void)cl_registerClass:(nullable Class)cellClass
               identifier:(NSString *)identifier;
 

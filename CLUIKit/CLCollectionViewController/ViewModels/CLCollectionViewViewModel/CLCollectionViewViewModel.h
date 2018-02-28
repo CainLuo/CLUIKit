@@ -17,11 +17,27 @@
 
 @interface CLCollectionViewViewModel : NSObject
 
+/**
+ 只读的CLCollectionViewController
+ */
 @property (nonatomic, weak, readonly) CLCollectionViewController *cl_collectionViewController;
+
+/**
+ 数据源NSMutableArray
+ */
 @property (nonatomic, strong) NSMutableArray *cl_dataSource;
 
+/**
+ CLCollectionViewViewModel自定义初始化
+
+ @param viewController CLCollectionViewController
+ @return self
+ */
 - (instancetype)initCollectionViewBaseModelWithController:(CLCollectionViewController *)viewController;
 
+/**
+ 刷新UICollectionView的方法, 需要外部重载, 默认不实现任何东西
+ */
 - (void)cl_collectionViewHTTPRequest;
 
 @end
