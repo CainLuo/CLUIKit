@@ -14,11 +14,24 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ UIButton倒计时的状态
+
+ - CLButtonStarStyleBegin: 开始倒计时
+ - CLButtonStarStyleFinish: 倒计时完成
+ */
 typedef NS_ENUM(NSInteger, CLButtonStarStyle) {
     CLButtonStarStyleBegin = 0,
     CLButtonStarStyleFinish
 };
 
+/**
+ UIButton倒计时的回调
+
+ @param cl_starButton UIButton
+ @param cl_buttonStarStyle CLButtonStarStyle
+ @param time NSInteger
+ */
 typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time);
 
 @interface UIButton (CLButton)

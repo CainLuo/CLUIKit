@@ -18,8 +18,17 @@
 
 @interface CLViewControllerViewModel : NSObject
 
+/**
+ 只读的CLViewController
+ */
 @property (nonatomic, weak, readonly) CLViewController *cl_viewController;
 
+/**
+ 初始化CLViewControllerViewModel
+
+ @param controller CLViewController
+ @return self
+ */
 - (instancetype)initViewControllerViewModelWithController:(CLViewController *)controller;
 
 @end

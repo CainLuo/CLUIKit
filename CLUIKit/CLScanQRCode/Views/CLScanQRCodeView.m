@@ -26,9 +26,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    self.opaque = YES;
-    
+        
     [self cl_addConstraintsWithSuperView];
 }
 

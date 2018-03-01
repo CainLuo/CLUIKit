@@ -17,8 +17,17 @@
 
 @interface CLTableViewDataSource : NSObject <UITableViewDataSource>
 
+/**
+ 只读的CLTableViewViewModel
+ */
 @property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
 
+/**
+ 初始化CLTableViewViewModel
+
+ @param viewModel CLTableViewViewModel
+ @return self
+ */
 - (instancetype)initTableViewDataSourceWithViewModel:(CLTableViewViewModel *)viewModel;
 
 @end

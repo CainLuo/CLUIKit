@@ -17,9 +17,22 @@
 
 @interface CLTableViewViewModel : NSObject
 
+/**
+ 数据源NSArray
+ */
 @property (nonatomic, strong) NSMutableArray *cl_dataSource;
+
+/**
+ 只读的CLTableViewController
+ */
 @property (nonatomic, weak, readonly) CLTableViewController *cl_tableViewController;
 
+/**
+ 初始化CLTableViewViewModel
+
+ @param viewController CLTableViewController
+ @return self
+ */
 - (instancetype)initTableViewBaseModelWithController:(CLTableViewController *)viewController;
 
 /**

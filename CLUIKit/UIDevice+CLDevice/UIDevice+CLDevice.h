@@ -122,5 +122,6 @@
  @return NSString
  */
 + (NSString *)cl_getCurrentDeviceIPAddressWithCell;
+
 @end
 

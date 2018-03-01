@@ -47,7 +47,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.opaque          = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self cl_addRefresh];
@@ -64,8 +63,6 @@
             
             _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         }
-        
-        _cl_tableView.opaque = YES;
     }
 
     return _cl_tableView;

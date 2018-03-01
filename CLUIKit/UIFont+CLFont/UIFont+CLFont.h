@@ -40,8 +40,23 @@
  */
 + (UIFont *)cl_fitItalicSystemFontOfSize:(CGFloat)fontSize;
 
+/**
+ 设置UIFont的Size和Weight
+
+ @param fontSize CGFloat
+ @param weight UIFontWeight
+ @return UIFont
+ */
 + (UIFont *)cl_fitSystemFontOfSize:(CGFloat)fontSize
                             weight:(UIFontWeight)weight NS_AVAILABLE_IOS(8_2);
+
+/**
+ 根据指定的Size和Weight返回UIFont
+
+ @param fontSize CGFloat
+ @param weight UIFontWeight
+ @return UIFont
+ */
 + (UIFont *)cl_fitMonospacedDigitSystemFontOfSize:(CGFloat)fontSize
                                            weight:(UIFontWeight)weight NS_AVAILABLE_IOS(9_0);
 

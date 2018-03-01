@@ -38,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.opaque = YES;
     self.view.backgroundColor = [UIColor whiteColor];
 }
 

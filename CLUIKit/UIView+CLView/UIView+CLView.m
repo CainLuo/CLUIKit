@@ -17,15 +17,15 @@
     dispatch_once(&onceToken, ^{
 
         if (@available(iOS 11, *)) {
-
+            
             [self cl_exchangeImplementationsWithClass:NSClassFromString(@"_UIBackButtonContainerView")
                                      originalSelector:@selector(addSubview:)
-                                     swizzledSelector:@selector(backButtonTitle_addSubview:)];
+                                     swizzledSelector:@selector(cl_backButtonTitleAddSubview:)];
         }
     });
 }
 
-- (void)backButtonTitle_addSubview:(UIView *)view {
+- (void)cl_backButtonTitleAddSubview:(UIView *)view {
     
     view.alpha = 0;
     
@@ -37,7 +37,7 @@
                 forState:UIControlStateNormal];
     }
     
-    [self backButtonTitle_addSubview:view];
+    [self cl_backButtonTitleAddSubview:view];
 }
 
 @end

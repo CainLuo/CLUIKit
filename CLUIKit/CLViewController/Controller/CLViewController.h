@@ -17,12 +17,18 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
     
-    CLMainViewController = 0,
+    CLMainViewController = 0, // Default
     CLChildViewController
 };
 
 @interface CLViewController : UIViewController
 
+/**
+ 初始化CLViewController, 默认为CLMainViewController
+
+ @param style CLViewControllerStyle
+ @return self
+ */
 - (instancetype)initCLViewControllerWith:(CLViewControllerStyle)style;
 
 @end

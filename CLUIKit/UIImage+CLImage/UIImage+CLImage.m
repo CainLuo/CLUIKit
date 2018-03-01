@@ -89,15 +89,21 @@
 #pragma mark - 截取指定视图大小的截图
 + (UIImage *)cl_getImageForView:(UIView *)view {
     
-    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
+    UIImage *__block cl_image = nil;
     
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    UIImage *cl_imageRet = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
+    dispatch_async(dispatch_get_main_queue(), ^{
 
-    return cl_imageRet;
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
+        
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+        
+        cl_image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+    });
+    
+
+    return cl_image;
 }
 
 #pragma mark - 缩放指定比例的图片

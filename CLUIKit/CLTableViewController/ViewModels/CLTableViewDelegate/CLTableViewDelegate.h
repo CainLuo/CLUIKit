@@ -18,8 +18,17 @@
 
 @interface CLTableViewDelegate : NSObject <UITableViewDelegate>
 
+/**
+ 只读的CLTableViewViewModel
+ */
 @property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
 
+/**
+ 初始化CLTableViewDelegate
+
+ @param viewModel CLTableViewViewModel
+ @return self
+ */
 - (instancetype)initTableViewDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
 
 @end

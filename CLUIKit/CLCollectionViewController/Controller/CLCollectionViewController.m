@@ -33,8 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.opaque = YES;
-
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.cl_collectionView];
@@ -57,7 +55,6 @@
         _cl_collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame
                                                 collectionViewLayout:self.cl_collectionViewFlowLayout];
         
-        _cl_collectionView.opaque          = YES;
         _cl_collectionView.backgroundColor = [UIColor whiteColor];
         
         [_cl_collectionView registerClass:[UICollectionViewCell class]

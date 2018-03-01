@@ -169,4 +169,5 @@ typedef void(^CLImage)(UIImage *image);
                           borderWidth:(CGFloat)borderWidth
                           borderColor:(UIColor *)borderColor
                            completion:(CLImage)completion;
+
 @end

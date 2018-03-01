@@ -31,7 +31,6 @@
 #import "CLTableViewDataSource.h"
 #import "CLTableViewViewModel.h"
 #import "CLTableViewDelegate.h"
-#import "CLTableViewCell.h"
 
 #pragma mark - CLCollectionViewController
 #import "CLCollectionViewController.h"

@@ -27,10 +27,32 @@
 - [CLTableViewController@](#CLTableViewController)
   - [UITableView与MJRefresh@](#UITableView与MJRefresh)
   - [UITableView代理与数据源@](#UITableView代理与数据源)
+- [CLTableViewDataSource@](#CLTableViewDataSource)
+- [CLTableViewDelegate@](#CLTableViewDelegate)
+- [CLTableViewViewModel@](#CLTableViewViewModel)
+- [CLTextField@](#CLTextField)
+- [CLToolBarListView@](#CLToolBarListView)
+- [CLViewController@](#CLViewController)
+- [CLViewControllerViewModel@](#CLViewControllerViewModel)
+- [UIButton+CLButton@](#UIButton+CLButton)
+- [UICollectionView+CLCollectionView@](#UICollectionView+CLCollectionView)
+  - [UICollectionView占位图代理@](#UICollectionView占位图代理)
+  - [UICollectionView刷新@](#UICollectionView刷新)
+- [UIColor+CLColor@](#UIColor+CLColor)
+- [UIDevice+CLDevice@](#UIDevice+CLDevice)
+- [UIFont+CLFont@](#UIFont+CLFont)
+- [UIImage+CLImage@](#UIImage+CLImage)
+- [UINavigationItem+CLNavigationItem@](#UINavigationItem+CLNavigationItem)
+- [UIScreen+CLScreen@](#UIScreen+CLScreen)
+- [UITableView+CLTableView@](#UITableView+CLTableView)
+- [UIView+CLView@](#UIView+CLView)
+- [UIViewController+CLViewController@](#UIViewController+CLViewController)
+
+
 
 ## CLButton@
 
-`CLButton`是对系统`UIButton`的封装并添加了一些属性:
+`CLButton`是对系统`UIButton`的封装并添加了一些特性:
 
 ```objective-c
 typedef NS_ENUM(NSInteger, CLButtonStyle) {
@@ -89,18 +111,16 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
               identifier:(NSString *)identifier;
 ```
 
-## CLCollectionViewViewModel
 
-`CLCollectionViewViewModel`是`CLCollectionViewController`的`ViewModel`, 需要配合着使用:
+
+## CLCollectionViewDataSource@
+
+`CLCollectionViewDataSource`是`CLCollectionViewController`的数据源, 需要配合着使用:
 
 ```objective-c
-@property (nonatomic, weak, readonly) CLCollectionViewController *cl_collectionViewController;
+@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
 
-@property (nonatomic, strong) NSMutableArray *cl_dataSource;
-
-- (instancetype)initCollectionViewBaseModelWithController:(CLCollectionViewController *)viewController;
-
-- (void)cl_collectionViewHTTPRequest;
+- (instancetype)initCollectionViewDataSourceWithViewModel:(CLCollectionViewViewModel *)viewModel;
 ```
 
 
@@ -117,14 +137,18 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
-## CLCollectionViewDataSource@
+## CLCollectionViewViewModel
 
-`CLCollectionViewDataSource`是`CLCollectionViewController`的数据源代理, 需要配合着使用:
+`CLCollectionViewViewModel`是`CLCollectionViewController`的`ViewModel`, 需要配合着使用:
 
 ```objective-c
-@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
+@property (nonatomic, weak, readonly) CLCollectionViewController *cl_collectionViewController;
 
-- (instancetype)initCollectionViewDataSourceWithViewModel:(CLCollectionViewViewModel *)viewModel;
+@property (nonatomic, strong) NSMutableArray *cl_dataSource;
+
+- (instancetype)initCollectionViewBaseModelWithController:(CLCollectionViewController *)viewController;
+
+- (void)cl_collectionViewHTTPRequest;
 ```
 
 
@@ -181,7 +205,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 ## CLTableViewController@
 
-`CLTableViewController`是对系统`UIViewController + UITableView`的封装并添加了一些特性:
+`CLTableViewController`是针对系统`UIViewController + UITableView`的封装并添加了一些特性:
 
 ```objective-c
 @property (nonatomic, strong, null_resettable, readonly) UITableView *cl_tableView;
@@ -220,10 +244,481 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
+## CLTableViewDataSource@
+
+`CLTableViewDataSource`是`CLTableViewController`的数据源, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
+
+- (instancetype)initTableViewDataSourceWithViewModel:(CLTableViewViewModel *)viewModel;
+```
+
+
+
+## CLTableViewDelegate@
+
+`CLTableViewDelegate`是`CLTableViewController`的代理, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
+
+- (instancetype)initTableViewDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
+```
+
+
+
+## CLTableViewViewModel@
+
+`CLTableViewViewModel`是`CLTableViewController`的`ViewModel`, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, strong) NSMutableArray *cl_dataSource;
+
+@property (nonatomic, weak, readonly) CLTableViewController *cl_tableViewController;
+
+- (instancetype)initTableViewBaseModelWithController:(CLTableViewController *)viewController;
+
+- (void)cl_tableViewHTTPRequest;
+
+- (void)cl_configTableViewWithDataSource;
+```
+
+
+
 关于`CLTableViewController`封装的原理: [玩转iOS开发：打造一个低耦合可复用的《TableViewController》](https://cainrun.github.io/15009611814095.html).
+
+
+
+## CLTextField@
+
+`CLTextField`是针对系统`UITextField`的封装并添加了一些特性:
+
+```objective-c
+typedef NS_ENUM(NSInteger, CLTextFieldType) {
+    
+    CLTextFieldBottomNormal = 0, // default
+    CLTextFieldBottomLineType
+};
+
+@property (nonatomic, assign) CLTextFieldType cl_textFieldType;
+
+@property (nonatomic, strong) UIColor *cl_lineColor;
+```
 
 
 
 ## CLToolBarListView@
 
+`CLToolBarListView`是在系统`UIView`上封装的一个横向菜单栏的控件(未来会重构一个更灵活的):
+
+```objective-c
+typedef NS_ENUM(NSInteger, CLToolBarStyle) {
+    CLToolBarNormalStyle = 0,
+    CLToolBarSeparationStyle
+};
+
+- (instancetype)initToolBarWithFrame:(CGRect)frame;
+
+@property (nonatomic, assign) CLToolBarStyle cl_toolBarStyle;
+
+@property (nonatomic, assign) BOOL cl_titleAdjustsFontSizeToFitWidth;
+
+@property (nonatomic, strong) NSArray  *cl_titleArray;
+
+@property (nonatomic, strong) UIColor *cl_selectedColor;
+
+@property (nonatomic, strong) UIColor *cl_deselectColor;
+
+@property (nonatomic, strong) UIColor *cl_barBakcgroundColor;
+
+@property (nonatomic, strong) UIColor *cl_bottomLineColor;
+
+@property (nonatomic, strong) UIColor *cl_selectedLineColor;
+
+@property (nonatomic, assign) NSInteger cl_textFont;
+
+@property (nonatomic, assign) CGFloat cl_buttonSpacing;
+
+@property (nonatomic, assign) BOOL cl_isNeedLine;
+
+@property (nonatomic, assign) BOOL cl_isNeedSelectedLine;
+
+@property (nonatomic, getter=currentIndex) NSInteger cl_currentIndex;
+
+#pragma mark - Tool Bar Separation Style Property
+@property (nonatomic, strong) UIColor *cl_separationColor;
+
+@property (nonatomic, assign) CGFloat cl_separationWidth;
+
+#pragma mark - Common Method
+- (void)cl_reloadData;
+
+- (void)cl_didSelectedButton:(NSInteger)index;
+
+@property (nonatomic, copy) void(^cl_toolBarSelectedBlock)(NSInteger index);
+```
+
+
+
 关于**CLToolBarListView**的用法, 以前就写过一篇文章, 大家可以去看看[玩转iOS开发：横向滑动条《CLToolBarListView》](https://cainrun.github.io/14729678790305.html).
+
+
+
+## CLViewController@
+
+`CLViewController`是对系统`UIViewController`的封装并添加了一些特性:
+
+```objective-c
+typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
+    
+    CLMainViewController = 0, // Default
+    CLChildViewController
+};
+
+- (instancetype)initCLViewControllerWith:(CLViewControllerStyle)style;
+```
+
+
+
+## CLViewControllerViewModel@
+
+`CLViewControllerViewModel`是对系统`CLViewController`的`ViewModel`, 需要配合使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLViewController *cl_viewController;
+
+- (instancetype)initViewControllerViewModelWithController:(CLViewController *)controller;
+```
+
+
+
+## UIButton+CLButton@
+
+针对`UIKit`的`UIButton`进行系统外的方法补充:
+
+```objective-c
+typedef NS_ENUM(NSInteger, CLButtonStarStyle) {
+    CLButtonStarStyleBegin = 0,
+    CLButtonStarStyleFinish
+};
+
+typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time);
+
+@property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
+
+- (void)cl_starButtonWithTime:(NSInteger)time
+                     complete:(CLButtonStar)complete;
+```
+
+
+
+## UICollectionView+CLCollectionView@
+
+针对`UIKit`的`UICollectionView`进行系统外的方法补充:
+
+### UICollectionView占位图代理@
+
+```objective-c
+@protocol CLCollectionViewPlaceholderDelegate <NSObject>
+
+@required
+
+- (UIView *)cl_placeholderView;
+
+@optional
+
+- (BOOL)cl_scrollEnabledWithShowPlaceholderView;
+
+@end
+```
+
+### UICollectionView刷新@
+
+```objective-c
+- (void)cl_reloadData;
+```
+
+
+
+## UIColor+CLColor@
+
+针对`UIKit`的`UIColor`进行系统外的方法补充:
+
+```objective-c
++ (UIColor *)cl_getARC4RandomColor;
+
++ (UIColor *)cl_colorWithHex:(NSInteger)hexValue;
+
++ (UIColor *)cl_colorWithHex:(NSInteger)hexValue
+                       alpha:(CGFloat)alphaValue;
+
++ (UIColor *)cl_colorWithHexString:(NSString *)hexString;
+
++ (UIColor *)cl_colorWithHexString:(NSString *)hexString
+                             alpha:(CGFloat)alphaValue;
+
++ (UIColor *)cl_colorWithRed:(CGFloat)red
+                       green:(CGFloat)green
+                        blue:(CGFloat)blue
+                       alpha:(CGFloat)alpha;
+
++ (UIColor *)cl_colorWithRed:(CGFloat)red
+                       green:(CGFloat)green
+                        blue:(CGFloat)blue;
+```
+
+
+
+## UIDevice+CLDevice@
+
+针对`UIKit`的`UIDevice`进行系统外的方法补充:
+
+### 设备相关@
+
+```objective-c
++ (NSString *)cl_getSystemVersion;
+
++ (NSString *)cl_getDeviceName;
+
++ (NSString *)cl_getDeviceModelType;
+
++ (NSString *)cl_getUUIDString;
+
++ (NSString *)cl_getCurrentDeviceModelName;
+```
+
+### CPU相关@
+
+```objective-c
++ (NSUInteger)cl_getCurrentDeviceCPUCount;
+
++ (CGFloat)cl_getCurrentDeviceAllCoreCPUUse;
+
++ (NSArray *)cl_getCurrentDeviceSingleCoreCPUUse;
+
+```
+
+### 网络相关@
+
+```objective-c
++ (NSString *)cl_getCarrierName;
+
++ (NSString *)cl_getCurrentRadioAccessTechnology;
+
++ (NSString *)cl_getCurrentDeviceIPAddresses;
+
++ (NSString *)cl_getCurrentDeviceIPAddressWithWiFi;
+
++ (NSString *)cl_getCurrentDeviceIPAddressWithCell;
+```
+
+
+
+## UIFont+CLFont@
+
+针对`UIKit`的`UIFont`进行系统外的方法补充:
+
+```objective-c
++ (UIFont *)cl_fitSystemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *)cl_fitBoldSystemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *)cl_fitItalicSystemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *)cl_fitSystemFontOfSize:(CGFloat)fontSize
+                            weight:(UIFontWeight)weight NS_AVAILABLE_IOS(8_2);
+
++ (UIFont *)cl_fitMonospacedDigitSystemFontOfSize:(CGFloat)fontSize
+                                           weight:(UIFontWeight)weight NS_AVAILABLE_IOS(9_0);
+```
+
+
+
+## UIImage+CLImage@
+
+针对`UIKit`的`UIImage`进行系统外的方法补充:
+
+### 生成指定颜色的图片@
+
+```objective-c
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
+                       completion:(CLImage)completion;
+
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
+                             rect:(CGRect)rect
+                       completion:(CLImage)completion;
+```
+
+### 截取指定视图大小的截图@
+
+```objective-c
++ (UIImage *)cl_getImageForView:(UIView *)view;
+```
+
+### 缩放指定比例的图片@
+
+```objective-c
++ (void)cl_asyncDrawImageToSize:(CGSize)size
+                          image:(UIImage *)image
+                     completion:(CLImage)completion;
+```
+
+### 加载GIF图片@
+
+```objective-c
++ (void)cl_asyncLoadGIFImageForName:(NSString *)name
+                         completion:(CLImage)completion;
+
++ (void)cl_asyncLoadGIFImageWithData:(NSData *)data
+                          completion:(CLImage)completion;
+```
+
+### 生成二维码@
+
+```objective-c
++ (void)cl_asyncCreateQRCodeImageWithString:(NSString *)string
+                                 completion:(CLImage)completion;
+
++ (void)cl_asyncCreateQRCodeImageWithString:(NSString *)string
+                                  logoImage:(UIImage *)logoImage
+                                 completion:(CLImage)completion;
+```
+
+### 生成条形码@
+
+```objective-c
++ (void)cl_asyncCreate128BarcodeImageWithString:(NSString *)string
+                                     completion:(CLImage)completion;
+
++ (void)cl_asyncCreate128BarcodeImageWithString:(NSString *)string
+                                     imageSpace:(CGFloat)imageSpace
+                                     completion:(CLImage)completion;
+```
+
+### 获取指定Bundle文件里的图片@
+
+```objective-c
++ (UIImage *)cl_getImageWithBundleName:(NSString *)bundle
+                             imageName:(NSString *)imageName;
+```
+
+### 图片高斯模糊处理@
+
+```objective-c
++ (void)cl_asyncBlurImageWithBlur:(CGFloat)blur
+                            image:(UIImage *)image
+                       completion:(CLImage)completion;
+```
+
+### 图片圆角处理@
+
+```objective-c
++ (void)cl_asyncCornerImageWithRadius:(CGFloat)radius
+                                image:(UIImage *)image
+                           completion:(CLImage)completion;
+
++ (void)cl_asyncCornerImageWithRadius:(CGFloat)radius
+                                image:(UIImage *)image
+                          borderWidth:(CGFloat)borderWidth
+                          borderColor:(UIColor *)borderColor
+                           completion:(CLImage)completion;
+```
+
+
+
+## UINavigationItem+CLNavigationItem@
+
+针对`UIKit`的`UINavigationItem`进行系统外的方法补充:
+
+> 这里没有提供外部的API, 内部实现在iOS 11之前修改UINavigationBar backItem的标题, 如果不需要修改的话, 请在CLUIKit.h文件注释#import "UINavigationItem+CLNavigationItem.h"
+
+
+
+## UIScreen+CLScreen@
+
+针对`UIKit`的`UIScreen`进行系统外的方法补充:
+
+```objective-c
++ (CGFloat)cl_getScreenWidth;
+
++ (CGFloat)cl_getScreenHeight;
+
++ (CGFloat)cl_fitScreen:(CGFloat)value;
+
++ (CGFloat)cl_getStatusBarHeight;
+
++ (CGFloat)cl_getNavigationBarHeight;
+
++ (CGFloat)cl_getTabBarHeight;
+```
+
+
+
+## UITableView+CLTableView@
+
+针对`UIKit`的`UITableView`进行系统外的方法补充:
+
+### UITableView占位代理@
+
+```objective-c
+@protocol CLTableViewPlaceholderDelegate <NSObject>
+
+@required
+
+- (UIView *)cl_placeholderView;
+
+@optional
+
+- (BOOL)cl_calculateTableViewHeaderViewFrame;
+
+- (BOOL)cl_scrollEnabledWithShowPlaceholderView;
+
+@end
+
+```
+
+### UITableView刷新@
+
+```objective-c
+- (void)cl_reloadData;
+```
+
+
+
+## UIView+CLView@
+
+针对`UIKit`的`UIView`进行系统外的方法补充:
+
+> 这里没有提供外部的API, 内部实现在iOS 11修改UINavigationBar backItem的标题, 如果不需要修改的话, 请在CLUIKit.h文件注释#import "UIView+CLView.h"
+
+
+
+## UIViewController+CLViewController@
+
+针对`UIKit`的`UIViewController`进行系统外的方法补充:
+
+```objective-c
+- (void)cl_setNavigationBarTranslucentWithBOOL:(BOOL)bools;
+
+- (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools;
+
+- (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber
+                            message:(NSString *)message
+                             titile:(NSString *)title;
+
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                                buttonTitle:(NSString *)buttonTitle;
+
+- (void)cl_showSheetViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                               actionTitles:(NSArray<NSString *> *)actionTitles
+                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler;
+
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                                    actions:(NSArray<UIAlertAction *> *) actions
+                             preferredStyle:(UIAlertControllerStyle)preferredStyle;
+```
+
