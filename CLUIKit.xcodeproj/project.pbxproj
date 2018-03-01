@@ -7,109 +7,124 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0421A215201F223600BB92BA /* CLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A213201F223600BB92BA /* CLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3D4201F2B2A00BB92BA /* CLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A389201F2B2900BB92BA /* CLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3D5201F2B2A00BB92BA /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A38A201F2B2900BB92BA /* CLViewController.m */; };
-		0421A3D6201F2B2A00BB92BA /* CLViewControllerViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A38C201F2B2900BB92BA /* CLViewControllerViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3D7201F2B2A00BB92BA /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A38D201F2B2900BB92BA /* CLViewControllerViewModel.m */; };
-		0421A3D8201F2B2A00BB92BA /* UIFont+CLFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A38F201F2B2900BB92BA /* UIFont+CLFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3D9201F2B2A00BB92BA /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A390201F2B2900BB92BA /* UIFont+CLFont.m */; };
-		0421A3DA201F2B2A00BB92BA /* UIViewController+CLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A392201F2B2900BB92BA /* UIViewController+CLViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3DB201F2B2A00BB92BA /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A393201F2B2900BB92BA /* UIViewController+CLViewController.m */; };
-		0421A3DC201F2B2A00BB92BA /* CLTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A396201F2B2900BB92BA /* CLTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3DD201F2B2A00BB92BA /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A397201F2B2900BB92BA /* CLTableViewController.m */; };
-		0421A3DE201F2B2A00BB92BA /* CLTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A39A201F2B2900BB92BA /* CLTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3DF201F2B2A00BB92BA /* CLTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A39B201F2B2900BB92BA /* CLTableViewDataSource.m */; };
-		0421A3E0201F2B2A00BB92BA /* CLTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A39D201F2B2900BB92BA /* CLTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3E1201F2B2A00BB92BA /* CLTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A39E201F2B2900BB92BA /* CLTableViewDelegate.m */; };
-		0421A3E2201F2B2A00BB92BA /* CLTableViewViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3A0201F2B2900BB92BA /* CLTableViewViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3E3201F2B2A00BB92BA /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3A1201F2B2900BB92BA /* CLTableViewViewModel.m */; };
-		0421A3E4201F2B2A00BB92BA /* CLTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3A3201F2B2900BB92BA /* CLTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3E5201F2B2A00BB92BA /* CLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3A4201F2B2900BB92BA /* CLTableViewCell.m */; };
-		0421A3E6201F2B2A00BB92BA /* CLNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3A6201F2B2900BB92BA /* CLNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3E7201F2B2A00BB92BA /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3A7201F2B2900BB92BA /* CLNavigationController.m */; };
-		0421A3E8201F2B2A00BB92BA /* UIButton+CLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3A9201F2B2900BB92BA /* UIButton+CLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3E9201F2B2A00BB92BA /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3AA201F2B2900BB92BA /* UIButton+CLButton.m */; };
-		0421A3EA201F2B2A00BB92BA /* CLCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3AD201F2B2900BB92BA /* CLCollectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3EB201F2B2A00BB92BA /* CLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3AE201F2B2900BB92BA /* CLCollectionViewController.m */; };
-		0421A3EC201F2B2A00BB92BA /* CLCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3B1201F2B2900BB92BA /* CLCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3ED201F2B2A00BB92BA /* CLCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3B2201F2B2900BB92BA /* CLCollectionViewDataSource.m */; };
-		0421A3EE201F2B2A00BB92BA /* CLCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3B4201F2B2900BB92BA /* CLCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3EF201F2B2A00BB92BA /* CLCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3B5201F2B2900BB92BA /* CLCollectionViewDelegate.m */; };
-		0421A3F0201F2B2A00BB92BA /* CLCollectionViewViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3B7201F2B2900BB92BA /* CLCollectionViewViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3F1201F2B2A00BB92BA /* CLCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3B8201F2B2900BB92BA /* CLCollectionViewViewModel.m */; };
-		0421A3F2201F2B2A00BB92BA /* UIColor+CLColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3BA201F2B2900BB92BA /* UIColor+CLColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3F3201F2B2A00BB92BA /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3BB201F2B2900BB92BA /* UIColor+CLColor.m */; };
-		0421A3F4201F2B2A00BB92BA /* UIImage+CLImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3BD201F2B2900BB92BA /* UIImage+CLImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3F5201F2B2A00BB92BA /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3BE201F2B2900BB92BA /* UIImage+CLImage.m */; };
-		0421A3F6201F2B2A00BB92BA /* UIScreen+CLScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3C0201F2B2900BB92BA /* UIScreen+CLScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3F7201F2B2A00BB92BA /* UIScreen+CLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3C1201F2B2900BB92BA /* UIScreen+CLScreen.m */; };
-		0421A3F8201F2B2A00BB92BA /* UITableView+CLTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3C3201F2B2900BB92BA /* UITableView+CLTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3F9201F2B2A00BB92BA /* UITableView+CLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3C4201F2B2900BB92BA /* UITableView+CLTableView.m */; };
-		0421A3FA201F2B2A00BB92BA /* CLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3C6201F2B2900BB92BA /* CLButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3FB201F2B2A00BB92BA /* CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3C7201F2B2900BB92BA /* CLButton.m */; };
-		0421A3FC201F2B2A00BB92BA /* UIDevice+CLDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3C9201F2B2900BB92BA /* UIDevice+CLDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3FD201F2B2A00BB92BA /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3CA201F2B2900BB92BA /* UIDevice+CLDevice.m */; };
-		0421A3FE201F2B2A00BB92BA /* CLTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3CC201F2B2A00BB92BA /* CLTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A3FF201F2B2A00BB92BA /* CLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3CD201F2B2A00BB92BA /* CLTextField.m */; };
-		0421A400201F2B2A00BB92BA /* CLToolBarListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3CF201F2B2A00BB92BA /* CLToolBarListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A401201F2B2A00BB92BA /* CLToolBarListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3D0201F2B2A00BB92BA /* CLToolBarListView.m */; };
-		0421A402201F2B2A00BB92BA /* UICollectionView+CLCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0421A3D2201F2B2A00BB92BA /* UICollectionView+CLCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0421A403201F2B2A00BB92BA /* UICollectionView+CLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421A3D3201F2B2A00BB92BA /* UICollectionView+CLCollectionView.m */; };
+		040D851C2047D938008436AC /* CLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84C32047D938008436AC /* CLButton.h */; };
+		040D851D2047D938008436AC /* CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84C42047D938008436AC /* CLButton.m */; };
+		040D851E2047D938008436AC /* CLCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84C72047D938008436AC /* CLCollectionViewController.h */; };
+		040D851F2047D938008436AC /* CLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84C82047D938008436AC /* CLCollectionViewController.m */; };
+		040D85202047D938008436AC /* CLCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84CB2047D938008436AC /* CLCollectionViewDataSource.h */; };
+		040D85212047D938008436AC /* CLCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84CC2047D938008436AC /* CLCollectionViewDataSource.m */; };
+		040D85222047D938008436AC /* CLCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84CE2047D938008436AC /* CLCollectionViewDelegate.h */; };
+		040D85232047D938008436AC /* CLCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84CF2047D938008436AC /* CLCollectionViewDelegate.m */; };
+		040D85242047D938008436AC /* CLCollectionViewViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84D12047D938008436AC /* CLCollectionViewViewModel.h */; };
+		040D85252047D938008436AC /* CLCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84D22047D938008436AC /* CLCollectionViewViewModel.m */; };
+		040D85262047D938008436AC /* CLNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84D42047D938008436AC /* CLNavigationController.h */; };
+		040D85272047D938008436AC /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84D52047D938008436AC /* CLNavigationController.m */; };
+		040D85282047D938008436AC /* CLResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 040D84D62047D938008436AC /* CLResource.bundle */; };
+		040D85292047D938008436AC /* CLScanQRCodeController.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84D92047D938008436AC /* CLScanQRCodeController.h */; };
+		040D852A2047D938008436AC /* CLScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84DA2047D938008436AC /* CLScanQRCodeController.m */; };
+		040D852B2047D938008436AC /* CLScanQRCodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84DC2047D938008436AC /* CLScanQRCodeView.h */; };
+		040D852C2047D938008436AC /* CLScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84DD2047D938008436AC /* CLScanQRCodeView.m */; };
+		040D852D2047D938008436AC /* CLTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84E02047D938008436AC /* CLTableViewController.h */; };
+		040D852E2047D938008436AC /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84E12047D938008436AC /* CLTableViewController.m */; };
+		040D852F2047D938008436AC /* CLTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84E42047D938008436AC /* CLTableViewDataSource.h */; };
+		040D85302047D938008436AC /* CLTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84E52047D938008436AC /* CLTableViewDataSource.m */; };
+		040D85312047D938008436AC /* CLTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84E72047D938008436AC /* CLTableViewDelegate.h */; };
+		040D85322047D938008436AC /* CLTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84E82047D938008436AC /* CLTableViewDelegate.m */; };
+		040D85332047D938008436AC /* CLTableViewViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84EA2047D938008436AC /* CLTableViewViewModel.h */; };
+		040D85342047D938008436AC /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84EB2047D938008436AC /* CLTableViewViewModel.m */; };
+		040D85352047D938008436AC /* CLTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84ED2047D938008436AC /* CLTextField.h */; };
+		040D85362047D938008436AC /* CLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84EE2047D938008436AC /* CLTextField.m */; };
+		040D85372047D938008436AC /* CLToolBarListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84F02047D938008436AC /* CLToolBarListView.h */; };
+		040D85382047D938008436AC /* CLToolBarListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84F12047D938008436AC /* CLToolBarListView.m */; };
+		040D85392047D938008436AC /* CLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84F22047D938008436AC /* CLUIKit.h */; };
+		040D853A2047D938008436AC /* CLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84F52047D938008436AC /* CLViewController.h */; };
+		040D853B2047D938008436AC /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84F62047D938008436AC /* CLViewController.m */; };
+		040D853C2047D938008436AC /* CLViewControllerViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84F82047D938008436AC /* CLViewControllerViewModel.h */; };
+		040D853D2047D938008436AC /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84F92047D938008436AC /* CLViewControllerViewModel.m */; };
+		040D853E2047D938008436AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040D84FA2047D938008436AC /* Info.plist */; };
+		040D853F2047D938008436AC /* UIButton+CLButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84FC2047D938008436AC /* UIButton+CLButton.h */; };
+		040D85402047D938008436AC /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D84FD2047D938008436AC /* UIButton+CLButton.m */; };
+		040D85412047D938008436AC /* UICollectionView+CLCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D84FF2047D938008436AC /* UICollectionView+CLCollectionView.h */; };
+		040D85422047D938008436AC /* UICollectionView+CLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85002047D938008436AC /* UICollectionView+CLCollectionView.m */; };
+		040D85432047D938008436AC /* UIColor+CLColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D85022047D938008436AC /* UIColor+CLColor.h */; };
+		040D85442047D938008436AC /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85032047D938008436AC /* UIColor+CLColor.m */; };
+		040D85452047D938008436AC /* UIDevice+CLDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D85052047D938008436AC /* UIDevice+CLDevice.h */; };
+		040D85462047D938008436AC /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85062047D938008436AC /* UIDevice+CLDevice.m */; };
+		040D85472047D938008436AC /* UIFont+CLFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D85082047D938008436AC /* UIFont+CLFont.h */; };
+		040D85482047D938008436AC /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85092047D938008436AC /* UIFont+CLFont.m */; };
+		040D85492047D938008436AC /* UIImage+CLImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D850B2047D938008436AC /* UIImage+CLImage.h */; };
+		040D854A2047D938008436AC /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D850C2047D938008436AC /* UIImage+CLImage.m */; };
+		040D854B2047D938008436AC /* UINavigationItem+CLNavigationItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D850E2047D938008436AC /* UINavigationItem+CLNavigationItem.h */; };
+		040D854C2047D938008436AC /* UINavigationItem+CLNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D850F2047D938008436AC /* UINavigationItem+CLNavigationItem.m */; };
+		040D854D2047D938008436AC /* UIScreen+CLScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D85112047D938008436AC /* UIScreen+CLScreen.h */; };
+		040D854E2047D938008436AC /* UIScreen+CLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85122047D938008436AC /* UIScreen+CLScreen.m */; };
+		040D854F2047D938008436AC /* UITableView+CLTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D85142047D938008436AC /* UITableView+CLTableView.h */; };
+		040D85502047D938008436AC /* UITableView+CLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85152047D938008436AC /* UITableView+CLTableView.m */; };
+		040D85512047D938008436AC /* UIView+CLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D85172047D938008436AC /* UIView+CLView.h */; };
+		040D85522047D938008436AC /* UIView+CLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D85182047D938008436AC /* UIView+CLView.m */; };
+		040D85532047D938008436AC /* UIViewController+CLViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 040D851A2047D938008436AC /* UIViewController+CLViewController.h */; };
+		040D85542047D938008436AC /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D851B2047D938008436AC /* UIViewController+CLViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040D84C32047D938008436AC /* CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLButton.h; sourceTree = "<group>"; };
+		040D84C42047D938008436AC /* CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLButton.m; sourceTree = "<group>"; };
+		040D84C72047D938008436AC /* CLCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewController.h; sourceTree = "<group>"; };
+		040D84C82047D938008436AC /* CLCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewController.m; sourceTree = "<group>"; };
+		040D84CB2047D938008436AC /* CLCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDataSource.h; sourceTree = "<group>"; };
+		040D84CC2047D938008436AC /* CLCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDataSource.m; sourceTree = "<group>"; };
+		040D84CE2047D938008436AC /* CLCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDelegate.h; sourceTree = "<group>"; };
+		040D84CF2047D938008436AC /* CLCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDelegate.m; sourceTree = "<group>"; };
+		040D84D12047D938008436AC /* CLCollectionViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewViewModel.h; sourceTree = "<group>"; };
+		040D84D22047D938008436AC /* CLCollectionViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewViewModel.m; sourceTree = "<group>"; };
+		040D84D42047D938008436AC /* CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNavigationController.h; sourceTree = "<group>"; };
+		040D84D52047D938008436AC /* CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNavigationController.m; sourceTree = "<group>"; };
+		040D84D62047D938008436AC /* CLResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLResource.bundle; sourceTree = "<group>"; };
+		040D84D92047D938008436AC /* CLScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLScanQRCodeController.h; sourceTree = "<group>"; };
+		040D84DA2047D938008436AC /* CLScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLScanQRCodeController.m; sourceTree = "<group>"; };
+		040D84DC2047D938008436AC /* CLScanQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLScanQRCodeView.h; sourceTree = "<group>"; };
+		040D84DD2047D938008436AC /* CLScanQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLScanQRCodeView.m; sourceTree = "<group>"; };
+		040D84E02047D938008436AC /* CLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewController.h; sourceTree = "<group>"; };
+		040D84E12047D938008436AC /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
+		040D84E42047D938008436AC /* CLTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDataSource.h; sourceTree = "<group>"; };
+		040D84E52047D938008436AC /* CLTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDataSource.m; sourceTree = "<group>"; };
+		040D84E72047D938008436AC /* CLTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDelegate.h; sourceTree = "<group>"; };
+		040D84E82047D938008436AC /* CLTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDelegate.m; sourceTree = "<group>"; };
+		040D84EA2047D938008436AC /* CLTableViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewViewModel.h; sourceTree = "<group>"; };
+		040D84EB2047D938008436AC /* CLTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewViewModel.m; sourceTree = "<group>"; };
+		040D84ED2047D938008436AC /* CLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTextField.h; sourceTree = "<group>"; };
+		040D84EE2047D938008436AC /* CLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTextField.m; sourceTree = "<group>"; };
+		040D84F02047D938008436AC /* CLToolBarListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLToolBarListView.h; sourceTree = "<group>"; };
+		040D84F12047D938008436AC /* CLToolBarListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLToolBarListView.m; sourceTree = "<group>"; };
+		040D84F22047D938008436AC /* CLUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUIKit.h; sourceTree = "<group>"; };
+		040D84F52047D938008436AC /* CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
+		040D84F62047D938008436AC /* CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
+		040D84F82047D938008436AC /* CLViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerViewModel.h; sourceTree = "<group>"; };
+		040D84F92047D938008436AC /* CLViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerViewModel.m; sourceTree = "<group>"; };
+		040D84FA2047D938008436AC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040D84FC2047D938008436AC /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
+		040D84FD2047D938008436AC /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
+		040D84FF2047D938008436AC /* UICollectionView+CLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CLCollectionView.h"; sourceTree = "<group>"; };
+		040D85002047D938008436AC /* UICollectionView+CLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CLCollectionView.m"; sourceTree = "<group>"; };
+		040D85022047D938008436AC /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
+		040D85032047D938008436AC /* UIColor+CLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CLColor.m"; sourceTree = "<group>"; };
+		040D85052047D938008436AC /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
+		040D85062047D938008436AC /* UIDevice+CLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CLDevice.m"; sourceTree = "<group>"; };
+		040D85082047D938008436AC /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
+		040D85092047D938008436AC /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
+		040D850B2047D938008436AC /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
+		040D850C2047D938008436AC /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
+		040D850E2047D938008436AC /* UINavigationItem+CLNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CLNavigationItem.h"; sourceTree = "<group>"; };
+		040D850F2047D938008436AC /* UINavigationItem+CLNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CLNavigationItem.m"; sourceTree = "<group>"; };
+		040D85112047D938008436AC /* UIScreen+CLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CLScreen.h"; sourceTree = "<group>"; };
+		040D85122047D938008436AC /* UIScreen+CLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CLScreen.m"; sourceTree = "<group>"; };
+		040D85142047D938008436AC /* UITableView+CLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CLTableView.h"; sourceTree = "<group>"; };
+		040D85152047D938008436AC /* UITableView+CLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CLTableView.m"; sourceTree = "<group>"; };
+		040D85172047D938008436AC /* UIView+CLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLView.h"; sourceTree = "<group>"; };
+		040D85182047D938008436AC /* UIView+CLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLView.m"; sourceTree = "<group>"; };
+		040D851A2047D938008436AC /* UIViewController+CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLViewController.h"; sourceTree = "<group>"; };
+		040D851B2047D938008436AC /* UIViewController+CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLViewController.m"; sourceTree = "<group>"; };
 		0421A210201F223600BB92BA /* CLUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0421A213201F223600BB92BA /* CLUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLUIKit.h; sourceTree = "<group>"; };
-		0421A214201F223600BB92BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0421A389201F2B2900BB92BA /* CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
-		0421A38A201F2B2900BB92BA /* CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
-		0421A38C201F2B2900BB92BA /* CLViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerViewModel.h; sourceTree = "<group>"; };
-		0421A38D201F2B2900BB92BA /* CLViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerViewModel.m; sourceTree = "<group>"; };
-		0421A38F201F2B2900BB92BA /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
-		0421A390201F2B2900BB92BA /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
-		0421A392201F2B2900BB92BA /* UIViewController+CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLViewController.h"; sourceTree = "<group>"; };
-		0421A393201F2B2900BB92BA /* UIViewController+CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLViewController.m"; sourceTree = "<group>"; };
-		0421A396201F2B2900BB92BA /* CLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewController.h; sourceTree = "<group>"; };
-		0421A397201F2B2900BB92BA /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
-		0421A39A201F2B2900BB92BA /* CLTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDataSource.h; sourceTree = "<group>"; };
-		0421A39B201F2B2900BB92BA /* CLTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDataSource.m; sourceTree = "<group>"; };
-		0421A39D201F2B2900BB92BA /* CLTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewDelegate.h; sourceTree = "<group>"; };
-		0421A39E201F2B2900BB92BA /* CLTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDelegate.m; sourceTree = "<group>"; };
-		0421A3A0201F2B2900BB92BA /* CLTableViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewViewModel.h; sourceTree = "<group>"; };
-		0421A3A1201F2B2900BB92BA /* CLTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewViewModel.m; sourceTree = "<group>"; };
-		0421A3A3201F2B2900BB92BA /* CLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewCell.h; sourceTree = "<group>"; };
-		0421A3A4201F2B2900BB92BA /* CLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewCell.m; sourceTree = "<group>"; };
-		0421A3A6201F2B2900BB92BA /* CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNavigationController.h; sourceTree = "<group>"; };
-		0421A3A7201F2B2900BB92BA /* CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNavigationController.m; sourceTree = "<group>"; };
-		0421A3A9201F2B2900BB92BA /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
-		0421A3AA201F2B2900BB92BA /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
-		0421A3AD201F2B2900BB92BA /* CLCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewController.h; sourceTree = "<group>"; };
-		0421A3AE201F2B2900BB92BA /* CLCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewController.m; sourceTree = "<group>"; };
-		0421A3B1201F2B2900BB92BA /* CLCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDataSource.h; sourceTree = "<group>"; };
-		0421A3B2201F2B2900BB92BA /* CLCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDataSource.m; sourceTree = "<group>"; };
-		0421A3B4201F2B2900BB92BA /* CLCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDelegate.h; sourceTree = "<group>"; };
-		0421A3B5201F2B2900BB92BA /* CLCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDelegate.m; sourceTree = "<group>"; };
-		0421A3B7201F2B2900BB92BA /* CLCollectionViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewViewModel.h; sourceTree = "<group>"; };
-		0421A3B8201F2B2900BB92BA /* CLCollectionViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewViewModel.m; sourceTree = "<group>"; };
-		0421A3BA201F2B2900BB92BA /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
-		0421A3BB201F2B2900BB92BA /* UIColor+CLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CLColor.m"; sourceTree = "<group>"; };
-		0421A3BD201F2B2900BB92BA /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
-		0421A3BE201F2B2900BB92BA /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
-		0421A3C0201F2B2900BB92BA /* UIScreen+CLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CLScreen.h"; sourceTree = "<group>"; };
-		0421A3C1201F2B2900BB92BA /* UIScreen+CLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CLScreen.m"; sourceTree = "<group>"; };
-		0421A3C3201F2B2900BB92BA /* UITableView+CLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CLTableView.h"; sourceTree = "<group>"; };
-		0421A3C4201F2B2900BB92BA /* UITableView+CLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CLTableView.m"; sourceTree = "<group>"; };
-		0421A3C6201F2B2900BB92BA /* CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLButton.h; sourceTree = "<group>"; };
-		0421A3C7201F2B2900BB92BA /* CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLButton.m; sourceTree = "<group>"; };
-		0421A3C9201F2B2900BB92BA /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
-		0421A3CA201F2B2900BB92BA /* UIDevice+CLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CLDevice.m"; sourceTree = "<group>"; };
-		0421A3CC201F2B2A00BB92BA /* CLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTextField.h; sourceTree = "<group>"; };
-		0421A3CD201F2B2A00BB92BA /* CLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTextField.m; sourceTree = "<group>"; };
-		0421A3CF201F2B2A00BB92BA /* CLToolBarListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLToolBarListView.h; sourceTree = "<group>"; };
-		0421A3D0201F2B2A00BB92BA /* CLToolBarListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLToolBarListView.m; sourceTree = "<group>"; };
-		0421A3D2201F2B2A00BB92BA /* UICollectionView+CLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CLCollectionView.h"; sourceTree = "<group>"; };
-		0421A3D3201F2B2A00BB92BA /* UICollectionView+CLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CLCollectionView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +138,338 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040D84C12047D938008436AC /* CLUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				040D84D62047D938008436AC /* CLResource.bundle */,
+				040D84F22047D938008436AC /* CLUIKit.h */,
+				040D84FA2047D938008436AC /* Info.plist */,
+				040D84C22047D938008436AC /* CLButton */,
+				040D84C52047D938008436AC /* CLCollectionViewController */,
+				040D84D32047D938008436AC /* CLNavigationController */,
+				040D84D72047D938008436AC /* CLScanQRCode */,
+				040D84DE2047D938008436AC /* CLTableViewController */,
+				040D84EC2047D938008436AC /* CLTextField */,
+				040D84EF2047D938008436AC /* CLToolBarListView */,
+				040D84F32047D938008436AC /* CLViewController */,
+				040D84FB2047D938008436AC /* UIButton+CLButton */,
+				040D84FE2047D938008436AC /* UICollectionView+CLCollectionView */,
+				040D85012047D938008436AC /* UIColor+CLColor */,
+				040D85042047D938008436AC /* UIDevice+CLDevice */,
+				040D85072047D938008436AC /* UIFont+CLFont */,
+				040D850A2047D938008436AC /* UIImage+CLImage */,
+				040D850D2047D938008436AC /* UINavigationItem+CLNavigationItem */,
+				040D85102047D938008436AC /* UIScreen+CLScreen */,
+				040D85132047D938008436AC /* UITableView+CLTableView */,
+				040D85162047D938008436AC /* UIView+CLView */,
+				040D85192047D938008436AC /* UIViewController+CLViewController */,
+			);
+			path = CLUIKit;
+			sourceTree = "<group>";
+		};
+		040D84C22047D938008436AC /* CLButton */ = {
+			isa = PBXGroup;
+			children = (
+				040D84C32047D938008436AC /* CLButton.h */,
+				040D84C42047D938008436AC /* CLButton.m */,
+			);
+			path = CLButton;
+			sourceTree = "<group>";
+		};
+		040D84C52047D938008436AC /* CLCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				040D84C62047D938008436AC /* Controller */,
+				040D84C92047D938008436AC /* ViewModels */,
+			);
+			path = CLCollectionViewController;
+			sourceTree = "<group>";
+		};
+		040D84C62047D938008436AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040D84C72047D938008436AC /* CLCollectionViewController.h */,
+				040D84C82047D938008436AC /* CLCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040D84C92047D938008436AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				040D84CA2047D938008436AC /* CLCollectionViewDataSource */,
+				040D84CD2047D938008436AC /* CLCollectionViewDelegate */,
+				040D84D02047D938008436AC /* CLCollectionViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		040D84CA2047D938008436AC /* CLCollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				040D84CB2047D938008436AC /* CLCollectionViewDataSource.h */,
+				040D84CC2047D938008436AC /* CLCollectionViewDataSource.m */,
+			);
+			path = CLCollectionViewDataSource;
+			sourceTree = "<group>";
+		};
+		040D84CD2047D938008436AC /* CLCollectionViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				040D84CE2047D938008436AC /* CLCollectionViewDelegate.h */,
+				040D84CF2047D938008436AC /* CLCollectionViewDelegate.m */,
+			);
+			path = CLCollectionViewDelegate;
+			sourceTree = "<group>";
+		};
+		040D84D02047D938008436AC /* CLCollectionViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				040D84D12047D938008436AC /* CLCollectionViewViewModel.h */,
+				040D84D22047D938008436AC /* CLCollectionViewViewModel.m */,
+			);
+			path = CLCollectionViewViewModel;
+			sourceTree = "<group>";
+		};
+		040D84D32047D938008436AC /* CLNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				040D84D42047D938008436AC /* CLNavigationController.h */,
+				040D84D52047D938008436AC /* CLNavigationController.m */,
+			);
+			path = CLNavigationController;
+			sourceTree = "<group>";
+		};
+		040D84D72047D938008436AC /* CLScanQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				040D84D82047D938008436AC /* Controller */,
+				040D84DB2047D938008436AC /* Views */,
+			);
+			path = CLScanQRCode;
+			sourceTree = "<group>";
+		};
+		040D84D82047D938008436AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040D84D92047D938008436AC /* CLScanQRCodeController.h */,
+				040D84DA2047D938008436AC /* CLScanQRCodeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040D84DB2047D938008436AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				040D84DC2047D938008436AC /* CLScanQRCodeView.h */,
+				040D84DD2047D938008436AC /* CLScanQRCodeView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		040D84DE2047D938008436AC /* CLTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				040D84DF2047D938008436AC /* Controller */,
+				040D84E22047D938008436AC /* ViewModels */,
+			);
+			path = CLTableViewController;
+			sourceTree = "<group>";
+		};
+		040D84DF2047D938008436AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040D84E02047D938008436AC /* CLTableViewController.h */,
+				040D84E12047D938008436AC /* CLTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040D84E22047D938008436AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				040D84E32047D938008436AC /* CLTableViewDataSource */,
+				040D84E62047D938008436AC /* CLTableViewDelegate */,
+				040D84E92047D938008436AC /* CLTableViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		040D84E32047D938008436AC /* CLTableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				040D84E42047D938008436AC /* CLTableViewDataSource.h */,
+				040D84E52047D938008436AC /* CLTableViewDataSource.m */,
+			);
+			path = CLTableViewDataSource;
+			sourceTree = "<group>";
+		};
+		040D84E62047D938008436AC /* CLTableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				040D84E72047D938008436AC /* CLTableViewDelegate.h */,
+				040D84E82047D938008436AC /* CLTableViewDelegate.m */,
+			);
+			path = CLTableViewDelegate;
+			sourceTree = "<group>";
+		};
+		040D84E92047D938008436AC /* CLTableViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				040D84EA2047D938008436AC /* CLTableViewViewModel.h */,
+				040D84EB2047D938008436AC /* CLTableViewViewModel.m */,
+			);
+			path = CLTableViewViewModel;
+			sourceTree = "<group>";
+		};
+		040D84EC2047D938008436AC /* CLTextField */ = {
+			isa = PBXGroup;
+			children = (
+				040D84ED2047D938008436AC /* CLTextField.h */,
+				040D84EE2047D938008436AC /* CLTextField.m */,
+			);
+			path = CLTextField;
+			sourceTree = "<group>";
+		};
+		040D84EF2047D938008436AC /* CLToolBarListView */ = {
+			isa = PBXGroup;
+			children = (
+				040D84F02047D938008436AC /* CLToolBarListView.h */,
+				040D84F12047D938008436AC /* CLToolBarListView.m */,
+			);
+			path = CLToolBarListView;
+			sourceTree = "<group>";
+		};
+		040D84F32047D938008436AC /* CLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				040D84F42047D938008436AC /* Controller */,
+				040D84F72047D938008436AC /* ViewModels */,
+			);
+			path = CLViewController;
+			sourceTree = "<group>";
+		};
+		040D84F42047D938008436AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040D84F52047D938008436AC /* CLViewController.h */,
+				040D84F62047D938008436AC /* CLViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040D84F72047D938008436AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				040D84F82047D938008436AC /* CLViewControllerViewModel.h */,
+				040D84F92047D938008436AC /* CLViewControllerViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		040D84FB2047D938008436AC /* UIButton+CLButton */ = {
+			isa = PBXGroup;
+			children = (
+				040D84FC2047D938008436AC /* UIButton+CLButton.h */,
+				040D84FD2047D938008436AC /* UIButton+CLButton.m */,
+			);
+			path = "UIButton+CLButton";
+			sourceTree = "<group>";
+		};
+		040D84FE2047D938008436AC /* UICollectionView+CLCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				040D84FF2047D938008436AC /* UICollectionView+CLCollectionView.h */,
+				040D85002047D938008436AC /* UICollectionView+CLCollectionView.m */,
+			);
+			path = "UICollectionView+CLCollectionView";
+			sourceTree = "<group>";
+		};
+		040D85012047D938008436AC /* UIColor+CLColor */ = {
+			isa = PBXGroup;
+			children = (
+				040D85022047D938008436AC /* UIColor+CLColor.h */,
+				040D85032047D938008436AC /* UIColor+CLColor.m */,
+			);
+			path = "UIColor+CLColor";
+			sourceTree = "<group>";
+		};
+		040D85042047D938008436AC /* UIDevice+CLDevice */ = {
+			isa = PBXGroup;
+			children = (
+				040D85052047D938008436AC /* UIDevice+CLDevice.h */,
+				040D85062047D938008436AC /* UIDevice+CLDevice.m */,
+			);
+			path = "UIDevice+CLDevice";
+			sourceTree = "<group>";
+		};
+		040D85072047D938008436AC /* UIFont+CLFont */ = {
+			isa = PBXGroup;
+			children = (
+				040D85082047D938008436AC /* UIFont+CLFont.h */,
+				040D85092047D938008436AC /* UIFont+CLFont.m */,
+			);
+			path = "UIFont+CLFont";
+			sourceTree = "<group>";
+		};
+		040D850A2047D938008436AC /* UIImage+CLImage */ = {
+			isa = PBXGroup;
+			children = (
+				040D850B2047D938008436AC /* UIImage+CLImage.h */,
+				040D850C2047D938008436AC /* UIImage+CLImage.m */,
+			);
+			path = "UIImage+CLImage";
+			sourceTree = "<group>";
+		};
+		040D850D2047D938008436AC /* UINavigationItem+CLNavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				040D850E2047D938008436AC /* UINavigationItem+CLNavigationItem.h */,
+				040D850F2047D938008436AC /* UINavigationItem+CLNavigationItem.m */,
+			);
+			path = "UINavigationItem+CLNavigationItem";
+			sourceTree = "<group>";
+		};
+		040D85102047D938008436AC /* UIScreen+CLScreen */ = {
+			isa = PBXGroup;
+			children = (
+				040D85112047D938008436AC /* UIScreen+CLScreen.h */,
+				040D85122047D938008436AC /* UIScreen+CLScreen.m */,
+			);
+			path = "UIScreen+CLScreen";
+			sourceTree = "<group>";
+		};
+		040D85132047D938008436AC /* UITableView+CLTableView */ = {
+			isa = PBXGroup;
+			children = (
+				040D85142047D938008436AC /* UITableView+CLTableView.h */,
+				040D85152047D938008436AC /* UITableView+CLTableView.m */,
+			);
+			path = "UITableView+CLTableView";
+			sourceTree = "<group>";
+		};
+		040D85162047D938008436AC /* UIView+CLView */ = {
+			isa = PBXGroup;
+			children = (
+				040D85172047D938008436AC /* UIView+CLView.h */,
+				040D85182047D938008436AC /* UIView+CLView.m */,
+			);
+			path = "UIView+CLView";
+			sourceTree = "<group>";
+		};
+		040D85192047D938008436AC /* UIViewController+CLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				040D851A2047D938008436AC /* UIViewController+CLViewController.h */,
+				040D851B2047D938008436AC /* UIViewController+CLViewController.m */,
+			);
+			path = "UIViewController+CLViewController";
+			sourceTree = "<group>";
+		};
 		0421A206201F223600BB92BA = {
 			isa = PBXGroup;
 			children = (
-				0421A212201F223600BB92BA /* CLUIKit */,
+				040D84C12047D938008436AC /* CLUIKit */,
 				0421A211201F223600BB92BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,295 +482,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0421A212201F223600BB92BA /* CLUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3C5201F2B2900BB92BA /* CLButton */,
-				0421A3AB201F2B2900BB92BA /* CLCollectionViewController */,
-				0421A3A5201F2B2900BB92BA /* CLNavigationController */,
-				0421A394201F2B2900BB92BA /* CLTableViewController */,
-				0421A3CB201F2B2A00BB92BA /* CLTextField */,
-				0421A3CE201F2B2A00BB92BA /* CLToolBarListView */,
-				0421A387201F2B2900BB92BA /* CLViewController */,
-				0421A3A8201F2B2900BB92BA /* UIButton+CLButton */,
-				0421A3D1201F2B2A00BB92BA /* UICollectionView+CLCollectionView */,
-				0421A3B9201F2B2900BB92BA /* UIColor+CLColor */,
-				0421A3C8201F2B2900BB92BA /* UIDevice+CLDevice */,
-				0421A38E201F2B2900BB92BA /* UIFont+CLFont */,
-				0421A3BC201F2B2900BB92BA /* UIImage+CLImage */,
-				0421A3BF201F2B2900BB92BA /* UIScreen+CLScreen */,
-				0421A3C2201F2B2900BB92BA /* UITableView+CLTableView */,
-				0421A391201F2B2900BB92BA /* UIViewController+CLViewController */,
-				0421A213201F223600BB92BA /* CLUIKit.h */,
-				0421A214201F223600BB92BA /* Info.plist */,
-			);
-			path = CLUIKit;
-			sourceTree = "<group>";
-		};
-		0421A387201F2B2900BB92BA /* CLViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0421A388201F2B2900BB92BA /* Controller */,
-				0421A38B201F2B2900BB92BA /* ViewModel */,
-			);
-			path = CLViewController;
-			sourceTree = "<group>";
-		};
-		0421A388201F2B2900BB92BA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0421A389201F2B2900BB92BA /* CLViewController.h */,
-				0421A38A201F2B2900BB92BA /* CLViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0421A38B201F2B2900BB92BA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0421A38C201F2B2900BB92BA /* CLViewControllerViewModel.h */,
-				0421A38D201F2B2900BB92BA /* CLViewControllerViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0421A38E201F2B2900BB92BA /* UIFont+CLFont */ = {
-			isa = PBXGroup;
-			children = (
-				0421A38F201F2B2900BB92BA /* UIFont+CLFont.h */,
-				0421A390201F2B2900BB92BA /* UIFont+CLFont.m */,
-			);
-			path = "UIFont+CLFont";
-			sourceTree = "<group>";
-		};
-		0421A391201F2B2900BB92BA /* UIViewController+CLViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0421A392201F2B2900BB92BA /* UIViewController+CLViewController.h */,
-				0421A393201F2B2900BB92BA /* UIViewController+CLViewController.m */,
-			);
-			path = "UIViewController+CLViewController";
-			sourceTree = "<group>";
-		};
-		0421A394201F2B2900BB92BA /* CLTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0421A395201F2B2900BB92BA /* Controller */,
-				0421A398201F2B2900BB92BA /* ViewModels */,
-				0421A3A2201F2B2900BB92BA /* Views */,
-			);
-			path = CLTableViewController;
-			sourceTree = "<group>";
-		};
-		0421A395201F2B2900BB92BA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0421A396201F2B2900BB92BA /* CLTableViewController.h */,
-				0421A397201F2B2900BB92BA /* CLTableViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0421A398201F2B2900BB92BA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				0421A399201F2B2900BB92BA /* TableViewDataSource */,
-				0421A39C201F2B2900BB92BA /* TableViewDelegate */,
-				0421A39F201F2B2900BB92BA /* TableViewViewModel */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		0421A399201F2B2900BB92BA /* TableViewDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				0421A39A201F2B2900BB92BA /* CLTableViewDataSource.h */,
-				0421A39B201F2B2900BB92BA /* CLTableViewDataSource.m */,
-			);
-			path = TableViewDataSource;
-			sourceTree = "<group>";
-		};
-		0421A39C201F2B2900BB92BA /* TableViewDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				0421A39D201F2B2900BB92BA /* CLTableViewDelegate.h */,
-				0421A39E201F2B2900BB92BA /* CLTableViewDelegate.m */,
-			);
-			path = TableViewDelegate;
-			sourceTree = "<group>";
-		};
-		0421A39F201F2B2900BB92BA /* TableViewViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3A0201F2B2900BB92BA /* CLTableViewViewModel.h */,
-				0421A3A1201F2B2900BB92BA /* CLTableViewViewModel.m */,
-			);
-			path = TableViewViewModel;
-			sourceTree = "<group>";
-		};
-		0421A3A2201F2B2900BB92BA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3A3201F2B2900BB92BA /* CLTableViewCell.h */,
-				0421A3A4201F2B2900BB92BA /* CLTableViewCell.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		0421A3A5201F2B2900BB92BA /* CLNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3A6201F2B2900BB92BA /* CLNavigationController.h */,
-				0421A3A7201F2B2900BB92BA /* CLNavigationController.m */,
-			);
-			path = CLNavigationController;
-			sourceTree = "<group>";
-		};
-		0421A3A8201F2B2900BB92BA /* UIButton+CLButton */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3A9201F2B2900BB92BA /* UIButton+CLButton.h */,
-				0421A3AA201F2B2900BB92BA /* UIButton+CLButton.m */,
-			);
-			path = "UIButton+CLButton";
-			sourceTree = "<group>";
-		};
-		0421A3AB201F2B2900BB92BA /* CLCollectionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3AC201F2B2900BB92BA /* Controller */,
-				0421A3AF201F2B2900BB92BA /* ViewModels */,
-			);
-			path = CLCollectionViewController;
-			sourceTree = "<group>";
-		};
-		0421A3AC201F2B2900BB92BA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3AD201F2B2900BB92BA /* CLCollectionViewController.h */,
-				0421A3AE201F2B2900BB92BA /* CLCollectionViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0421A3AF201F2B2900BB92BA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3B0201F2B2900BB92BA /* CollectionViewDataSource */,
-				0421A3B3201F2B2900BB92BA /* CollectionViewDelegate */,
-				0421A3B6201F2B2900BB92BA /* CollectionViewViewModel */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		0421A3B0201F2B2900BB92BA /* CollectionViewDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3B1201F2B2900BB92BA /* CLCollectionViewDataSource.h */,
-				0421A3B2201F2B2900BB92BA /* CLCollectionViewDataSource.m */,
-			);
-			path = CollectionViewDataSource;
-			sourceTree = "<group>";
-		};
-		0421A3B3201F2B2900BB92BA /* CollectionViewDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3B4201F2B2900BB92BA /* CLCollectionViewDelegate.h */,
-				0421A3B5201F2B2900BB92BA /* CLCollectionViewDelegate.m */,
-			);
-			path = CollectionViewDelegate;
-			sourceTree = "<group>";
-		};
-		0421A3B6201F2B2900BB92BA /* CollectionViewViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3B7201F2B2900BB92BA /* CLCollectionViewViewModel.h */,
-				0421A3B8201F2B2900BB92BA /* CLCollectionViewViewModel.m */,
-			);
-			path = CollectionViewViewModel;
-			sourceTree = "<group>";
-		};
-		0421A3B9201F2B2900BB92BA /* UIColor+CLColor */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3BA201F2B2900BB92BA /* UIColor+CLColor.h */,
-				0421A3BB201F2B2900BB92BA /* UIColor+CLColor.m */,
-			);
-			path = "UIColor+CLColor";
-			sourceTree = "<group>";
-		};
-		0421A3BC201F2B2900BB92BA /* UIImage+CLImage */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3BD201F2B2900BB92BA /* UIImage+CLImage.h */,
-				0421A3BE201F2B2900BB92BA /* UIImage+CLImage.m */,
-			);
-			path = "UIImage+CLImage";
-			sourceTree = "<group>";
-		};
-		0421A3BF201F2B2900BB92BA /* UIScreen+CLScreen */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3C0201F2B2900BB92BA /* UIScreen+CLScreen.h */,
-				0421A3C1201F2B2900BB92BA /* UIScreen+CLScreen.m */,
-			);
-			path = "UIScreen+CLScreen";
-			sourceTree = "<group>";
-		};
-		0421A3C2201F2B2900BB92BA /* UITableView+CLTableView */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3C3201F2B2900BB92BA /* UITableView+CLTableView.h */,
-				0421A3C4201F2B2900BB92BA /* UITableView+CLTableView.m */,
-			);
-			path = "UITableView+CLTableView";
-			sourceTree = "<group>";
-		};
-		0421A3C5201F2B2900BB92BA /* CLButton */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3C6201F2B2900BB92BA /* CLButton.h */,
-				0421A3C7201F2B2900BB92BA /* CLButton.m */,
-			);
-			path = CLButton;
-			sourceTree = "<group>";
-		};
-		0421A3C8201F2B2900BB92BA /* UIDevice+CLDevice */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3C9201F2B2900BB92BA /* UIDevice+CLDevice.h */,
-				0421A3CA201F2B2900BB92BA /* UIDevice+CLDevice.m */,
-			);
-			path = "UIDevice+CLDevice";
-			sourceTree = "<group>";
-		};
-		0421A3CB201F2B2A00BB92BA /* CLTextField */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3CC201F2B2A00BB92BA /* CLTextField.h */,
-				0421A3CD201F2B2A00BB92BA /* CLTextField.m */,
-			);
-			path = CLTextField;
-			sourceTree = "<group>";
-		};
-		0421A3CE201F2B2A00BB92BA /* CLToolBarListView */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3CF201F2B2A00BB92BA /* CLToolBarListView.h */,
-				0421A3D0201F2B2A00BB92BA /* CLToolBarListView.m */,
-			);
-			path = CLToolBarListView;
-			sourceTree = "<group>";
-		};
-		0421A3D1201F2B2A00BB92BA /* UICollectionView+CLCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				0421A3D2201F2B2A00BB92BA /* UICollectionView+CLCollectionView.h */,
-				0421A3D3201F2B2A00BB92BA /* UICollectionView+CLCollectionView.m */,
-			);
-			path = "UICollectionView+CLCollectionView";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -435,31 +489,34 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0421A3EE201F2B2A00BB92BA /* CLCollectionViewDelegate.h in Headers */,
-				0421A3E0201F2B2A00BB92BA /* CLTableViewDelegate.h in Headers */,
-				0421A402201F2B2A00BB92BA /* UICollectionView+CLCollectionView.h in Headers */,
-				0421A3E8201F2B2A00BB92BA /* UIButton+CLButton.h in Headers */,
-				0421A3F0201F2B2A00BB92BA /* CLCollectionViewViewModel.h in Headers */,
-				0421A3D4201F2B2A00BB92BA /* CLViewController.h in Headers */,
-				0421A3F8201F2B2A00BB92BA /* UITableView+CLTableView.h in Headers */,
-				0421A3F6201F2B2A00BB92BA /* UIScreen+CLScreen.h in Headers */,
-				0421A3FE201F2B2A00BB92BA /* CLTextField.h in Headers */,
-				0421A215201F223600BB92BA /* CLUIKit.h in Headers */,
-				0421A3EA201F2B2A00BB92BA /* CLCollectionViewController.h in Headers */,
-				0421A3FC201F2B2A00BB92BA /* UIDevice+CLDevice.h in Headers */,
-				0421A3D6201F2B2A00BB92BA /* CLViewControllerViewModel.h in Headers */,
-				0421A3E2201F2B2A00BB92BA /* CLTableViewViewModel.h in Headers */,
-				0421A3F4201F2B2A00BB92BA /* UIImage+CLImage.h in Headers */,
-				0421A3DE201F2B2A00BB92BA /* CLTableViewDataSource.h in Headers */,
-				0421A3DA201F2B2A00BB92BA /* UIViewController+CLViewController.h in Headers */,
-				0421A3D8201F2B2A00BB92BA /* UIFont+CLFont.h in Headers */,
-				0421A3DC201F2B2A00BB92BA /* CLTableViewController.h in Headers */,
-				0421A400201F2B2A00BB92BA /* CLToolBarListView.h in Headers */,
-				0421A3EC201F2B2A00BB92BA /* CLCollectionViewDataSource.h in Headers */,
-				0421A3FA201F2B2A00BB92BA /* CLButton.h in Headers */,
-				0421A3E6201F2B2A00BB92BA /* CLNavigationController.h in Headers */,
-				0421A3E4201F2B2A00BB92BA /* CLTableViewCell.h in Headers */,
-				0421A3F2201F2B2A00BB92BA /* UIColor+CLColor.h in Headers */,
+				040D85202047D938008436AC /* CLCollectionViewDataSource.h in Headers */,
+				040D85512047D938008436AC /* UIView+CLView.h in Headers */,
+				040D85262047D938008436AC /* CLNavigationController.h in Headers */,
+				040D85222047D938008436AC /* CLCollectionViewDelegate.h in Headers */,
+				040D85472047D938008436AC /* UIFont+CLFont.h in Headers */,
+				040D85292047D938008436AC /* CLScanQRCodeController.h in Headers */,
+				040D85452047D938008436AC /* UIDevice+CLDevice.h in Headers */,
+				040D85312047D938008436AC /* CLTableViewDelegate.h in Headers */,
+				040D85432047D938008436AC /* UIColor+CLColor.h in Headers */,
+				040D85242047D938008436AC /* CLCollectionViewViewModel.h in Headers */,
+				040D853A2047D938008436AC /* CLViewController.h in Headers */,
+				040D853F2047D938008436AC /* UIButton+CLButton.h in Headers */,
+				040D85492047D938008436AC /* UIImage+CLImage.h in Headers */,
+				040D852B2047D938008436AC /* CLScanQRCodeView.h in Headers */,
+				040D852F2047D938008436AC /* CLTableViewDataSource.h in Headers */,
+				040D85532047D938008436AC /* UIViewController+CLViewController.h in Headers */,
+				040D85352047D938008436AC /* CLTextField.h in Headers */,
+				040D851E2047D938008436AC /* CLCollectionViewController.h in Headers */,
+				040D85372047D938008436AC /* CLToolBarListView.h in Headers */,
+				040D85392047D938008436AC /* CLUIKit.h in Headers */,
+				040D851C2047D938008436AC /* CLButton.h in Headers */,
+				040D85412047D938008436AC /* UICollectionView+CLCollectionView.h in Headers */,
+				040D85332047D938008436AC /* CLTableViewViewModel.h in Headers */,
+				040D854D2047D938008436AC /* UIScreen+CLScreen.h in Headers */,
+				040D853C2047D938008436AC /* CLViewControllerViewModel.h in Headers */,
+				040D852D2047D938008436AC /* CLTableViewController.h in Headers */,
+				040D854B2047D938008436AC /* UINavigationItem+CLNavigationItem.h in Headers */,
+				040D854F2047D938008436AC /* UITableView+CLTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +578,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040D853E2047D938008436AC /* Info.plist in Resources */,
+				040D85282047D938008436AC /* CLResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,30 +590,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0421A3F7201F2B2A00BB92BA /* UIScreen+CLScreen.m in Sources */,
-				0421A3F5201F2B2A00BB92BA /* UIImage+CLImage.m in Sources */,
-				0421A3F9201F2B2A00BB92BA /* UITableView+CLTableView.m in Sources */,
-				0421A3E7201F2B2A00BB92BA /* CLNavigationController.m in Sources */,
-				0421A3EB201F2B2A00BB92BA /* CLCollectionViewController.m in Sources */,
-				0421A3F3201F2B2A00BB92BA /* UIColor+CLColor.m in Sources */,
-				0421A3F1201F2B2A00BB92BA /* CLCollectionViewViewModel.m in Sources */,
-				0421A3E5201F2B2A00BB92BA /* CLTableViewCell.m in Sources */,
-				0421A3FB201F2B2A00BB92BA /* CLButton.m in Sources */,
-				0421A3DB201F2B2A00BB92BA /* UIViewController+CLViewController.m in Sources */,
-				0421A3DF201F2B2A00BB92BA /* CLTableViewDataSource.m in Sources */,
-				0421A401201F2B2A00BB92BA /* CLToolBarListView.m in Sources */,
-				0421A3D9201F2B2A00BB92BA /* UIFont+CLFont.m in Sources */,
-				0421A3FF201F2B2A00BB92BA /* CLTextField.m in Sources */,
-				0421A3E1201F2B2A00BB92BA /* CLTableViewDelegate.m in Sources */,
-				0421A3DD201F2B2A00BB92BA /* CLTableViewController.m in Sources */,
-				0421A3D7201F2B2A00BB92BA /* CLViewControllerViewModel.m in Sources */,
-				0421A3ED201F2B2A00BB92BA /* CLCollectionViewDataSource.m in Sources */,
-				0421A3EF201F2B2A00BB92BA /* CLCollectionViewDelegate.m in Sources */,
-				0421A3D5201F2B2A00BB92BA /* CLViewController.m in Sources */,
-				0421A403201F2B2A00BB92BA /* UICollectionView+CLCollectionView.m in Sources */,
-				0421A3E3201F2B2A00BB92BA /* CLTableViewViewModel.m in Sources */,
-				0421A3FD201F2B2A00BB92BA /* UIDevice+CLDevice.m in Sources */,
-				0421A3E9201F2B2A00BB92BA /* UIButton+CLButton.m in Sources */,
+				040D853D2047D938008436AC /* CLViewControllerViewModel.m in Sources */,
+				040D851D2047D938008436AC /* CLButton.m in Sources */,
+				040D85422047D938008436AC /* UICollectionView+CLCollectionView.m in Sources */,
+				040D85302047D938008436AC /* CLTableViewDataSource.m in Sources */,
+				040D85212047D938008436AC /* CLCollectionViewDataSource.m in Sources */,
+				040D852E2047D938008436AC /* CLTableViewController.m in Sources */,
+				040D854E2047D938008436AC /* UIScreen+CLScreen.m in Sources */,
+				040D854C2047D938008436AC /* UINavigationItem+CLNavigationItem.m in Sources */,
+				040D852C2047D938008436AC /* CLScanQRCodeView.m in Sources */,
+				040D853B2047D938008436AC /* CLViewController.m in Sources */,
+				040D85542047D938008436AC /* UIViewController+CLViewController.m in Sources */,
+				040D854A2047D938008436AC /* UIImage+CLImage.m in Sources */,
+				040D85272047D938008436AC /* CLNavigationController.m in Sources */,
+				040D85252047D938008436AC /* CLCollectionViewViewModel.m in Sources */,
+				040D85232047D938008436AC /* CLCollectionViewDelegate.m in Sources */,
+				040D85402047D938008436AC /* UIButton+CLButton.m in Sources */,
+				040D85502047D938008436AC /* UITableView+CLTableView.m in Sources */,
+				040D85322047D938008436AC /* CLTableViewDelegate.m in Sources */,
+				040D85442047D938008436AC /* UIColor+CLColor.m in Sources */,
+				040D851F2047D938008436AC /* CLCollectionViewController.m in Sources */,
+				040D85362047D938008436AC /* CLTextField.m in Sources */,
+				040D85522047D938008436AC /* UIView+CLView.m in Sources */,
+				040D85382047D938008436AC /* CLToolBarListView.m in Sources */,
+				040D852A2047D938008436AC /* CLScanQRCodeController.m in Sources */,
+				040D85482047D938008436AC /* UIFont+CLFont.m in Sources */,
+				040D85462047D938008436AC /* UIDevice+CLDevice.m in Sources */,
+				040D85342047D938008436AC /* CLTableViewViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
