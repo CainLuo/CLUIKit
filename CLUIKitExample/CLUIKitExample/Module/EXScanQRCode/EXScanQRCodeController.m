@@ -21,7 +21,7 @@
     
     self.cl_autoStopCaptureSessionRunning = YES;
     
-    [self cl_scanQRCodeBlock];
+    [self cl_scanQRCodeBlock];    
 }
 
 #pragma mark - CLScanQRCodeBlock

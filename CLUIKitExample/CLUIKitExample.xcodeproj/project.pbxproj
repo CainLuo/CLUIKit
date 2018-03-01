@@ -42,7 +42,6 @@
 		A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7160203802FC0015964F /* CLTableViewDelegate.m */; };
 		A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7164203802FC0015964F /* CLTableViewDataSource.m */; };
 		A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7167203802FC0015964F /* CLTableViewViewModel.m */; };
-		A4DB719C203802FC0015964F /* CLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB716A203802FC0015964F /* CLTableViewCell.m */; };
 		A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB716D203802FC0015964F /* CLTableViewController.m */; };
 		A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7170203802FC0015964F /* UIFont+CLFont.m */; };
 		A4DB719F203802FC0015964F /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7173203802FC0015964F /* UIImage+CLImage.m */; };
@@ -147,8 +146,6 @@
 		A4DB7164203802FC0015964F /* CLTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDataSource.m; sourceTree = "<group>"; };
 		A4DB7166203802FC0015964F /* CLTableViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewViewModel.h; sourceTree = "<group>"; };
 		A4DB7167203802FC0015964F /* CLTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewViewModel.m; sourceTree = "<group>"; };
-		A4DB7169203802FC0015964F /* CLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewCell.h; sourceTree = "<group>"; };
-		A4DB716A203802FC0015964F /* CLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewCell.m; sourceTree = "<group>"; };
 		A4DB716C203802FC0015964F /* CLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewController.h; sourceTree = "<group>"; };
 		A4DB716D203802FC0015964F /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
 		A4DB716F203802FC0015964F /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
@@ -625,7 +622,6 @@
 			children = (
 				A4DB716B203802FC0015964F /* Controller */,
 				A4DB715E203802FC0015964F /* ViewModels */,
-				A4DB7168203802FC0015964F /* Views */,
 			);
 			path = CLTableViewController;
 			sourceTree = "<group>";
@@ -665,15 +661,6 @@
 				A4DB7167203802FC0015964F /* CLTableViewViewModel.m */,
 			);
 			path = CLTableViewViewModel;
-			sourceTree = "<group>";
-		};
-		A4DB7168203802FC0015964F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB7169203802FC0015964F /* CLTableViewCell.h */,
-				A4DB716A203802FC0015964F /* CLTableViewCell.m */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		A4DB716B203802FC0015964F /* Controller */ = {
@@ -1190,7 +1177,6 @@
 				A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */,
 				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
 				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
-				A4DB719C203802FC0015964F /* CLTableViewCell.m in Sources */,
 				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
 				A4DB719F203802FC0015964F /* UIImage+CLImage.m in Sources */,
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,

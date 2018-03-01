@@ -17,6 +17,9 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface CLTableViewController : CLViewController
 
+/**
+ 只读的UITableView
+ */
 @property (nonatomic, strong, null_resettable, readonly) UITableView *cl_tableView;
 
 /**
@@ -27,29 +30,59 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initTableViewControllerWithStyle:(UITableViewStyle)style;
 
+/**
+ 删除MJRefresh
+ */
 - (void)cl_removeRefresh;
+
+/**
+ 删除头部MJRefresh
+ */
 - (void)cl_removeHeaderRefresh;
+
+/**
+ 删除尾部MJRefresh
+ */
 - (void)cl_removeFooterRefresh;
 
 /**
- 下拉刷新方法/上拉加载方法
- */
-- (void)cl_dropDownRefresh;
-- (void)cl_pullUpRefresh;
-
-/**
- 开始执行下拉操作/结束下拉操作
+ 开始下拉刷新
  */
 - (void)cl_dropDownBeginRefresh;
+
+/**
+ 结束下拉刷新
+ */
 - (void)cl_dropDownEndRefresh;
 
 /**
- 开始执行上拉操作/结束上拉操作
+ 下拉刷新方法
+ */
+- (void)cl_dropDownRefresh;
+
+/**
+ 开始上拉加载
  */
 - (void)cl_pullUpBeginRefresh;
+
+/**
+ 结束上拉加载
+ */
 - (void)cl_pullUpEndRefresh;
 
+/**
+ 上拉加载的方法
+ */
+- (void)cl_pullUpRefresh;
+
+/**
+ 设置UITableView的代理与数据源
+
+ @param delegate UITableViewDelegate
+ @param dataSource UITableViewDataSource
+ */
 - (void)cl_setTableViewDelegate:(_Nullable id <UITableViewDelegate>)delegate
                      dataSource:(_Nullable id <UITableViewDataSource>)dataSource;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -46,6 +46,11 @@
 
 - (void)cl_configCaptureVideoPreviewLayer {
     
+    if (!self.cl_scanQRCodeView) {
+        
+        self.cl_scanQRCodeView = [[CLScanQRCodeView alloc] initWithFrame:self.view.bounds];
+    }
+
     [self.view addSubview:self.cl_scanQRCodeView];
 
     [self.view.layer insertSublayer:self.captureVideoPreviewLayer
@@ -137,16 +142,6 @@
     }
     
     return _captureVideoPreviewLayer;
-}
-
-- (CLScanQRCodeView *)cl_scanQRCodeView {
-    
-    if (!_cl_scanQRCodeView) {
-    
-        _cl_scanQRCodeView = [[CLScanQRCodeView alloc] initWithFrame:self.view.bounds];
-    }
-    
-    return _cl_scanQRCodeView;
 }
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate

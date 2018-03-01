@@ -16,10 +16,19 @@
 
 @interface CLNavigationController : UINavigationController
 
+/**
+ 设置UINavigationBar的背景图
+ */
 @property (nonatomic, strong) UIImage *cl_backgroundImage;
 
+/**
+ 设置UINavigationBar的Tint Color
+ */
 @property (nonatomic, strong) UIColor *cl_tintColor;
 
+/**
+ 设置UINavigationBar的Foreground Color
+ */
 @property (nonatomic, strong) UIColor *cl_foregroundColor;
 
 @end

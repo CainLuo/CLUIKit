@@ -14,11 +14,19 @@
 ## 目录
 - [CLButton@](#CLButton)
 - [CLCollectionViewController@](#CLCollectionViewController)
-  - [MJRefresh@](#MJRefresh)
-  - [代理与数据源@](#代理与数据源)
+  - [UICollectionView与MJRefresh@](#UICollectionView与MJRefresh)
+  - [UICollectionView代理与数据源@](#代理与数据源)
   - [注册类@](#注册类)
-- [CLCollectionViewDataSource@](#CLCollectionViewDataSource)
+- [CLCollectionViewViewModel@](#CLCollectionViewViewModel)
 - [CLCollectionViewDelegate@](#CLCollectionViewDelegate)
+- [CLCollectionViewDataSource@](#CLCollectionViewDataSource)
+- [CLNavigationController@](#CLNavigationController)
+- [CLScanQRCodeController@](#CLScanQRCodeController)
+  - [获取数据(Block)@](#获取数据(Block))
+  - [获取数据(Delegate)@](#获取数据(Delegate))
+- [CLTableViewController@](#CLTableViewController)
+  - [UITableView与MJRefresh@](#UITableView与MJRefresh)
+  - [UITableView代理与数据源@](#UITableView代理与数据源)
 
 ## CLButton@
 
@@ -43,9 +51,9 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 ## CLCollectionViewController@
 
-`CLCollectionViewController`是对系统`UIViewController + UICollectionView`的封装添加了一些特性:
+`CLCollectionViewController`是对系统`UIViewController + UICollectionView`的封装并添加了一些特性:
 
-### MJRefresh@
+### UICollectionView与MJRefresh@
 
 ```objective-c
 - (void)cl_removeRefresh;
@@ -67,7 +75,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_pullUpEndRefresh;
 ```
 
-### 代理与数据源@
+### UICollectionView代理与数据源@
 
 ```objective-c
 - (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
@@ -97,18 +105,6 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
-## CLCollectionViewDataSource@
-
-`CLCollectionViewDataSource`是`CLCollectionViewController`的数据源代理, 需要配合着使用:
-
-```objective-c
-@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
-
-- (instancetype)initCollectionViewDataSourceWithViewModel:(CLCollectionViewViewModel *)viewModel;
-```
-
-
-
 ## CLCollectionViewDelegate@
 
 `CLCollectionViewDelegate`是`CLCollectionViewController`的代理, 需要配合着使用:
@@ -121,9 +117,110 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
+## CLCollectionViewDataSource@
+
+`CLCollectionViewDataSource`是`CLCollectionViewController`的数据源代理, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
+
+- (instancetype)initCollectionViewDataSourceWithViewModel:(CLCollectionViewViewModel *)viewModel;
+```
+
+
+
+## CLNavigationController@
+
+`CLNavigationController`是针对系统`UINavigationController`的封装并添加了一些特性:
+
+```objective-c
+@property (nonatomic, strong) UIImage *cl_backgroundImage;
+
+@property (nonatomic, strong) UIColor *cl_tintColor;
+
+@property (nonatomic, strong) UIColor *cl_foregroundColor;
+```
+
+
+
+`CLNavigationController`默认重载了`pushViewController:animated:`, 会在`pushViewController`的时候自动隐藏掉`UITarBar`.
+
+## CLScanQRCodeController@
+
+`CLScanQRCodeController`是基于`AVFoundation`进行封装的`QRCode`扫描库, 系统默认识别十三种编码:
+
+```objective-c
+@property (nonatomic, strong) UIView *cl_scanQRCodeView;
+
+@property (nonatomic, assign) BOOL cl_autoStopCaptureSessionRunning;
+
+@property (nonatomic, weak) id <CLScanQRCodeControllerDelegate> cl_scanQRCodeControllerDelegate;
+
+- (void)cl_startCaptureSessionRunning;
+
+- (void)cl_stopCaptureSessionRunning;
+```
+
+### 获取数据(Block)@
+
+```objective-c
+@property (nonatomic, copy) void(^cl_scanQRCodeGetMetadataObjectsBlock)(NSArray *metadataObjects);
+
+@property (nonatomic, copy) void(^cl_scanQRCodeGetMetadataStringValue)(NSString *stringValue);
+```
+
+### 获取数据(Delegate)@
+
+```objective-c
+- (void)cl_scanQRCodeGetMetadataObjectsWithMetadataObjects:(NSArray *)metadataObjects;
+
+- (void)cl_scanQRCodeGetMetadataStringValue:(NSString *)stringValue;
+```
+
+
+
 ## CLTableViewController@
 
-由于这里已经写了一篇文章了, 这里就不写了啦~~[玩转iOS开发：打造一个低耦合可复用的《TableViewController》](https://cainrun.github.io/15009611814095.html).
+`CLTableViewController`是对系统`UIViewController + UITableView`的封装并添加了一些特性:
+
+```objective-c
+@property (nonatomic, strong, null_resettable, readonly) UITableView *cl_tableView;
+
+- (instancetype)initTableViewControllerWithStyle:(UITableViewStyle)style;
+```
+
+### UITableView与MJRefresh@
+
+```objective-c
+- (void)cl_removeRefresh;
+
+- (void)cl_removeHeaderRefresh;
+
+- (void)cl_removeFooterRefresh;
+
+- (void)cl_dropDownRefresh;
+
+- (void)cl_dropDownBeginRefresh;
+
+- (void)cl_dropDownEndRefresh;
+
+- (void)cl_pullUpRefresh;
+
+- (void)cl_pullUpBeginRefresh;
+
+- (void)cl_pullUpEndRefresh;
+```
+
+### UITableView代理与数据源@
+
+```objective-c
+- (void)cl_setTableViewDelegate:(_Nullable id <UITableViewDelegate>)delegate
+                     dataSource:(_Nullable id <UITableViewDataSource>)dataSource;
+```
+
+
+
+关于`CLTableViewController`封装的原理: [玩转iOS开发：打造一个低耦合可复用的《TableViewController》](https://cainrun.github.io/15009611814095.html).
 
 
 

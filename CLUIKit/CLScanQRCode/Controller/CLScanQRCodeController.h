@@ -12,29 +12,61 @@
 @protocol CLScanQRCodeControllerDelegate <NSObject>
 
 @optional
+
+/**
+ 获取扫描后的元数据
+
+ @param metadataObjects NSArray
+ */
 - (void)cl_scanQRCodeGetMetadataObjectsWithMetadataObjects:(NSArray *)metadataObjects;
 
+/**
+ 获取扫描后的String Value数据
+
+ @param stringValue NSString
+ */
 - (void)cl_scanQRCodeGetMetadataStringValue:(NSString *)stringValue;
 
 @end
 
 @interface CLScanQRCodeController : CLViewController
 
-@property (nonatomic, strong) CLScanQRCodeView *cl_scanQRCodeView;
+/**
+ 扫描所覆盖的Mark视图, 可定义更换
+ */
+@property (nonatomic, strong) UIView *cl_scanQRCodeView;
 
 /**
- Config Capture Session Running Auto Stop, Default: NO
+ 是否自动停止扫描
  */
 @property (nonatomic, assign) BOOL cl_autoStopCaptureSessionRunning;
 
+/**
+ CLScanQRCodeControllerDelegate
+ */
 @property (nonatomic, weak) id <CLScanQRCodeControllerDelegate> cl_scanQRCodeControllerDelegate;
 
 
 #pragma mark - Block
+
+/**
+ 获取扫描后的元数据Block
+ */
 @property (nonatomic, copy) void(^cl_scanQRCodeGetMetadataObjectsBlock)(NSArray *metadataObjects);
+
+/**
+ 获取扫描后的String Value数据
+ */
 @property (nonatomic, copy) void(^cl_scanQRCodeGetMetadataStringValue)(NSString *stringValue);
 
+/**
+ 开始扫描, 默认自动实现
+ */
 - (void)cl_startCaptureSessionRunning;
+
+/**
+ 停止扫描, 如果cl_autoStopCaptureSessionRunning为YES则不需要手动, 否则就要手动停止
+ */
 - (void)cl_stopCaptureSessionRunning;
 
 @end
