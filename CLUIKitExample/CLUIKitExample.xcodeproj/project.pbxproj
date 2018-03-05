@@ -27,6 +27,9 @@
 		A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1D16203CEAB1005026E8 /* CLScanQRCodeController.m */; };
 		A4AB1D19203CEE9D005026E8 /* CLResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4AB1D18203CEE9C005026E8 /* CLResource.bundle */; };
 		A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */; };
+		A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */; };
+		A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */; };
+		A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3147204CF253002E0ED7 /* EXApplicationController.m */; };
 		A4DB712A203800530015964F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7129203800530015964F /* AppDelegate.m */; };
 		A4DB7132203800530015964F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7131203800530015964F /* Assets.xcassets */; };
 		A4DB7135203800530015964F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7133203800530015964F /* LaunchScreen.storyboard */; };
@@ -115,6 +118,12 @@
 		A4AB1D18203CEE9C005026E8 /* CLResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLResource.bundle; sourceTree = "<group>"; };
 		A4AB1D1A203CEF16005026E8 /* CLScanQRCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScanQRCodeView.h; sourceTree = "<group>"; };
 		A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScanQRCodeView.m; sourceTree = "<group>"; };
+		A4BA313E204CE528002E0ED7 /* UIApplication+CLApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+CLApplication.h"; sourceTree = "<group>"; };
+		A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+CLApplication.m"; sourceTree = "<group>"; };
+		A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXBaseViewController.m; sourceTree = "<group>"; };
+		A4BA3144204CF21D002E0ED7 /* EXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXBaseViewController.h; sourceTree = "<group>"; };
+		A4BA3146204CF253002E0ED7 /* EXApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXApplicationController.h; sourceTree = "<group>"; };
+		A4BA3147204CF253002E0ED7 /* EXApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXApplicationController.m; sourceTree = "<group>"; };
 		A4DB7125203800530015964F /* CLUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB7128203800530015964F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4DB7129203800530015964F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -445,6 +454,33 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A4BA313D204CE508002E0ED7 /* UIApplication+CLApplication */ = {
+			isa = PBXGroup;
+			children = (
+				A4BA313E204CE528002E0ED7 /* UIApplication+CLApplication.h */,
+				A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */,
+			);
+			path = "UIApplication+CLApplication";
+			sourceTree = "<group>";
+		};
+		A4BA3141204CF1A2002E0ED7 /* EXApplication */ = {
+			isa = PBXGroup;
+			children = (
+				A4BA3146204CF253002E0ED7 /* EXApplicationController.h */,
+				A4BA3147204CF253002E0ED7 /* EXApplicationController.m */,
+			);
+			path = EXApplication;
+			sourceTree = "<group>";
+		};
+		A4BA3142204CF21D002E0ED7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A4BA3144204CF21D002E0ED7 /* EXBaseViewController.h */,
+				A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		A4DB711C203800530015964F = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DB713F203802530015964F /* AppDelegate */,
+				A4BA3142204CF21D002E0ED7 /* Base */,
 				A4DB7141203802FC0015964F /* CLUIKit */,
 				A4DB71AA203805A70015964F /* Module */,
 				A4DB713E203802490015964F /* Resource */,
@@ -510,6 +547,7 @@
 				A4DB718B203802FC0015964F /* CLTextField */,
 				A4DB7149203802FC0015964F /* CLToolBarListView */,
 				A4DB717A203802FC0015964F /* CLViewController */,
+				A4BA313D204CE508002E0ED7 /* UIApplication+CLApplication */,
 				A4DB714C203802FC0015964F /* UIButton+CLButton */,
 				A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */,
 				A4DB7177203802FC0015964F /* UIColor+CLColor */,
@@ -784,6 +822,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DB71C820381A0A0015964F /* EXAlert */,
+				A4BA3141204CF1A2002E0ED7 /* EXApplication */,
 				A4DB71DE20386EFE0015964F /* EXButton */,
 				A4DB71E2203A7E9F0015964F /* EXCollection */,
 				A4AB1CBF203BD4B6005026E8 /* EXColor */,
@@ -1162,6 +1201,7 @@
 				A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */,
 				A4AB1CEC203C46BB005026E8 /* EXTextFieldController.m in Sources */,
 				A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */,
+				A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */,
 				A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */,
 				A4DB7194203802FC0015964F /* UIButton+CLButton.m in Sources */,
 				A4DB71A8203802FC0015964F /* CLTextField.m in Sources */,
@@ -1182,6 +1222,7 @@
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
 				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,
 				A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */,
+				A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */,
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
 				A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */,
@@ -1196,6 +1237,7 @@
 				A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				A4DB712A203800530015964F /* AppDelegate.m in Sources */,
 				A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */,
+				A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */,
 				A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1326,6 +1368,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DA59678JQE;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CLUIKitExample/Resource/CLUIKitExample-PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CLUIKitExample/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1344,6 +1387,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DA59678JQE;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CLUIKitExample/Resource/CLUIKitExample-PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CLUIKitExample/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

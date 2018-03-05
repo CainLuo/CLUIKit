@@ -17,6 +17,8 @@
 
     NSArray *ex_dataSourceArray = @[@{@"title":@"EXAlertController",
                                       @"controller":@"EXAlertController"},
+                                    @{@"title":@"EXApplicationController",
+                                      @"controller":@"EXApplicationController"},
                                     @{@"title":@"EXButtonController",
                                       @"controller":@"EXButtonController"},
                                     @{@"title":@"EXCollectionViewController",

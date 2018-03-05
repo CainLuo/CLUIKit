@@ -1,4 +1,11 @@
 //
+// __    ______  ______      __     ___    _
+//   /  __)    /  \    (_    _) |    \  |  |
+//  |  /      /    \     |  |   |  |\ \ |  |
+//  | |      /  ()  \    |  |   |  | \ \|  |
+//  |  \__  |   __   |  _|  |_  |  |  \    |
+//  _\    )_|  (__)  |_(      )_|  |___\   |_
+//
 //  UIView+CLView.m
 //  ShareHotel
 //
@@ -11,11 +18,11 @@
 
 @implementation UIView (CLView)
 
-+ (void)initialize {
-    
++ (void)load {
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-
+        
         if (@available(iOS 11, *)) {
             
             [self cl_exchangeImplementationsWithClass:NSClassFromString(@"_UIBackButtonContainerView")

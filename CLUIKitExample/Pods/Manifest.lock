@@ -1,5 +1,5 @@
 PODS:
-  - CLFoundation (1.4.3)
+  - CLFoundation (1.5.0)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - YYModel (1.0.4)
@@ -11,7 +11,7 @@ DEPENDENCIES:
   - YYModel
 
 SPEC CHECKSUMS:
-  CLFoundation: c33f4ac8023bc750f99b4285396d887896fa807a
+  CLFoundation: feed5667eaf5c2205dc8ec6fd3ce9d73b942e106
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30

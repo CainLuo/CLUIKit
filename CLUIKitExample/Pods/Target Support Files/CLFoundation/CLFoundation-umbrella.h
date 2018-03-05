@@ -17,6 +17,7 @@
 #import "NSData+CLData.h"
 #import "NSDate+CLDate.h"
 #import "NSDictionary+CLDictionary.h"
+#import "NSFileManager+CLFileManager.h"
 #import "NSMutableArray+CLMutableArray.h"
 #import "NSMutableAttributedString+CLMutableAttributedString.h"
 #import "NSMutableDictionary+CLMutableDictionary.h"
