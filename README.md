@@ -34,6 +34,7 @@
 - [CLToolBarListView@](#CLToolBarListView)
 - [CLViewController@](#CLViewController)
 - [CLViewControllerViewModel@](#CLViewControllerViewModel)
+- [UIApplication+CLApplication@](#UIApplication+CLApplication)
 - [UIButton+CLButton@](#UIButton+CLButton)
 - [UICollectionView+CLCollectionView@](#UICollectionView+CLCollectionView)
   - [UICollectionView占位图代理@](#UICollectionView占位图代理)
@@ -389,6 +390,24 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 @property (nonatomic, weak, readonly) CLViewController *cl_viewController;
 
 - (instancetype)initViewControllerViewModelWithController:(CLViewController *)controller;
+```
+
+## UIApplication+CLApplication@
+
+针对`UIKit`的`UIApplication`进行系统外的方法补充:
+
+```objective-c
++ (BOOL)cl_getApplicationLocationPermit;
+
++ (BOOL)cl_getApplicationAddressBookPermit;
+
++ (BOOL)cl_getApplicationCameraPermit;
+
++ (BOOL)cl_getApplicationRemindersPermit;
+
++ (BOOL)cl_getApplicationPhotosLibraryPermit;
+
++ (void)cl_getApplicationMicrophonePermitWithBlock:(CLPermissionBlock)block;
 ```
 
 
