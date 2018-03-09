@@ -39,6 +39,19 @@ typedef void(^CLImage)(UIImage *image);
                              rect:(CGRect)rect
                        completion:(CLImage)completion;
 
+/**
+ 根据给定的颜色异步生成一张图, 并设置圆角
+
+ @param color UIColor
+ @param rect 指定大小
+ @param radius 弧度
+ @param completion 回调
+ */
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
+                             rect:(CGRect)rect
+                           radius:(CGFloat)radius
+                       completion:(CLImage)completion;
+
 #pragma mark - 截取指定视图大小的截图
 /**
  截取指定视图大小的截图

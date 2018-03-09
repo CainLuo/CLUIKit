@@ -64,7 +64,8 @@
                                @"创建二维码",
                                @"创建条形码",
                                @"添加高斯模糊",
-                               @"给图片添加圆角"];
+                               @"给图片添加圆角",
+                               @"给图片添加颜色和圆角"];
     
     [self cl_showSheetViewControllerWithTitle:@"设置图片"
                                       message:@"设置您的图片"
@@ -154,6 +155,19 @@
                                     }];
         }
             break;
+            
+        case 8: {
+            
+            [UIImage cl_asyncGetImageWithColor:[UIColor redColor]
+                                          rect:CGRectMake(0, 0, 100, 100)
+                                        radius:50
+                                    completion:^(UIImage *image) {
+                
+                                        self.ex_imageView.image = image;
+                                    }];
+        }
+            break;
+
         default:
             break;
     }

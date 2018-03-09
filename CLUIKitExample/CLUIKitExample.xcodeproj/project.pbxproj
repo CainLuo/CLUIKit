@@ -74,6 +74,7 @@
 		A4DB71F0203A86250015964F /* EXCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71EF203A86250015964F /* EXCollectionViewDelegate.m */; };
 		A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */; };
 		A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F6203ACFD10015964F /* EXTableViewController.m */; };
+		A4EDC72C2052D65300704DD6 /* UINavigationController+CLNavigaionController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC72B2052D65300704DD6 /* UINavigationController+CLNavigaionController.m */; };
 		BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +213,8 @@
 		A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewViewModel.m; sourceTree = "<group>"; };
 		A4DB71F5203ACFD10015964F /* EXTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewController.h; sourceTree = "<group>"; };
 		A4DB71F6203ACFD10015964F /* EXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewController.m; sourceTree = "<group>"; };
+		A4EDC72A2052D65300704DD6 /* UINavigationController+CLNavigaionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigaionController.h"; sourceTree = "<group>"; };
+		A4EDC72B2052D65300704DD6 /* UINavigationController+CLNavigaionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CLNavigaionController.m"; sourceTree = "<group>"; };
 		E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -554,6 +557,7 @@
 				A4DB7146203802FC0015964F /* UIDevice+CLDevice */,
 				A4DB716E203802FC0015964F /* UIFont+CLFont */,
 				A4DB7171203802FC0015964F /* UIImage+CLImage */,
+				A4EDC7292052D63100704DD6 /* UINavigationController+CLNavigaionController */,
 				A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */,
 				A4DB7181203802FC0015964F /* UIScreen+CLScreen */,
 				A4DB7184203802FC0015964F /* UITableView+CLTableView */,
@@ -1041,6 +1045,15 @@
 			path = EXTableView;
 			sourceTree = "<group>";
 		};
+		A4EDC7292052D63100704DD6 /* UINavigationController+CLNavigaionController */ = {
+			isa = PBXGroup;
+			children = (
+				A4EDC72A2052D65300704DD6 /* UINavigationController+CLNavigaionController.h */,
+				A4EDC72B2052D65300704DD6 /* UINavigationController+CLNavigaionController.m */,
+			);
+			path = "UINavigationController+CLNavigaionController";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1201,6 +1214,7 @@
 				A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */,
 				A4AB1CEC203C46BB005026E8 /* EXTextFieldController.m in Sources */,
 				A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */,
+				A4EDC72C2052D65300704DD6 /* UINavigationController+CLNavigaionController.m in Sources */,
 				A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */,
 				A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */,
 				A4DB7194203802FC0015964F /* UIButton+CLButton.m in Sources */,

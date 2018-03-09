@@ -78,12 +78,29 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            if (completion != nil) {
+            if (completion) {
                 
                 completion(cl_image);
             }
         });
     });
+}
+
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
+                             rect:(CGRect)rect
+                           radius:(CGFloat)radius
+                       completion:(CLImage)completion {
+    
+    [self cl_asyncGetImageWithColor:color
+                               rect:rect
+                         completion:^(UIImage *image) {
+                             
+                             [self cl_asyncCornerImageWithRadius:radius
+                                                              image:image
+                                                        borderWidth:0
+                                                        borderColor:nil
+                                                         completion:completion];
+                         }];
 }
 
 #pragma mark - 截取指定视图大小的截图

@@ -14,7 +14,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (CLViewController)
+@interface UIViewController (CLViewController) <CLNavigationControllerBackItemProtocol>
 
 @property (nonatomic, strong) UIAlertController *cl_alertController;
 

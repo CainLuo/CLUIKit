@@ -26,7 +26,7 @@
     
     [UIApplication cl_getApplicationMicrophonePermitWithBlock:^(BOOL granted) {
         
-        [self.ex_textViewString appendFormat:@"是否开启麦克风权限: %@\n", granted ? @"YES" : @"NO"];
+        [self.ex_textViewString appendFormat:@"是否开启麦克风: %@\n", granted ? @"YES" : @"NO"];
     }];
     
     [self ex_reloadTextView];

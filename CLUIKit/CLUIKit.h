@@ -65,6 +65,9 @@
 #pragma mark - UIImage+CLImage
 #import "UIImage+CLImage.h"
 
+#pragma mark - UINavigationController+CLNavigaionController
+#import "UINavigationController+CLNavigaionController.h"
+
 #pragma mark - 控制UINavigationBarItem是否显示标题
 #import "UINavigationItem+CLNavigationItem.h"
 

@@ -16,7 +16,7 @@
 #import <UIKit/UIKit.h>
 #import "CLCollectionViewViewModel.h"
 
-@interface CLCollectionViewDelegate : NSObject <UICollectionViewDelegate>
+@interface CLCollectionViewDelegate : NSObject <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 /**
  只读的CLCollectionViewViewModel
