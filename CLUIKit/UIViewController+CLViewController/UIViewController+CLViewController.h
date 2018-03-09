@@ -13,10 +13,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UINavigationController+CLNavigaionController.h"
 
-@interface UIViewController (CLViewController)
+@protocol CLNavigationControllerBackItemProtocol <NSObject>
+@optional
+
+/**
+ 检测UIViewController的UINavigationController返回事件
+ 
+ @return BOOL
+ */
+- (BOOL)cl_navigationShouldPopOnBackButton;
+
+@end
+
+@interface UIViewController (CLViewController) <CLNavigationControllerBackItemProtocol>
 
 @property (nonatomic, strong) UIAlertController *cl_alertController;
+
+- (BOOL)cl_navigationShouldPopOnBackButton;
 
 /**
  设置NavigationBar的Translucent, 默认为YES, 如果为NO, 那么视图的Top会紧挨UINavigationBar的底部, 但前提automaticallyAdjustsScrollViewInsets要为YES
