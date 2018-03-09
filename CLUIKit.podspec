@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CLUIKit"
-  spec.version      = "1.6.5"
+  spec.version      = "1.6.6"
   spec.summary      = "CLUIKit for iOS"
   spec.homepage     = "https://github.com/CainLuo/CLUIKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
