@@ -41,4 +41,9 @@
 
 - (void)cl_reloadData;
 
+/**
+ 删除占位图
+ */
+- (void)cl_removePlaceholderViewWithSuperView;
+
 @end

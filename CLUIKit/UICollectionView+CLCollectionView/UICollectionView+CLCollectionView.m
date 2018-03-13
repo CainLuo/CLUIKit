@@ -32,6 +32,13 @@ static void *CLPlaceholderView = &CLPlaceholderView;
     return objc_getAssociatedObject(self, CLPlaceholderView);
 }
 
+- (void)cl_removePlaceholderViewWithSuperView {
+    
+    [self.cl_placeholderView removeFromSuperview];
+    
+    self.cl_placeholderView = nil;
+}
+
 - (void)cl_reloadData {
     
     [self reloadData];
@@ -72,14 +79,12 @@ static void *CLPlaceholderView = &CLPlaceholderView;
             
             self.cl_placeholderView = [self cl_responseCollectionViewPlaceholderView];
             
-            self.cl_placeholderView.frame = self.frame;
+            self.cl_placeholderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
             
             [self addSubview:self.cl_placeholderView];
         } else {
             
-            [self.cl_placeholderView removeFromSuperview];
-            
-            self.cl_placeholderView = nil;
+            [self cl_removePlaceholderViewWithSuperView];
         }
         
     } else if (cl_isEmpty){

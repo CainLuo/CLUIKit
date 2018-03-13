@@ -21,7 +21,7 @@
 
 /**
  设置一个UITableView占位图
-
+ 
  @return UIView
  */
 - (UIView *)cl_placeholderView;
@@ -30,14 +30,14 @@
 
 /**
  是否要计算UITableViewHeaderView的Frame
-
+ 
  @return BOOL
  */
 - (BOOL)cl_calculateTableViewHeaderViewFrame;
 
 /**
  出现占位图的时候是否允许滑动
-
+ 
  @return BOOL
  */
 - (BOOL)cl_scrollEnabledWithShowPlaceholderView;
@@ -48,4 +48,10 @@
 
 - (void)cl_reloadData;
 
+/**
+ 删除占位图
+ */
+- (void)cl_removePlaceholderViewWithSuperView;
+
 @end
+
