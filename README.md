@@ -58,6 +58,8 @@
 - [UITableView+CLTableView@](#UITableView+CLTableView)
 - [UIView+CLView@](#UIView+CLView)
 - [UIViewController+CLViewController@](#UIViewController+CLViewController)
+  - [UIViewControllerBackItem检测代理@](#UIViewControllerBackItem检测代理)
+  - [UIViewController+CLViewController方法@](#UIViewController+CLViewController方法)
 
 
 
@@ -434,10 +436,18 @@ typedef NS_ENUM(NSInteger, CLButtonStarStyle) {
 
 typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time);
 
+typedef void (^CLButtonAction)(UIButton *sender);
+
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
 - (void)cl_starButtonWithTime:(NSInteger)time
                      complete:(CLButtonStar)complete;
+
+- (void)cl_addButtonActionComplete:(CLButtonAction)complete;
+
+- (void)cl_showActivityIndicatorViewWithStyle:(UIActivityIndicatorViewStyle)style;
+
+- (void)cl_hideActivityIndicatorView;
 ```
 
 
@@ -466,6 +476,8 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 
 ```objective-c
 - (void)cl_reloadData;
+
+- (void)cl_removePlaceholderViewWithSuperView;
 ```
 
 
@@ -577,6 +589,11 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 + (void)cl_asyncGetImageWithColor:(UIColor *)color
                              rect:(CGRect)rect
                        completion:(CLImage)completion;
+
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
+                             rect:(CGRect)rect
+                           radius:(CGFloat)radius
+                       completion:(CLImage)completion;
 ```
 
 ### 截取指定视图大小的截图@
@@ -669,6 +686,8 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 针对`UIKit`的`UIScreen`进行系统外的方法补充:
 
 ```objective-c
++ (CGSize)cl_getScreenSize;
+
 + (CGFloat)cl_getScreenWidth;
 
 + (CGFloat)cl_getScreenHeight;
@@ -711,6 +730,8 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 
 ```objective-c
 - (void)cl_reloadData;
+
+- (void)cl_removePlaceholderViewWithSuperView;
 ```
 
 
@@ -727,7 +748,22 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 
 针对`UIKit`的`UIViewController`进行系统外的方法补充:
 
+### UIViewControllerBackItem检测代理@
+
 ```objective-c
+@protocol CLNavigationControllerBackItemProtocol <NSObject>
+@optional
+
+- (BOOL)cl_navigationShouldPopOnBackButton;
+
+@end
+```
+
+###UIViewController+CLViewController方法@
+
+```objective-c
+- (BOOL)cl_navigationShouldPopOnBackButton;
+
 - (void)cl_setNavigationBarTranslucentWithBOOL:(BOOL)bools;
 
 - (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools;
