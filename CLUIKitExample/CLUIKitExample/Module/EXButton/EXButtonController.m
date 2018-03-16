@@ -82,7 +82,6 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
 }
 
 #pragma mark - 倒计时Button
-
 - (UIButton *)ex_starButton {
     
     CL_GET_METHOD_RETURN_OBJC(_ex_starButton);
@@ -96,9 +95,11 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
                     forState:UIControlStateNormal];
     [_ex_starButton setTitleColor:[UIColor whiteColor]
                          forState:UIControlStateNormal];
-    [_ex_starButton addTarget:self
-                       action:@selector(cl_buttonActions:)
-             forControlEvents:UIControlEventTouchUpInside];
+    
+    [_ex_starButton cl_addButtonActionComplete:^(UIButton *sender) {
+        
+        [self cl_buttonActions:sender];
+    }];
 
     return _ex_starButton;
 }
@@ -142,10 +143,12 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
                      forState:UIControlStateNormal];
     [_ex_clickButton setTitleColor:[UIColor whiteColor]
                           forState:UIControlStateNormal];
-    [_ex_clickButton addTarget:self
-                        action:@selector(cl_buttonActions:)
-              forControlEvents:UIControlEventTouchUpInside];
     
+    [_ex_clickButton cl_addButtonActionComplete:^(UIButton *sender) {
+        
+        [sender cl_showActivityIndicatorViewWithStyle:UIActivityIndicatorViewStyleGray];
+    }];
+
     return _ex_clickButton;
 }
 
