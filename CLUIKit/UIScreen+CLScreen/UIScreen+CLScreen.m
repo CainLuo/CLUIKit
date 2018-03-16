@@ -17,12 +17,16 @@
 
 @implementation UIScreen (CLScreen)
 
-#pragma mark - 获取屏幕宽度
+#pragma mark - 获取屏幕相关的
++ (CGSize)cl_getScreenSize {
+    
+    return [[UIScreen mainScreen] bounds].size;
+}
+
 + (CGFloat)cl_getScreenWidth {
     return [[UIScreen mainScreen] bounds].size.width;
 }
 
-#pragma mark - 获取屏幕高度
 + (CGFloat)cl_getScreenHeight {
     return [[UIScreen mainScreen] bounds].size.height;
 }
