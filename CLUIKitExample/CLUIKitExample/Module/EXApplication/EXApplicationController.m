@@ -24,6 +24,9 @@
     [self.ex_textViewString appendFormat:@"是否开启推送权限: %@\n", [UIApplication cl_getApplicationRemindersPermit] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"是否开启相册权限: %@\n", [UIApplication cl_getApplicationPhotosLibraryPermit] ? @"YES" : @"NO"];
     
+    [self.ex_textViewString appendString:@"----------App相关----------\n"];
+    [self.ex_textViewString appendFormat:@"获取App的启动图: %@\n", [UIApplication cl_getApplicationLaunchImage]];
+    
     [UIApplication cl_getApplicationMicrophonePermitWithBlock:^(BOOL granted) {
         
         [self.ex_textViewString appendFormat:@"是否开启麦克风: %@\n", granted ? @"YES" : @"NO"];

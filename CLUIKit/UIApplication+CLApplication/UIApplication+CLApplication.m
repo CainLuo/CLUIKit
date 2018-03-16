@@ -14,6 +14,8 @@
 //
 
 #import "UIApplication+CLApplication.h"
+#import "UIScreen+CLScreen.h"
+#import "NSURL+CLURL.h"
 
 #import <CoreLocation/CoreLocation.h>
 #import <Photos/Photos.h>
@@ -82,6 +84,54 @@
             block(granted);
         }
     }];
+}
+
+#pragma mark - Open URL
++ (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber {
+    
+    NSString *cl_tellPhoneNumber = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cl_tellPhoneNumber]];
+}
+
++ (void)cl_sendEmailWithEmailAddress:(NSString *)emailAddress {
+    
+    NSString *cl_emailAddress = [NSString stringWithFormat:@"mailto://:%@", emailAddress];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cl_emailAddress]];
+}
+
+#pragma mark - App相关
++ (UIImage *)cl_getApplicationLaunchImage {
+    
+    UIImage *__block cl_launchImage;
+    NSString *cl_interfaceOrientation;
+    
+    CGSize cl_screenSize = [UIScreen cl_getScreenSize];
+    
+    UIInterfaceOrientation cl_interfaceProentation = [[self sharedApplication] statusBarOrientation];
+    
+    if (cl_interfaceProentation == UIInterfaceOrientationLandscapeLeft || cl_interfaceProentation == UIInterfaceOrientationLandscapeRight) {
+        
+        cl_interfaceOrientation = @"Landscape";
+    } else {
+        
+        cl_interfaceOrientation = @"Portrait";
+    }
+    
+    NSArray<NSDictionary *> *cl_applicationImages = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    
+    [cl_applicationImages enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        CGSize cl_imageSize = CGSizeFromString(obj[@"UILaunchImageSize"]);
+        
+        if (CGSizeEqualToSize(cl_imageSize, cl_screenSize) && [cl_interfaceOrientation isEqualToString:obj[@"UILaunchImageOrientation"]]) {
+            
+            cl_launchImage = [UIImage imageNamed:obj[@"UILaunchImageName"]];
+        }
+    }];
+    
+    return cl_launchImage;
 }
 
 @end

@@ -15,6 +15,8 @@
 #import "UIViewController+CLViewController.h"
 #import <objc/runtime.h>
 
+#import "UIApplication+CLApplication.h"
+
 static void *AlertControllerKey = &AlertControllerKey;
 
 @implementation UIViewController (CLViewController)
@@ -52,7 +54,7 @@ static void *AlertControllerKey = &AlertControllerKey;
                                                              style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction *action) {
                                                                
-                                                               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cl_tellPhoneNumber]];
+                                                               [UIApplication cl_callPhoneWithPhoneNumber:cl_tellPhoneNumber];
                                                            }];
     
     [self cl_showAlertViewControllerWithTitle:title

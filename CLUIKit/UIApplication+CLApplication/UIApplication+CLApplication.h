@@ -62,4 +62,27 @@ typedef void (^CLPermissionBlock)(BOOL granted);
  */
 + (void)cl_getApplicationMicrophonePermitWithBlock:(CLPermissionBlock)block;
 
+#pragma mark - Open URL
+/**
+ 给指定的手机号码拨打电话
+
+ @param phoneNumber NSString
+ */
++ (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber;
+
+/**
+ 给指定的邮箱地址发邮件
+
+ @param emailAddress NSString
+ */
++ (void)cl_sendEmailWithEmailAddress:(NSString *)emailAddress;
+
+#pragma mark - App相关
+/**
+ 获取App启动图
+
+ @return UIImage
+ */
++ (UIImage *)cl_getApplicationLaunchImage;
+
 @end
