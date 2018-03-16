@@ -15,6 +15,11 @@
 #import "UIButton+CLButton.h"
 #import <objc/runtime.h>
 
+static const void *CLButtonActionKey = &CLButtonActionKey;
+
+static NSString *const kShowActivityIndicatorKey = @"kShowActivityIndicatorKey";
+static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
+
 @implementation UIButton (CLButton)
 
 #pragma mark - 修改点击区域
@@ -89,6 +94,60 @@
     });
     
     dispatch_resume(_timer);
+}
+
+#pragma mark - 添加UIButton点击方法
+- (void)cl_addButtonActionComplete:(CLButtonAction)complete {
+    
+    objc_setAssociatedObject(self, CLButtonActionKey, complete, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    
+    [self addTarget:self action:@selector(cl_buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)cl_buttonAction:(UIButton *)sender {
+    
+    CLButtonAction cl_buttonAction = objc_getAssociatedObject(self, CLButtonActionKey);
+    
+    if (cl_buttonAction) {
+        
+        cl_buttonAction(sender);
+    }
+}
+
+#pragma mark - 用UIActivityIndicatorView代替文字
+- (void)cl_showActivityIndicatorViewWithStyle:(UIActivityIndicatorViewStyle)style {
+    
+    UIActivityIndicatorView *cl_activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:style];
+    
+    cl_activityIndicatorView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    
+    [cl_activityIndicatorView startAnimating];
+    
+    NSString *cl_buttonTitleString = self.titleLabel.text;
+    
+    objc_setAssociatedObject(self, &kShowActivityIndicatorKey, cl_activityIndicatorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kHideActivityIndicatorKey, cl_buttonTitleString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [self setTitle:@""
+          forState:UIControlStateNormal];
+    
+    self.enabled = NO;
+    
+    [self addSubview:cl_activityIndicatorView];
+}
+
+- (void)cl_hideActivityIndicatorView {
+    
+    NSString *cl_buttonTitleString = (NSString *)objc_getAssociatedObject(self, &kHideActivityIndicatorKey);
+    
+    UIActivityIndicatorView *cl_activityIndicatorView = (UIActivityIndicatorView *)objc_getAssociatedObject(self, &kShowActivityIndicatorKey);
+    
+    [cl_activityIndicatorView removeFromSuperview];
+    
+    [self setTitle:cl_buttonTitleString
+          forState:UIControlStateNormal];
+    
+    self.enabled = YES;
 }
 
 @end

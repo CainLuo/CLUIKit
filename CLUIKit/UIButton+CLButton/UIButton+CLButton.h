@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, CLButtonStarStyle) {
  */
 typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time);
 
+typedef void (^CLButtonAction)(UIButton *sender);
+
 @interface UIButton (CLButton)
 
 /**
@@ -41,6 +43,7 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
  */
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
+#pragma mark - 倒计时方法
 /**
  倒计时方法
 
@@ -49,6 +52,25 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
  */
 - (void)cl_starButtonWithTime:(NSInteger)time
                      complete:(CLButtonStar)complete;
+
+#pragma mark - 添加UIButton点击方法
+/**
+ 给UIButton添加一个Action Block
+
+ @param complete CLButtonAction
+ */
+- (void)cl_addButtonActionComplete:(CLButtonAction)complete;
+
+#pragma mark - 用UIActivityIndicatorView代替文字
+/**
+ 显示UIActivityIndicatorView
+ */
+- (void)cl_showActivityIndicatorViewWithStyle:(UIActivityIndicatorViewStyle)style;
+
+/**
+ 隐藏UIActivityIndicatorView
+ */
+- (void)cl_hideActivityIndicatorView;
 
 @end
 
