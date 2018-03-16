@@ -39,6 +39,9 @@
 
 @interface UICollectionView (CLCollectionView)
 
+/**
+ 刷新并加载占位图
+ */
 - (void)cl_reloadData;
 
 /**

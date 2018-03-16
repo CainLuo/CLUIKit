@@ -30,6 +30,11 @@
 
 @property (nonatomic, strong) UIAlertController *cl_alertController;
 
+/**
+ 检测UIViewController的UINavigationController返回事件
+ 
+ @return BOOL
+ */
 - (BOOL)cl_navigationShouldPopOnBackButton;
 
 /**
