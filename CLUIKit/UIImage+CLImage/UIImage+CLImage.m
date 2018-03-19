@@ -729,7 +729,7 @@
                          size:(CGSize)size
                    completion:(CLImage)completion {
     
-    [self cl_performAsyncWithComplete:^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         UIGraphicsBeginImageContext(size);
         
@@ -739,15 +739,14 @@
         
         UIGraphicsEndImageContext();
         
-        [self cl_performMainThreadWithWait:NO
-                                  complete:^{
-           
-                                      if (completion) {
-                                          
-                                          completion(cl_resetSizeImage);
-                                      }
-                                  }];
-    }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (completion) {
+                
+                completion(cl_resetSizeImage);
+            }
+        });
+    });
 }
 
 + (CGSize)cl_getScaleImageWithImage:(UIImage *)image

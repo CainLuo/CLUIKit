@@ -7,6 +7,7 @@
 //
 
 #import "UIControl+CLControl.h"
+#import <objc/runtime.h>
 
 static const void *CLControlActionBlockArray = &CLControlActionBlockArray;
 
@@ -69,11 +70,12 @@ static const void *CLControlActionKey = &CLControlActionKey;
     
     NSMutableArray *cl_controlActionBlocksArray = objc_getAssociatedObject(self, CLControlActionBlockArray);
     
-    CL_GET_METHOD_RETURN_OBJC(cl_controlActionBlocksArray);
+    if (!cl_controlActionBlocksArray) {
     
-    cl_controlActionBlocksArray = [NSMutableArray array];
-    
-    objc_setAssociatedObject(self, CLControlActionBlockArray, cl_controlActionBlocksArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        cl_controlActionBlocksArray = [NSMutableArray array];
+        
+        objc_setAssociatedObject(self, CLControlActionBlockArray, cl_controlActionBlocksArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
     
     return cl_controlActionBlocksArray;
 }
