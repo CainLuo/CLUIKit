@@ -19,8 +19,8 @@
 
 @implementation EXImageController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
     [self ex_addConstraintsWithSuperView];
 }
@@ -31,8 +31,7 @@
     
     _ex_imageView = [[UIImageView alloc] init];
     
-    _ex_imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
+    _ex_imageView.contentMode     = UIViewContentModeScaleAspectFit;
     _ex_imageView.backgroundColor = [UIColor cl_colorWithHex:0xd8d8d8];
     
     return _ex_imageView;
@@ -65,7 +64,9 @@
                                @"创建条形码",
                                @"添加高斯模糊",
                                @"给图片添加圆角",
-                               @"给图片添加颜色和圆角"];
+                               @"给图片添加颜色和圆角",
+                               @"获取重置Size的图片",
+                               @"获取指定最长边的UIImage Size"];
     
     [self cl_showSheetViewControllerWithTitle:@"设置图片"
                                       message:@"设置您的图片"
@@ -144,7 +145,6 @@
                                     }];
         }
             break;
-            
         case 7: {
             
             [UIImage cl_asyncCornerImageWithRadius:50
@@ -155,11 +155,9 @@
                                     }];
         }
             break;
-            
         case 8: {
             
             [UIImage cl_asyncGetImageWithColor:[UIColor redColor]
-                                          rect:CGRectMake(0, 0, 100, 100)
                                         radius:50
                                     completion:^(UIImage *image) {
                 
@@ -167,7 +165,35 @@
                                     }];
         }
             break;
+        case 9: {
+            
+            [UIImage cl_resetSizeWithImage:[UIImage imageNamed:@"1"]
+                                      size:CGSizeMake(20, 20)
+                                completion:^(UIImage *image) {
+                
+                                    self.ex_imageView.image = image;
+                                }];
+            
+        }
+            break;
 
+        case 10: {
+            
+            UIImage *cl_image = [UIImage imageNamed:@"dog"];
+            
+            CGSize cl_iamgeSize = [UIImage cl_getScaleImageWithImage:cl_image
+                                                              length:200];
+            
+            [UIImage cl_resetSizeWithImage:cl_image
+                                      size:cl_iamgeSize
+                                completion:^(UIImage *image) {
+                                    
+                                    self.ex_imageView.image = image;
+                                }];
+            
+            NSLog(@"UIImage 的比例为: %@", NSStringFromCGSize(cl_iamgeSize));
+        }
+            break;
         default:
             break;
     }

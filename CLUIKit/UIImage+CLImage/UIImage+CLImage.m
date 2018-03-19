@@ -87,6 +87,18 @@
 }
 
 + (void)cl_asyncGetImageWithColor:(UIColor *)color
+                           radius:(CGFloat)radius
+                       completion:(CLImage)completion {
+    
+    CGRect cl_imageSize = CGRectMake(0, 0, radius * 2, radius * 2);
+    
+    [self cl_asyncGetImageWithColor:color
+                               rect:cl_imageSize
+                             radius:radius
+                         completion:completion];
+}
+
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
                              rect:(CGRect)rect
                            radius:(CGFloat)radius
                        completion:(CLImage)completion {
@@ -96,10 +108,8 @@
                          completion:^(UIImage *image) {
                              
                              [self cl_asyncCornerImageWithRadius:radius
-                                                              image:image
-                                                        borderWidth:0
-                                                        borderColor:nil
-                                                         completion:completion];
+                                                           image:image
+                                                      completion:completion];
                          }];
 }
 
@@ -712,6 +722,65 @@
             }
         });
     });
+}
+
+#pragma mark - 图片处理
++ (void)cl_resetSizeWithImage:(UIImage *)image
+                         size:(CGSize)size
+                   completion:(CLImage)completion {
+    
+    [self cl_performAsyncWithComplete:^{
+        
+        UIGraphicsBeginImageContext(size);
+        
+        [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        
+        UIImage *cl_resetSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+        
+        [self cl_performMainThreadWithWait:NO
+                                  complete:^{
+           
+                                      if (completion) {
+                                          
+                                          completion(cl_resetSizeImage);
+                                      }
+                                  }];
+    }];
+}
+
++ (CGSize)cl_getScaleImageWithImage:(UIImage *)image
+                             length:(CGFloat)length {
+    
+    CGFloat cl_resetW = 0.0f;
+    CGFloat cl_resetH = 0.0f;
+    
+    CGFloat cl_imageW = image.size.width;
+    CGFloat cl_imageH = image.size.height;
+    
+    if (cl_imageW > length || cl_imageH > length) {
+        
+        if (cl_imageW > cl_imageH) {
+            
+            cl_resetW = length;
+            cl_resetH = cl_resetW * cl_imageH / cl_imageW;
+            
+        } else if (cl_imageH > cl_imageW) {
+            
+            cl_resetH = length;
+            cl_resetW = cl_resetH * cl_imageW / cl_imageH;
+        } else {
+            
+            cl_resetW = length;
+            cl_resetH = length;
+        }
+    } else {
+        
+        return CGSizeMake(cl_imageW, cl_imageH);
+    }
+    
+    return CGSizeMake(cl_resetW, cl_resetH);
 }
 
 @end
