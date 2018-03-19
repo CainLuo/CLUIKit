@@ -207,10 +207,10 @@
     dispatch_async(cl_globalQueue, complete);
 }
 
-- (void)cl_performMainThreadWithComplete:(CLObject)complete
-                                  isWait:(BOOL)isWait {
+- (void)cl_performMainThreadWithWait:(BOOL)wait
+                            complete:(CLObject)complete {
 
-    if (isWait) {
+    if (wait) {
         
         dispatch_sync(dispatch_get_main_queue(), complete);
     } else {
