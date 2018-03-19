@@ -50,9 +50,19 @@
   - [UICollectionView占位图代理@](#UICollectionView占位图代理)
   - [UICollectionView刷新@](#UICollectionView刷新)
 - [UIColor+CLColor@](#UIColor+CLColor)
+- [UIControl+CLControl@](#UIControl+CLControl)
 - [UIDevice+CLDevice@](#UIDevice+CLDevice)
 - [UIFont+CLFont@](#UIFont+CLFont)
 - [UIImage+CLImage@](#UIImage+CLImage)
+  - [生成指定颜色的图片@](#生成指定颜色的图片@)
+  - [截取指定视图大小的截图@](#截取指定视图大小的截图@)
+  - [缩放指定比例的图片@](#缩放指定比例的图片@)
+  - [加载GIF图片@](#加载GIF图片@)
+  - [生成二维码@](#生成二维码@)
+  - [获取指定Bundle文件里的图片@](#获取指定Bundle文件里的图片@)
+  - [图片高斯模糊处理@](#图片高斯模糊处理@)
+  - [图片圆角处理@](图片圆角处理@)
+  - [图片处理](#图片处理)
 - [UINavigationItem+CLNavigationItem@](#UINavigationItem+CLNavigationItem)
 - [UIScreen+CLScreen@](#UIScreen+CLScreen)
 - [UITableView+CLTableView@](#UITableView+CLTableView)
@@ -454,6 +464,8 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
+@property (nonatomic, assign, readonly) BOOL cl_isSubmitting;
+
 - (void)cl_starButtonWithTime:(NSInteger)time
                      complete:(CLButtonStar)complete;
 
@@ -462,6 +474,22 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (void)cl_showActivityIndicatorViewWithStyle:(UIActivityIndicatorViewStyle)style;
 
 - (void)cl_hideActivityIndicatorView;
+
+- (void)cl_setNormalButtonWithImage:(UIImage *)image;
+
+- (void)cl_setHighlightedButtonWithImage:(UIImage *)image;
+
+- (void)cl_setSelectedButtonWithImage:(UIImage *)image;
+
+- (void)cl_setDisabledButtonWithImage:(UIImage *)image;
+
+- (UIImage *)cl_getNormalButtonImage;
+
+- (UIImage *)cl_getHighlightedButtonImage;
+
+- (UIImage *)cl_getSelectedButtonImage;
+
+- (UIImage *)cl_getDisabledButtonImage;
 ```
 
 
@@ -522,6 +550,39 @@ typedef void (^CLButtonAction)(UIButton *sender);
 + (UIColor *)cl_colorWithRed:(CGFloat)red
                        green:(CGFloat)green
                         blue:(CGFloat)blue;
+
++ (UIColor *)cl_configGradientWithBeginColor:(UIColor *)beginColor
+                                    endColor:(UIColor *)endColor
+                                      height:(CGFloat)height;
+```
+
+
+
+## UIControl+CLControl@
+
+针对`UIKit`的`UIControl`进行系统外的方法补充:
+
+```objective-c
+typedef void(^CLControlAction)(id sender);
+
+@interface CLControlActionBlockObject : NSObject
+
+@property (nonatomic, copy) CLControlAction cl_controlAction;
+
+@property (nonatomic, assign) UIControlEvents cl_controlEvents;
+
+- (void)cl_controlInvokeBlock:(id)sender;
+
+@end
+
+@interface UIControl (CLControl)
+
+- (void)cl_addControlActionWithEvents:(UIControlEvents)controlEvents
+                             complete:(CLControlAction)complete;
+
+- (void)cl_removeControlActionWithEvents:(UIControlEvents)controlEvents;
+
+@end
 ```
 
 
@@ -607,6 +668,10 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 + (void)cl_asyncGetImageWithColor:(UIColor *)color
                              rect:(CGRect)rect
+                       completion:(CLImage)completion;
+
++ (void)cl_asyncGetImageWithColor:(UIColor *)color
+                           radius:(CGFloat)radius
                        completion:(CLImage)completion;
 
 + (void)cl_asyncGetImageWithColor:(UIColor *)color
@@ -696,6 +761,17 @@ typedef void (^CLButtonAction)(UIButton *sender);
                           borderWidth:(CGFloat)borderWidth
                           borderColor:(UIColor *)borderColor
                            completion:(CLImage)completion;
+```
+
+### 图片处理
+
+```objective-c
++ (void)cl_resetSizeWithImage:(UIImage *)image
+                         size:(CGSize)size
+                   completion:(CLImage)completion;
+
++ (CGSize)cl_getScaleImageWithImage:(UIImage *)image
+                             length:(CGFloat)length;
 ```
 
 
