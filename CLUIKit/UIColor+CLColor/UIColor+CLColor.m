@@ -39,7 +39,6 @@
                            alpha:alphaValue];
 }
 
-#pragma mark - 十六进制字符串转颜色值
 + (UIColor *)cl_colorWithHexString:(NSString *)hexString {
     
     return [self cl_getColorWithHexString:hexString
@@ -101,7 +100,7 @@
                            alpha:1.0f];
 }
 
-#pragma mark - 常规三原色值
+#pragma mark - 三原色
 + (UIColor *)cl_colorWithRed:(CGFloat)red
                        green:(CGFloat)green
                         blue:(CGFloat)blue
@@ -121,6 +120,40 @@
                            green:green / 255.0f
                             blue:blue / 255.0f
                            alpha:1.0f];
+}
+
+#pragma mark - 设置渐变色
++ (UIColor *)cl_configGradientWithBeginColor:(UIColor *)beginColor
+                                    endColor:(UIColor *)endColor
+                                      height:(CGFloat)height {
+    
+    CGSize cl_colorSize = CGSizeMake(1, height);
+    
+    UIGraphicsBeginImageContextWithOptions(cl_colorSize, NO, 0);
+    
+    CGContextRef cl_contextRef = UIGraphicsGetCurrentContext();
+    
+    CGColorSpaceRef cl_colorSpaceRef = CGColorSpaceCreateDeviceRGB();
+    
+    NSArray *cl_colorArray = @[(id)beginColor.CGColor,
+                               (id)endColor.CGColor];
+    
+    CGGradientRef cl_gradientRef = CGGradientCreateWithColors(cl_colorSpaceRef,
+                                                              (__bridge CFArrayRef)cl_colorArray,
+                                                              NULL);
+    CGContextDrawLinearGradient(cl_contextRef,
+                                cl_gradientRef,
+                                CGPointMake(0, 0),
+                                CGPointMake(0, cl_colorSize.height),
+                                0);
+    
+    UIImage *cl_gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    CGGradientRelease(cl_gradientRef);
+    CGColorSpaceRelease(cl_colorSpaceRef);
+    UIGraphicsEndImageContext();
+    
+    return [UIColor colorWithPatternImage:cl_gradientImage];
 }
 
 @end

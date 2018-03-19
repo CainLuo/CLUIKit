@@ -49,7 +49,7 @@
     
     [self cl_showSheetViewControllerWithTitle:@"设置颜色"
                                       message:@"选择您要的颜色"
-                                 actionTitles:@[@"随机色", @"十六进制数值颜色值", @"十六进制字符颜色值", @"三原色"]
+                                 actionTitles:@[@"随机色", @"十六进制数值颜色值", @"十六进制字符颜色值", @"三原色", @"渐变色"]
                                       handler:^(UIAlertAction *action, NSUInteger idex) {
                                           
                                           [self ex_changeColorWithIndex:idex];
@@ -77,6 +77,13 @@
             self.view.backgroundColor = [UIColor cl_colorWithRed:120.0
                                                            green:20.0
                                                             blue:0.0];
+            
+            break;
+        case 4:
+            
+            self.view.backgroundColor = [UIColor cl_configGradientWithBeginColor:[UIColor greenColor]
+                                                                        endColor:[UIColor redColor]
+                                                                          height:[UIScreen cl_getScreenHeight]];
             
             break;
         default:

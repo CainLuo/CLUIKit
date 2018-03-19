@@ -23,6 +23,7 @@
  */
 + (UIColor *)cl_getARC4RandomColor;
 
+#pragma mark - 十六进制颜色值
 /**
  十六进制转UIColor
  
@@ -59,8 +60,9 @@
 + (UIColor *)cl_colorWithHexString:(NSString *)hexString
                              alpha:(CGFloat)alphaValue;
 
+#pragma mark - 三原色
 /**
- 常规的三原色, 并且可控制alpha
+ 三原色, 并且可控制alpha
 
  @param red CGFloat
  @param green CGFloat
@@ -74,7 +76,7 @@
                        alpha:(CGFloat)alpha;
 
 /**
- 常规的三原色
+ 三原色
  
  @param red CGFloat
  @param green CGFloat
@@ -84,5 +86,17 @@
 + (UIColor *)cl_colorWithRed:(CGFloat)red
                        green:(CGFloat)green
                         blue:(CGFloat)blue;
+
+/**
+ 设置渐变色
+
+ @param beginColor 开始的颜色
+ @param endColor 结束的颜色
+ @param height 颜色的高度
+ @return UIColor
+ */
++ (UIColor *)cl_configGradientWithBeginColor:(UIColor *)beginColor
+                                    endColor:(UIColor *)endColor
+                                      height:(CGFloat)height;
 
 @end
