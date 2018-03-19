@@ -16,9 +16,16 @@
 #import <objc/runtime.h>
 
 static const void *CLButtonActionKey = &CLButtonActionKey;
+static const void *CLButtonSubmitKey = &CLButtonSubmitKey;
 
 static NSString *const kShowActivityIndicatorKey = @"kShowActivityIndicatorKey";
 static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
+
+@interface UIButton ()
+
+@property (nonatomic, assign, readwrite) BOOL cl_isSubmitting;
+
+@end
 
 @implementation UIButton (CLButton)
 
@@ -57,6 +64,17 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
     CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.cl_clickAreaEdgeInsets);
     
     return CGRectContainsPoint(hitFrame, point);
+}
+
+#pragma mark - 是否正在提交
+- (void)setCl_isSubmitting:(BOOL)cl_isSubmitting {
+    
+    objc_setAssociatedObject(self, CLButtonSubmitKey, @(cl_isSubmitting), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (BOOL)cl_isSubmitting {
+    
+    return [objc_getAssociatedObject(self, CLButtonSubmitKey) boolValue];
 }
 
 #pragma mark - 倒计时方法
@@ -132,6 +150,7 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
           forState:UIControlStateNormal];
     
     self.enabled = NO;
+    self.cl_isSubmitting = YES;
     
     [self addSubview:cl_activityIndicatorView];
 }
@@ -148,6 +167,53 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
           forState:UIControlStateNormal];
     
     self.enabled = YES;
+    self.cl_isSubmitting = NO;
+}
+
+#pragma mark - 设置UIButton图片
+- (void)cl_setNormalButtonWithImage:(UIImage *)image {
+    
+    [self setImage:image
+          forState:UIControlStateNormal];
+}
+
+- (void)cl_setHighlightedButtonWithImage:(UIImage *)image {
+    
+    [self setImage:image
+          forState:UIControlStateHighlighted];
+}
+
+- (void)cl_setSelectedButtonWithImage:(UIImage *)image {
+    
+    [self setImage:image
+          forState:UIControlStateSelected];
+}
+
+- (void)cl_setDisabledButtonWithImage:(UIImage *)image {
+    
+    [self setImage:image
+          forState:UIControlStateDisabled];
+}
+
+#pragma mark - 获取UIButton的图片
+- (UIImage *)cl_getNormalButtonImage {
+    
+    return [self imageForState:UIControlStateNormal];
+}
+
+- (UIImage *)cl_getHighlightedButtonImage {
+    
+    return [self imageForState:UIControlStateHighlighted];
+}
+
+- (UIImage *)cl_getSelectedButtonImage {
+    
+    return [self imageForState:UIControlStateSelected];
+}
+
+- (UIImage *)cl_getDisabledButtonImage {
+    
+    return [self imageForState:UIControlStateDisabled];
 }
 
 @end

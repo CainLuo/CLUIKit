@@ -43,6 +43,11 @@ typedef void (^CLButtonAction)(UIButton *sender);
  */
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
+/**
+ 按钮是否正在提交中
+ */
+@property (nonatomic, assign, readonly) BOOL cl_isSubmitting;
+
 #pragma mark - 倒计时方法
 /**
  倒计时方法
@@ -71,6 +76,64 @@ typedef void (^CLButtonAction)(UIButton *sender);
  隐藏UIActivityIndicatorView
  */
 - (void)cl_hideActivityIndicatorView;
+
+#pragma mark - 设置UIButton图片
+/**
+ 设置UIButton Normal状态下的图片
+
+ @param image UIImage
+ */
+- (void)cl_setNormalButtonWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Highlighted状态下的图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setHighlightedButtonWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Selected状态下的图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setSelectedButtonWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Disabled状态下的图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setDisabledButtonWithImage:(UIImage *)image;
+
+#pragma mark - 获取UIButton的图片
+/**
+ 获取UIButton Normal状态下的图片
+
+ @return UIImage
+ */
+- (UIImage *)cl_getNormalButtonImage;
+
+/**
+ 获取UIButton Highlighted状态下的图片
+ 
+ @return UIImage
+ */
+- (UIImage *)cl_getHighlightedButtonImage;
+
+/**
+ 获取UIButton Selected状态下的图片
+ 
+ @return UIImage
+ */
+- (UIImage *)cl_getSelectedButtonImage;
+
+/**
+ 获取UIButton Disabled状态下的图片
+ 
+ @return UIImage
+ */
+- (UIImage *)cl_getDisabledButtonImage;
 
 @end
 

@@ -53,9 +53,8 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
         cl_button.cl_buttomImageStyle = cl_buttonStyle;
         cl_button.backgroundColor     = [UIColor cl_getARC4RandomColor];
         
+        [cl_button cl_setNormalButtonWithImage:[UIImage imageNamed:@"icon1"]];
         [cl_button setTitle:[NSString stringWithFormat:@"按钮%ld", idx]
-                      forState:UIControlStateNormal];
-        [cl_button setImage:[UIImage imageNamed:@"icon1"]
                       forState:UIControlStateNormal];
         [cl_button addTarget:self
                       action:@selector(cl_buttonActions:)
@@ -106,6 +105,8 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
 
 - (void)cl_buttonActions:(UIButton *)sender {
     
+    NSLog(@"UIButton Normal状态下的图片: %@", [sender cl_getNormalButtonImage]);
+    
     if (sender.tag == EXButtonTypeStar) {
         
         [sender cl_starButtonWithTime:10
@@ -147,6 +148,16 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     [_ex_clickButton cl_addButtonActionComplete:^(UIButton *sender) {
         
         [sender cl_showActivityIndicatorViewWithStyle:UIActivityIndicatorViewStyleGray];
+        
+        NSLog(@"按钮是否正在加载中: %@", sender.cl_isSubmitting ? @"YES" : @"NO");
+        
+        [NSObject cl_performWithAfterSecond:2.0f
+                                   complete:^{
+                                       
+                                       [sender cl_hideActivityIndicatorView];
+                                       
+                                       NSLog(@"2秒后按钮是否正在加载中: %@", sender.cl_isSubmitting ? @"YES" : @"NO");
+                                   }];
     }];
 
     return _ex_clickButton;
