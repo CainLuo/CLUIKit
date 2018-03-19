@@ -56,6 +56,9 @@
 #pragma mark - UIColor+CLColor
 #import "UIColor+CLColor.h"
 
+#pragma mark - UIControl+CLControl
+#import "UIControl+CLControl.h"
+
 #pragma mark - UIDevice+CLDevice
 #import "UIDevice+CLDevice.h"
 

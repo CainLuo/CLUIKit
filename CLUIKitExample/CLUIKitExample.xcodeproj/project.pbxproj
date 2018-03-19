@@ -75,6 +75,7 @@
 		A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */; };
 		A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F6203ACFD10015964F /* EXTableViewController.m */; };
 		BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */; };
+		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +213,8 @@
 		A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewViewModel.m; sourceTree = "<group>"; };
 		A4DB71F5203ACFD10015964F /* EXTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewController.h; sourceTree = "<group>"; };
 		A4DB71F6203ACFD10015964F /* EXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewController.m; sourceTree = "<group>"; };
+		BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
+		BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
 		E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -551,6 +554,7 @@
 				A4DB714C203802FC0015964F /* UIButton+CLButton */,
 				A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */,
 				A4DB7177203802FC0015964F /* UIColor+CLColor */,
+				BFC89ACB205F679600A04A58 /* UIControl+CLControl */,
 				A4DB7146203802FC0015964F /* UIDevice+CLDevice */,
 				A4DB716E203802FC0015964F /* UIFont+CLFont */,
 				A4DB7171203802FC0015964F /* UIImage+CLImage */,
@@ -1041,6 +1045,15 @@
 			path = EXTableView;
 			sourceTree = "<group>";
 		};
+		BFC89ACB205F679600A04A58 /* UIControl+CLControl */ = {
+			isa = PBXGroup;
+			children = (
+				BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */,
+				BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */,
+			);
+			path = "UIControl+CLControl";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1193,6 +1206,7 @@
 				A4DB71D120381AA80015964F /* EXAlertBaseModel.m in Sources */,
 				A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */,
 				A4DB7138203800530015964F /* main.m in Sources */,
+				BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */,
 				A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */,
 				A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */,
 				A4DB71C1203812700015964F /* EXRootDataSource.m in Sources */,
