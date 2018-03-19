@@ -83,10 +83,10 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
-
 ## CLCollectionViewController@
 
 `CLCollectionViewController`是对系统`UIViewController + UICollectionView`的封装并添加了一些特性:
+
 
 ### UICollectionView与MJRefresh@
 
@@ -110,12 +110,14 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_pullUpEndRefresh;
 ```
 
+
 ### UICollectionView代理与数据源@
 
 ```objective-c
 - (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
                           dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
 ```
+
 
 ### 注册类
 
@@ -198,6 +200,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_stopCaptureSessionRunning;
 ```
 
+
 ### 获取数据(Block)@
 
 ```objective-c
@@ -205,6 +208,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 @property (nonatomic, copy) void(^cl_scanQRCodeGetMetadataStringValue)(NSString *stringValue);
 ```
+
 
 ### 获取数据(Delegate)@
 
@@ -225,6 +229,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 - (instancetype)initTableViewControllerWithStyle:(UITableViewStyle)style;
 ```
+
 
 ### UITableView与MJRefresh@
 
@@ -247,6 +252,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 - (void)cl_pullUpEndRefresh;
 ```
+
 
 ### UITableView代理与数据源@
 
@@ -404,6 +410,8 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 - (instancetype)initViewControllerViewModelWithController:(CLViewController *)controller;
 ```
 
+
+
 ## UIApplication+CLApplication@
 
 针对`UIKit`的`UIApplication`进行系统外的方法补充:
@@ -420,6 +428,12 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 + (BOOL)cl_getApplicationPhotosLibraryPermit;
 
 + (void)cl_getApplicationMicrophonePermitWithBlock:(CLPermissionBlock)block;
+
++ (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber;
+
++ (void)cl_sendEmailWithEmailAddress:(NSString *)emailAddress;
+
++ (UIImage *)cl_getApplicationLaunchImage;
 ```
 
 
@@ -472,6 +486,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 @end
 ```
 
+
 ### UICollectionView刷新@
 
 ```objective-c
@@ -515,6 +530,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 针对`UIKit`的`UIDevice`进行系统外的方法补充:
 
+
 ### 设备相关@
 
 ```objective-c
@@ -529,6 +545,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 + (NSString *)cl_getCurrentDeviceModelName;
 ```
 
+
 ### CPU相关@
 
 ```objective-c
@@ -539,6 +556,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 + (NSArray *)cl_getCurrentDeviceSingleCoreCPUUse;
 
 ```
+
 
 ### 网络相关@
 
@@ -580,6 +598,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 针对`UIKit`的`UIImage`进行系统外的方法补充:
 
+
 ### 生成指定颜色的图片@
 
 ```objective-c
@@ -596,11 +615,13 @@ typedef void (^CLButtonAction)(UIButton *sender);
                        completion:(CLImage)completion;
 ```
 
+
 ### 截取指定视图大小的截图@
 
 ```objective-c
 + (UIImage *)cl_getImageForView:(UIView *)view;
 ```
+
 
 ### 缩放指定比例的图片@
 
@@ -609,6 +630,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
                           image:(UIImage *)image
                      completion:(CLImage)completion;
 ```
+
 
 ### 加载GIF图片@
 
@@ -619,6 +641,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 + (void)cl_asyncLoadGIFImageWithData:(NSData *)data
                           completion:(CLImage)completion;
 ```
+
 
 ### 生成二维码@
 
@@ -631,6 +654,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
                                  completion:(CLImage)completion;
 ```
 
+
 ### 生成条形码@
 
 ```objective-c
@@ -642,12 +666,14 @@ typedef void (^CLButtonAction)(UIButton *sender);
                                      completion:(CLImage)completion;
 ```
 
+
 ### 获取指定Bundle文件里的图片@
 
 ```objective-c
 + (UIImage *)cl_getImageWithBundleName:(NSString *)bundle
                              imageName:(NSString *)imageName;
 ```
+
 
 ### 图片高斯模糊处理@
 
@@ -656,6 +682,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
                             image:(UIImage *)image
                        completion:(CLImage)completion;
 ```
+
 
 ### 图片圆角处理@
 
@@ -707,6 +734,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 针对`UIKit`的`UITableView`进行系统外的方法补充:
 
+
 ### UITableView占位代理@
 
 ```objective-c
@@ -725,6 +753,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 @end
 
 ```
+
 
 ### UITableView刷新@
 
@@ -748,6 +777,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 针对`UIKit`的`UIViewController`进行系统外的方法补充:
 
+
 ### UIViewControllerBackItem检测代理@
 
 ```objective-c
@@ -759,7 +789,8 @@ typedef void (^CLButtonAction)(UIButton *sender);
 @end
 ```
 
-###UIViewController+CLViewController方法@
+
+### UIViewController+CLViewController方法@
 
 ```objective-c
 - (BOOL)cl_navigationShouldPopOnBackButton;
