@@ -74,6 +74,8 @@
 #pragma mark - UIScreen+CLScreen
 #import "UIScreen+CLScreen.h"
 
+#import "UIScrollView+CLScrollView.h"
+
 #pragma mark - Category
 #import "UITableView+CLTableView.h"
 
@@ -82,5 +84,3 @@
 
 #pragma mark - UIViewController+CLViewController
 #import "UIViewController+CLViewController.h"
-
-
