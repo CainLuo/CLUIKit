@@ -45,8 +45,12 @@
 
 - (NSArray *)cl_popToViewControllerWithLevel:(NSUInteger)level
                                     animated:(BOOL)animated {
-
-    if (self.viewControllers.count > level) {
+    
+    if (level == 0 || self.viewControllers.count < level) {
+        
+        return [self popToRootViewControllerAnimated:animated];
+        
+    } else {
         
         NSUInteger cl_index = self.viewControllers.count - level - 1;
         
@@ -54,10 +58,6 @@
         
         return [self popToViewController:cl_viewController
                                 animated:animated];
-        
-    } else {
-        
-        return [self popToRootViewControllerAnimated:animated];
     }
 }
 

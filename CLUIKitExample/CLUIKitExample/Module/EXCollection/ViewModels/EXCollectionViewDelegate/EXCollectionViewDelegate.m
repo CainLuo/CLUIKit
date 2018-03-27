@@ -14,6 +14,9 @@
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"点击了第%ld条Cell", indexPath.row);
+    
+    [self.cl_viewModel.cl_collectionViewController.navigationController cl_popToViewControllerWithLevel:0
+                                                                                               animated:YES];
 }
 
 - (UIView *)cl_placeholderView {
