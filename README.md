@@ -63,6 +63,7 @@
   - [图片高斯模糊处理@](#图片高斯模糊处理@)
   - [图片圆角处理@](图片圆角处理@)
   - [图片处理](#图片处理)
+- [UINavigationController+CLNavigationController@](#UINavigationController+CLNavigationController)
 - [UINavigationItem+CLNavigationItem@](#UINavigationItem+CLNavigationItem)
 - [UIScreen+CLScreen@](#UIScreen+CLScreen)
 - [UITableView+CLTableView@](#UITableView+CLTableView)
@@ -188,6 +189,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 @property (nonatomic, strong) UIColor *cl_tintColor;
 
 @property (nonatomic, strong) UIColor *cl_foregroundColor;
+
+@property (nonatomic, strong) UIImage *cl_shadowImage;
 ```
 
 
@@ -776,6 +779,26 @@ typedef void(^CLControlAction)(id sender);
 
 
 
+## UINavigationController+CLNavigationController
+
+针对`UIKit`的`UINavigationController`进行系统外的方法补充:
+
+```objective-c
+- (UIViewController *)cl_findViewControllerWithClassName:(NSString *)className;
+
+- (NSUInteger)cl_getIndexWithViewController:(UIViewController *)viewController;
+
+- (UIViewController *)cl_getFirstViewController;
+
+- (NSArray *)cl_popToViewControllerWithClassName:(NSString *)className
+                                        animated:(BOOL)animated;
+
+- (NSArray *)cl_popToViewControllerWithLevel:(NSUInteger)level
+                                    animated:(BOOL)animated;
+```
+
+
+
 ## UINavigationItem+CLNavigationItem@
 
 针对`UIKit`的`UINavigationItem`进行系统外的方法补充:
@@ -802,6 +825,22 @@ typedef void(^CLControlAction)(id sender);
 + (CGFloat)cl_getNavigationBarHeight;
 
 + (CGFloat)cl_getTabBarHeight;
+```
+
+
+
+## UIScrollView+CLScrollView
+
+针对`UIKit`的`UIScrollView`进行系统外的方法补充:
+
+```objective-c
+- (void)cl_scrollViewToTopWithAnimated:(BOOL)animated;
+
+- (void)cl_scrollViewToLeftWithAnimated:(BOOL)animated;
+
+- (void)cl_scrollViewToBottomWithAnimated:(BOOL)animated;
+
+- (void)cl_scrollViewToRightWithAnimated:(BOOL)animated;
 ```
 
 
@@ -845,7 +884,37 @@ typedef void(^CLControlAction)(id sender);
 
 针对`UIKit`的`UIView`进行系统外的方法补充:
 
-> 这里没有提供外部的API, 内部实现在iOS 11修改UINavigationBar backItem的标题, 如果不需要修改的话, 请在CLUIKit.h文件注释#import "UIView+CLView.h"
+> 内部实现在iOS 11修改UINavigationBar backItem的标题, 如果不需要修改的话, 请在CLUIKit.h文件注释#import "UIView+CLView.h"
+
+
+
+```objective-c
+typedef void (^CLGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
+
+@property (nonatomic, assign) CGSize cl_size;
+
+@property (nonatomic, assign) CGFloat cl_width;
+@property (nonatomic, assign) CGFloat cl_height;
+@property (nonatomic, assign) CGFloat cl_top;
+@property (nonatomic, assign) CGFloat cl_left;
+@property (nonatomic, assign) CGFloat cl_bottom;
+@property (nonatomic, assign) CGFloat cl_right;
+@property (nonatomic, assign) CGFloat cl_centerX;
+@property (nonatomic, assign) CGFloat cl_centerY;
+
+- (void)cl_addTapGestureRecognizerWithBlock:(CLGestureActionBlock)block;
+
+- (void)cl_addLongPressGestureRecognizerWithBlock:(CLGestureActionBlock)block;
+
+- (id)cl_getSubViewWithSubViewClass:(Class)objcClass;
+
+- (id)cl_getSuperViewWithSuperViewClass:(Class)objcClass;
+
+- (BOOL)cl_resignFirstResponder;
+
+- (UIView *)cl_getFirstResponder;
+
+```
 
 
 
