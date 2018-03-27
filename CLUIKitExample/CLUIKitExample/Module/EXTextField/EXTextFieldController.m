@@ -21,6 +21,8 @@
     [super viewDidLoad];
     
     [self cl_addConstraintsWithSuperView];
+    
+    NSLog(@"%@", [self.view cl_getFirstResponder]);
 }
 
 - (CLTextField *)cl_lineTextField {
@@ -33,6 +35,8 @@
     _cl_lineTextField.cl_lineColor     = [UIColor cl_getARC4RandomColor];
     _cl_lineTextField.cl_textFieldType = CLTextFieldBottomLineType;
     
+    [_cl_lineTextField becomeFirstResponder];
+
     return _cl_lineTextField;
 }
 

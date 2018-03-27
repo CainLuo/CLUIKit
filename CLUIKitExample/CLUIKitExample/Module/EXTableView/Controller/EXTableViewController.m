@@ -32,6 +32,12 @@
     [self.cl_tableView cl_reloadData];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self ex_addConstraintsWithSuperView];
+}
+
 - (void)cl_dropDownRefresh {
     
     [self.ex_tableViewViewModel cl_tableViewHTTPRequest];
@@ -39,7 +45,7 @@
 
 - (void)cl_pullUpRefresh {
     
-    [self.ex_tableViewViewModel cl_tableViewHTTPRequest];
+
 }
 
 - (EXTableViewDelegate *)ex_tableViewDelegate {
@@ -67,6 +73,24 @@
     _ex_tableViewDataSource = [[EXTableViewDataSource alloc] initTableViewDataSourceWithViewModel:self.ex_tableViewViewModel];
     
     return _ex_tableViewDataSource;
+}
+
+- (void)ex_addConstraintsWithSuperView {
+    
+    [self.cl_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        } else {
+            
+            (void)make.edges;
+        }
+    }];
+
 }
 
 @end

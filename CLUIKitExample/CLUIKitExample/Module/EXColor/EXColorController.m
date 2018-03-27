@@ -22,10 +22,28 @@
     
     [self.view addSubview:self.ex_colorButton];
     
+//    self.ex_colorButton.cl_centerX = self.view.cl_centerX;
+//    self.ex_colorButton.cl_centerY = self.view.cl_centerY;
+//    self.ex_colorButton.cl_width   = 100;
+//    self.ex_colorButton.cl_height  = 50;
+    
     [self.ex_colorButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+
         (void)make.center;
     }];
+    
+    [self.view cl_addTapGestureRecognizerWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        
+        NSLog(@"哈哈哈哈哈");
+    }];
+    
+    [self.view cl_addLongPressGestureRecognizerWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        
+        NSLog(@"嘿嘿嘿嘿");        
+    }];
+    
+    NSLog(@"%@\n%@", [self.view cl_getSubViewWithSubViewClass:[UIButton class]], self.ex_colorButton);
+    NSLog(@"%@\n%@", [self.ex_colorButton cl_getSuperViewWithSuperViewClass:[UIView class]], self.view);
 }
 
 - (UIButton *)ex_colorButton {

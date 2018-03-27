@@ -23,7 +23,7 @@
         
     } else {
      
-        for (NSInteger i = 0; i < 10; i++) {
+        for (NSInteger i = 0; i < 30; i++) {
             
             [self.cl_dataSource addObject:[NSString stringWithFormat:@"第%ld条Cell", i]];
         }

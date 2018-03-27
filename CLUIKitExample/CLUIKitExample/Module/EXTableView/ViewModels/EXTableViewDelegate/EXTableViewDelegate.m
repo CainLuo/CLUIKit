@@ -15,6 +15,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
     
+    [tableView cl_scrollViewToBottomWithAnimated:YES];
+    
     NSLog(@"点击了: %@", self.cl_viewModel.cl_dataSource[indexPath.row]);
 }
 

@@ -76,6 +76,8 @@
 		A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F6203ACFD10015964F /* EXTableViewController.m */; };
 		BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */; };
 		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
+		BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */; };
+		BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,6 +217,10 @@
 		A4DB71F6203ACFD10015964F /* EXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewController.m; sourceTree = "<group>"; };
 		BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
 		BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
+		BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigationController.h"; sourceTree = "<group>"; };
+		BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CLNavigationController.m"; sourceTree = "<group>"; };
+		BFD172D3206A0AB2003C2E2F /* UIScrollView+CLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CLScrollView.h"; sourceTree = "<group>"; };
+		BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CLScrollView.m"; sourceTree = "<group>"; };
 		E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -558,8 +564,10 @@
 				A4DB7146203802FC0015964F /* UIDevice+CLDevice */,
 				A4DB716E203802FC0015964F /* UIFont+CLFont */,
 				A4DB7171203802FC0015964F /* UIImage+CLImage */,
+				BFD172CA2069E90C003C2E2F /* UINavigationController+CLNavigationController */,
 				A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */,
 				A4DB7181203802FC0015964F /* UIScreen+CLScreen */,
+				BFD172D2206A0A9A003C2E2F /* UIScrollView+CLScrollView */,
 				A4DB7184203802FC0015964F /* UITableView+CLTableView */,
 				A42FEFE2203DC44C0054C8A3 /* UIView+CLView */,
 				A4DB7143203802FC0015964F /* UIViewController+CLViewController */,
@@ -1054,6 +1062,24 @@
 			path = "UIControl+CLControl";
 			sourceTree = "<group>";
 		};
+		BFD172CA2069E90C003C2E2F /* UINavigationController+CLNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */,
+				BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */,
+			);
+			path = "UINavigationController+CLNavigationController";
+			sourceTree = "<group>";
+		};
+		BFD172D2206A0A9A003C2E2F /* UIScrollView+CLScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BFD172D3206A0AB2003C2E2F /* UIScrollView+CLScrollView.h */,
+				BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */,
+			);
+			path = "UIScrollView+CLScrollView";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1192,6 +1218,7 @@
 			files = (
 				A4AB1CCE203C19B2005026E8 /* EXScreenController.m in Sources */,
 				A4DB7197203802FC0015964F /* CLCollectionViewDelegate.m in Sources */,
+				BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */,
 				A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */,
 				A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */,
 				A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */,
@@ -1241,6 +1268,7 @@
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
 				A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */,
 				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
+				BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */,
 				A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */,
 				A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */,
 				A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */,
