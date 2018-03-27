@@ -40,6 +40,12 @@
     ex_rootNavigationController.cl_backgroundImage = [UIImage imageNamed:@"navigationBarImage"];
     ex_rootNavigationController.cl_foregroundColor = [UIColor whiteColor];
 
+    [UIImage cl_asyncGetImageWithColor:[UIColor cl_getARC4RandomColor]
+                            completion:^(UIImage *image) {
+        
+                                ex_rootNavigationController.cl_shadowImage = image;
+                            }];
+    
     UITabBarController *ex_tabBarController = [[UITabBarController alloc] init];
     
     ex_tabBarController.viewControllers = @[ex_rootNavigationController];

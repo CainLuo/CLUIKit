@@ -31,4 +31,9 @@
  */
 @property (nonatomic, strong) UIColor *cl_foregroundColor;
 
+/**
+ 设置UINavigationBar的Shadow Image
+ */
+@property (nonatomic, strong) UIImage *cl_shadowImage;
+
 @end

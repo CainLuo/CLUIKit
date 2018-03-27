@@ -56,4 +56,11 @@
     [self.navigationBar setTitleTextAttributes:cl_dictionary];
 }
 
+- (void)setCl_shadowImage:(UIImage *)cl_shadowImage {
+    
+    _cl_shadowImage = cl_shadowImage;
+    
+    [self.navigationBar setShadowImage:cl_shadowImage];
+}
+
 @end
