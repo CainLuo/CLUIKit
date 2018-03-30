@@ -27,9 +27,12 @@
   - [UICollectionView与MJRefresh@](#UICollectionView与MJRefresh)
   - [UICollectionView代理与数据源@](#代理与数据源)
   - [注册类@](#注册类)
-- [CLCollectionViewViewModel@](#CLCollectionViewViewModel)
-- [CLCollectionViewDelegate@](#CLCollectionViewDelegate)
+- ​
 - [CLCollectionViewDataSource@](#CLCollectionViewDataSource)
+- [CLCollectionViewDelegate@](#CLCollectionViewDelegate)
+- [CLCollectionViewDragDelegate@](#CLCollectionViewDragDelegate)
+- [CLCollectionViewDropDelegate@](#CLCollectionViewDropDelegate)
+- [CLCollectionViewViewModel@](#CLCollectionViewViewModel)
 - [CLNavigationController@](#CLNavigationController)
 - [CLScanQRCodeController@](#CLScanQRCodeController)
   - [获取数据(Block)@](#获取数据(Block))
@@ -39,6 +42,8 @@
   - [UITableView代理与数据源@](#UITableView代理与数据源)
 - [CLTableViewDataSource@](#CLTableViewDataSource)
 - [CLTableViewDelegate@](#CLTableViewDelegate)
+- [CLTableViewDragDelegate@](#CLTableViewDragDelegate)
+- [CLTableViewDropDelegate@](#CLTableViewDropDelegate)
 - [CLTableViewViewModel@](#CLTableViewViewModel)
 - [CLTextField@](#CLTextField)
 - [CLToolBarListView@](#CLToolBarListView)
@@ -127,6 +132,9 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 ```objective-c
 - (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
                           dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
+
+- (void)cl_setCollectionViewDragDelegate:(_Nullable id <UICollectionViewDragDelegate>)dragDelegate
+                            dropDelegate:(_Nullable id <UICollectionViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
 ```
 
 
@@ -159,6 +167,30 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 @property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
 
 - (instancetype)initCollectionViewDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
+```
+
+
+
+## CLCollectionViewDragDelegate@
+
+`CLCollectionViewDragDelegate`是`CLCollectionViewController`的代理, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
+
+- (instancetype)initCollectionViewDragDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
+```
+
+
+
+## CLCollectionViewDropDelegate@
+
+`CLCollectionViewDropDelegate`是`CLCollectionViewController`的代理, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
+
+- (instancetype)initCollectionViewDropDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
 ```
 
 
@@ -272,6 +304,9 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 ```objective-c
 - (void)cl_setTableViewDelegate:(_Nullable id <UITableViewDelegate>)delegate
                      dataSource:(_Nullable id <UITableViewDataSource>)dataSource;
+
+- (void)cl_setTableViewDragDelegate:(_Nullable id <UITableViewDragDelegate>)dragDelegate
+                       dropDelegate:(_Nullable id <UITableViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
 ```
 
 
@@ -296,6 +331,30 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 @property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
 
 - (instancetype)initTableViewDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
+```
+
+
+
+## CLTableViewDragDelegate@
+
+`CLTableViewDragDelegate`是`CLTableViewController`的代理, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
+
+- (instancetype)initTableViewDragDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
+```
+
+
+
+## CLTableViewDropDelegate@
+
+`CLTableViewDropDelegate`是`CLTableViewController`的代理, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
+
+- (instancetype)initTableViewDropDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
 ```
 
 
@@ -493,6 +552,38 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (UIImage *)cl_getSelectedButtonImage;
 
 - (UIImage *)cl_getDisabledButtonImage;
+
+- (void)cl_setNormalButtonWithTitle:(NSString *)title;
+
+- (void)cl_setHighlightedButtonWithTitle:(NSString *)title;
+
+- (void)cl_setSelectedButtonWithTitle:(NSString *)title;
+
+- (void)cl_setDisabledButtonWithTitle:(NSString *)title;
+
+- (NSString *)cl_getNormalButtonTitle;
+
+- (NSString *)cl_getHighlightedButtonTitle;
+
+- (NSString *)cl_getSelectedButtonTitle;
+
+- (NSString *)cl_getDisabledButtonTitle;
+
+- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color;
+
+- (void)cl_setHighlightedButtonWithColor:(UIColor *)color;
+
+- (void)cl_setSelectedButtonWithColor:(UIColor *)color;
+
+- (void)cl_setDisabledButtonWithColor:(UIColor *)color;
+
+- (UIColor *)cl_getNormalButtonTitleColor;
+
+- (UIColor *)cl_getHighlightedButtonTitleColor;
+
+- (UIColor *)cl_getSelectedButtonTitleColor;
+
+- (UIColor *)cl_getDisabledButtonTitleColor;
 ```
 
 
