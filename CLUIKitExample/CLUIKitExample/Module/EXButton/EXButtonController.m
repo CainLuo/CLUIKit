@@ -28,43 +28,45 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     
     [self cl_setNavigationBarTranslucentWithBOOL:NO];
     
-    [self cl_imageButton];
+    [self ex_imageButton];
     
-    [self cl_addConstraintsWithSuperView];
+    [self ex_addConstraintsWithSuperView];
 }
 
 #pragma mark - 修改Button图片的显示位置
-- (void)cl_imageButton {
+- (void)ex_imageButton {
     
-    NSArray *cl_buttonStyles = @[@(CLButtonImageTopStyle),
+    NSArray *ex_buttonStyles = @[@(CLButtonImageTopStyle),
                                  @(CLButtonImageLeftStyle),
                                  @(CLButtonImageBottomStyle),
                                  @(CLButtonImageRightStyle)];
     
-    [cl_buttonStyles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [ex_buttonStyles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        CLButtonStyle cl_buttonStyle = (CLButtonStyle)[obj integerValue];
+        CLButtonStyle ex_buttonStyle = (CLButtonStyle)[obj integerValue];
         
-        CLButton *cl_button = [[CLButton alloc] init];
+        CLButton *ex_button = [[CLButton alloc] init];
         
-        cl_button.tag                 = EXButtonTypeImage;
-        cl_button.cl_imageSize        = CGSizeMake([UIScreen cl_fitScreen:30], [UIScreen cl_fitScreen:30]);
-        cl_button.cl_imageSpacing     = [UIScreen cl_fitScreen:10];
-        cl_button.cl_buttomImageStyle = cl_buttonStyle;
-        cl_button.backgroundColor     = [UIColor cl_getARC4RandomColor];
+        ex_button.tag                 = EXButtonTypeImage;
+        ex_button.cl_imageSize        = CGSizeMake([UIScreen cl_fitScreen:30], [UIScreen cl_fitScreen:30]);
+        ex_button.cl_imageSpacing     = [UIScreen cl_fitScreen:10];
+        ex_button.cl_buttomImageStyle = ex_buttonStyle;
+        ex_button.backgroundColor     = [UIColor cl_getARC4RandomColor];
         
-        [cl_button cl_setNormalButtonWithImage:[UIImage imageNamed:@"icon1"]];
-        [cl_button setTitle:[NSString stringWithFormat:@"按钮%ld", idx]
-                      forState:UIControlStateNormal];
-        [cl_button addTarget:self
-                      action:@selector(cl_buttonActions:)
-            forControlEvents:UIControlEventTouchUpInside];
+        [ex_button cl_setNormalButtonWithImage:[UIImage imageNamed:@"icon1"]];
+        [ex_button cl_setNormalButtonWithTitle:[NSString stringWithFormat:@"按钮%ld", idx]];
+        [ex_button cl_addButtonActionComplete:^(UIButton *sender) {
+            
+            NSLog(@"UIButton Normal状态下的图片: %@", [sender cl_getNormalButtonImage]);
 
-        [self.view addSubview:cl_button];
+            [self ex_buttonActions:sender];
+        }];
+
+        [self.view addSubview:ex_button];
         
-        CGFloat cl_buttonW = CGRectGetWidth(self.view.frame) / 4;
+        CGFloat ex_buttonW = CGRectGetWidth(self.view.frame) / 4;
         
-        [cl_button mas_makeConstraints:^(MASConstraintMaker *make) {
+        [ex_button mas_makeConstraints:^(MASConstraintMaker *make) {
             
             if (@available(iOS 11.0, *)) {
                 
@@ -73,9 +75,9 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
                 (void)make.top;
             }
             
-            make.left.mas_equalTo(cl_buttonW * idx);
+            make.left.mas_equalTo(ex_buttonW * idx);
             make.height.mas_equalTo(50);
-            make.width.mas_equalTo(cl_buttonW);
+            make.width.mas_equalTo(ex_buttonW);
         }];
     }];
 }
@@ -90,29 +92,25 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     _ex_starButton.tag             = EXButtonTypeStar;
     _ex_starButton.backgroundColor = [UIColor cl_getARC4RandomColor];
     
-    [_ex_starButton setTitle:@"开始倒计时"
-                    forState:UIControlStateNormal];
-    [_ex_starButton setTitleColor:[UIColor whiteColor]
-                         forState:UIControlStateNormal];
+    [_ex_starButton cl_setNormalButtonWithTitle:@"开始倒计时"];
+    [_ex_starButton cl_setNormalButtonWithTitleColor:[UIColor whiteColor]];
     
     [_ex_starButton cl_addButtonActionComplete:^(UIButton *sender) {
         
-        [self cl_buttonActions:sender];
+        [self ex_buttonActions:sender];
     }];
 
     return _ex_starButton;
 }
 
-- (void)cl_buttonActions:(UIButton *)sender {
-    
-    NSLog(@"UIButton Normal状态下的图片: %@", [sender cl_getNormalButtonImage]);
+- (void)ex_buttonActions:(UIButton *)sender {
     
     if (sender.tag == EXButtonTypeStar) {
         
         [sender cl_starButtonWithTime:10
-                             complete:^(UIButton *ex_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time) {
+                             complete:^(UIButton *ex_starButton, CLButtonStarStyle ex_buttonStarStyle, NSInteger time) {
                                  
-                                 if (cl_buttonStarStyle == CLButtonStarStyleBegin) {
+                                 if (ex_buttonStarStyle == CLButtonStarStyleBegin) {
                                      
                                      [ex_starButton setTitle:[NSString stringWithFormat:@"%ld", time]
                                                     forState:UIControlStateNormal];
@@ -140,11 +138,9 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     _ex_clickButton.backgroundColor = [UIColor cl_getARC4RandomColor];
     _ex_clickButton.cl_clickAreaEdgeInsets = UIEdgeInsetsMake(-50, -50, -50, -50);
     
-    [_ex_clickButton setTitle:@"修改点击区域"
-                     forState:UIControlStateNormal];
-    [_ex_clickButton setTitleColor:[UIColor whiteColor]
-                          forState:UIControlStateNormal];
-    
+    [_ex_clickButton cl_setNormalButtonWithTitle:@"修改点击区域"];
+    [_ex_clickButton cl_setNormalButtonWithTitleColor:[UIColor whiteColor]];
+
     [_ex_clickButton cl_addButtonActionComplete:^(UIButton *sender) {
         
         [sender cl_showActivityIndicatorViewWithStyle:UIActivityIndicatorViewStyleGray];
@@ -163,7 +159,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     return _ex_clickButton;
 }
 
-- (void)cl_addConstraintsWithSuperView {
+- (void)ex_addConstraintsWithSuperView {
     
     [self.view addSubview:self.ex_clickButton];
     [self.view addSubview:self.ex_starButton];

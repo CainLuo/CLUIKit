@@ -10,6 +10,15 @@
 
 > pod 'CLFoundation'
 
+
+
+## 支助
+如果您觉得挺赞的话, 可以给我打赏打赏, 谢谢啦~
+
+![支付宝](https://raw.githubusercontent.com/CainRun/PayProject/master/WeChatPay-Objective-C/Images/支付宝QRC.jpg)
+
+
+
 ## 目录
 
 - [NSArray+CLArray@](#NSArray+CLArray)
@@ -22,6 +31,7 @@
   - [日期判断@](#日期判断)
 - [获取NSDateComponents@](#获取NSDateComponents)
 - [NSDictionary+CLDictionary@](#NSDictionary+CLDictionary)
+- [NSFileManager+CLFileManager@](#NSFileManager+CLFileManager)
 - [NSMutableArray+CLMutableArray@](#NSMutableArray+CLMutableArray)
 - [NSMutableAttributedString+CLMutableAttributedString@](#NSMutableAttributedString+CLMutableAttributedString)
 - [NSMutableDictionary+CLMutableDictionary@](#NSMutableDictionary+CLMutableDictionary)
@@ -132,6 +142,7 @@
 
 针对`Foundation`的`NSDate`进行系统外的方法补充:
 
+
 ### 时间戳处理/计算日期@
 
 ```objective-c
@@ -149,7 +160,6 @@
 
 + (NSString *)cl_calculateDaysWithDate:(NSDate *)date;
 ```
-
 
 
 ### 日期处理@
@@ -196,7 +206,6 @@
 ```
 
 
-
 ### 日期判断@
 
 ```objective-c
@@ -204,7 +213,6 @@
 
 + (BOOL)cl_checkTodayWithDate:(NSDate *)date;
 ```
-
 
 
 ### 获取NSDateComponents@
@@ -222,6 +230,47 @@
 
 ```objective-c
 + (NSDictionary *)cl_dictionaryWithURLString:(NSString *)urlString;
+```
+
+
+
+## NSFileManager+CLFileManager@
+
+针对`Foundation`的`NSFileManager`进行系统外的方法补充:
+
+```objective-c
++ (BOOL)cl_saveDataCacheWithData:(NSData *)data
+                      identifier:(NSString *)identifier;
+
++ (BOOL)cl_saveDataCacheWithData:(NSData *)data
+                       cacheName:(NSString *)cacheName
+                      identifier:(NSString *)identifier;
+
++ (NSData *)cl_getDataCacheWithIdentifier:(NSString *)identifier;
+
++ (NSData *)cl_getDataCacheWithCacheName:(NSString *)cacheName
+                              identifier:(NSString *)identifier;
+
++ (BOOL)cl_removeDataWithCache;
+
++ (BOOL)cl_removeDataWithCacheWithCacheName:(NSString *)cacheName;
+
++ (BOOL)cl_saveDocumentWithObject:(id)object
+                         fileName:(NSString *)fileName;
+
++ (BOOL)cl_removeDocumentObjectWithFileName:(NSString *)fileName;
+
++ (id)cl_getDocumentObjectWithFileName:(NSString *)fileName;
+
++ (BOOL)cl_checkFileExistWithFilePath:(NSString *)filePath;
+
++ (NSUInteger)cl_getApplicationDocumentSize;
+
++ (NSUInteger)cl_getApplicationCacheSize;
+
++ (NSUInteger)cl_getApplicationLibrarySize;
+
++ (NSUInteger)cl_getApplicationFileSizeWithFilePath:(NSString *)folderPath;
 ```
 
 
@@ -265,6 +314,12 @@
 
 + (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
                                                            lineSpacing:(CGFloat)lineSpacing;
+
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithString:(NSString *)string
+                                                              range:(NSRange)range;
+
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithAttributedString:(NSAttributedString *)attributedString
+                                                                        range:(NSRange)range;
 ```
 
 
@@ -312,6 +367,7 @@
 
 针对`Foundation`的`NSObject`进行系统外的方法补充:
 
+
 ### RunTime@
 
 ```objective-c
@@ -342,6 +398,7 @@
 - (BOOL)cl_hasIvarWithKey:(NSString *)key;
 ```
 
+
 ### GCD@
 
 ```objective-c
@@ -354,9 +411,12 @@
                          complete:(CLObject)complete;
 ```
 
+
+
 ## NSString+CLString@
 
 针对`Foundation`的`NSString`进行系统外的方法补充:
+
 
 ### 字符串处理@
 
@@ -399,6 +459,7 @@
 + (NSString *)cl_jsonStringWithObject:(NSObject *)object;
 ```
 
+
 ### 加密字符串@
 
 ```objective-c
@@ -412,6 +473,7 @@
 + (NSString *)cl_encodingMD5WithString:(NSString *)string;
 ```
 
+
 ### 取首字母@
 
 ```objective-c
@@ -420,11 +482,13 @@
 + (NSString *)cl_getFirstPinYinWithString:(NSString *)string;
 ```
 
+
 ### 正则表达式(数字相关)@
 
 ```objective-c
 - (BOOL)cl_realContainDecimal;
 ```
+
 
 ### 正则表达式验证(整数相关)@
 
@@ -449,6 +513,7 @@
 - (BOOL)cl_isNegativeInteger;
 ```
 
+
 ### 正则表达式验证(浮点数相关)@
 
 ```objective-c
@@ -466,6 +531,7 @@
 
 - (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative;
 ```
+
 
 ### 正则表达式验证(字符串相关)@
 
@@ -508,6 +574,7 @@
 - (BOOL)cl_checkFirstAndLastSpaceCharacters;
 ```
 
+
 ### 正则表达式验证(号码相关)@
 
 ```objective-c
@@ -524,11 +591,13 @@
 - (BOOL)cl_checkFormatTelePhoneNumber;
 ```
 
+
 ### 正则表达式验证(身份证相关)@
 
 ```objective-c
 - (BOOL)cl_checkIdentityCard;
 ```
+
 
 ### 正则表达式验证(账号相关)@
 
@@ -541,6 +610,7 @@
                        longest:(NSInteger)longest;
 ```
 
+
 ### 正则表达式验证(日期相关)@
 
 ```objective-c
@@ -552,6 +622,7 @@
 
 - (BOOL)cl_checkDay;
 ```
+
 
 ### 正则表达式验证(特殊正则)@
 
@@ -606,10 +677,20 @@
 ```objective-c
 + (void)cl_openBrowserWithURL:(NSString *)urlString;
 
-+ (NSURL *)cl_getDocumentURLPath;
++ (NSURL *)cl_getDocumentFileURL;
 
-+ (NSURL *)cl_getLibraryURLPath;
++ (NSURL *)cl_getLibraryFileURL;
 
-+ (NSURL *)cl_getCachesURLPath;
++ (NSURL *)cl_getCachesFileURL;
+
++ (NSURL *)cl_getFileURLForDirectory:(NSSearchPathDirectory)directory;
+
++ (NSString *)cl_getDocumentPathURL;
+
++ (NSString *)cl_getLibraryPathURL;
+
++ (NSString *)cl_getCachesPathURL;
+
++ (NSString *)cl_getPathURLForDirectory:(NSSearchPathDirectory)directory;
 ```
 

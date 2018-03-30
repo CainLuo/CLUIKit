@@ -30,7 +30,7 @@
         
         [self.cl_tableViewController.cl_tableView cl_reloadData];
         
-        [self cl_configTableViewWithDataSource];
+        [self cl_showTableViewSeparatorLine];
         
         [self.cl_tableViewController cl_dropDownEndRefresh];
         [self.cl_tableViewController cl_pullUpEndRefresh];

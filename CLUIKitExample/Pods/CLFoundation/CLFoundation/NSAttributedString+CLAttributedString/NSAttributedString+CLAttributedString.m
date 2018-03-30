@@ -8,6 +8,7 @@
 
 #import "NSAttributedString+CLAttributedString.h"
 #import <CoreText/CoreText.h>
+#import "NSString+CLString.h"
 
 @implementation NSAttributedString (CLAttributedString)
 
@@ -126,6 +127,11 @@
                                                 suffixFont:(UIFont *)suffixFont
                                                suffixColor:(UIColor *)suffixColor {
     
+    if ([NSString cl_checkEmptyWithString:prefixString] || [NSString cl_checkEmptyWithString:suffixString]) {
+        
+        return nil;
+    }
+    
     NSInteger prefixLength = prefixString.length;
     NSInteger suffixLength = suffixString.length;
     
@@ -136,8 +142,7 @@
     if (prefixFont == 0 && prefixColor == 0) {
         
         [attributedString addAttributes:@{NSForegroundColorAttributeName: [self colorWithHex:0x999999],
-                                          NSFontAttributeName: [UIFont systemFontOfSize:10.0f]
-                                          }
+                                          NSFontAttributeName: [UIFont systemFontOfSize:10.0f]}
                                   range:NSMakeRange(0, prefixLength)];
         
         

@@ -113,11 +113,11 @@ typedef void(^CLObject)(void);
 /**
  在主线程中执行GCD, 是否需要等待
 
- @param wait BOOL
  @param complete CLObject
+ @param isWait BOOL
  */
-- (void)cl_performMainThreadWithWait:(BOOL)wait
-                            complete:(CLObject)complete;
+- (void)cl_performMainThreadWithComplete:(CLObject)complete
+                               isWait:(BOOL)isWait;
 
 /**
  指点延迟几秒后执行
