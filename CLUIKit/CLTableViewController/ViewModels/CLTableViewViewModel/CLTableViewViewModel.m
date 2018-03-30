@@ -16,6 +16,8 @@
 
 @interface CLTableViewViewModel()
 
+@property (nonatomic, strong, readwrite) NSMutableArray *cl_dataSource;
+
 @property (nonatomic, weak, readwrite) CLTableViewController *cl_tableViewController;
 
 @end
@@ -47,7 +49,7 @@
     
 }
 
-- (void)cl_configTableViewWithDataSource {
+- (void)cl_showTableViewSeparatorLine {
     
     if (self.cl_dataSource.count > 0) {
         

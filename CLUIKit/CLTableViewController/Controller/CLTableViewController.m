@@ -13,8 +13,6 @@
 //
 
 #import "CLTableViewController.h"
-#import "CLTableViewDelegate.h"
-#import "CLTableViewViewModel.h"
 
 #import "MJRefresh.h"
 
@@ -23,9 +21,6 @@
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 
 @property (nonatomic, strong, readwrite) UITableView *cl_tableView;
-
-@property (nonatomic, strong) CLTableViewDelegate *cl_tableViewDelegate;
-@property (nonatomic, strong) CLTableViewViewModel *cl_tableViewBaseModel;
 
 @end
 
@@ -48,7 +43,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
+    [self.view addSubview:self.cl_tableView];
     [self cl_addRefresh];
 }
 
@@ -68,6 +64,7 @@
     return _cl_tableView;
 }
 
+#pragma mark - 设置Delegate与DataSource
 - (void)cl_setTableViewDelegate:(id<UITableViewDelegate>)delegate
                      dataSource:(id<UITableViewDataSource>)dataSource {
     
@@ -75,26 +72,12 @@
     self.cl_tableView.dataSource = dataSource;
 }
 
-#pragma mark - Table View Delegate
-- (CLTableViewDelegate *)cl_tableViewDelegate {
+#pragma mark - 设置DragDelegate与DropDelegate
+- (void)cl_setTableViewDragDelegate:(id<UITableViewDragDelegate>)dragDelegate
+                       dropDelegate:(id<UITableViewDropDelegate>)dropDelegate {
     
-    if (!_cl_tableViewDelegate) {
-
-        _cl_tableViewDelegate = [[CLTableViewDelegate alloc] initTableViewDelegateWithViewModel:self.cl_tableViewBaseModel];
-    }
-
-    return _cl_tableViewDelegate;
-}
-
-#pragma mark - Table View Base Model
-- (CLTableViewViewModel *)cl_tableViewBaseModel {
-    
-    if (!_cl_tableViewBaseModel) {
-    
-        _cl_tableViewBaseModel = [[CLTableViewViewModel alloc] initTableViewBaseModelWithController:self];
-    }
-    
-    return _cl_tableViewBaseModel;
+    self.cl_tableView.dragDelegate = dragDelegate;
+    self.cl_tableView.dropDelegate = dropDelegate;
 }
 
 #pragma mark - Refresh
@@ -116,8 +99,6 @@
     refreshFooter.automaticallyHidden = YES;
     
     self.cl_tableView.mj_footer = refreshFooter;
-    
-    [self.view addSubview:self.cl_tableView];
 }
 
 - (void)cl_dropDownRefresh {}

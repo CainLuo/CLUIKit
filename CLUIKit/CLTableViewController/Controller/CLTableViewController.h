@@ -84,5 +84,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cl_setTableViewDelegate:(_Nullable id <UITableViewDelegate>)delegate
                      dataSource:(_Nullable id <UITableViewDataSource>)dataSource;
 
+
+/**
+ 设置UITableView的拖拽代理与拖放代理
+ 
+ @param dragDelegate UITableViewDragDelegate
+ @param dropDelegate UITableViewDropDelegate
+ */
+- (void)cl_setTableViewDragDelegate:(_Nullable id <UITableViewDragDelegate>)dragDelegate
+                       dropDelegate:(_Nullable id <UITableViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
+
 @end
 NS_ASSUME_NONNULL_END

@@ -19,8 +19,10 @@
 #pragma mark - CLCollectionViewController
 #import "CLCollectionViewController.h"
 #import "CLCollectionViewDataSource.h"
-#import "CLCollectionViewViewModel.h"
+#import "CLCollectionViewDragDelegate.h"
+#import "CLCollectionViewDragDelegate.h"
 #import "CLCollectionViewDelegate.h"
+#import "CLCollectionViewViewModel.h"
 
 #pragma mark - CLNavigationController
 #import "CLNavigationController.h"
@@ -31,8 +33,10 @@
 #pragma mark - CLTableViewController
 #import "CLTableViewController.h"
 #import "CLTableViewDataSource.h"
-#import "CLTableViewViewModel.h"
+#import "CLTableViewDragDelegate.h"
+#import "CLTableViewDropDelegate.h"
 #import "CLTableViewDelegate.h"
+#import "CLTableViewViewModel.h"
 
 #pragma mark - CLTitleView
 #import "CLTextField.h"

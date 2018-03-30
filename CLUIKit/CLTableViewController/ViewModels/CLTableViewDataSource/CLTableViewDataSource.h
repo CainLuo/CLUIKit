@@ -23,7 +23,7 @@
 @property (nonatomic, weak, readonly) CLTableViewViewModel *cl_viewModel;
 
 /**
- 初始化CLTableViewViewModel
+ 初始化CLTableViewDataSource
 
  @param viewModel CLTableViewViewModel
  @return self

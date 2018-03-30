@@ -20,7 +20,7 @@
 /**
  数据源NSArray
  */
-@property (nonatomic, strong) NSMutableArray *cl_dataSource;
+@property (nonatomic, strong, readonly) NSMutableArray *cl_dataSource;
 
 /**
  只读的CLTableViewController
@@ -43,6 +43,6 @@
 /**
  配置TableView每一条Cell所显示的分割线
  */
-- (void)cl_configTableViewWithDataSource;
+- (void)cl_showTableViewSeparatorLine;
 
 @end

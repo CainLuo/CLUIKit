@@ -75,6 +75,10 @@
 		A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */; };
 		A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F6203ACFD10015964F /* EXTableViewController.m */; };
 		BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */; };
+		BF28A4D8206E038600E0E19C /* CLCollectionViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4D7206E038600E0E19C /* CLCollectionViewDropDelegate.m */; };
+		BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DB206E064800E0E19C /* CLCollectionViewDragDelegate.m */; };
+		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
+		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
 		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
 		BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */; };
 		BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */; };
@@ -215,6 +219,14 @@
 		A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewViewModel.m; sourceTree = "<group>"; };
 		A4DB71F5203ACFD10015964F /* EXTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewController.h; sourceTree = "<group>"; };
 		A4DB71F6203ACFD10015964F /* EXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewController.m; sourceTree = "<group>"; };
+		BF28A4D6206E038600E0E19C /* CLCollectionViewDropDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDropDelegate.h; sourceTree = "<group>"; };
+		BF28A4D7206E038600E0E19C /* CLCollectionViewDropDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDropDelegate.m; sourceTree = "<group>"; };
+		BF28A4DA206E064800E0E19C /* CLCollectionViewDragDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDragDelegate.h; sourceTree = "<group>"; };
+		BF28A4DB206E064800E0E19C /* CLCollectionViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDragDelegate.m; sourceTree = "<group>"; };
+		BF28A4DE206E08F700E0E19C /* CLTableViewDropDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTableViewDropDelegate.h; sourceTree = "<group>"; };
+		BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDropDelegate.m; sourceTree = "<group>"; };
+		BF28A4E2206E090700E0E19C /* CLTableViewDragDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTableViewDragDelegate.h; sourceTree = "<group>"; };
+		BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDragDelegate.m; sourceTree = "<group>"; };
 		BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
 		BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
 		BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigationController.h"; sourceTree = "<group>"; };
@@ -626,6 +638,8 @@
 			children = (
 				A4DB7154203802FC0015964F /* CLCollectionViewDataSource */,
 				A4DB7157203802FC0015964F /* CLCollectionViewDelegate */,
+				BF28A4D9206E063700E0E19C /* CLCollectionViewDragDelegate */,
+				BF28A4D5206E036C00E0E19C /* CLCollectionViewDropDelegate */,
 				A4DB7151203802FC0015964F /* CLCollectionViewViewModel */,
 			);
 			path = ViewModels;
@@ -681,6 +695,8 @@
 			children = (
 				A4DB7162203802FC0015964F /* CLTableViewDataSource */,
 				A4DB715F203802FC0015964F /* CLTableViewDelegate */,
+				BF28A4E1206E08FE00E0E19C /* CLTableViewDragDelegate */,
+				BF28A4DD206E08EC00E0E19C /* CLTableViewDropDelegate */,
 				A4DB7165203802FC0015964F /* CLTableViewViewModel */,
 			);
 			path = ViewModels;
@@ -1053,6 +1069,42 @@
 			path = EXTableView;
 			sourceTree = "<group>";
 		};
+		BF28A4D5206E036C00E0E19C /* CLCollectionViewDropDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF28A4D6206E038600E0E19C /* CLCollectionViewDropDelegate.h */,
+				BF28A4D7206E038600E0E19C /* CLCollectionViewDropDelegate.m */,
+			);
+			path = CLCollectionViewDropDelegate;
+			sourceTree = "<group>";
+		};
+		BF28A4D9206E063700E0E19C /* CLCollectionViewDragDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF28A4DA206E064800E0E19C /* CLCollectionViewDragDelegate.h */,
+				BF28A4DB206E064800E0E19C /* CLCollectionViewDragDelegate.m */,
+			);
+			path = CLCollectionViewDragDelegate;
+			sourceTree = "<group>";
+		};
+		BF28A4DD206E08EC00E0E19C /* CLTableViewDropDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF28A4DE206E08F700E0E19C /* CLTableViewDropDelegate.h */,
+				BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */,
+			);
+			path = CLTableViewDropDelegate;
+			sourceTree = "<group>";
+		};
+		BF28A4E1206E08FE00E0E19C /* CLTableViewDragDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF28A4E2206E090700E0E19C /* CLTableViewDragDelegate.h */,
+				BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */,
+			);
+			path = CLTableViewDragDelegate;
+			sourceTree = "<group>";
+		};
 		BFC89ACB205F679600A04A58 /* UIControl+CLControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1222,6 +1274,7 @@
 				A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */,
 				A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */,
 				A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */,
+				BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */,
 				A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */,
 				A4DB71ED203A86170015964F /* EXCollectionViewDataSource.m in Sources */,
 				A4AB1CDF203C34BC005026E8 /* EXFontBaseModel.m in Sources */,
@@ -1255,6 +1308,7 @@
 				A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */,
 				A4AB1CE8203C34E5005026E8 /* EXFontViewModel.m in Sources */,
 				A4AB1CD6203C2DCF005026E8 /* EXFontController.m in Sources */,
+				BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */,
 				A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */,
 				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
 				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
@@ -1267,6 +1321,8 @@
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
 				A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */,
+				BF28A4D8206E038600E0E19C /* CLCollectionViewDropDelegate.m in Sources */,
+				BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */,
 				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
 				BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */,
 				A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */,
