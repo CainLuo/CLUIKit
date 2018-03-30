@@ -216,4 +216,96 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
     return [self imageForState:UIControlStateDisabled];
 }
 
+#pragma mark - 设置UIButton标题
+- (void)cl_setNormalButtonWithTitle:(NSString *)title {
+    
+    [self setTitle:title
+          forState:UIControlStateNormal];
+}
+
+- (void)cl_setHighlightedButtonWithTitle:(NSString *)title {
+    
+    [self setTitle:title
+          forState:UIControlStateHighlighted];
+}
+
+- (void)cl_setSelectedButtonWithTitle:(NSString *)title {
+    
+    [self setTitle:title
+          forState:UIControlStateSelected];
+}
+
+- (void)cl_setDisabledButtonWithTitle:(NSString *)title {
+    
+    [self setTitle:title
+          forState:UIControlStateDisabled];
+}
+
+#pragma mark - 获取UIButton标题
+- (NSString *)cl_getNormalButtonTitle {
+    
+    return [self titleForState:UIControlStateNormal];
+}
+
+- (NSString *)cl_getHighlightedButtonTitle {
+    
+    return [self titleForState:UIControlStateHighlighted];
+}
+
+- (NSString *)cl_getSelectedButtonTitle {
+    
+    return [self titleForState:UIControlStateSelected];
+}
+
+- (NSString *)cl_getDisabledButtonTitle {
+    
+    return [self titleForState:UIControlStateDisabled];
+}
+
+#pragma mark - 设置UIButton标题颜色
+- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color {
+    
+    [self setTitleColor:color
+               forState:UIControlStateNormal];
+}
+
+- (void)cl_setHighlightedButtonWithColor:(UIColor *)color {
+    
+    [self setTitleColor:color
+               forState:UIControlStateHighlighted];
+}
+
+- (void)cl_setSelectedButtonWithColor:(UIColor *)color {
+    
+    [self setTitleColor:color
+               forState:UIControlStateSelected];
+}
+
+- (void)cl_setDisabledButtonWithColor:(UIColor *)color {
+    
+    [self setTitleColor:color
+               forState:UIControlStateDisabled];
+}
+
+#pragma mark - 获取UIButton标题颜色
+- (UIColor *)cl_getNormalButtonTitleColor {
+    
+    return [self titleColorForState:UIControlStateNormal];
+}
+
+- (UIColor *)cl_getHighlightedButtonTitleColor {
+    
+    return [self titleColorForState:UIControlStateHighlighted];
+}
+
+- (UIColor *)cl_getSelectedButtonTitleColor {
+    
+    return [self titleColorForState:UIControlStateSelected];
+}
+
+- (UIColor *)cl_getDisabledButtonTitleColor {
+    
+    return [self titleColorForState:UIControlStateDisabled];
+}
+
 @end

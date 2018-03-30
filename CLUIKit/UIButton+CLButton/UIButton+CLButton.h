@@ -135,5 +135,121 @@ typedef void (^CLButtonAction)(UIButton *sender);
  */
 - (UIImage *)cl_getDisabledButtonImage;
 
+#pragma mark - 设置UIButton标题
+/**
+ 设置UIButton Normal状态下的标题
+
+ @param title NSString
+ */
+- (void)cl_setNormalButtonWithTitle:(NSString *)title;
+
+/**
+ 设置UIButton Highlighted状态下的标题
+ 
+ @param title NSString
+ */
+- (void)cl_setHighlightedButtonWithTitle:(NSString *)title;
+
+/**
+ 设置UIButton Selected状态下的标题
+ 
+ @param title NSString
+ */
+- (void)cl_setSelectedButtonWithTitle:(NSString *)title;
+
+/**
+ 设置UIButton Disabled状态下的标题
+ 
+ @param title NSString
+ */
+- (void)cl_setDisabledButtonWithTitle:(NSString *)title;
+
+#pragma mark - 获取UIButton标题
+/**
+ 获取UIButton Normal状态下的标题
+
+ @return NSString
+ */
+- (NSString *)cl_getNormalButtonTitle;
+
+/**
+ 获取UIButton Highlighted状态下的标题
+ 
+ @return NSString
+ */
+- (NSString *)cl_getHighlightedButtonTitle;
+
+/**
+ 获取UIButton Selected状态下的标题
+ 
+ @return NSString
+ */
+- (NSString *)cl_getSelectedButtonTitle;
+
+/**
+ 获取UIButton Disabled状态下的标题
+ 
+ @return NSString
+ */
+- (NSString *)cl_getDisabledButtonTitle;
+
+#pragma mark - 设置UIButton标题
+/**
+ 设置UIButton Normal状态下的标题颜色
+ 
+ @param color UIColor
+ */
+- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color;
+
+/**
+ 设置UIButton Highlighted状态下的标题颜色
+ 
+ @param color UIColor
+ */
+- (void)cl_setHighlightedButtonWithColor:(UIColor *)color;
+
+/**
+ 设置UIButton Selected状态下的标题颜色
+ 
+ @param color UIColor
+ */
+- (void)cl_setSelectedButtonWithColor:(UIColor *)color;
+
+/**
+ 设置UIButton Disabled状态下的标题颜色
+ 
+ @param color UIColor
+ */
+- (void)cl_setDisabledButtonWithColor:(UIColor *)color;
+
+#pragma mark - 获取UIButton标题颜色
+/**
+ 获取UIButton Normal状态下的标题颜色
+ 
+ @return UIColor
+ */
+- (UIColor *)cl_getNormalButtonTitleColor;
+
+/**
+ 获取UIButton Highlighted状态下的标题颜色
+ 
+ @return UIColor
+ */
+- (UIColor *)cl_getHighlightedButtonTitleColor;
+
+/**
+ 获取UIButton Selected状态下的标题颜色
+ 
+ @return UIColor
+ */
+- (UIColor *)cl_getSelectedButtonTitleColor;
+
+/**
+ 获取UIButton Disabled状态下的标题颜色
+ 
+ @return UIColor
+ */
+- (UIColor *)cl_getDisabledButtonTitleColor;
+
 @end
 
