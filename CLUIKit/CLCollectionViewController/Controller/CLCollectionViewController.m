@@ -13,8 +13,6 @@
 //
 
 #import "CLCollectionViewController.h"
-#import "CLCollectionViewViewModel.h"
-#import "CLCollectionViewDelegate.h"
 
 #import "MJRefresh.h"
 
@@ -22,9 +20,6 @@
 
 @property (nonatomic, strong, readwrite) UICollectionView *cl_collectionView;
 @property (nonatomic, strong, readwrite) UICollectionViewFlowLayout *cl_collectionViewFlowLayout;
-
-@property (nonatomic, strong) CLCollectionViewViewModel *cl_collectionViewBaseModel;
-@property (nonatomic, strong) CLCollectionViewDelegate *cl_collectionViewDelegate;
 
 @end
 
@@ -36,15 +31,23 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.cl_collectionView];
-    
     [self cl_addRefresh];
 }
 
+#pragma mark - 设置Delegate与DataSource
 - (void)cl_setCollectionViewDelegate:(id<UICollectionViewDelegate>)delegate
                           dataSource:(id<UICollectionViewDataSource>)dataSource {
     
     self.cl_collectionView.delegate = delegate;
     self.cl_collectionView.dataSource = dataSource;
+}
+
+#pragma mark - 设置DragDelegate与DropDelegate
+- (void)cl_setCollectionViewDragDelegate:(id<UICollectionViewDragDelegate>)dragDelegate
+                            dropDelegate:(id<UICollectionViewDropDelegate>)dropDelegate {
+    
+    self.cl_collectionView.dragDelegate = dragDelegate;
+    self.cl_collectionView.dropDelegate = dropDelegate;
 }
 
 #pragma mark - Collection View
@@ -70,26 +73,6 @@
     
     [self.cl_collectionView registerClass:cellClass
                forCellWithReuseIdentifier:identifier];
-}
-
-- (CLCollectionViewViewModel *)cl_collectionViewBaseModel {
-    
-    if (!_cl_collectionViewBaseModel) {
-     
-        _cl_collectionViewBaseModel = [[CLCollectionViewViewModel alloc] initCollectionViewBaseModelWithController:self];
-    }
-
-    return _cl_collectionViewBaseModel;
-}
-
-- (CLCollectionViewDelegate *)cl_collectionViewDelegate {
-    
-    if (!_cl_collectionViewDelegate) {
-
-        _cl_collectionViewDelegate = [[CLCollectionViewDelegate alloc] initCollectionViewDelegateWithViewModel:self.cl_collectionViewBaseModel];
-    }
-    
-    return _cl_collectionViewDelegate;
 }
 
 #pragma mark - Collection View Flow Layout

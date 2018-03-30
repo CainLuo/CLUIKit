@@ -82,6 +82,15 @@ NS_ASSUME_NONNULL_BEGIN
                           dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
 
 /**
+ 设置UICollectionView的拖拽代理与拖放代理
+
+ @param dragDelegate UICollectionViewDragDelegate
+ @param dropDelegate UICollectionViewDropDelegate
+ */
+- (void)cl_setCollectionViewDragDelegate:(_Nullable id <UICollectionViewDragDelegate>)dragDelegate
+                            dropDelegate:(_Nullable id <UICollectionViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
+
+/**
  给UICollectionView注册类
 
  @param cellClass Class

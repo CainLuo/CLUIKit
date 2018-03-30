@@ -18,14 +18,14 @@
 @interface CLCollectionViewViewModel : NSObject
 
 /**
+ 数据源NSMutableArray
+ */
+@property (nonatomic, strong, readonly) NSMutableArray *cl_dataSource;
+
+/**
  只读的CLCollectionViewController
  */
 @property (nonatomic, weak, readonly) CLCollectionViewController *cl_collectionViewController;
-
-/**
- 数据源NSMutableArray
- */
-@property (nonatomic, strong) NSMutableArray *cl_dataSource;
 
 /**
  CLCollectionViewViewModel自定义初始化

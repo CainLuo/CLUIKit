@@ -16,6 +16,8 @@
 
 @interface CLCollectionViewViewModel ()
 
+@property (nonatomic, strong, readwrite) NSMutableArray *cl_dataSource;
+
 @property (nonatomic, weak, readwrite) CLCollectionViewController *cl_collectionViewController;
 
 @end

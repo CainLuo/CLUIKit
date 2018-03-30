@@ -23,7 +23,7 @@
 @property (nonatomic, weak, readonly) CLCollectionViewViewModel *cl_viewModel;
 
 /**
- CLCollectionViewViewModel自定义初始化
+ CLCollectionViewDataSource自定义初始化
 
  @param viewModel CLCollectionViewViewModel
  @return self
