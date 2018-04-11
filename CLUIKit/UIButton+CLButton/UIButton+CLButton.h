@@ -106,6 +106,34 @@ typedef void (^CLButtonAction)(UIButton *sender);
  */
 - (void)cl_setDisabledButtonWithImage:(UIImage *)image;
 
+/**
+ 设置UIButton Normal状态下的背景图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Highlighted状态下的背景图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Selected状态下的背景图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setSelectedButtonBackgroundImageWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Disabled状态下的背景图片
+ 
+ @param image UIImage
+ */
+- (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image;
+
 #pragma mark - 获取UIButton的图片
 /**
  获取UIButton Normal状态下的图片
@@ -135,10 +163,38 @@ typedef void (^CLButtonAction)(UIButton *sender);
  */
 - (UIImage *)cl_getDisabledButtonImage;
 
+/**
+ 获取UIButton Normal状态下的背景图片
+
+ @return UIImage
+ */
+- (UIImage *)cl_getNormalButtonBackgroundImage;
+
+/**
+ 获取UIButton Highlighted状态下的背景图片
+ 
+ @return UIImage
+ */
+- (UIImage *)cl_getHighlightedButtonBackgroundImage;
+
+/**
+ 获取UIButton Selected状态下的背景图片
+ 
+ @return UIImage
+ */
+- (UIImage *)cl_getSelectedButtonBackgroundImage;
+
+/**
+ 获取UIButton Disabled状态下的背景图片
+ 
+ @return UIImage
+ */
+- (UIImage *)cl_getDisabledButtonBackgroundImage;
+
 #pragma mark - 设置UIButton标题
 /**
  设置UIButton Normal状态下的标题
-
+ 
  @param title NSString
  */
 - (void)cl_setNormalButtonWithTitle:(NSString *)title;
@@ -167,7 +223,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 #pragma mark - 获取UIButton标题
 /**
  获取UIButton Normal状态下的标题
-
+ 
  @return NSString
  */
 - (NSString *)cl_getNormalButtonTitle;
@@ -252,4 +308,3 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (UIColor *)cl_getDisabledButtonTitleColor;
 
 @end
-
