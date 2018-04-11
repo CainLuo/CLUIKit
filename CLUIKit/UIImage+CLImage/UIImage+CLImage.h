@@ -156,6 +156,15 @@ typedef void(^CLSaveImage)(NSError *error);
 + (UIImage *)cl_getImageWithBundleName:(NSString *)bundle
                              imageName:(NSString *)imageName;
 
+/**
+ 获取本地视频的预览图
+
+ @param videoURL NSURL
+ @param completion 回调
+ */
++ (void)cl_asyncGetVideoPreViewImageWithVideoURL:(NSURL *)videoURL
+                                      completion:(CLImage)completion;
+
 #pragma mark - 图片高斯模糊处理
 /**
  输入一张UIImage, 返回一张带高斯模糊的UIImage
