@@ -64,7 +64,7 @@
   - [缩放指定比例的图片@](#缩放指定比例的图片@)
   - [加载GIF图片@](#加载GIF图片@)
   - [生成二维码@](#生成二维码@)
-  - [获取指定Bundle文件里的图片@](#获取指定Bundle文件里的图片@)
+  - [获取图片@](#获取图片@)
   - [图片高斯模糊处理@](#图片高斯模糊处理@)
   - [图片圆角处理@](图片圆角处理@)
   - [图片处理](#图片处理)
@@ -545,6 +545,14 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (void)cl_setDisabledButtonWithImage:(UIImage *)image;
 
+- (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image;
+
+- (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image;
+
+- (void)cl_setSelectedButtonBackgroundImageWithImage:(UIImage *)image;
+
+- (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image;
+
 - (UIImage *)cl_getNormalButtonImage;
 
 - (UIImage *)cl_getHighlightedButtonImage;
@@ -552,6 +560,14 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (UIImage *)cl_getSelectedButtonImage;
 
 - (UIImage *)cl_getDisabledButtonImage;
+
+- (UIImage *)cl_getNormalButtonBackgroundImage;
+
+- (UIImage *)cl_getHighlightedButtonBackgroundImage;
+
+- (UIImage *)cl_getSelectedButtonBackgroundImage;
+
+- (UIImage *)cl_getDisabledButtonBackgroundImage;
 
 - (void)cl_setNormalButtonWithTitle:(NSString *)title;
 
@@ -826,11 +842,14 @@ typedef void(^CLControlAction)(id sender);
 ```
 
 
-### 获取指定Bundle文件里的图片@
+### 获取图片@
 
 ```objective-c
 + (UIImage *)cl_getImageWithBundleName:(NSString *)bundle
                              imageName:(NSString *)imageName;
+
++ (void)cl_asyncGetVideoPreViewImageWithVideoURL:(NSURL *)videoURL
+                                      completion:(CLImage)completion;
 ```
 
 
