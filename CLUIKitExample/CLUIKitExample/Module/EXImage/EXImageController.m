@@ -7,13 +7,15 @@
 //
 
 #import "EXImageController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface EXImageController ()
+@interface EXImageController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIImageView *ex_imageView;
 
 @property (nonatomic, strong) UIButton *ex_imageButton;
 
+@property (nonatomic, strong) UIImagePickerController *ex_imagePickerController;
 
 @end
 
@@ -66,7 +68,8 @@
                                @"给图片添加圆角",
                                @"给图片添加颜色和圆角",
                                @"获取重置Size的图片",
-                               @"获取指定最长边的UIImage Size"];
+                               @"获取指定最长边的UIImage Size",
+                               @"获取本地视频的URL"];
     
     [self cl_showSheetViewControllerWithTitle:@"设置图片"
                                       message:@"设置您的图片"
@@ -194,9 +197,51 @@
             NSLog(@"UIImage 的比例为: %@", NSStringFromCGSize(cl_iamgeSize));
         }
             break;
+            
+        case 11: {
+            
+            [self presentViewController:self.ex_imagePickerController
+                               animated:YES
+                             completion:nil];
+        }
         default:
             break;
     }
+}
+
+- (UIImagePickerController *)ex_imagePickerController {
+    
+    CL_GET_METHOD_RETURN_OBJC(_ex_imagePickerController);
+    
+    _ex_imagePickerController = [[UIImagePickerController alloc] init];
+    
+    _ex_imagePickerController.delegate      = self;
+    _ex_imagePickerController.allowsEditing = YES;
+    
+    NSString *ss_typeMovieString = (NSString *)kUTTypeMovie;
+    NSArray *ss_mediaTypes = @[ss_typeMovieString];
+    
+    _ex_imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    _ex_imagePickerController.mediaTypes = ss_mediaTypes;
+
+    _ex_imagePickerController.navigationBar.translucent = NO;
+    
+    return _ex_imagePickerController;
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+
+    NSURL *ex_videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+    
+    [UIImage cl_asyncGetVideoPreViewImageWithVideoURL:ex_videoURL
+                                           completion:^(UIImage *image) {
+                                               
+                                               self.ex_imageView.image = image;
+                                           }];
+
+    [picker dismissViewControllerAnimated:YES
+                               completion:nil];
 }
 
 - (void)ex_addConstraintsWithSuperView {
