@@ -43,9 +43,7 @@ static void *AlertControllerKey = &AlertControllerKey;
 - (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber
                             message:(NSString *)message
                              titile:(NSString *)title {
-    
-    NSMutableString *cl_tellPhoneNumber = [[NSMutableString alloc]initWithFormat:@"tel:%@", phoneNumber];
-    
+        
     UIAlertAction *cl_cancelAction = [UIAlertAction actionWithTitle:@"取消"
                                                               style:UIAlertActionStyleCancel
                                                             handler:^(UIAlertAction *action) {}];
@@ -54,7 +52,7 @@ static void *AlertControllerKey = &AlertControllerKey;
                                                              style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction *action) {
                                                                
-                                                               [UIApplication cl_callPhoneWithPhoneNumber:cl_tellPhoneNumber];
+                                                               [UIApplication cl_callPhoneWithPhoneNumber:phoneNumber];
                                                            }];
     
     [self cl_showAlertViewControllerWithTitle:title
