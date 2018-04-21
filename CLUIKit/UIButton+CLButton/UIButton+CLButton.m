@@ -195,6 +195,30 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
           forState:UIControlStateDisabled];
 }
 
+- (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image {
+    
+    [self setBackgroundImage:image
+                    forState:UIControlStateNormal];
+}
+
+- (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image {
+    
+    [self setBackgroundImage:image
+                    forState:UIControlStateHighlighted];
+}
+
+- (void)cl_setSelectedButtonBackgroundImageWithImage:(UIImage *)image {
+    
+    [self setBackgroundImage:image
+                    forState:UIControlStateSelected];
+}
+
+- (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image {
+    
+    [self setBackgroundImage:image
+                    forState:UIControlStateDisabled];
+}
+
 #pragma mark - 获取UIButton的图片
 - (UIImage *)cl_getNormalButtonImage {
     
@@ -214,6 +238,26 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
 - (UIImage *)cl_getDisabledButtonImage {
     
     return [self imageForState:UIControlStateDisabled];
+}
+
+- (UIImage *)cl_getNormalButtonBackgroundImage {
+    
+    return [self backgroundImageForState:UIControlStateNormal];
+}
+
+- (UIImage *)cl_getHighlightedButtonBackgroundImage {
+    
+    return [self backgroundImageForState:UIControlStateHighlighted];
+}
+
+- (UIImage *)cl_getSelectedButtonBackgroundImage {
+    
+    return [self backgroundImageForState:UIControlStateSelected];
+}
+
+- (UIImage *)cl_getDisabledButtonBackgroundImage {
+    
+    return [self backgroundImageForState:UIControlStateDisabled];
 }
 
 #pragma mark - 设置UIButton标题

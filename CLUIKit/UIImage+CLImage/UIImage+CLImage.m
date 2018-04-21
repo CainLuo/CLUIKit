@@ -17,6 +17,7 @@
 
 #import <ImageIO/ImageIO.h>
 #import <Accelerate/Accelerate.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation UIImage (CLImage)
 
@@ -116,15 +117,19 @@
 #pragma mark - 截取指定视图大小的截图
 + (UIImage *)cl_getImageForView:(UIView *)view {
     
-    UIImage *cl_image;
+    UIImage *__block cl_image = nil;
     
-    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
+        
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+        
+        cl_image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIGraphicsEndImageContext();
+    });
     
-    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    cl_image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
 
     return cl_image;
 }
@@ -481,6 +486,38 @@
               compatibleWithTraitCollection:nil];
     
     return cl_image;
+}
+
++ (void)cl_asyncGetVideoPreViewImageWithVideoURL:(NSURL *)videoURL
+                                      completion:(CLImage)completion {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        AVURLAsset *cl_avURLAsset = [[AVURLAsset alloc] initWithURL:videoURL
+                                                            options:nil];
+        
+        AVAssetImageGenerator *cl_avAssetImageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:cl_avURLAsset];
+        
+        cl_avAssetImageGenerator.appliesPreferredTrackTransform = YES;
+        
+        CMTime cl_time    = CMTimeMakeWithSeconds(0.0, 600);
+        NSError *cl_error = nil;
+        
+        CMTime cl_actualTime;
+        CGImageRef cl_videoImageRef = [cl_avAssetImageGenerator copyCGImageAtTime:cl_time
+                                                                       actualTime:&cl_actualTime
+                                                                            error:&cl_error];
+        
+        UIImage *cl_image = [[UIImage alloc] initWithCGImage:cl_videoImageRef];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (completion) {
+                
+                completion(cl_image);
+            }
+        });
+    });
 }
 
 #pragma mark - 图片高斯模糊处理

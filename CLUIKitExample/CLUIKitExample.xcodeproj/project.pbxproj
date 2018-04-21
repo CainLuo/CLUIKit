@@ -30,6 +30,8 @@
 		A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */; };
 		A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */; };
 		A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3147204CF253002E0ED7 /* EXApplicationController.m */; };
+		A4D750B7207E725800F6F63A /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D750B6207E725800F6F63A /* UIImage+CLImage.m */; };
+		A4D750BA207E727300F6F63A /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D750B8207E727300F6F63A /* UIButton+CLButton.m */; };
 		A4DB712A203800530015964F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7129203800530015964F /* AppDelegate.m */; };
 		A4DB7132203800530015964F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7131203800530015964F /* Assets.xcassets */; };
 		A4DB7135203800530015964F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7133203800530015964F /* LaunchScreen.storyboard */; };
@@ -37,7 +39,6 @@
 		A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */; };
 		A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */; };
 		A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB714B203802FC0015964F /* CLToolBarListView.m */; };
-		A4DB7194203802FC0015964F /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB714E203802FC0015964F /* UIButton+CLButton.m */; };
 		A4DB7195203802FC0015964F /* CLCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */; };
 		A4DB7196203802FC0015964F /* CLCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7155203802FC0015964F /* CLCollectionViewDataSource.m */; };
 		A4DB7197203802FC0015964F /* CLCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7158203802FC0015964F /* CLCollectionViewDelegate.m */; };
@@ -47,7 +48,6 @@
 		A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7167203802FC0015964F /* CLTableViewViewModel.m */; };
 		A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB716D203802FC0015964F /* CLTableViewController.m */; };
 		A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7170203802FC0015964F /* UIFont+CLFont.m */; };
-		A4DB719F203802FC0015964F /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7173203802FC0015964F /* UIImage+CLImage.m */; };
 		A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7176203802FC0015964F /* CLNavigationController.m */; };
 		A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7179203802FC0015964F /* UIColor+CLColor.m */; };
 		A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */; };
@@ -131,6 +131,10 @@
 		A4BA3144204CF21D002E0ED7 /* EXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXBaseViewController.h; sourceTree = "<group>"; };
 		A4BA3146204CF253002E0ED7 /* EXApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXApplicationController.h; sourceTree = "<group>"; };
 		A4BA3147204CF253002E0ED7 /* EXApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXApplicationController.m; sourceTree = "<group>"; };
+		A4D750B5207E725700F6F63A /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
+		A4D750B6207E725800F6F63A /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
+		A4D750B8207E727300F6F63A /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
+		A4D750B9207E727300F6F63A /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
 		A4DB7125203800530015964F /* CLUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB7128203800530015964F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4DB7129203800530015964F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,8 +150,6 @@
 		A4DB7148203802FC0015964F /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
 		A4DB714A203802FC0015964F /* CLToolBarListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLToolBarListView.h; sourceTree = "<group>"; };
 		A4DB714B203802FC0015964F /* CLToolBarListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLToolBarListView.m; sourceTree = "<group>"; };
-		A4DB714D203802FC0015964F /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
-		A4DB714E203802FC0015964F /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
 		A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewViewModel.m; sourceTree = "<group>"; };
 		A4DB7153203802FC0015964F /* CLCollectionViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewViewModel.h; sourceTree = "<group>"; };
 		A4DB7155203802FC0015964F /* CLCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDataSource.m; sourceTree = "<group>"; };
@@ -166,8 +168,6 @@
 		A4DB716D203802FC0015964F /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
 		A4DB716F203802FC0015964F /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
 		A4DB7170203802FC0015964F /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
-		A4DB7172203802FC0015964F /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
-		A4DB7173203802FC0015964F /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
 		A4DB7175203802FC0015964F /* CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNavigationController.h; sourceTree = "<group>"; };
 		A4DB7176203802FC0015964F /* CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNavigationController.m; sourceTree = "<group>"; };
 		A4DB7178203802FC0015964F /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
@@ -618,8 +618,8 @@
 		A4DB714C203802FC0015964F /* UIButton+CLButton */ = {
 			isa = PBXGroup;
 			children = (
-				A4DB714D203802FC0015964F /* UIButton+CLButton.h */,
-				A4DB714E203802FC0015964F /* UIButton+CLButton.m */,
+				A4D750B9207E727300F6F63A /* UIButton+CLButton.h */,
+				A4D750B8207E727300F6F63A /* UIButton+CLButton.m */,
 			);
 			path = "UIButton+CLButton";
 			sourceTree = "<group>";
@@ -750,8 +750,8 @@
 		A4DB7171203802FC0015964F /* UIImage+CLImage */ = {
 			isa = PBXGroup;
 			children = (
-				A4DB7172203802FC0015964F /* UIImage+CLImage.h */,
-				A4DB7173203802FC0015964F /* UIImage+CLImage.m */,
+				A4D750B5207E725700F6F63A /* UIImage+CLImage.h */,
+				A4D750B6207E725800F6F63A /* UIImage+CLImage.m */,
 			);
 			path = "UIImage+CLImage";
 			sourceTree = "<group>";
@@ -1297,7 +1297,6 @@
 				A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */,
 				A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */,
 				A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */,
-				A4DB7194203802FC0015964F /* UIButton+CLButton.m in Sources */,
 				A4DB71A8203802FC0015964F /* CLTextField.m in Sources */,
 				A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */,
 				A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */,
@@ -1313,9 +1312,9 @@
 				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
 				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
 				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
-				A4DB719F203802FC0015964F /* UIImage+CLImage.m in Sources */,
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
 				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,
+				A4D750BA207E727300F6F63A /* UIButton+CLButton.m in Sources */,
 				A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */,
 				A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */,
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
@@ -1329,6 +1328,7 @@
 				A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */,
 				A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */,
 				A4AB1CC6203BF09B005026E8 /* EXImageController.m in Sources */,
+				A4D750B7207E725800F6F63A /* UIImage+CLImage.m in Sources */,
 				A4AB1CE2203C34D1005026E8 /* EXFontDelegate.m in Sources */,
 				A4DB71B2203806D10015964F /* EXRootController.m in Sources */,
 				A4AB1CC2203BD4C8005026E8 /* EXColorController.m in Sources */,
