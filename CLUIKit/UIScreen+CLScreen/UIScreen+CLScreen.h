@@ -40,7 +40,7 @@
 /**
  iPhone是以 (iPhone 6)750x1334 为基准, iPad是以 (iPad Air)2048×1536 为基准
 
- @param value @param value UI原始值
+ @param value UI原始值
  @return CGFloat
  */
 + (CGFloat)cl_fitScreen:(CGFloat)value;
