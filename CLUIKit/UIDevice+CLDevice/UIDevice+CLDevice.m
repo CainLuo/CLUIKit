@@ -190,6 +190,63 @@
     return platform;
 }
 
++ (BOOL)cl_isPad {
+    
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+}
+
++ (BOOL)cl_isSimulator {
+    
+    return NSNotFound != [[self cl_getDeviceModelType] rangeOfString:@"Simulator"].location;
+}
+
++ (BOOL)cl_isJailbroken {
+    
+    if ([self cl_isSimulator]) {
+        
+        return NO;
+    }
+    
+    NSArray *cl_pathArray = @[@"/Applications/Cydia.app",
+                              @"/private/var/lib/apt/",
+                              @"/private/var/lib/cydia",
+                              @"/private/var/stash"];
+    
+    for (NSString *cl_pathString in cl_pathArray) {
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:cl_pathString]) {
+            
+            return YES;
+        }
+    }
+    
+    FILE *bash = fopen("/bin/bash", "r");
+    
+    if (bash != NULL) {
+        
+        fclose(bash);
+        
+        return YES;
+    }
+    
+    NSString *cl_pathString = [NSString stringWithFormat:@"/private/%@", [self cl_getUUIDString]];
+    
+    BOOL cl_haveTest = [@"test" writeToFile:cl_pathString
+                                 atomically:YES
+                                   encoding:NSUTF8StringEncoding
+                                      error:NULL];
+    
+    if (cl_haveTest) {
+        
+        [[NSFileManager defaultManager] removeItemAtPath:cl_pathString
+                                                   error:nil];
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
 #pragma mark - CPU相关
 + (NSUInteger)cl_getCurrentDeviceCPUCount {
     return [NSProcessInfo processInfo].activeProcessorCount;

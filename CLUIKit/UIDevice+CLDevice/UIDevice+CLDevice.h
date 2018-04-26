@@ -52,6 +52,27 @@
  */
 + (NSString *)cl_getCurrentDeviceModelName;
 
+/**
+ 获取设备是否是iPad
+ 
+ @return BOOL
+ */
++ (BOOL)cl_isPad;
+
+/**
+ 获取设备是否是模拟器
+ 
+ @return BOOL
+ */
++ (BOOL)cl_isSimulator;
+
+/**
+ 获取设备是否已越狱
+ 
+ @return BOOL
+ */
++ (BOOL)cl_isJailbroken;
+
 #pragma mark - CPU相关
 /**
  获取当前设备的CPU数量
