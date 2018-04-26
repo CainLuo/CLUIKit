@@ -1,5 +1,5 @@
 PODS:
-  - CLFoundation (1.5.4)
+  - CLFoundation (1.7.0)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - YYModel (1.0.4)
@@ -10,12 +10,19 @@ DEPENDENCIES:
   - MJRefresh
   - YYModel
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CLFoundation
+    - Masonry
+    - MJRefresh
+    - YYModel
+
 SPEC CHECKSUMS:
-  CLFoundation: 301ef7d4d1815a340241d8a3e9451b52c50adeb9
+  CLFoundation: 6e97a2fb51d31537f31cf37a1059d09c15c2115a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 7bb1c2dac981a3484c8335bc0f0795595f0fa608
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

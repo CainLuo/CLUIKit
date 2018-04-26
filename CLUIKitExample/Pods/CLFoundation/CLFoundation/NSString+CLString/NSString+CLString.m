@@ -14,6 +14,7 @@
 
 #import "NSString+CLString.h"
 #import "NSObject+CLObject.h"
+#import "NSData+CLData.h"
 #import <CommonCrypto/CommonDigest.h>
 
 static char cl_base64EncodingTable[64] = {
@@ -25,57 +26,7 @@ static char cl_base64EncodingTable[64] = {
 
 @implementation NSString (CLString)
 
-+ (NSString *)cl_getNumberWithString:(NSString *)string {
-    
-    NSMutableString *cl_string = [[NSMutableString alloc] init];
-
-    for (NSInteger i = 0; i < string.length; i++) {
-        
-        NSString *cl_numberString = [string substringWithRange:NSMakeRange(i, 1)];
-        
-        if ([cl_numberString cl_isNumber]) {
-            
-            [cl_string appendString:cl_numberString];
-        }
-    }
-    
-    return cl_string;
-}
-
-+ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber {
-    
-    if (![phoneNumber cl_checkPhoneNumber]) {
-        
-        return nil;
-    }
-    
-    NSMutableString *cl_phoneNumberString = [NSMutableString stringWithString:phoneNumber];
-    
-    NSRange cl_phoneNumberRange = NSMakeRange(3, 4);
-    
-    [cl_phoneNumberString replaceCharactersInRange:cl_phoneNumberRange
-                                        withString:@"****"];
-    
-    return cl_phoneNumberString;
-}
-
-+ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber {
-    
-    if (cardNumber.length < 8) {
-        
-        return nil;
-    }
-    
-    NSMutableString *cl_cardNumber = [NSMutableString stringWithString:cardNumber];
-    
-    NSRange cl_cardRange = NSMakeRange(4, 8);
-    
-    [cl_cardNumber replaceCharactersInRange:cl_cardRange
-                                 withString:@" **** **** "];
-
-    return cl_cardNumber;
-}
-
+#pragma mark - 字符串计算
 - (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
                            width:(CGFloat)width {
     
@@ -86,6 +37,103 @@ static char cl_base64EncodingTable[64] = {
                                context:nil].size.height;
 }
 
++ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
+                                         font:(UIFont *)font
+                                        width:(CGFloat)width {
+    
+    if ([self cl_checkEmptyWithString:string] || width <= 0) {
+        
+        return 0;
+    }
+    
+    CGSize cl_stringSize = [string boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                                attributes:@{NSFontAttributeName:font}
+                                                context:nil].size;
+    
+    return ceil(cl_stringSize.height);
+}
+
++ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
+                                                font:(UIFont *)font {
+ 
+    if ([self cl_checkEmptyWithString:string]) {
+        
+        return 0;
+    }
+    
+    CGSize cl_stringSize = [string boundingRectWithSize:CGSizeMake(0, 0)
+                                                options:NSStringDrawingUsesFontLeading
+                                             attributes:@{NSFontAttributeName:font}
+                                                context:nil].size;
+
+    return ceil(cl_stringSize.width);
+}
+
++ (CGSize)cl_measureStringSizeWithString:(NSString *)string
+                                    font:(UIFont *)font {
+    
+    if ([self cl_checkEmptyWithString:string]) {
+        
+        return CGSizeZero;
+    }
+    
+    CGSize cl_stringSize = [string boundingRectWithSize:CGSizeMake(0, 0)
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                             attributes:@{NSFontAttributeName:font}
+                                                context:nil].size;
+    
+    return cl_stringSize;
+}
+
++ (CGSize)cl_measureStringWithString:(NSString *)string
+                                font:(UIFont *)font
+                                size:(CGSize)size
+                                mode:(NSLineBreakMode)lineBreakMode {
+    
+    CGSize cl_stringSize;
+    
+    if (!font) {
+        
+        font = [UIFont systemFontOfSize:12];
+    }
+    
+    if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        
+        NSMutableDictionary *cl_mutableDictionary = [NSMutableDictionary dictionary];
+        
+        cl_mutableDictionary[NSFontAttributeName] = font;
+        
+        if (lineBreakMode != NSLineBreakByWordWrapping) {
+            
+            NSMutableParagraphStyle *cl_mutableParagraphStyle = [NSMutableParagraphStyle new];
+            
+            cl_mutableParagraphStyle.lineBreakMode = lineBreakMode;
+            
+            cl_mutableDictionary[NSParagraphStyleAttributeName] = cl_mutableParagraphStyle;
+            
+        }
+        
+        CGRect rect = [string boundingRectWithSize:size
+                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                      attributes:cl_mutableDictionary
+                                           context:nil];
+        cl_stringSize = rect.size;
+        
+    } else {
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        cl_stringSize = [string sizeWithFont:font
+                           constrainedToSize:size
+                               lineBreakMode:lineBreakMode];
+#pragma clang diagnostic pop
+    }
+    
+    return cl_stringSize;
+}
+
+#pragma mark - 字符串过滤
 - (NSString *)cl_removeUnwantedZero {
     
     if ([[self substringWithRange:NSMakeRange(self.length - 3, 3)] isEqualToString:@"000"]) {
@@ -106,6 +154,13 @@ static char cl_base64EncodingTable[64] = {
 
 - (NSString *)cl_trimmedString {
     
+    NSCharacterSet *cl_characterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    return [self stringByTrimmingCharactersInSet:cl_characterSet];
+}
+
+- (NSString *)cl_trimmedAllString {
+    
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
@@ -113,6 +168,257 @@ static char cl_base64EncodingTable[64] = {
     
     return [self stringByReplacingOccurrencesOfString:character
                                            withString:@""];
+}
+
+#pragma mark - 字符串转换
++ (NSString *)cl_urlQueryStringWithDictionary:(NSDictionary *)dictionary {
+    
+    NSMutableString *string = [NSMutableString string];
+    
+    for (NSString *key in [dictionary allKeys]) {
+        
+        if ([string length]) {
+            
+            [string appendString:@"&"];
+        }
+        CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)[[dictionary objectForKey:key] description],
+                                                                      NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                      kCFStringEncodingUTF8);
+        [string appendFormat:@"%@=%@", key, escaped];
+        CFRelease(escaped);
+    }
+    return string;
+}
+
++ (NSString *)cl_jsonStringWithObject:(NSObject *)object {
+    
+    if ([NSJSONSerialization isValidJSONObject:object]) {
+        
+        NSError *cl_error;
+        NSData *cl_JSONData = [NSJSONSerialization dataWithJSONObject:object
+                                                              options:0
+                                                                error:&cl_error];
+        
+        NSString *cl_jsonString = [[NSString alloc] initWithData:cl_JSONData
+                                                        encoding:NSUTF8StringEncoding];
+        return cl_jsonString;
+    }
+    
+    return nil;
+}
+
++ (NSString *)cl_jsonPrettyStringWithObject:(NSObject *)object {
+    
+    if ([NSJSONSerialization isValidJSONObject:object]) {
+        
+        NSError *cl_error;
+        NSData *cl_JSONData = [NSJSONSerialization dataWithJSONObject:object
+                                                              options:NSJSONWritingPrettyPrinted
+                                                                error:&cl_error];
+        
+        NSString *cl_jsonString = [[NSString alloc] initWithData:cl_JSONData
+                                                        encoding:NSUTF8StringEncoding];
+        return cl_jsonString;
+    }
+    
+    return nil;
+}
+
++ (NSString *)cl_urlEncodeWithString:(NSString *)string {
+    
+    if ([self respondsToSelector:@selector(stringByAddingPercentEncodingWithAllowedCharacters:)]) {
+        /**
+         AFNetworking/AFURLRequestSerialization.m
+         
+         Returns a percent-escaped string following RFC 3986 for a query string key or value.
+         RFC 3986 states that the following characters are "reserved" characters.
+         - General Delimiters: ":", "#", "[", "]", "@", "?", "/"
+         - Sub-Delimiters: "!", "$", "&", "'", "(", ")", "*", "+", ",", ";", "="
+         In RFC 3986 - Section 3.4, it states that the "?" and "/" characters should not be escaped to allow
+         query strings to include a URL. Therefore, all "reserved" characters with the exception of "?" and "/"
+         should be percent-escaped in the query string.
+         - parameter string: The string to be percent-escaped.
+         - returns: The percent-escaped string.
+         */
+        static NSString *const kAFCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        static NSString *const kAFCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
+        
+        NSMutableCharacterSet *cl_mutableCharacterSet = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
+        
+        NSString *cl_charactersInString = [kAFCharactersGeneralDelimitersToEncode stringByAppendingString:kAFCharactersSubDelimitersToEncode];
+        
+        [cl_mutableCharacterSet removeCharactersInString:cl_charactersInString];
+        
+        static NSUInteger const cl_batchSize = 50;
+        
+        NSUInteger cl_index = 0;
+        
+        NSMutableString *cl_escaped = @"".mutableCopy;
+        
+        while (cl_index < string.length) {
+            
+            NSUInteger cl_length = MIN(string.length - cl_index, cl_batchSize);
+            
+            NSRange cl_range = NSMakeRange(cl_index, cl_length);
+            
+            // To avoid breaking up character sequences such as 👴🏻👮🏽
+            cl_range = [string rangeOfComposedCharacterSequencesForRange:cl_range];
+            
+            NSString *cl_substring = [string substringWithRange:cl_range];
+            
+            NSString *cl_encodedString = [cl_substring stringByAddingPercentEncodingWithAllowedCharacters:cl_mutableCharacterSet];
+            
+            [cl_escaped appendString:cl_encodedString];
+            
+            cl_index += cl_range.length;
+        }
+        
+        return cl_escaped;
+        
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        
+        CFStringEncoding cl_cfStringEncoding = CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding);
+        
+        NSString *cl_encodedString = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                                                           (__bridge CFStringRef)string,
+                                                                                                           NULL,
+                                                                                                           CFSTR("!#$&'()*+,/:;=?@[]"),
+                                                                                                           cl_cfStringEncoding);
+        return cl_encodedString;
+#pragma clang diagnostic pop
+    }
+}
+
++ (NSString *)cl_urlDecodeWithString:(NSString *)string {
+    
+    if ([self respondsToSelector:@selector(stringByRemovingPercentEncoding)]) {
+        
+        return [string stringByRemovingPercentEncoding];
+        
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        CFStringEncoding cl_cfStringEncoding = CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding);
+        NSString *cl_decodedString = [string stringByReplacingOccurrencesOfString:@"+"
+                                                                       withString:@" "];
+        cl_decodedString = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                                 (__bridge CFStringRef)cl_decodedString,
+                                                                                                                 CFSTR(""),
+                                                                                                                 cl_cfStringEncoding);
+        return cl_decodedString;
+#pragma clang diagnostic pop
+    }
+}
+
++ (NSString *)cl_escapingHTMLWithString:(NSString *)string {
+    
+    NSUInteger cl_stringLength = string.length;
+    
+    if (!cl_stringLength) {
+        return string;
+    }
+    
+    unichar *cl_unicharBuf = malloc(sizeof(unichar) * cl_stringLength);
+    
+    if (!cl_unicharBuf) {
+        return string;
+    }
+    
+    [string getCharacters:cl_unicharBuf
+                    range:NSMakeRange(0, cl_stringLength)];
+    
+    NSMutableString *cl_mutableString = [NSMutableString string];
+    
+    for (NSUInteger i = 0; i < cl_stringLength; i++) {
+        
+        unichar cl_unichar = cl_unicharBuf[i];
+        
+        NSString *cl_escString = nil;
+        
+        switch (cl_unichar) {
+            case 34: cl_escString = @"&quot;"; break;
+            case 38: cl_escString = @"&amp;"; break;
+            case 39: cl_escString = @"&apos;"; break;
+            case 60: cl_escString = @"&lt;"; break;
+            case 62: cl_escString = @"&gt;"; break;
+            default: break;
+        }
+        
+        if (cl_escString) {
+            
+            [cl_mutableString appendString:cl_escString];
+        } else {
+            
+            CFStringAppendCharacters((CFMutableStringRef)cl_mutableString, &cl_unichar, 1);
+        }
+    }
+    
+    free(cl_unicharBuf);
+    
+    return cl_mutableString;
+}
+
++ (BOOL)cl_checkEmptyWithString:(NSString *)string {
+    
+    if (string == nil || string == NULL || [string isKindOfClass:[NSNull class]] || [string length] == 0 || [string isEqualToString: @"(null)"]) {
+        
+        return YES;
+    }
+    return NO;
+}
+
+#pragma mark - 字符串格式化
++ (NSString *)cl_getNumberWithString:(NSString *)string {
+    
+    NSMutableString *cl_string = [[NSMutableString alloc] init];
+    
+    for (NSInteger i = 0; i < string.length; i++) {
+        
+        NSString *cl_numberString = [string substringWithRange:NSMakeRange(i, 1)];
+        
+        if ([cl_numberString cl_isNumber]) {
+            
+            [cl_string appendString:cl_numberString];
+        }
+    }
+    
+    return cl_string;
+}
+
++ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber {
+    
+    if (cardNumber.length < 8) {
+        
+        return nil;
+    }
+    
+    NSMutableString *cl_cardNumber = [NSMutableString stringWithString:cardNumber];
+    
+    NSRange cl_cardRange = NSMakeRange(4, 8);
+    
+    [cl_cardNumber replaceCharactersInRange:cl_cardRange
+                                 withString:@" **** **** "];
+    
+    return cl_cardNumber;
+}
+
++ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber {
+    
+    if (![phoneNumber cl_checkPhoneNumber]) {
+        
+        return nil;
+    }
+    
+    NSMutableString *cl_phoneNumberString = [NSMutableString stringWithString:phoneNumber];
+    
+    NSRange cl_phoneNumberRange = NSMakeRange(3, 4);
+    
+    [cl_phoneNumberString replaceCharactersInRange:cl_phoneNumberRange
+                                        withString:@"****"];
+    
+    return cl_phoneNumberString;
 }
 
 + (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber {
@@ -156,103 +462,7 @@ static char cl_base64EncodingTable[64] = {
     }
 }
 
-
-+ (CGSize)cl_measureStringSizeWithString:(NSString *)string
-                                    font:(UIFont *)font {
-    
-    if ([self cl_checkEmptyWithString:string]) {
-        
-        return CGSizeZero;
-    }
-    
-    CGSize measureSize = [string boundingRectWithSize:CGSizeMake(0, 0)
-                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil]
-                                              context:nil].size;
-
-    return measureSize;
-}
-
-+ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
-                                                font:(UIFont *)font {
- 
-    if ([self cl_checkEmptyWithString:string]) {
-        
-        return 0;
-    }
-    
-    CGSize measureSize = [string boundingRectWithSize:CGSizeMake(0, 0)
-                                              options:NSStringDrawingUsesFontLeading
-                                           attributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil]
-                                              context:nil].size;
-
-    return ceil(measureSize.width);
-}
-
-+ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
-                                         font:(UIFont *)font
-                                        width:(CGFloat)width {
-    
-    if ([self cl_checkEmptyWithString:string] || width <= 0) {
-        
-        return 0;
-    }
-    
-    CGSize measureSize = [string boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
-                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil]
-                                              context:nil].size;
-
-    return ceil(measureSize.height);
-}
-
-+ (NSString *)cl_urlQueryStringWithDictionary:(NSDictionary *)dictionary {
-    
-    NSMutableString *string = [NSMutableString string];
-    
-    for (NSString *key in [dictionary allKeys]) {
-        
-        if ([string length]) {
-            
-            [string appendString:@"&"];
-        }
-        CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)[[dictionary objectForKey:key] description],
-                                                                      NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]",
-                                                                      kCFStringEncodingUTF8);
-        [string appendFormat:@"%@=%@", key, escaped];
-        CFRelease(escaped);
-    }
-    return string;
-}
-
-+ (NSString *)cl_jsonStringWithObject:(NSObject *)object {
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    if (jsonData == nil) {
-#ifdef DEBUG
-        NSLog(@"fail to get JSON from dictionary: %@, error: %@", self, error);
-#endif
-        return nil;
-    }
-    
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData
-                                                 encoding:NSUTF8StringEncoding];
-    return jsonString;
-}
-
-+ (BOOL)cl_checkEmptyWithString:(NSString *)string {
-    
-    if (string == nil || string == NULL || [string isKindOfClass:[NSNull class]] || [string length] == 0 || [string isEqualToString: @"(null)"]) {
-        
-        return YES;
-    }
-    return NO;
-}
-
-#pragma mark - 加密字符串方法
+#pragma mark - Base 64加密
 + (NSString *)cl_base64StringFromData:(NSData *)data
                                length:(NSUInteger)length {
     
@@ -344,27 +554,82 @@ static char cl_base64EncodingTable[64] = {
     return cl_decodedString;
 }
 
-#pragma mark - MD5
+#pragma mark - MD加密字符串
++ (NSString *)cl_encodingMD2WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredMD2String];
+}
+
++ (NSString *)cl_encodingMD4WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredMD4String];
+}
+
 + (NSString *)cl_encodingMD5WithString:(NSString *)string {
     
-    if([self cl_checkEmptyWithString:string]) {
-        return nil;
-    }
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredMD5String];
+}
+
++ (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
+                                             key:(NSString *)key {
     
-    const char *value = [string UTF8String];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredMD5StringWithKey:key];
+}
+
+#pragma mark - SHA加密字符串
++ (NSString *)cl_encodingSHA1WithString:(NSString *)string {
     
-    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA1String];
+}
+
++ (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
+                                              key:(NSString *)key {
     
-    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA1StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA224WithString:(NSString *)string {
     
-    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA224String];
+}
+
++ (NSString *)cl_hmacEncodingSHA224StringWithString:(NSString *)string
+                                                key:(NSString *)key {
     
-    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
-        
-        [outputString appendFormat:@"%02x",outputBuffer[count]];
-    }
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA224StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA256WithString:(NSString *)string {
     
-    return [NSString stringWithString:outputString];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA256String];
+}
+
++ (NSString *)cl_hmacEncodingSHA256StringWithString:(NSString *)string
+                                                key:(NSString *)key {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA256StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA384WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA384String];
+}
+
++ (NSString *)cl_hmacEncodingSHA384StringWithString:(NSString *)string
+                                                key:(NSString *)key {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA384StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA512WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA512String];
+}
+
++ (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
+                                                key:(NSString *)key {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA512StringWithKey:key];
 }
 
 #pragma mark - 获取字符串首字母

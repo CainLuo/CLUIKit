@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, CLDataBaseType) {
+typedef NS_ENUM(NSInteger, CLEncodedType) {
     
-    CLDataBaseType64 = 64,
-    CLDataBaseType76 = 76
+    CLEncodedType64 = 64,
+    CLEncodedType76 = 76
 };
 
 @interface NSData (CLData)
@@ -48,11 +48,11 @@ typedef NS_ENUM(NSInteger, CLDataBaseType) {
  将指定的NSData转成64或76的字符串
 
  @param data NSData
- @param wrapWidth CLDataBaseType
+ @param wrapWidth CLEncodedType
  @return NSString
  */
 + (NSString *)cl_transformBase64EncodedStringWithData:(NSData *)data
-                                            wrapWidth:(CLDataBaseType)wrapWidth;
+                                            wrapWidth:(CLEncodedType)wrapWidth;
 
 #pragma mark - AES加密/解密
 /**
@@ -95,5 +95,230 @@ typedef NS_ENUM(NSInteger, CLDataBaseType) {
  */
 - (NSData *)cl_decryptedDataWith3DEKey:(NSString *)key
                            decryptData:(NSData *)decryptData;
+
+#pragma mark - MD加密
+/**
+ 获取MD2加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredMD2String;
+
+/**
+ 获取MD2加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredMD2Data;
+
+/**
+ 获取MD4加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredMD4String;
+
+/**
+ 获取MD4加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredMD4Data;
+
+/**
+ 获取MD5加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredMD5String;
+
+/**
+ 使用指定Key去哈希加密MD5
+ 
+ @param key NSString
+ @return NSString
+ */
+- (NSString *)cl_hmacEncryptredMD5StringWithKey:(NSString *)key;
+
+/**
+ 获取MD5加密后的NSData
+
+ @return NSData
+ */
+- (NSData *)cl_encryptredMD5Data;
+
+/**
+ 获取使用指定Key HASH MD5加密后的NSData
+ 
+ @param key NSData
+ @return NSData
+ */
+- (NSData *)cl_hmacEncryptredMD5DataWithKey:(NSData *)key;
+
+#pragma mark - SHA加密
+/**
+ 获取SHA1加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredSHA1String;
+
+/**
+ 获取使用指定Key HASH SHA1加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
+- (NSString *)cl_hmacEncryptredSHA1StringWithKey:(NSString *)key;
+
+/**
+ 获取SHA1加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA1Data;
+
+/**
+ 获取使用指定Key HASH SHA1加密后的NSData
+ 
+ @param key NSData
+ @return NSData
+ */
+- (NSData *)cl_hmacEncryptredSHA1DataWithKey:(NSData *)key;
+
+/**
+ 获取SHA224加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredSHA224String;
+
+/**
+ 获取使用指定Key HASH SHA224加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
+- (NSString *)cl_hmacEncryptredSHA224StringWithKey:(NSString *)key;
+
+/**
+ 获取SHA224加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA224Data;
+
+/**
+ 获取使用指定Key HASH SHA224加密后的NSData
+ 
+ @param key NSData
+ @return NSData
+ */
+- (NSData *)cl_hmacEncryptredSHA224DataWithKey:(NSData *)key;
+
+/**
+ 获取SHA256加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredSHA256String;
+
+/**
+ 获取使用指定Key HASH SHA256加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
+- (NSString *)cl_hmacEncryptredSHA256StringWithKey:(NSString *)key;
+
+/**
+ 获取SHA256加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA256Data;
+
+/**
+ 获取使用指定Key HASH SHA256加密后的NSData
+ 
+ @param key NSData
+ @return NSData
+ */
+- (NSData *)cl_hmacEncryptredSHA256DataWithKey:(NSData *)key;
+
+/**
+ 获取SHA384加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredSHA384String;
+
+/**
+ 获取使用指定Key HASH SHA384加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
+- (NSString *)cl_hmacEncryptredSHA384StringWithKey:(NSString *)key;
+
+/**
+ 获取SHA384加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA384Data;
+
+/**
+ 获取使用指定Key HASH SHA384加密后的NSData
+ 
+ @param key NSData
+ @return NSData
+ */
+- (NSData *)cl_hmacEncryptredSHA384DataWithKey:(NSData *)key;
+
+/**
+ 获取SHA512加密后的NSString
+ 
+ @return NSString
+ */
+- (NSString *)cl_encryptredSHA512String;
+
+/**
+ 获取使用指定Key HASH SHA512加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
+- (NSString *)cl_hmacEncryptredSHA512StringWithKey:(NSString *)key;
+
+/**
+ 获取SHA512加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA512Data;
+
+/**
+ 获取使用指定Key HASH SHA512加密后的NSData
+
+ @param key NSData
+ @return NSData
+ */
+- (NSData *)cl_hmacEncryptredSHA512DataWithKey:(NSData *)key;
+
+/**
+ 解析JSON数据
+
+ @return id
+ */
+- (id)cl_dataJSONValueDecoded;
+
+/**
+ 获取指定NSBundle获取NSData
+
+ @param name NSString
+ @return NSData
+ */
++ (NSData *)cl_getDataWithBundleNamed:(NSString *)name;
 
 @end

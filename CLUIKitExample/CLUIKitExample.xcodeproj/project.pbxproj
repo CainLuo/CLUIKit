@@ -1144,7 +1144,6 @@
 				A4DB7122203800530015964F /* Frameworks */,
 				A4DB7123203800530015964F /* Resources */,
 				2AACA567227F4D4DA1A5D8F3 /* [CP] Embed Pods Frameworks */,
-				0C2D9A1BBC25F6698F7C860B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1204,21 +1203,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C2D9A1BBC25F6698F7C860B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2AACA567227F4D4DA1A5D8F3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

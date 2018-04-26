@@ -11,6 +11,7 @@
 #endif
 
 #import "CLFoundation.h"
+#import "CLSpeechSynthesizer.h"
 #import "NSArray+CLArray.h"
 #import "NSAttributedString+CLAttributedString.h"
 #import "NSBundle+CLBundle.h"
@@ -21,6 +22,7 @@
 #import "NSMutableArray+CLMutableArray.h"
 #import "NSMutableAttributedString+CLMutableAttributedString.h"
 #import "NSMutableDictionary+CLMutableDictionary.h"
+#import "NSNotificationCenter+CLNotificationCenter.h"
 #import "NSNumber+CLNumber.h"
 #import "NSObject+CLObject.h"
 #import "NSString+CLString.h"

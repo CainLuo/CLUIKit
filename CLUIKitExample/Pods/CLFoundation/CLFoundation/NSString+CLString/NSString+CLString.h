@@ -17,123 +17,95 @@
 
 @interface NSString (CLString)
 
-#pragma mark - 字符串处理
-/**
- 返回过滤后的数字
-
- @param string 字符串
- @return 数字
- */
-+ (NSString *)cl_getNumberWithString:(NSString *)string;
-
-/**
- 隐藏电话号码中间4位数字
-
- @param phoneNumber 手机号
- @return 隐藏后的手机号
- */
-+ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
-
-/**
- 隐藏银行卡号中间8位数字
-
- @param cardNumber 银行卡号
- @return 隐藏后的银行卡号
- */
-+ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
+#pragma mark - 字符串计算
 
 /**
  根据条件计算文字的高度
 
- @param fontSize 字体大小
- @param width 宽度
+ @param fontSize CGFloat
+ @param width CGFloat
  @return CGFloat
  */
 - (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
                            width:(CGFloat)width;
 
 /**
- 抹除运费小数末尾的0
-
- @return NSString
- */
-- (NSString *)cl_removeUnwantedZero;
-
-/**
- 去掉字符串前后的空格
-
- @return NSString
- */
-- (NSString *)cl_trimmedString;
-
-/**
- 去除指定的字符
-
- @param character 指定的字符
- @return NSString
- */
-- (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character;
-
-/**
- 手机号格式化, 默认: 138 0013 8000
-
- @param phoneNumber 手机号
- @return NSString
- */
-+ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber;
-
-/**
- 手机号格式化
-
- @param phoneNumber 手机号
- @param separator 号码分隔符, 比如: 138-0013-8000
- @return NSString
- */
-+ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber
-                          separator:(NSString *)separator;
-
-/**
- 字符串单位格式化
-
- @param value 数值
- @param unitString 单位, 比如亿, 万
- @return NSString
- */
-+ (NSString *)cl_stringUnitFormat:(CGFloat)value
-                       unitString:(NSString *)unitString;
-
-/**
- 获取指定字符串的尺寸
-
- @param string 字符串
- @param font 字体
- @return CGFloat
- */
-+ (CGSize)cl_measureStringSizeWithString:(NSString *)string
-                                    font:(UIFont *)font;
-
-/**
- 获取指定字符串的宽度
-
- @param string 字符串
- @param font 字体
- @return CGFloat
- */
-+ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
-                                                font:(UIFont *)font;
-
-/**
  获取指定字符串的高度
-
- @param string 字符串
- @param font 字体
- @param width 宽度
+ 
+ @param string NSString
+ @param font UIFont
+ @param width CGFloat
  @return CGFloat
  */
 + (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
                                          font:(UIFont *)font
                                         width:(CGFloat)width;
 
+/**
+ 获取指定字符串的宽度
+
+ @param string NSString
+ @param font UIFont
+ @return CGFloat
+ */
++ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
+                                                font:(UIFont *)font;
+
+/**
+ 获取指定字符串的尺寸
+ 
+ @param string NSString
+ @param font UIFont
+ @return CGFloat
+ */
++ (CGSize)cl_measureStringSizeWithString:(NSString *)string
+                                    font:(UIFont *)font;
+
+/**
+ 获取指定字符串的尺寸
+
+ @param string NSString
+ @param font UIFont
+ @param size CGSize
+ @param lineBreakMode NSLineBreakMode
+ @return CGSize
+ */
++ (CGSize)cl_measureStringWithString:(NSString *)string
+                                font:(UIFont *)font
+                                size:(CGSize)size
+                                mode:(NSLineBreakMode)lineBreakMode;
+
+#pragma mark - 字符串过滤
+/**
+ 抹除运费小数末尾的0
+ 
+ @return NSString
+ */
+- (NSString *)cl_removeUnwantedZero;
+
+/**
+ 去掉字符串前后的空格
+ 
+ @return NSString
+ */
+- (NSString *)cl_trimmedString;
+
+/**
+ 去掉字符串前后中间的空格
+ 
+ @return NSString
+ */
+- (NSString *)cl_trimmedAllString;
+
+/**
+ 去除指定的字符
+ 
+ @param character NSString
+ @return NSString
+ */
+- (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character;
+
+#pragma mark - 字符串转换
 /**
  将指定的NSDictionary转成URL字符串
 
@@ -151,18 +123,103 @@
 + (NSString *)cl_jsonStringWithObject:(NSObject *)object;
 
 /**
+ 将指定的NSObject转成带格式的JSON字符串
+
+ @param object NSArray || NSDictionary || NSObject
+ @return NSString
+ */
++ (NSString *)cl_jsonPrettyStringWithObject:(NSObject *)object;
+
+/**
+ 将指定的字符串转义为URL字符串
+
+ @param string NSString
+ @return NSString
+ */
++ (NSString *)cl_urlEncodeWithString:(NSString *)string;
+
+/**
+ 将指定的URL字符串转义成正常的字符串
+
+ @param string NSString
+ @return NSString
+ */
++ (NSString *)cl_urlDecodeWithString:(NSString *)string;
+
+/**
+ 将指定的HTML字符串转义成正常的字符串
+
+ @param string NSString
+ @return NSString
+ */
++ (NSString *)cl_escapingHTMLWithString:(NSString *)string;
+
+/**
  判断字符串是否为空
  
- @param string 字符串
+ @param string NSString
  @return BOOL, YES为空, NO不为空
  */
 + (BOOL)cl_checkEmptyWithString:(NSString *)string;
 
-#pragma mark - 加密字符串方法
+#pragma mark - 字符串格式化
+/**
+ 返回过滤后的数字
+ 
+ @param string NSString
+ @return NSString
+ */
++ (NSString *)cl_getNumberWithString:(NSString *)string;
+
+/**
+ 隐藏银行卡号中间8位数字
+ 
+ @param cardNumber NSString
+ @return NSString
+ */
++ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
+
+/**
+ 隐藏电话号码中间4位数字
+ 
+ @param phoneNumber NSString
+ @return NSString
+ */
++ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
+
+/**
+ 手机号格式化, 默认: 138 0013 8000
+ 
+ @param phoneNumber NSString
+ @return NSString
+ */
++ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber;
+
+/**
+ 手机号格式化
+ 
+ @param phoneNumber NSString
+ @param separator NSString, 比如: 138-0013-8000
+ @return NSString
+ */
++ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber
+                          separator:(NSString *)separator;
+
+/**
+ 字符串单位格式化
+ 
+ @param value CGFloat, 数值
+ @param unitString NSString, 单位, 比如亿, 万
+ @return NSString
+ */
++ (NSString *)cl_stringUnitFormat:(CGFloat)value
+                       unitString:(NSString *)unitString;
+
+#pragma mark - Base64加密字符串
 /**
  将data数据转成Base64字符串
  
- @param data data对象
+ @param data NSData
  @param length NSUInteger
  @return NSString
  */
@@ -185,12 +242,118 @@
  */
 + (NSString *)cl_decodedBase64WithString:(NSString *)string;
 
+#pragma mark - MD加密字符串
+/**
+ 加密成MD2字符串
+
+ @param string NSString
+ @return NSString
+ */
++ (NSString *)cl_encodingMD2WithString:(NSString *)string;
+
+/**
+ 加密成MD4字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingMD4WithString:(NSString *)string;
+
 /**
  加密成MD5字符串
  
  @return NSString
  */
 + (NSString *)cl_encodingMD5WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH MD5加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
+                                             key:(NSString *)key;
+
+#pragma mark - SHA加密字符串
+/**
+ 加密成SHA1字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA1WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA1加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
+                                              key:(NSString *)key;
+
+/**
+ 加密成SHA224字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA224WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA224加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA224StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
+/**
+ 加密成SHA256字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA256WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA256加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA256StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
+/**
+ 加密成SHA384字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA384WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA384加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA384StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
+/**
+ 加密成SHA512字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA512WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA512加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
+                                                key:(NSString *)key;
 
 #pragma mark - NSString获取首字母
 /**
@@ -229,7 +392,7 @@
 /**
  当前字符是否为number位的数字
  
- @param quantity 限制数字的数量
+ @param quantity NSInteger, 限制数字的数量
  @return BOOL
  */
 - (BOOL)cl_checkMostNumber:(NSInteger)quantity;
@@ -237,7 +400,7 @@
 /**
  当前字符是否为至少number位的数字
  
- @param quantity 至少数字的数量
+ @param quantity NSInteger, 至少数字的数量
  @return BOOL
  */
 - (BOOL)cl_checkAtLeastNumber:(NSInteger)quantity;
@@ -245,8 +408,8 @@
 /**
  当前字符是否为最少leastNumber个数字, 最多moreNumber个数字的
  
- @param leastNumber 最少
- @param mostNumber 最多
+ @param leastNumber NSInteger, 最少
+ @param mostNumber NSInteger, 最多
  @return BOOL
  */
 - (BOOL)cl_checkLeastNumber:(NSInteger)leastNumber
@@ -357,8 +520,8 @@
 /**
  当前字符是否为 长度为3-20的所有字符
  
- @param fistRange 开始的范围
- @param lastRange 结束的范围
+ @param fistRange NSInteger, 开始的范围
+ @param lastRange NSInteger, 结束的范围
  @return BOOL
  */
 - (BOOL)cl_limitinglength:(NSInteger)fistRange
@@ -367,7 +530,7 @@
 /**
  当前字符长度是否位 length, 并且是由字母或数字所组成
  
- @param length length 字符的长度
+ @param length length NSInteger, 字符的长度
  @return BOOL
  */
 - (BOOL)cl_checkString:(NSInteger)length;
@@ -424,7 +587,7 @@
 /**
  当前字符是否禁止输入 含有charater的字符
  
- @param charater 输入限制的字符
+ @param charater NSString, 输入限制的字符
  @return BOOL
  */
 - (BOOL)cl_isContainCharacter:(NSString *)charater;
@@ -540,8 +703,8 @@
 /**
  当前字符是否为强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：briefest指的是最短密码长度, longest指的时最长密码长度
  
- @param briefest 密码最短的长度
- @param longest 密码最长的长度
+ @param briefest NSInteger, 密码最短的长度
+ @param longest NSInteger, 密码最长的长度
  @return BOOL
  */
 - (BOOL)cl_checkStrongPassword:(NSInteger)briefest
@@ -636,7 +799,7 @@
 /**
  自定义正则
  
- @param rule 正则规则
+ @param rule NSString, 正则规则
  @return BOOL
  */
 - (BOOL)cl_regularWithRule:(NSString *)rule;

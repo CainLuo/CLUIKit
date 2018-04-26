@@ -7,8 +7,28 @@
 //
 
 #import "NSDictionary+CLDictionary.h"
+#import "NSString+CLString.h"
 
 @implementation NSDictionary (CLDictionary)
+
++ (NSDictionary *)cl_dictionaryWithPlistData:(NSData *)plist {
+    
+    if (!plist) {
+        return nil;
+        
+    }
+    
+    NSDictionary *dictionary = [NSPropertyListSerialization propertyListWithData:plist
+                                                                         options:NSPropertyListImmutable
+                                                                          format:NULL
+                                                                           error:NULL];
+    if ([dictionary isKindOfClass:[NSDictionary class]]) {
+        
+        return dictionary;
+    }
+    
+    return nil;
+}
 
 + (NSDictionary *)cl_dictionaryWithURLString:(NSString *)urlString {
     
@@ -45,6 +65,51 @@
     }];
     
     return [cl_queryDictionary copy];
+}
+
+- (NSArray *)cl_getAllKeysSorted {
+    return [[self allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+}
+
+- (NSArray *)cl_getAllValuesSortedByKeys {
+    
+    NSArray *cl_sortedKeys = [self cl_getAllKeysSorted];
+    
+    NSMutableArray *cl_array = [NSMutableArray array];
+    
+    for (id cl_key in cl_sortedKeys) {
+        
+        [cl_array addObject:self[cl_key]];
+    }
+    
+    return cl_array;
+}
+
+- (BOOL)cl_containsObjectForKey:(id)key {
+    
+    if (!key) {
+        
+        return NO;
+    }
+    
+    return self[key] != nil;
+}
+
+- (NSDictionary *)cl_getDictionaryForKeys:(NSArray *)keys {
+    
+    NSMutableDictionary *cl_mutableDictionary = [NSMutableDictionary new];
+    
+    for (id key in keys) {
+        
+        id value = self[key];
+        
+        if (value) {
+            
+            cl_mutableDictionary[key] = value;
+        }
+    }
+    
+    return cl_mutableDictionary;
 }
 
 @end

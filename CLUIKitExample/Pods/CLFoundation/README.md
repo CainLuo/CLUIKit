@@ -21,13 +21,16 @@
 
 ## 目录
 
+- [CLSpeechSynthesizer@](#CLSpeechSynthesizer)
 - [NSArray+CLArray@](#NSArray+CLArray)
 - [NSAttributedString+CLAttributedString@](#NSAttributedString+CLAttributedString)
 - [NSBundle+CLBundle@](#NSBundle+CLBundle)
 - [NSData+CLData@](#NSData+CLData)
 - [NSDate+CLDate@](#NSDate+CLDate)
+  - [NSDate的属性@](NSDate的属性@)
   - [时间戳处理/计算日期@](#时间戳处理/计算日期)
   - [日期处理@](#日期处理)
+  - [日期格式化@](日期格式化@)
   - [日期判断@](#日期判断)
 - [获取NSDateComponents@](#获取NSDateComponents)
 - [NSDictionary+CLDictionary@](#NSDictionary+CLDictionary)
@@ -40,9 +43,14 @@
   - [RunTime@](#RunTime)
   - [GCD@](#GCD)
 - [NSString+CLString@](#NSString+CLString)
-  - [字符串处理@](#字符串处理)
-  - [加密字符串@](#加密字符串)
-  - [取首字母@](#取首字母)
+  - [字符串计算@](#字符串计算)
+  - [字符串过滤@](#字符串过滤)
+  - [字符串转换@](#字符串转换)
+  - [字符串格式化@](#字符串格式化)
+  - [Base64加密字符串@](#Base64加密字符串)
+  - [MD加密字符串@](#MD加密字符串)
+  - [SHA加密字符串@](#SHA加密字符串)
+  - [NSString获取首字母@](#NSString获取首字母)
   - [正则表达式(数字相关)@](#正则表达式(数字相关))
   - [正则表达式验证(整数相关)@](#正则表达式验证(整数相关))
   - [正则表达式验证(浮点数相关)@](#正则表达式验证(浮点数相关))
@@ -56,7 +64,29 @@
 - [NSURL+CLURL@](#NSURL+CLURL)
 
 
+
+
+## CLSpeechSynthesizer@
+
+**CLSpeechSynthesizer**基于**AVFoundation**实现的语音播报工具类:
+
+```objective-c
++ (instancetype)sharedSpeechSynthesizer;
+
+- (BOOL)cl_isSpeaking;
+
+- (void)cl_speakString:(NSString *)string;
+
+- (void)cl_stopSpeak;
+
+- (void)cl_chooseVoiceWithLanguage:(NSString *)language
+                        speakSpeed:(CGFloat)speakSpeed;
+```
+
+
+
 ## NSArray+CLArray@
+
 针对`Foundation`的`NSArray`进行系统外的方法补充:
 
 ```objective-c
@@ -132,8 +162,93 @@
 针对`Foundation`的`NSData`进行系统外的方法补充:
 
 ```objective-c
+typedef NS_ENUM(NSInteger, CLEncodedType) {
+    
+    CLEncodedType64 = 64,
+    CLEncodedType76 = 76
+};
+
 + (NSData *)cl_compressOriginalImage:(UIImage *)image
                   compressionQuality:(CGFloat)compressionQuality;
+
++ (NSString *)cl_replacingAPNsTokenWithData:(NSData *)data;
+
++ (NSData *)cl_transformDataWithBase64EncodedString:(NSString *)string;
+
++ (NSString *)cl_transformBase64EncodedStringWithData:(NSData *)data
+                                            wrapWidth:(CLEncodedType)wrapWidth;
+
+- (NSData *)cl_encryptedDataWithAESKey:(NSString *)key
+                           encryptData:(NSData *)encryptData;
+
+- (NSData *)cl_decryptedDataWithAESKey:(NSString *)key
+                           decryptData:(NSData *)decryptData;
+
+- (NSData *)cl_encryptedDataWith3DESKey:(NSString *)key
+                            encryptData:(NSData *)encryptData;
+
+- (NSData *)cl_decryptedDataWith3DEKey:(NSString *)key
+                           decryptData:(NSData *)decryptData;
+
+- (NSString *)cl_encryptredMD2String;
+
+- (NSData *)cl_encryptredMD2Data;
+
+- (NSString *)cl_encryptredMD4String;
+
+- (NSData *)cl_encryptredMD4Data;
+
+- (NSString *)cl_encryptredMD5String;
+
+- (NSString *)cl_hmacEncryptredMD5StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredMD5Data;
+
+- (NSData *)cl_hmacEncryptredMD5DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA1String;
+
+- (NSString *)cl_hmacEncryptredSHA1StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA1Data;
+
+- (NSData *)cl_hmacEncryptredSHA1DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA224String;
+
+- (NSString *)cl_hmacEncryptredSHA224StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA224Data;
+
+- (NSData *)cl_hmacEncryptredSHA224DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA256String;
+
+- (NSString *)cl_hmacEncryptredSHA256StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA256Data;
+
+- (NSData *)cl_hmacEncryptredSHA256DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA384String;
+
+- (NSString *)cl_hmacEncryptredSHA384StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA384Data;
+
+- (NSData *)cl_hmacEncryptredSHA384DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA512String;
+
+- (NSString *)cl_hmacEncryptredSHA512StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA512Data;
+
+- (NSData *)cl_hmacEncryptredSHA512DataWithKey:(NSData *)key;
+
+- (id)cl_dataJSONValueDecoded;
+
++ (NSData *)cl_getDataWithBundleNamed:(NSString *)name;
 ```
 
 
@@ -142,23 +257,44 @@
 
 针对`Foundation`的`NSDate`进行系统外的方法补充:
 
+### NSDate的属性
+
+```objective-c
+@property (nonatomic, readonly) NSInteger cl_year;
+@property (nonatomic, readonly) NSInteger cl_month;
+@property (nonatomic, readonly) NSInteger cl_day;
+@property (nonatomic, readonly) NSInteger cl_hour;
+@property (nonatomic, readonly) NSInteger cl_minute;
+@property (nonatomic, readonly) NSInteger cl_second;
+@property (nonatomic, readonly) NSInteger cl_nanosecond;
+@property (nonatomic, readonly) NSInteger cl_weekday;
+@property (nonatomic, readonly) NSInteger cl_weekdayOrdinal;
+@property (nonatomic, readonly) NSInteger cl_weekOfMonth;
+@property (nonatomic, readonly) NSInteger cl_weekOfYear;
+@property (nonatomic, readonly) NSInteger cl_yearForWeekOfYear;
+@property (nonatomic, readonly) NSInteger cl_quarter;
+@property (nonatomic, readonly) BOOL cl_isLeapMonth;
+@property (nonatomic, readonly) BOOL cl_isLeapYear;
+@property (nonatomic, readonly) BOOL cl_isToday;
+@property (nonatomic, readonly) BOOL cl_isYesterday;
+```
+
+
+
 
 ### 时间戳处理/计算日期@
 
 ```objective-c
 + (NSString *)cl_compareCureentTimeWithDate:(NSTimeInterval)timeStamp;
 
-+ (NSString *)cl_getCurrentTimeStamp;
++ (NSString *)cl_getCurrentTimeStampString;
+
++ (NSTimeInterval)cl_getCurrentTimeStamp;
 
 + (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp;
 
-+ (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp
-                                formatter:(NSString *)formatter;
-
-+ (NSString *)cl_getDateStringWithDate:(NSDate *)date
-                             formatter:(NSString *)formatter;
-
 + (NSString *)cl_calculateDaysWithDate:(NSDate *)date;
+
 ```
 
 
@@ -205,6 +341,32 @@
                               hours:(NSInteger)hours;
 ```
 
+### 日期格式化
+
+```objective-c
++ (NSString *)cl_getStringDateWithTimeStamp:(NSTimeInterval)timeStamp
+                                  formatter:(NSString *)formatter;
+
+- (NSString *)cl_getStringDateWithFormatter:(NSString *)formatter;
+
++ (NSString *)cl_getStringDateWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter;
+
++ (NSString *)cl_getStringDateWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter
+                              timeZone:(NSTimeZone *)timeZone
+                                locale:(NSLocale *)locale;
+
++ (NSDate *)cl_getDateWithDateString:(NSString *)dateString
+                           formatter:(NSString *)formatter;
+
++ (NSDate *)cl_getDateWithDateString:(NSString *)dateString
+                           formatter:(NSString *)formatter
+                            timeZone:(NSTimeZone *)timeZone
+                              locale:(NSLocale *)locale;
+```
+
+
 
 ### 日期判断@
 
@@ -229,7 +391,17 @@
 针对`Foundation`的`NSDictionary`进行系统外的方法补充:
 
 ```objective-c
++ (NSDictionary *)cl_dictionaryWithPlistData:(NSData *)plist;
+
 + (NSDictionary *)cl_dictionaryWithURLString:(NSString *)urlString;
+
+- (NSArray *)cl_getAllKeysSorted;
+
+- (NSArray *)cl_getAllValuesSortedByKeys;
+
+- (BOOL)cl_containsObjectForKey:(id)key;
+
+- (NSDictionary *)cl_getDictionaryForKeys:(NSArray *)keys;
 ```
 
 
@@ -335,6 +507,10 @@
 - (id)cl_safeObjectForKey:(id)key;
 
 - (id)cl_safeKeyForValue:(id)value;
+
++ (NSMutableDictionary *)cl_mutableDictionaryWithPlistData:(NSData *)plist;
+
+- (NSMutableDictionary *)cl_popEntriesForKeys:(NSArray *)keys;
 ```
 
 
@@ -368,6 +544,7 @@
 针对`Foundation`的`NSObject`进行系统外的方法补充:
 
 
+
 ### RunTime@
 
 ```objective-c
@@ -399,6 +576,7 @@
 ```
 
 
+
 ### GCD@
 
 ```objective-c
@@ -418,23 +596,53 @@
 针对`Foundation`的`NSString`进行系统外的方法补充:
 
 
-### 字符串处理@
+
+### 字符串计算
 
 ```objective-c
-+ (NSString *)cl_getNumberWithString:(NSString *)string;
-
-+ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
-
-+ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
-
 - (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
                            width:(CGFloat)width;
 
++ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
+                                         font:(UIFont *)font
+                                        width:(CGFloat)width;
+
++ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
+                                                font:(UIFont *)font;
+
++ (CGSize)cl_measureStringSizeWithString:(NSString *)string
+                                    font:(UIFont *)font;
+
++ (CGSize)cl_measureStringWithString:(NSString *)string
+                                font:(UIFont *)font
+                                size:(CGSize)size
+                                mode:(NSLineBreakMode)lineBreakMode;
+```
+
+
+
+### 字符串过滤
+
+```objective-c
 - (NSString *)cl_removeUnwantedZero;
 
 - (NSString *)cl_trimmedString;
 
+- (NSString *)cl_trimmedAllString;
+
 - (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character;
+```
+
+
+
+### 字符串格式化
+
+```objective-c
++ (NSString *)cl_getNumberWithString:(NSString *)string;
+
++ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
+
++ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
 
 + (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber;
 
@@ -443,24 +651,11 @@
 
 + (NSString *)cl_stringUnitFormat:(CGFloat)value
                        unitString:(NSString *)unitString;
-
-+ (CGSize)cl_measureStringSizeWithString:(NSString *)string
-                                    font:(UIFont *)font;
-
-+ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
-                                                font:(UIFont *)font;
-
-+ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
-                                         font:(UIFont *)font
-                                        width:(CGFloat)width;
-
-+ (NSString *)cl_urlQueryStringWithDictionary:(NSDictionary *)dictionary;
-
-+ (NSString *)cl_jsonStringWithObject:(NSObject *)object;
 ```
 
 
-### 加密字符串@
+
+### Base64加密字符串
 
 ```objective-c
 + (NSString *)cl_base64StringFromData:(NSData *)data
@@ -469,12 +664,57 @@
 + (NSString *)cl_encodingBase64WithString:(NSString *)string;
 
 + (NSString *)cl_decodedBase64WithString:(NSString *)string;
-
-+ (NSString *)cl_encodingMD5WithString:(NSString *)string;
 ```
 
 
-### 取首字母@
+
+### MD加密字符串@
+
+```objective-c
++ (NSString *)cl_encodingMD2WithString:(NSString *)string;
+
++ (NSString *)cl_encodingMD4WithString:(NSString *)string;
+
++ (NSString *)cl_encodingMD5WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
+                                             key:(NSString *)key;
+```
+
+
+
+### SHA加密字符串@
+
+```objective-c
++ (NSString *)cl_encodingSHA1WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
+                                              key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA224WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA224StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA256WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA256StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA384WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA384StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA512WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+```
+
+
+
+### NSString获取首字母@
 
 ```objective-c
 + (NSString *)cl_getFirstCharactorWithString:(NSString *)string;
@@ -483,11 +723,13 @@
 ```
 
 
+
 ### 正则表达式(数字相关)@
 
 ```objective-c
 - (BOOL)cl_realContainDecimal;
 ```
+
 
 
 ### 正则表达式验证(整数相关)@
@@ -514,6 +756,7 @@
 ```
 
 
+
 ### 正则表达式验证(浮点数相关)@
 
 ```objective-c
@@ -531,6 +774,7 @@
 
 - (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative;
 ```
+
 
 
 ### 正则表达式验证(字符串相关)@
@@ -575,6 +819,7 @@
 ```
 
 
+
 ### 正则表达式验证(号码相关)@
 
 ```objective-c
@@ -592,11 +837,13 @@
 ```
 
 
+
 ### 正则表达式验证(身份证相关)@
 
 ```objective-c
 - (BOOL)cl_checkIdentityCard;
 ```
+
 
 
 ### 正则表达式验证(账号相关)@
@@ -611,6 +858,7 @@
 ```
 
 
+
 ### 正则表达式验证(日期相关)@
 
 ```objective-c
@@ -622,6 +870,7 @@
 
 - (BOOL)cl_checkDay;
 ```
+
 
 
 ### 正则表达式验证(特殊正则)@

@@ -13,6 +13,9 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - CLSpeechSunthesizer
+#import "CLSpeechSynthesizer.h"
+
 #pragma mark - NSArray+CLArray
 #import "NSArray+CLArray.h"
 
@@ -45,6 +48,9 @@
 
 #pragma mark - NSMutableDictionary+CLMutableDictionary
 #import "NSMutableDictionary+CLMutableDictionary.h"
+
+#pragma mark - NSNotificationCenter+CLNotificationCenter
+#import "NSNotificationCenter+CLNotificationCenter.h"
 
 #pragma mark - NSNumber+CLNumber
 #import "NSNumber+CLNumber.h"
