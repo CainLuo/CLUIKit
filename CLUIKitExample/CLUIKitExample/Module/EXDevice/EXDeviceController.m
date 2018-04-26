@@ -27,14 +27,22 @@
     
     NSMutableString *cl_mutableString = [[NSMutableString alloc] init];
     
+    [cl_mutableString appendFormat:@"----------设备相关----------\n"];
     [cl_mutableString appendFormat:@"获取系统版本: %@\n", [UIDevice cl_getSystemVersion]];
     [cl_mutableString appendFormat:@"获取设备名: %@\n", [UIDevice cl_getDeviceName]];
     [cl_mutableString appendFormat:@"获取设备类型: %@\n", [UIDevice cl_getDeviceModelType]];
     [cl_mutableString appendFormat:@"获取设备的UDID: %@\n", [UIDevice cl_getUUIDString]];
     [cl_mutableString appendFormat:@"获取设备的型号: %@\n", [UIDevice cl_getCurrentDeviceModelName]];
+    [cl_mutableString appendFormat:@"获取设备是否是iPad: %@\n", [UIDevice cl_isPad] ? @"YES" : @"NO"];
+    [cl_mutableString appendFormat:@"获取设备是否是模拟器: %@\n", [UIDevice cl_isSimulator] ? @"YES" : @"NO"];
+    [cl_mutableString appendFormat:@"获取设备是否是已越狱: %@\n", [UIDevice cl_isJailbroken] ? @"YES" : @"NO"];
+    
+    [cl_mutableString appendFormat:@"\n----------CPU相关----------\n"];
     [cl_mutableString appendFormat:@"获取设备的CPU数量: %ld\n", [UIDevice cl_getCurrentDeviceCPUCount]];
     [cl_mutableString appendFormat:@"获取设备的CPU使用率: %f%%\n", [UIDevice cl_getCurrentDeviceAllCoreCPUUse] * 100.0];
     [cl_mutableString appendFormat:@"获取设备单个CPU使用率: %@\n", [UIDevice cl_getCurrentDeviceSingleCoreCPUUse]];
+    
+    [cl_mutableString appendFormat:@"\n----------网络相关----------\n"];
     [cl_mutableString appendFormat:@"获取设备网络运营商: %@\n", [UIDevice cl_getCarrierName]];
     [cl_mutableString appendFormat:@"获取设备网络类型: %@\n", [UIDevice cl_getCurrentRadioAccessTechnology]];
     [cl_mutableString appendFormat:@"获取设备IP地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddresses]];
