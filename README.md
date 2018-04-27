@@ -57,6 +57,11 @@
 - [UIColor+CLColor@](#UIColor+CLColor)
 - [UIControl+CLControl@](#UIControl+CLControl)
 - [UIDevice+CLDevice@](#UIDevice+CLDevice)
+  - [设备相关@](#设备相关)
+  - [CPU相关@](#CPU相关)
+  - [网络相关@](#网络相关)
+  - [存储相关@](#存储相关)
+  - [内存相关@](#内存相关)
 - [UIFont+CLFont@](#UIFont+CLFont)
 - [UIImage+CLImage@](#UIImage+CLImage)
   - [生成指定颜色的图片@](#生成指定颜色的图片@)
@@ -714,6 +719,12 @@ typedef void(^CLControlAction)(id sender);
 + (NSString *)cl_getUUIDString;
 
 + (NSString *)cl_getCurrentDeviceModelName;
+
++ (BOOL)cl_isPad;
+
++ (BOOL)cl_isSimulator;
+
++ (BOOL)cl_isJailbroken;
 ```
 
 
@@ -725,7 +736,6 @@ typedef void(^CLControlAction)(id sender);
 + (CGFloat)cl_getCurrentDeviceAllCoreCPUUse;
 
 + (NSArray *)cl_getCurrentDeviceSingleCoreCPUUse;
-
 ```
 
 
@@ -741,6 +751,36 @@ typedef void(^CLControlAction)(id sender);
 + (NSString *)cl_getCurrentDeviceIPAddressWithWiFi;
 
 + (NSString *)cl_getCurrentDeviceIPAddressWithCell;
+```
+
+
+
+### 存储相关@
+
+```objective-c
++ (int64_t)cl_getDiskSpace;
+
++ (int64_t)cl_getDiskSpaceFree;
+
++ (int64_t)cl_getDiskSpaceUsed;
+```
+
+
+
+### 内存相关@
+
+```objective-c
++ (int64_t)cl_getMemoryTotal;
+
++ (int64_t)cl_getMemoryFree;
+
++ (int64_t)cl_getMemoryActive;
+
++ (int64_t)cl_getMemoryInactive;
+
++ (int64_t)cl_getMemoryWired;
+
++ (int64_t)cl_getMemoryPurgable;
 ```
 
 
