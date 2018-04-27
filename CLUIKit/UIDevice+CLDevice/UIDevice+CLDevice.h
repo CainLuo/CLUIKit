@@ -144,5 +144,71 @@
  */
 + (NSString *)cl_getCurrentDeviceIPAddressWithCell;
 
+#pragma mark - 存储相关
+
+/**
+ 获取设备的总存储大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getDiskSpace;
+
+/**
+ 获取设备可用存储大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getDiskSpaceFree;
+
+/**
+ 获取设备已用存储大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getDiskSpaceUsed;
+
+#pragma mark - 内存相关
+/**
+ 获取设备的总内存大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getMemoryTotal;
+
+/**
+ 获取可用的内存大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getMemoryFree;
+
+/**
+ 获取正在活跃中的内存大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getMemoryActive;
+
+/**
+ 获取非活跃中的内存大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getMemoryInactive;
+
+/**
+ 获取设备中有线的内存大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getMemoryWired;
+
+/**
+ 获取可清除的内存大小, 单位为Byte
+
+ @return int64_t
+ */
++ (int64_t)cl_getMemoryPurgable;
+
 @end
 

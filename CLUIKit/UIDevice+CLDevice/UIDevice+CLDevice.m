@@ -486,5 +486,191 @@
     return address ? address : @"The Device Don't Have IP Address";
 }
 
+#pragma mark - 存储相关
++ (int64_t)cl_getDiskSpace {
+    
+    NSError *cl_error = nil;
+    
+    NSDictionary *cl_homeDictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory()
+                                                                                              error:&cl_error];
+    
+    if (cl_error) {
+        return -1;
+    }
+    
+    int64_t cl_space =  [[cl_homeDictionary objectForKey:NSFileSystemSize] longLongValue];
+    
+    if (cl_space < 0) {
+        cl_space = -1;
+    }
+    
+    return cl_space;
+}
+
++ (int64_t)cl_getDiskSpaceFree {
+    
+    NSError *cl_error = nil;
+    
+    NSDictionary *cl_homeDictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory()
+                                                                                              error:&cl_error];
+    
+    if (cl_error) {
+        return -1;
+    }
+
+    int64_t cl_spaceFree =  [[cl_homeDictionary objectForKey:NSFileSystemFreeSize] longLongValue];
+    
+    if (cl_spaceFree < 0) {
+        cl_spaceFree = -1;
+    }
+    
+    return cl_spaceFree;
+}
+
++ (int64_t)cl_getDiskSpaceUsed {
+    
+    int64_t cl_totalSpace = [self cl_getDiskSpace];
+    int64_t cl_spaceFree  = [self cl_getDiskSpaceFree];
+    
+    if (cl_totalSpace < 0 || cl_spaceFree < 0) {
+        return -1;
+    }
+    
+    int64_t cl_availableSpace = cl_totalSpace - cl_spaceFree;
+    
+    if (cl_availableSpace < 0) {
+        cl_availableSpace = -1;
+    }
+    
+    return cl_availableSpace;
+}
+
+#pragma mark - 内存相关
++ (int64_t)cl_getMemoryTotal {
+    
+    int64_t cl_memoryTotal = [[NSProcessInfo processInfo] physicalMemory];
+    
+    if (cl_memoryTotal < -1) {
+        
+        cl_memoryTotal = -1;
+    }
+    
+    return cl_memoryTotal;
+}
+
++ (int64_t)cl_getMemoryFree {
+    
+    mach_port_t cl_host_port = mach_host_self();
+    mach_msg_type_number_t cl_host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t cl_page_size;
+    vm_statistics_data_t cl_vm_stat;
+    kern_return_t cl_kern;
+    
+    cl_kern = host_page_size(cl_host_port, &cl_page_size);
+    
+    if (cl_kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    cl_kern = host_statistics(cl_host_port, HOST_VM_INFO, (host_info_t)&cl_vm_stat, &cl_host_size);
+    
+    if (cl_kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    return cl_vm_stat.free_count * cl_page_size;
+}
+
++ (int64_t)cl_getMemoryActive {
+    
+    mach_port_t cl_host_port = mach_host_self();
+    mach_msg_type_number_t cl_host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(cl_host_port, &page_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    kern = host_statistics(cl_host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &cl_host_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    return vm_stat.active_count * page_size;
+}
+
++ (int64_t)cl_getMemoryInactive {
+    
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    return vm_stat.inactive_count * page_size;
+}
+
++ (int64_t)cl_getMemoryWired {
+    
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+
+    return vm_stat.wire_count * page_size;
+}
+
++ (int64_t)cl_getMemoryPurgable {
+    
+    mach_port_t host_port = mach_host_self();
+    mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    vm_size_t page_size;
+    vm_statistics_data_t vm_stat;
+    kern_return_t kern;
+    
+    kern = host_page_size(host_port, &page_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
+    
+    if (kern != KERN_SUCCESS) {
+        return -1;
+    }
+    return vm_stat.purgeable_count * page_size;
+}
+
 @end
 
