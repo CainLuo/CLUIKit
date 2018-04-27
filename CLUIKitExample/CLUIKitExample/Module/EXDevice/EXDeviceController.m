@@ -38,7 +38,7 @@
     [cl_mutableString appendFormat:@"获取设备是否是已越狱: %@\n", [UIDevice cl_isJailbroken] ? @"YES" : @"NO"];
     
     [cl_mutableString appendFormat:@"\n----------CPU相关----------\n"];
-    [cl_mutableString appendFormat:@"获取设备的CPU数量: %ld\n", [UIDevice cl_getCurrentDeviceCPUCount]];
+    [cl_mutableString appendFormat:@"获取设备的CPU数量: %lu\n", (unsigned long)[UIDevice cl_getCurrentDeviceCPUCount]];
     [cl_mutableString appendFormat:@"获取设备的CPU使用率: %f%%\n", [UIDevice cl_getCurrentDeviceAllCoreCPUUse] * 100.0];
     [cl_mutableString appendFormat:@"获取设备单个CPU使用率: %@\n", [UIDevice cl_getCurrentDeviceSingleCoreCPUUse]];
     
@@ -48,6 +48,20 @@
     [cl_mutableString appendFormat:@"获取设备IP地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddresses]];
     [cl_mutableString appendFormat:@"获取设备WiFi地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddressWithWiFi]];
     [cl_mutableString appendFormat:@"获取设备单元网络地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddressWithCell]];
+    
+    [cl_mutableString appendFormat:@"\n----------存储相关----------\n"];
+    [cl_mutableString appendFormat:@"获取设备总存储大小: %ldByte\n", (long)[UIDevice cl_getDiskSpace]];
+    [cl_mutableString appendFormat:@"获取设备可用存储大小: %ldByte\n", (long)[UIDevice cl_getDiskSpaceFree]];
+    [cl_mutableString appendFormat:@"获取设备已用存储大小: %ldByte\n", (long)[UIDevice cl_getDiskSpaceUsed]];
+
+    [cl_mutableString appendFormat:@"\n----------内存相关----------\n"];
+    [cl_mutableString appendFormat:@"获取设备总内存大小: %ldByte\n", (long)[UIDevice cl_getMemoryTotal]];
+    [cl_mutableString appendFormat:@"获取设备可用内存大小: %ldByte\n", (long)[UIDevice cl_getMemoryFree]];
+    [cl_mutableString appendFormat:@"获取设备活跃中的内存大小: %ldByte\n", (long)[UIDevice cl_getMemoryActive]];
+    [cl_mutableString appendFormat:@"获取设备非活跃中的内存大小: %ldByte\n", (long)[UIDevice cl_getMemoryInactive]];
+    [cl_mutableString appendFormat:@"获取设备有线的内存大小: %ldByte\n", (long)[UIDevice cl_getMemoryWired]];
+    [cl_mutableString appendFormat:@"获取设备中可清除的内存大小: %ldByte\n", (long)[UIDevice cl_getMemoryPurgable]];
+
 
     self.ex_textView.text = cl_mutableString;
 }
