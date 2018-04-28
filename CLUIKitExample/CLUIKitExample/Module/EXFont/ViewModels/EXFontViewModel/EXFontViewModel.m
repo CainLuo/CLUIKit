@@ -15,25 +15,29 @@
     
     [self.cl_dataSource removeAllObjects];
     
-    NSArray *ex_dataSourceArray = @[@{@"title":@"CLFont Fit System Of Size",
-                                      @"font":[UIFont cl_fitSystemFontOfSize:20]},
-                                    @{@"title":@"UIFont System Of Size",
-                                      @"font":[UIFont systemFontOfSize:20]},
-                                    @{@"title":@"CLFont Fit Bold System Of Size",
-                                      @"font":[UIFont cl_fitBoldSystemFontOfSize:20]},
-                                    @{@"title":@"UIFont Bold System Of Size",
-                                      @"font":[UIFont boldSystemFontOfSize:20]},
-                                    @{@"title":@"CLFont Fit Italic System Of Size",
-                                      @"font":[UIFont cl_fitItalicSystemFontOfSize:20]},
-                                    @{@"title":@"UIFont Italic System Of Size",
-                                      @"font":[UIFont italicSystemFontOfSize:20]},
-                                    @{@"title":@"CLFont Fit System Of Size Weight",
-                                      @"font":[UIFont cl_fitSystemFontOfSize:20 weight:100]},
-                                    @{@"title":@"CLFont Digit System Of Size Weight",
-                                      @"font":[UIFont cl_fitMonospacedDigitSystemFontOfSize:20 weight:100]}];
+    if (@available(iOS 9.0, *)) {
+        NSArray *ex_dataSourceArray = @[@{@"title":@"CLFont Fit System Of Size",
+                                          @"font":[UIFont cl_fitSystemFontOfSize:20]},
+                                        @{@"title":@"UIFont System Of Size",
+                                          @"font":[UIFont systemFontOfSize:20]},
+                                        @{@"title":@"CLFont Fit Bold System Of Size",
+                                          @"font":[UIFont cl_fitBoldSystemFontOfSize:20]},
+                                        @{@"title":@"UIFont Bold System Of Size",
+                                          @"font":[UIFont boldSystemFontOfSize:20]},
+                                        @{@"title":@"CLFont Fit Italic System Of Size",
+                                          @"font":[UIFont cl_fitItalicSystemFontOfSize:20]},
+                                        @{@"title":@"UIFont Italic System Of Size",
+                                          @"font":[UIFont italicSystemFontOfSize:20]},
+                                        @{@"title":@"CLFont Fit System Of Size Weight",
+                                          @"font":[UIFont cl_fitSystemFontOfSize:20 weight:100]},
+                                        @{@"title":@"CLFont Digit System Of Size Weight",
+                                          @"font":[UIFont cl_fitMonospacedDigitSystemFontOfSize:20 weight:100]}];
         
-    [self.cl_dataSource addObjectsFromArray:[NSArray yy_modelArrayWithClass:[EXFontBaseModel class]
-                                                                       json:ex_dataSourceArray]];
+        [self.cl_dataSource addObjectsFromArray:[NSArray yy_modelArrayWithClass:[EXFontBaseModel class]
+                                                                           json:ex_dataSourceArray]];
+    } else {
+        // Fallback on earlier versions
+    }
     
     [self.cl_tableViewController.cl_tableView reloadData];
     [self.cl_tableViewController cl_dropDownEndRefresh];

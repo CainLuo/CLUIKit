@@ -13,7 +13,7 @@
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"点击了第%ld条Cell", indexPath.row);
+    NSLog(@"点击了第%ld条Cell", (long)indexPath.row);
     
     [self.cl_viewModel.cl_collectionViewController.navigationController cl_popToViewControllerWithLevel:0
                                                                                                animated:YES];

@@ -76,7 +76,7 @@
 
 - (void)ex_changeColorWithIndex:(NSUInteger)idex {
     
-    NSLog(@"%ld", idex);
+    NSLog(@"%lu", (unsigned long)idex);
     
     switch (idex) {
         case 0:

@@ -62,7 +62,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                                      actionTitles:@[@"标题一", @"标题二"]
                                                                           handler:^(UIAlertAction *action, NSUInteger index) {
                                                                               
-                                                                              NSLog(@"点击了第%ld个, 标题为: %@", index, action.title);
+                                                                              NSLog(@"点击了第%lu个, 标题为: %@", (unsigned long)index, action.title);
                                                                           }];
 }
 

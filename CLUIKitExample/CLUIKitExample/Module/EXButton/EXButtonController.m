@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
         ex_button.backgroundColor     = [UIColor cl_getARC4RandomColor];
         
         [ex_button cl_setNormalButtonWithImage:[UIImage imageNamed:@"icon1"]];
-        [ex_button cl_setNormalButtonWithTitle:[NSString stringWithFormat:@"按钮%ld", idx]];
+        [ex_button cl_setNormalButtonWithTitle:[NSString stringWithFormat:@"按钮%lu", (unsigned long)idx]];
         [ex_button cl_addButtonActionComplete:^(UIButton *sender) {
             
             NSLog(@"UIButton Normal状态下的图片: %@", [sender cl_getNormalButtonImage]);
@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
                                  
                                  if (ex_buttonStarStyle == CLButtonStarStyleBegin) {
                                      
-                                     [ex_starButton setTitle:[NSString stringWithFormat:@"%ld", time]
+                                     [ex_starButton setTitle:[NSString stringWithFormat:@"%ld", (long)time]
                                                     forState:UIControlStateNormal];
                                      
                                  } else {

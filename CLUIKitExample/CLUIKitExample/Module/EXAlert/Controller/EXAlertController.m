@@ -30,6 +30,13 @@
     [self cl_dropDownBeginRefresh];
 }
 
+- (BOOL)cl_navigationShouldPopOnBackButton {
+    
+    NSLog(@"哈哈哈");
+    
+    return YES;
+}
+
 - (void)cl_dropDownRefresh {
     
     [self.ex_alertViewModel cl_tableViewHTTPRequest];

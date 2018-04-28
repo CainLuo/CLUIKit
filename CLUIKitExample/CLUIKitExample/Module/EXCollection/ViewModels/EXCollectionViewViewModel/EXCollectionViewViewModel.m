@@ -25,7 +25,7 @@
 
         for (NSInteger i = 0; i < 10; i++) {
             
-            [self.cl_dataSource addObject:[NSString stringWithFormat:@"%ld", i]];
+            [self.cl_dataSource addObject:[NSString stringWithFormat:@"%ld", (long)i]];
         }
         
         [self.cl_collectionViewController.cl_collectionView cl_reloadData];

@@ -25,7 +25,7 @@
      
         for (NSInteger i = 0; i < 30; i++) {
             
-            [self.cl_dataSource addObject:[NSString stringWithFormat:@"第%ld条Cell", i]];
+            [self.cl_dataSource addObject:[NSString stringWithFormat:@"第%ld条Cell", (long)i]];
         }
         
         [self.cl_tableViewController.cl_tableView cl_reloadData];

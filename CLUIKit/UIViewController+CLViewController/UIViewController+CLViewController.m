@@ -21,6 +21,11 @@ static void *AlertControllerKey = &AlertControllerKey;
 
 @implementation UIViewController (CLViewController)
 
+- (BOOL)cl_navigationShouldPopOnBackButton {
+    
+    return YES;
+}
+
 - (void)cl_setNavigationBarTranslucentWithBOOL:(BOOL)bools {
     self.navigationController.navigationBar.translucent = bools;
 }

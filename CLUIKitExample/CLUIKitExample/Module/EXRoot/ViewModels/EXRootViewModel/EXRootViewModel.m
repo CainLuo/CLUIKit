@@ -44,7 +44,7 @@
                                                                        json:ex_dataSourceArray]];
 
     [self.cl_tableViewController.cl_tableView reloadData];
-    [self.cl_tableViewController cl_dropDownEndRefresh];
+    [self.cl_tableViewController cl_endTableViewRefreshWithType:CLTableViewRefreshTypeDropDown];
     
     [self cl_showTableViewSeparatorLine];
 }
