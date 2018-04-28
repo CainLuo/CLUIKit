@@ -33,24 +33,36 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UICollectionViewFlowLayout *cl_collectionViewFlowLayout;
 
 /**
- 删除刷新控件
+ 设置UICollectionView的代理与数据源
+ 
+ @param delegate UICollectionViewDelegate
+ @param dataSource UICollectionViewDataSource
  */
-- (void)cl_removeRefresh;
+- (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
+                          dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
 
 /**
- 删除下拉加载控件
+ 设置UICollectionView的拖拽代理与拖放代理
+ 
+ @param dragDelegate UICollectionViewDragDelegate
+ @param dropDelegate UICollectionViewDropDelegate
  */
-- (void)cl_removeHeaderRefresh;
+- (void)cl_setCollectionViewDragDelegate:(_Nullable id <UICollectionViewDragDelegate>)dragDelegate
+                            dropDelegate:(_Nullable id <UICollectionViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
 
 /**
- 删除上拉加载控件
+ 隐藏UICollectionView的ScrollIndicator
  */
-- (void)cl_removeFooterRefresh;
+- (void)cl_hiddenCollectionViewScrollIndicator;
 
 /**
- 下拉刷新时调用的方法, 需要重载, 默认不实现任何东西
+ 给UICollectionView注册类
+ 
+ @param cellClass Class
+ @param identifier NSString
  */
-- (void)cl_dropDownRefresh;
+- (void)cl_registerClass:(nullable Class)cellClass
+              identifier:(NSString *)identifier;
 
 /**
  开始下拉刷新
@@ -58,19 +70,24 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cl_dropDownBeginRefresh;
 
 /**
+ 下拉刷新时调用的方法, 需要重载, 默认不实现任何东西
+ */
+- (void)cl_dropDownRefresh;
+
+/**
  结束下拉刷新
  */
 - (void)cl_dropDownEndRefresh;
 
 /**
- 上拉加载时调用的方法, 需要重载, 默认不实现任何东西
- */
-- (void)cl_pullUpRefresh;
-
-/**
  开始上拉加载
  */
 - (void)cl_pullUpBeginRefresh;
+
+/**
+ 上拉加载时调用的方法, 需要重载, 默认不实现任何东西
+ */
+- (void)cl_pullUpRefresh;
 
 /**
  结束上拉加载
@@ -85,31 +102,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cl_endCollectionViewRefreshWithType:(CLCollectionViewRefreshType)refreshType;
 
 /**
- 设置UICollectionView的代理与数据源
-
- @param delegate UICollectionViewDelegate
- @param dataSource UICollectionViewDataSource
+ 删除下拉加载控件
  */
-- (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
-                          dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
+- (void)cl_removeHeaderRefresh;
 
 /**
- 设置UICollectionView的拖拽代理与拖放代理
-
- @param dragDelegate UICollectionViewDragDelegate
- @param dropDelegate UICollectionViewDropDelegate
+ 删除上拉加载控件
  */
-- (void)cl_setCollectionViewDragDelegate:(_Nullable id <UICollectionViewDragDelegate>)dragDelegate
-                            dropDelegate:(_Nullable id <UICollectionViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
+- (void)cl_removeFooterRefresh;
 
 /**
- 给UICollectionView注册类
-
- @param cellClass Class
- @param identifier NSString
+ 删除刷新控件
  */
-- (void)cl_registerClass:(nullable Class)cellClass
-              identifier:(NSString *)identifier;
+- (void)cl_removeRefresh;
 
 @end
 NS_ASSUME_NONNULL_END
