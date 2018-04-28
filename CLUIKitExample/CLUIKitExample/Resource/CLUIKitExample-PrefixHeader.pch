@@ -9,6 +9,8 @@
 #ifndef CLUIKitExample_PrefixHeader_pch
 #define CLUIKitExample_PrefixHeader_pch
 
+#import "UIViewController+EXViewController.h"
+
 #import "MJRefresh.h"
 #import "YYModel.h"
 #import "Masonry.h"
