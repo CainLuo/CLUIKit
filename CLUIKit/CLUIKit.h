@@ -30,6 +30,11 @@
 #pragma mark - CLScanQRCodeController
 #import "CLScanQRCodeController.h"
 
+#pragma mark - CLScrollViewController
+#import "CLScrollViewController.h"
+#import "CLScrollViewDelegate.h"
+#import "CLScrollViewViewModel.h"
+
 #pragma mark - CLTableViewController
 #import "CLTableViewController.h"
 #import "CLTableViewDataSource.h"
@@ -50,6 +55,9 @@
 
 #pragma mark - UIApplication+CLApplication
 #import "UIApplication+CLApplication.h"
+
+#pragma mark - UIBarButtonItem+CLBarButtonItem
+#import "UIBarButtonItem+CLBarButtonItem.h"
 
 #pragma mark - UIButton+CLButton
 #import "UIButton+CLButton.h"
