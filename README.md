@@ -37,6 +37,8 @@
 - [CLScanQRCodeController@](#CLScanQRCodeController)
   - [获取数据(Block)@](#获取数据(Block))
   - [获取数据(Delegate)@](#获取数据(Delegate))
+- [CLScrollViewController@](#CLScrollViewController)
+  - [UIScrollView代理与数据源@](#UIScrollView代理与数据源)
 - [CLTableViewController@](#CLTableViewController)
   - [UITableView与MJRefresh@](#UITableView与MJRefresh)
   - [UITableView代理与数据源@](#UITableView代理与数据源)
@@ -107,6 +109,10 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 ## CLCollectionViewController@
 
 `CLCollectionViewController`是对系统`UIViewController + UICollectionView`的封装并添加了一些特性:
+
+```objective-c
+- (void)cl_hiddenCollectionViewScrollIndicator;
+```
 
 
 ### UICollectionView与MJRefresh@
@@ -272,6 +278,38 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
+## CLScrollViewController@
+
+`CLScrollViewController`是基于系统`UIViewController+UIScrollView`的封装并添加了一些特性:
+
+```objective-c
+@property (nonatomic, strong, readonly) UIScrollView *cl_scrollView;
+
+- (void)cl_hiddenScrollIndicator;
+```
+
+
+
+### UIScrollView代理@
+
+```objective-c
+- (void)cl_setScrollViewDelegate:(_Nullable id <UIScrollViewDelegate>)delegate;
+```
+
+
+
+### CLScrollViewViewModel
+
+```objective-c
+@property (nonatomic, weak, readonly) CLScrollViewController *cl_scrollViewController;
+
+- (instancetype)initScrollViewDelegateWithController:(CLScrollViewController *)controller;
+```
+
+
+
+
+
 ## CLTableViewController@
 
 `CLTableViewController`是针对系统`UIViewController + UITableView`的封装并添加了一些特性:
@@ -280,6 +318,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 @property (nonatomic, strong, null_resettable, readonly) UITableView *cl_tableView;
 
 - (instancetype)initTableViewControllerWithStyle:(UITableViewStyle)style;
+
+- (void)cl_hiddenTableViewScrollIndicator;
 ```
 
 
