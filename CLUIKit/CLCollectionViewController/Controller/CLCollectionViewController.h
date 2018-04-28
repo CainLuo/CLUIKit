@@ -14,6 +14,11 @@
 
 #import "CLViewController.h"
 
+typedef NS_ENUM(NSInteger, CLCollectionViewRefreshType) {
+    CLCollectionViewRefreshTypeDropDown = 0,
+    CLCollectionViewRefreshTypePullUp
+};
+
 NS_ASSUME_NONNULL_BEGIN
 @interface CLCollectionViewController : CLViewController
 
@@ -71,6 +76,13 @@ NS_ASSUME_NONNULL_BEGIN
  结束上拉加载
  */
 - (void)cl_pullUpEndRefresh;
+
+/**
+ 选择指定的类型结束刷新
+ 
+ @param refreshType CLCollectionViewRefreshType
+ */
+- (void)cl_endCollectionViewRefreshWithType:(CLCollectionViewRefreshType)refreshType;
 
 /**
  设置UICollectionView的代理与数据源

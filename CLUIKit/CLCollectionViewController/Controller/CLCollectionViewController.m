@@ -134,6 +134,17 @@
     [self.cl_collectionView.mj_footer endRefreshing];
 }
 
+- (void)cl_endCollectionViewRefreshWithType:(CLCollectionViewRefreshType)refreshType {
+    
+    if (refreshType == CLCollectionViewRefreshTypeDropDown) {
+        
+        [self cl_dropDownEndRefresh];
+    } else {
+        
+        [self cl_pullUpEndRefresh];
+    }
+}
+
 - (void)cl_removeRefresh {
     
     self.cl_collectionView.mj_header = nil;
