@@ -121,6 +121,16 @@
     [self.cl_tableView.mj_footer endRefreshing];
 }
 
+- (void)cl_endTableViewRefreshWithType:(CLTableViewRefreshType)refreshType {
+    
+    if (refreshType == CLTableViewRefreshTypeDropDown) {
+        
+        [self cl_dropDownEndRefresh];
+    } else {
+        [self cl_pullUpEndRefresh];
+    }
+}
+
 - (void)cl_removeRefresh {
     
     self.cl_tableView.mj_header = nil;

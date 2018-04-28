@@ -14,6 +14,11 @@
 
 #import "CLViewController.h"
 
+typedef NS_ENUM(NSInteger, CLTableViewRefreshType) {
+    CLTableViewRefreshTypeDropDown = 0,
+    CLTableViewRefreshTypePullUp
+};
+
 NS_ASSUME_NONNULL_BEGIN
 @interface CLTableViewController : CLViewController
 
@@ -74,6 +79,13 @@ NS_ASSUME_NONNULL_BEGIN
  上拉加载的方法
  */
 - (void)cl_pullUpRefresh;
+
+/**
+ 选择指定的类型结束刷新
+
+ @param refreshType CLTableViewRefreshType
+ */
+- (void)cl_endTableViewRefreshWithType:(CLTableViewRefreshType)refreshType;
 
 /**
  设置UITableView的代理与数据源
