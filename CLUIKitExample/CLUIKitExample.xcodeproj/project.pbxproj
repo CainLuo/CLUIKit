@@ -82,6 +82,15 @@
 		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
 		BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */; };
 		BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */; };
+		BFD49E472094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E462094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m */; };
+		BFD49E4B2094446300A9C252 /* EXBarButtonItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E4A2094446300A9C252 /* EXBarButtonItemController.m */; };
+		BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E4F2094488100A9C252 /* UIViewController+EXViewController.m */; };
+		BFD49E5A2094505500A9C252 /* CLScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E592094505500A9C252 /* CLScrollViewController.m */; };
+		BFD49E5D2094510600A9C252 /* CLScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E5C2094510600A9C252 /* CLScrollViewDelegate.m */; };
+		BFD49E622094519300A9C252 /* CLScrollViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E612094519300A9C252 /* CLScrollViewViewModel.m */; };
+		BFD49E682094565900A9C252 /* EXScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E672094565900A9C252 /* EXScrollViewController.m */; };
+		BFD49E6D2094567800A9C252 /* EXScrollViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E6C2094567800A9C252 /* EXScrollViewViewModel.m */; };
+		BFD49E702094568300A9C252 /* EXScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E6F2094568300A9C252 /* EXScrollViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -233,6 +242,24 @@
 		BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CLNavigationController.m"; sourceTree = "<group>"; };
 		BFD172D3206A0AB2003C2E2F /* UIScrollView+CLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CLScrollView.h"; sourceTree = "<group>"; };
 		BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CLScrollView.m"; sourceTree = "<group>"; };
+		BFD49E452094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CLBarButtonItem.h"; sourceTree = "<group>"; };
+		BFD49E462094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CLBarButtonItem.m"; sourceTree = "<group>"; };
+		BFD49E492094446300A9C252 /* EXBarButtonItemController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBarButtonItemController.h; sourceTree = "<group>"; };
+		BFD49E4A2094446300A9C252 /* EXBarButtonItemController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBarButtonItemController.m; sourceTree = "<group>"; };
+		BFD49E4E2094488100A9C252 /* UIViewController+EXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EXViewController.h"; sourceTree = "<group>"; };
+		BFD49E4F2094488100A9C252 /* UIViewController+EXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EXViewController.m"; sourceTree = "<group>"; };
+		BFD49E582094505500A9C252 /* CLScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScrollViewController.h; sourceTree = "<group>"; };
+		BFD49E592094505500A9C252 /* CLScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScrollViewController.m; sourceTree = "<group>"; };
+		BFD49E5B2094510600A9C252 /* CLScrollViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScrollViewDelegate.h; sourceTree = "<group>"; };
+		BFD49E5C2094510600A9C252 /* CLScrollViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScrollViewDelegate.m; sourceTree = "<group>"; };
+		BFD49E602094519300A9C252 /* CLScrollViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScrollViewViewModel.h; sourceTree = "<group>"; };
+		BFD49E612094519300A9C252 /* CLScrollViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScrollViewViewModel.m; sourceTree = "<group>"; };
+		BFD49E662094565900A9C252 /* EXScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScrollViewController.h; sourceTree = "<group>"; };
+		BFD49E672094565900A9C252 /* EXScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScrollViewController.m; sourceTree = "<group>"; };
+		BFD49E6B2094567800A9C252 /* EXScrollViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScrollViewViewModel.h; sourceTree = "<group>"; };
+		BFD49E6C2094567800A9C252 /* EXScrollViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScrollViewViewModel.m; sourceTree = "<group>"; };
+		BFD49E6E2094568300A9C252 /* EXScrollViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScrollViewDelegate.h; sourceTree = "<group>"; };
+		BFD49E6F2094568300A9C252 /* EXScrollViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScrollViewDelegate.m; sourceTree = "<group>"; };
 		E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -496,8 +523,8 @@
 		A4BA3142204CF21D002E0ED7 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A4BA3144204CF21D002E0ED7 /* EXBaseViewController.h */,
-				A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */,
+				BFD49E4D2094486A00A9C252 /* UIViewController+EXViewController */,
+				BFD49E4C2094486200A9C252 /* EXBaseViewController */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -564,11 +591,13 @@
 				A4DB714F203802FC0015964F /* CLCollectionViewController */,
 				A4DB7174203802FC0015964F /* CLNavigationController */,
 				A4AB1D12203CEA80005026E8 /* CLScanQRCode */,
+				BFD49E552094502600A9C252 /* CLScrollViewController */,
 				A4DB715D203802FC0015964F /* CLTableViewController */,
 				A4DB718B203802FC0015964F /* CLTextField */,
 				A4DB7149203802FC0015964F /* CLToolBarListView */,
 				A4DB717A203802FC0015964F /* CLViewController */,
 				A4BA313D204CE508002E0ED7 /* UIApplication+CLApplication */,
+				BFD49E442094415300A9C252 /* UIBarButtonItem+CLBarButtonItem */,
 				A4DB714C203802FC0015964F /* UIButton+CLButton */,
 				A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */,
 				A4DB7177203802FC0015964F /* UIColor+CLColor */,
@@ -851,6 +880,7 @@
 			children = (
 				A4DB71C820381A0A0015964F /* EXAlert */,
 				A4BA3141204CF1A2002E0ED7 /* EXApplication */,
+				BFD49E482094444800A9C252 /* EXBarButtonItem */,
 				A4DB71DE20386EFE0015964F /* EXButton */,
 				A4DB71E2203A7E9F0015964F /* EXCollection */,
 				A4AB1CBF203BD4B6005026E8 /* EXColor */,
@@ -860,6 +890,7 @@
 				A4DB71AB203805B00015964F /* EXRoot */,
 				A42FEFDE203D01640054C8A3 /* EXScanQRCode */,
 				A4AB1CCB203C19A3005026E8 /* EXScreen */,
+				BFD49E632094560300A9C252 /* EXScrollView */,
 				A4DB71F4203ACFBD0015964F /* EXTableView */,
 				A4AB1CE9203C46AA005026E8 /* EXTextField */,
 			);
@@ -1132,6 +1163,132 @@
 			path = "UIScrollView+CLScrollView";
 			sourceTree = "<group>";
 		};
+		BFD49E442094415300A9C252 /* UIBarButtonItem+CLBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E452094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.h */,
+				BFD49E462094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m */,
+			);
+			path = "UIBarButtonItem+CLBarButtonItem";
+			sourceTree = "<group>";
+		};
+		BFD49E482094444800A9C252 /* EXBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E492094446300A9C252 /* EXBarButtonItemController.h */,
+				BFD49E4A2094446300A9C252 /* EXBarButtonItemController.m */,
+			);
+			path = EXBarButtonItem;
+			sourceTree = "<group>";
+		};
+		BFD49E4C2094486200A9C252 /* EXBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4BA3144204CF21D002E0ED7 /* EXBaseViewController.h */,
+				A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */,
+			);
+			path = EXBaseViewController;
+			sourceTree = "<group>";
+		};
+		BFD49E4D2094486A00A9C252 /* UIViewController+EXViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E4E2094488100A9C252 /* UIViewController+EXViewController.h */,
+				BFD49E4F2094488100A9C252 /* UIViewController+EXViewController.m */,
+			);
+			path = "UIViewController+EXViewController";
+			sourceTree = "<group>";
+		};
+		BFD49E552094502600A9C252 /* CLScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E562094503200A9C252 /* Controller */,
+				BFD49E572094503700A9C252 /* ViewModels */,
+			);
+			path = CLScrollViewController;
+			sourceTree = "<group>";
+		};
+		BFD49E562094503200A9C252 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E582094505500A9C252 /* CLScrollViewController.h */,
+				BFD49E592094505500A9C252 /* CLScrollViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFD49E572094503700A9C252 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E5E2094518300A9C252 /* CLScrollViewDelegate */,
+				BFD49E5F2094518A00A9C252 /* CLScrollViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFD49E5E2094518300A9C252 /* CLScrollViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E5B2094510600A9C252 /* CLScrollViewDelegate.h */,
+				BFD49E5C2094510600A9C252 /* CLScrollViewDelegate.m */,
+			);
+			path = CLScrollViewDelegate;
+			sourceTree = "<group>";
+		};
+		BFD49E5F2094518A00A9C252 /* CLScrollViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E602094519300A9C252 /* CLScrollViewViewModel.h */,
+				BFD49E612094519300A9C252 /* CLScrollViewViewModel.m */,
+			);
+			path = CLScrollViewViewModel;
+			sourceTree = "<group>";
+		};
+		BFD49E632094560300A9C252 /* EXScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E642094561400A9C252 /* Controller */,
+				BFD49E652094561900A9C252 /* ViewModels */,
+			);
+			path = EXScrollView;
+			sourceTree = "<group>";
+		};
+		BFD49E642094561400A9C252 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E662094565900A9C252 /* EXScrollViewController.h */,
+				BFD49E672094565900A9C252 /* EXScrollViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFD49E652094561900A9C252 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E6A2094566900A9C252 /* EXScrollViewViewModel */,
+				BFD49E692094566000A9C252 /* EXScrollViewDelegate */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFD49E692094566000A9C252 /* EXScrollViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E6E2094568300A9C252 /* EXScrollViewDelegate.h */,
+				BFD49E6F2094568300A9C252 /* EXScrollViewDelegate.m */,
+			);
+			path = EXScrollViewDelegate;
+			sourceTree = "<group>";
+		};
+		BFD49E6A2094566900A9C252 /* EXScrollViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFD49E6B2094567800A9C252 /* EXScrollViewViewModel.h */,
+				BFD49E6C2094567800A9C252 /* EXScrollViewViewModel.m */,
+			);
+			path = EXScrollViewViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1257,6 +1414,7 @@
 				BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */,
 				A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */,
 				A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */,
+				BFD49E702094568300A9C252 /* EXScrollViewDelegate.m in Sources */,
 				A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */,
 				BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */,
 				A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */,
@@ -1272,7 +1430,9 @@
 				A4DB7138203800530015964F /* main.m in Sources */,
 				BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */,
 				A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */,
+				BFD49E5A2094505500A9C252 /* CLScrollViewController.m in Sources */,
 				A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */,
+				BFD49E682094565900A9C252 /* EXScrollViewController.m in Sources */,
 				A4DB71C1203812700015964F /* EXRootDataSource.m in Sources */,
 				A4DB71CB20381A2A0015964F /* EXAlertController.m in Sources */,
 				A4DB7196203802FC0015964F /* CLCollectionViewDataSource.m in Sources */,
@@ -1282,10 +1442,12 @@
 				A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */,
 				A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */,
 				A4DB71A8203802FC0015964F /* CLTextField.m in Sources */,
+				BFD49E622094519300A9C252 /* CLScrollViewViewModel.m in Sources */,
 				A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */,
 				A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */,
 				A4DB71A9203802FC0015964F /* CLButton.m in Sources */,
 				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
+				BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */,
 				A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */,
 				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
 				A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */,
@@ -1297,9 +1459,11 @@
 				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
 				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
+				BFD49E5D2094510600A9C252 /* CLScrollViewDelegate.m in Sources */,
 				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,
 				A4D750BA207E727300F6F63A /* UIButton+CLButton.m in Sources */,
 				A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */,
+				BFD49E472094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m in Sources */,
 				A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */,
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
@@ -1308,6 +1472,7 @@
 				BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */,
 				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
 				BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */,
+				BFD49E4B2094446300A9C252 /* EXBarButtonItemController.m in Sources */,
 				A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */,
 				A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */,
 				A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */,
@@ -1318,6 +1483,7 @@
 				A4AB1CC2203BD4C8005026E8 /* EXColorController.m in Sources */,
 				A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				A4DB712A203800530015964F /* AppDelegate.m in Sources */,
+				BFD49E6D2094567800A9C252 /* EXScrollViewViewModel.m in Sources */,
 				A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */,
 				A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */,
 				A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */,
@@ -1453,7 +1619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DA59678JQE;
+				DEVELOPMENT_TEAM = J26ST3TDCL;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CLUIKitExample/Resource/CLUIKitExample-PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CLUIKitExample/Resource/Info.plist";
@@ -1472,7 +1638,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DA59678JQE;
+				DEVELOPMENT_TEAM = J26ST3TDCL;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CLUIKitExample/Resource/CLUIKitExample-PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/CLUIKitExample/Resource/Info.plist";

@@ -119,7 +119,9 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
     
     objc_setAssociatedObject(self, CLButtonActionKey, complete, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
-    [self addTarget:self action:@selector(cl_buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addTarget:self
+             action:@selector(cl_buttonAction:)
+   forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)cl_buttonAction:(UIButton *)sender {
