@@ -42,11 +42,12 @@
 
 - (UIScrollView *)cl_scrollView {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_scrollView);
-    
-    _cl_scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    
-    _cl_scrollView.backgroundColor = [UIColor whiteColor];
+    if (!_cl_scrollView) {
+        
+        _cl_scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+        
+        _cl_scrollView.backgroundColor = [UIColor whiteColor];
+    }
     
     return _cl_scrollView;
 }
