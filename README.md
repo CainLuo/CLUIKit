@@ -129,6 +129,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_pullUpBeginRefresh;
 
 - (void)cl_pullUpEndRefresh;
+
+- (void)cl_endCollectionViewRefreshWithType:(CLCollectionViewRefreshType)refreshType;
 ```
 
 
@@ -301,6 +303,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_pullUpBeginRefresh;
 
 - (void)cl_pullUpEndRefresh;
+
+- (void)cl_endTableViewRefreshWithType:(CLTableViewRefreshType)refreshType;
 ```
 
 
