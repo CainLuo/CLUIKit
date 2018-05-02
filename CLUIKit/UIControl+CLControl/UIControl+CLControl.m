@@ -44,6 +44,14 @@ static const void *CLControlActionKey = &CLControlActionKey;
    forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)cl_setControlActionWithEvents:(UIControlEvents)controlEvents
+                             complete:(CLControlAction)complete {
+    
+    [self cl_removeControlActionWithEvents:UIControlEventAllEvents];
+    [self cl_addControlActionWithEvents:controlEvents
+                               complete:complete];
+}
+
 - (void)cl_removeControlActionWithEvents:(UIControlEvents)controlEvents {
     
     NSMutableArray *cl_controlActionBlockArray = [self cl_controlActionBlockArray];
@@ -64,6 +72,18 @@ static const void *CLControlActionKey = &CLControlActionKey;
     }];
     
     [cl_controlActionBlockArray removeObjectsInArray:cl_controlActionObjectArray];
+}
+
+- (void)cl_removeAllActions {
+    
+    [[self allTargets] enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        [self removeTarget:obj
+                    action:NULL
+          forControlEvents:UIControlEventAllEvents];
+    }];
+    
+    [[self cl_controlActionBlockArray] removeAllObjects];
 }
 
 - (NSMutableArray *)cl_controlActionBlockArray {

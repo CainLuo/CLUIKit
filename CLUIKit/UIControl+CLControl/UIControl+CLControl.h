@@ -43,10 +43,24 @@ typedef void(^CLControlAction)(id sender);
                              complete:(CLControlAction)complete;
 
 /**
+ 设置UIControl的Action事件
+
+ @param controlEvents UIControlEvents
+ @param complete CLControlAction
+ */
+- (void)cl_setControlActionWithEvents:(UIControlEvents)controlEvents
+                             complete:(CLControlAction)complete;
+
+/**
  删除UIControl的Action事件
 
  @param controlEvents UIControlEvents
  */
 - (void)cl_removeControlActionWithEvents:(UIControlEvents)controlEvents;
+
+/**
+ 删除所有的Action事件
+ */
+- (void)cl_removeAllActions;
 
 @end
