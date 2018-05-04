@@ -29,7 +29,7 @@
     [self cl_setTableViewDelegate:self.ex_rootDelegate
                        dataSource:self.ex_rootDataSource];
     
-    [self cl_dropDownBeginRefresh];
+    [self cl_dropDownBeginRefresh];    
 }
 
 - (void)cl_dropDownRefresh {

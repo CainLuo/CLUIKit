@@ -21,10 +21,29 @@
 
 @implementation EXImageController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self ex_checkImage];
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     [self ex_addConstraintsWithSuperView];
+}
+
+- (void)ex_checkImage {
+    
+    NSString *ex_retinaPath = [[NSBundle mainBundle] pathForResource:@"gif"
+                                                              ofType:@"gif"];
+    NSData *ex_data = [[NSData alloc] initWithContentsOfFile:ex_retinaPath];
+    
+    BOOL ex_isGIFPath = [UIImage cl_isAnimatedGIFWithFilePath:ex_retinaPath];
+    BOOL ex_isGIFData = [UIImage cl_isAnimatedGIFWithData:ex_data];
+    
+    NSLog(@"是否是GIF图片的路径:%@", ex_isGIFPath ? @"YES" : @"NO");
+    NSLog(@"是否是GIF图片的NSData:%@", ex_isGIFData ? @"YES" : @"NO");
 }
 
 - (UIImageView *)ex_imageView {

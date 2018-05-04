@@ -30,7 +30,10 @@
     [self cl_dropDownRefresh];
     
     [self.cl_tableView cl_reloadData];
-}
+    
+    NSLog(@"获取UINavigationBar的高度: %f\n", [self.navigationController cl_getNavigationBarHeight]);
+    NSLog(@"获取UIStatusBar的高度: %f\n", [UIApplication cl_getStatusBarHeight]);
+ }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
@@ -44,8 +47,6 @@
 }
 
 - (void)cl_pullUpRefresh {
-    
-
 }
 
 - (EXTableViewDelegate *)ex_tableViewDelegate {
@@ -90,7 +91,6 @@
             (void)make.edges;
         }
     }];
-
 }
 
 @end

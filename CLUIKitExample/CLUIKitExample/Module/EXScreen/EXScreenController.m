@@ -31,8 +31,6 @@
     [cl_mutableString appendFormat:@"获取屏幕的宽度: %f\n", [UIScreen cl_getScreenWidth]];
     [cl_mutableString appendFormat:@"获取屏幕的高度: %f\n", [UIScreen cl_getScreenHeight]];
     [cl_mutableString appendFormat:@"获取UITabBar的高度: %f\n", [UIScreen cl_getTabBarHeight]];
-    [cl_mutableString appendFormat:@"获取UIStatusBar的高度: %f\n", [UIScreen cl_getStatusBarHeight]];
-    [cl_mutableString appendFormat:@"获取UINavigationBar的高度: %f\n", [UIScreen cl_getNavigationBarHeight]];
 
     self.ex_textView.text = cl_mutableString;
 }
