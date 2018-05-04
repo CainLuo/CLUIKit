@@ -85,4 +85,11 @@ typedef void (^CLPermissionBlock)(BOOL granted);
  */
 + (UIImage *)cl_getApplicationLaunchImage;
 
+/**
+ 获取UIStatusBar的高度
+ 
+ @return CGFloat
+ */
++ (CGFloat)cl_getStatusBarHeight;
+
 @end

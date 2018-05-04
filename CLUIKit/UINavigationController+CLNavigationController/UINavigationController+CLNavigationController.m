@@ -61,4 +61,10 @@
     }
 }
 
+#pragma mark - 获取UINavigationBar的高度
+- (CGFloat)cl_getNavigationBarHeight {
+    
+    return CGRectGetHeight(self.navigationBar.frame);
+}
+
 @end

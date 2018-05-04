@@ -134,4 +134,11 @@
     return cl_launchImage;
 }
 
+
+#pragma mark - 获取UIStatusBar的高度
++ (CGFloat)cl_getStatusBarHeight {
+    
+    return [[self sharedApplication] statusBarFrame].size.height;
+}
+
 @end

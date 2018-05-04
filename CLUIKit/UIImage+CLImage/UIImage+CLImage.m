@@ -165,17 +165,14 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        CGFloat cl_scale = [UIScreen mainScreen].scale;
-        
-        if (cl_scale > 1.0f) {
-            
-            NSString *cl_retinaPath = [[NSBundle mainBundle] pathForResource:[name stringByAppendingString:@"@2x"]
-                                                                      ofType:@"gif"];
-            
-            NSData *cl_data = [NSData dataWithContentsOfFile:cl_retinaPath];
+        NSString *cl_filePath = [[NSBundle mainBundle] pathForResource:name
+                                                                ofType:@"gif"];
+        NSData *cl_data = [NSData dataWithContentsOfFile:cl_filePath];
 
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
             if (completion) {
-
+                
                 if (cl_data) {
                     
                     [UIImage cl_asyncLoadGIFImageWithData:cl_data
@@ -183,57 +180,12 @@
                                                    
                                                    completion(image);
                                                }];
+                } else {
+                    
+                    completion([UIImage imageNamed:name]);
                 }
             }
-            
-            NSString *cl_path = [[NSBundle mainBundle] pathForResource:name
-                                                             ofType:@"gif"];
-            
-            cl_data = [NSData dataWithContentsOfFile:cl_path];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                if (completion) {
-
-                    if (cl_data) {
-                        
-                        [UIImage cl_asyncLoadGIFImageWithData:cl_data
-                                                   completion:^(UIImage *image) {
-                                                       
-                                                       completion(image);
-                                                   }];
-                        
-                        return;
-                    }
-                    
-                    completion([UIImage imageNamed:name]);
-                }
-            });
-            
-        } else {
-            
-            NSString *cl_path = [[NSBundle mainBundle] pathForResource:name
-                                                                ofType:@"gif"];
-            
-            NSData *cl_data = [NSData dataWithContentsOfFile:cl_path];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                if (completion) {
-                    
-                    if (cl_data) {
-                        
-                        [UIImage cl_asyncLoadGIFImageWithData:cl_data
-                                                   completion:^(UIImage *image) {
-                            
-                                                       completion(image);
-                                                   }];
-                    }
-                    
-                    completion([UIImage imageNamed:name]);
-                }
-            });
-        }
+        });
     });
 }
 
@@ -302,13 +254,7 @@
     });
 }
 
-/**
- 计算GIF图片播放的时间
-
- @param index 索引
- @param source 图片内容
- @return 计算时间
- */
+// 私有方法
 + (CGFloat)cl_frameDurationAtIndex:(NSUInteger)index
                             source:(CGImageSourceRef)source {
     
@@ -352,6 +298,62 @@
     CFRelease(cl_cfFrameProperties);
     
     return cl_frameDuration;
+}
+
++ (BOOL)cl_isAnimatedGIFWithData:(NSData *)data {
+    
+    if (data.length < 16) {
+        return NO;
+    }
+    
+    UInt32 cl_magic = *(UInt32 *)data.bytes;
+    
+    if ((cl_magic & 0xFFFFFF) != '\0FIG') {
+        return NO;
+    }
+    
+    CGImageSourceRef cl_imageSourceRef = CGImageSourceCreateWithData((__bridge CFTypeRef)data, NULL);
+    
+    if (!cl_imageSourceRef) {
+        return NO;
+    }
+    
+    size_t cl_sizeT = CGImageSourceGetCount(cl_imageSourceRef);
+    
+    CFRelease(cl_imageSourceRef);
+    
+    return cl_sizeT > 1;
+}
+
++ (BOOL)cl_isAnimatedGIFWithFilePath:(NSString *)filePath {
+    
+    if (filePath.length == 0) {
+        return NO;
+    }
+    
+    const char *cl_charPath = filePath.UTF8String;
+    
+    FILE *cl_file = fopen(cl_charPath, "rb");
+    
+    if (!cl_file) {
+        return NO;
+    }
+    
+    BOOL cl_isGIF = NO;
+    
+    UInt32 cl_magic = 0;
+    
+    if (fread(&cl_magic, sizeof(UInt32), 1, cl_file) == 1) {
+        
+        if ((cl_magic & 0xFFFFFF) == '\0FIG') {
+            
+            cl_isGIF = YES;
+        }
+    }
+    
+    fclose(cl_file);
+    
+    return cl_isGIF;
 }
 
 #pragma mark - 异步生成一个二维码

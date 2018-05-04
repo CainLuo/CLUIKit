@@ -103,6 +103,22 @@ typedef void(^CLSaveImage)(NSError *error);
 + (void)cl_asyncLoadGIFImageWithData:(NSData *)data
                           completion:(CLImage)completion;
 
+/**
+ 判断NSData对象是否是GIF图片
+
+ @param data NSData
+ @return BOOL
+ */
++ (BOOL)cl_isAnimatedGIFWithData:(NSData *)data;
+
+/**
+ 判断文件路径是否是GIF图片
+
+ @param filePath NSString
+ @return BOOL
+ */
++ (BOOL)cl_isAnimatedGIFWithFilePath:(NSString *)filePath;
+
 #pragma mark - 生成二维码
 /**
  异步创建一个二维码

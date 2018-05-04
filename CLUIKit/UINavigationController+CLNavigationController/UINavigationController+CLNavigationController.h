@@ -52,4 +52,11 @@
 - (NSArray *)cl_popToViewControllerWithLevel:(NSUInteger)level
                                     animated:(BOOL)animated;
 
+/**
+ 获取UINavigationBar的高度
+ 
+ @return CGFloat
+ */
+- (CGFloat)cl_getNavigationBarHeight;
+
 @end

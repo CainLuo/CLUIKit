@@ -17,11 +17,25 @@
 @interface UIScreen (CLScreen)
 
 /**
+ 获取屏幕的比例
+
+ @return CGFloat
+ */
++ (CGFloat)cl_getScreenScale;
+
+/**
  获取屏幕的尺寸
 
  @return CGSize
  */
 + (CGSize)cl_getScreenSize;
+
+/**
+ 获取当前屏幕的Bounds, 可根据屏幕的旋转获取对应的Bounds
+
+ @return CGRect
+ */
++ (CGRect)cl_getCurrentScreenBounds;
 
 /**
  获取屏幕宽度
@@ -44,20 +58,6 @@
  @return CGFloat
  */
 + (CGFloat)cl_fitScreen:(CGFloat)value;
-
-/**
- 获取UIStatusBar的高度
- 
- @return CGFloat
- */
-+ (CGFloat)cl_getStatusBarHeight;
-
-/**
- 获取UINavigationBar的高度
-
- @return CGFloat
- */
-+ (CGFloat)cl_getNavigationBarHeight;
 
 /**
  获取UITabBar的高度
