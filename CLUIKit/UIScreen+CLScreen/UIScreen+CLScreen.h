@@ -31,13 +31,6 @@
 + (CGSize)cl_getScreenSize;
 
 /**
- 获取当前屏幕的Bounds, 可根据屏幕的旋转获取对应的Bounds
-
- @return CGRect
- */
-+ (CGRect)cl_getCurrentScreenBounds;
-
-/**
  获取屏幕宽度
  
  @return CGFloat
