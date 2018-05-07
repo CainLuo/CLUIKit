@@ -157,5 +157,135 @@ static void *CLPlaceholderView = &CLPlaceholderView;
     }
 }
 
+#pragma mark - 刷新UITableView
+- (void)cl_updateTableViewWithComplete:(CLTableViewUpdateBlock)complete {
+    
+    [self beginUpdates];
+    
+    if (complete) {
+        complete(self);
+    }
+    
+    [self endUpdates];
+}
+
+#pragma mark - 操作UITableViewCell
+- (void)cl_scrollToIndexPath:(NSIndexPath *)indexPath
+              scrollPosition:(UITableViewScrollPosition)scrollPosition
+                    animated:(BOOL)animated {
+    
+    [self scrollToRowAtIndexPath:indexPath
+                atScrollPosition:scrollPosition
+                        animated:animated];
+}
+
+- (void)cl_scrollToRow:(NSUInteger)row
+               section:(NSUInteger)section
+        scrollPosition:(UITableViewScrollPosition)scrollPosition
+              animated:(BOOL)animated {
+    
+    NSIndexPath *cl_indexPath = [NSIndexPath indexPathForRow:row
+                                                   inSection:section];
+    
+    [self cl_scrollToIndexPath:cl_indexPath
+                scrollPosition:scrollPosition
+                      animated:animated];
+}
+
+#pragma mark - UITableView 插入操作
+- (void)cl_insertRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation {
+    
+    [self insertRowsAtIndexPaths:@[indexPath]
+                withRowAnimation:animation];
+}
+
+- (void)cl_insertWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation {
+    
+    NSIndexSet *cl_indexSet = [NSIndexSet indexSetWithIndex:section];
+
+    [self insertSections:cl_indexSet
+        withRowAnimation:animation];
+}
+
+- (void)cl_insertWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation {
+    
+    NSIndexPath *cl_indexPath = [NSIndexPath indexPathForRow:row
+                                                   inSection:section];
+    
+    [self cl_insertRowWithIndexPath:cl_indexPath
+                          animation:animation];
+}
+
+#pragma mark - UITableView 刷新操作
+- (void)cl_reloadRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation {
+    
+    [self reloadRowsAtIndexPaths:@[indexPath]
+                withRowAnimation:animation];
+}
+
+- (void)cl_reloadWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation {
+    
+    NSIndexSet *cl_indexSet = [NSIndexSet indexSetWithIndex:section];
+
+    [self reloadSections:cl_indexSet
+        withRowAnimation:animation];
+}
+
+- (void)cl_reloadWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation {
+    
+    NSIndexPath *cl_indexPath = [NSIndexPath indexPathForRow:row
+                                                   inSection:section];
+    
+    [self cl_reloadRowWithIndexPath:cl_indexPath
+                          animation:animation];
+}
+
+#pragma mark - UITableView 删除相关
+- (void)cl_deleteRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation {
+    
+    [self deleteRowsAtIndexPaths:@[indexPath]
+                withRowAnimation:animation];
+}
+
+- (void)cl_deleteWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation {
+    
+    NSIndexSet *cl_indexSet = [NSIndexSet indexSetWithIndex:section];
+    
+    [self deleteSections:cl_indexSet
+        withRowAnimation:animation];
+}
+
+- (void)cl_deleteWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation {
+    
+    NSIndexPath *cl_indexPath = [NSIndexPath indexPathForRow:row
+                                                   inSection:section];
+    
+    [self cl_deleteRowWithIndexPath:cl_indexPath
+                          animation:animation];
+}
+
+- (void)cl_resetSelectedRowsAnimated:(BOOL)animated {
+    
+    NSArray *cl_indexArray = [self indexPathsForSelectedRows];
+    
+    [cl_indexArray enumerateObjectsUsingBlock:^(NSIndexPath *indxPath, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        [self deselectRowAtIndexPath:indxPath
+                            animated:animated];
+    }];
+}
+
 @end
 
