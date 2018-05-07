@@ -34,6 +34,19 @@
         
         [self.cl_tableViewController cl_dropDownEndRefresh];
         [self.cl_tableViewController cl_pullUpEndRefresh];
+        
+        [self cl_performWithAfterSecond:1.0
+                               complete:^{
+           
+//                                   [self.cl_tableViewController.cl_tableView cl_scrollToRow:20
+//                                                                                    section:0
+//                                                                             scrollPosition:UITableViewScrollPositionNone
+//                                                                                   animated:YES];
+                                   
+                                   [self.cl_tableViewController.cl_tableView cl_scrollToIndexPath:nil
+                                                                                   scrollPosition:UITableViewScrollPositionNone
+                                                                                         animated:YES];
+                               }];
     }
 }
 
