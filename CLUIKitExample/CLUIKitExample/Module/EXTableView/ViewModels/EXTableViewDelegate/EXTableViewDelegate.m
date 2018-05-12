@@ -50,4 +50,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     return cl_placeholderView;
 }
 
+- (BOOL)cl_calculateTableViewHeaderViewFrame {
+    
+    return YES;
+}
+
 @end

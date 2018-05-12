@@ -8,6 +8,6 @@
 
 #import "CLTableViewDelegate.h"
 
-@interface EXTableViewDelegate : CLTableViewDelegate <CLCollectionViewPlaceholderDelegate>
+@interface EXTableViewDelegate : CLTableViewDelegate <CLTableViewPlaceholderDelegate>
 
 @end

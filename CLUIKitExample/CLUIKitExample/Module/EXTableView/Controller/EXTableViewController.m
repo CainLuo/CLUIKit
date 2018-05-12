@@ -78,6 +78,12 @@
 
 - (void)ex_addConstraintsWithSuperView {
     
+    UIView *ex_tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen cl_getScreenWidth], 100)];
+    
+    ex_tableHeaderView.backgroundColor = [UIColor grayColor];
+    
+    self.cl_tableView.tableHeaderView = ex_tableHeaderView;
+    
     [self.cl_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         if (@available(iOS 11.0, *)) {
