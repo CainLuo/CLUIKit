@@ -80,12 +80,10 @@
     
     self.cl_tableView.mj_header = header;
     
-    MJRefreshAutoFooter *refreshFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+    MJRefreshBackNormalFooter *refreshFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         
         [weakSelf cl_pullUpRefresh];
     }];
-    
-    refreshFooter.automaticallyHidden = YES;
     
     self.cl_tableView.mj_footer = refreshFooter;
 }

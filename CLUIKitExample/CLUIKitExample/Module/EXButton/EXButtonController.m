@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     _ex_starButton.backgroundColor = [UIColor cl_getARC4RandomColor];
     
     [_ex_starButton cl_setNormalButtonWithTitle:@"开始倒计时"];
-    [_ex_starButton cl_setNormalButtonWithTitleColor:[UIColor whiteColor]];
+    [_ex_starButton cl_setNormalTitleWithColor:[UIColor whiteColor]];
     
     [_ex_starButton cl_addButtonActionComplete:^(UIButton *sender) {
         
@@ -139,7 +139,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     _ex_clickButton.cl_clickAreaEdgeInsets = UIEdgeInsetsMake(-50, -50, -50, -50);
     
     [_ex_clickButton cl_setNormalButtonWithTitle:@"修改点击区域"];
-    [_ex_clickButton cl_setNormalButtonWithTitleColor:[UIColor whiteColor]];
+    [_ex_clickButton cl_setNormalTitleWithColor:[UIColor whiteColor]];
 
     [_ex_clickButton cl_addButtonActionComplete:^(UIButton *sender) {
         
