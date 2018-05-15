@@ -13,6 +13,8 @@
 //
 
 #import "UIButton+CLButton.h"
+#import "UIImage+CLImage.h"
+
 #import <objc/runtime.h>
 
 static const void *CLButtonActionKey = &CLButtonActionKey;
@@ -179,10 +181,28 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
           forState:UIControlStateNormal];
 }
 
+- (void)cl_setNormalButtonImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+        
+                                [self cl_setNormalButtonWithImage:image];
+                            }];
+}
+
 - (void)cl_setHighlightedButtonWithImage:(UIImage *)image {
     
     [self setImage:image
           forState:UIControlStateHighlighted];
+}
+
+- (void)cl_setHighlightedButtonImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setHighlightedButtonWithImage:image];
+                            }];
 }
 
 - (void)cl_setSelectedButtonWithImage:(UIImage *)image {
@@ -191,16 +211,44 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
           forState:UIControlStateSelected];
 }
 
+- (void)cl_setSelectedButtonImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setSelectedButtonWithImage:image];
+                            }];
+}
+
 - (void)cl_setDisabledButtonWithImage:(UIImage *)image {
     
     [self setImage:image
           forState:UIControlStateDisabled];
 }
 
+- (void)cl_setDisabledButtonImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setDisabledButtonWithImage:image];
+                            }];
+}
+
+#pragma mark - 获取UIButton的背景图片
 - (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image {
     
     [self setBackgroundImage:image
                     forState:UIControlStateNormal];
+}
+
+- (void)cl_setNormalButtonBackgroundImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setNormalButtonBackgroundImageWithImage:image];
+                            }];
 }
 
 - (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image {
@@ -209,16 +257,43 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
                     forState:UIControlStateHighlighted];
 }
 
+- (void)cl_setHighlightedButtonBackgroundImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setHighlightedButtonBackgroundImageWithImage:image];
+                            }];
+}
+
 - (void)cl_setSelectedButtonBackgroundImageWithImage:(UIImage *)image {
     
     [self setBackgroundImage:image
                     forState:UIControlStateSelected];
 }
 
+- (void)cl_setSelectedButtonBackgroundImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setSelectedButtonBackgroundImageWithImage:image];
+                            }];
+}
+
 - (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image {
     
     [self setBackgroundImage:image
                     forState:UIControlStateDisabled];
+}
+
+- (void)cl_setDisabledButtonBackgroundImageWithColor:(UIColor *)color {
+    
+    [UIImage cl_asyncGetImageWithColor:color
+                            completion:^(UIImage *image) {
+                                
+                                [self cl_setDisabledButtonBackgroundImageWithImage:image];
+                            }];
 }
 
 #pragma mark - 获取UIButton的图片
@@ -309,25 +384,25 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
 }
 
 #pragma mark - 设置UIButton标题颜色
-- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color {
+- (void)cl_setNormalTitleWithColor:(UIColor *)color {
     
     [self setTitleColor:color
                forState:UIControlStateNormal];
 }
 
-- (void)cl_setHighlightedButtonWithColor:(UIColor *)color {
+- (void)cl_setHighlightedTitleWithColor:(UIColor *)color {
     
     [self setTitleColor:color
                forState:UIControlStateHighlighted];
 }
 
-- (void)cl_setSelectedButtonWithColor:(UIColor *)color {
+- (void)cl_setSelectedTitleWithColor:(UIColor *)color {
     
     [self setTitleColor:color
                forState:UIControlStateSelected];
 }
 
-- (void)cl_setDisabledButtonWithColor:(UIColor *)color {
+- (void)cl_setDisabledTitleWithColor:(UIColor *)color {
     
     [self setTitleColor:color
                forState:UIControlStateDisabled];

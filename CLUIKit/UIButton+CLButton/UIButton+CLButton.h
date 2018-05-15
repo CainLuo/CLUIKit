@@ -34,6 +34,11 @@ typedef NS_ENUM(NSInteger, CLButtonStarStyle) {
  */
 typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_buttonStarStyle, NSInteger time);
 
+/**
+ UIButton的事件回调
+
+ @param sender UIButton
+ */
 typedef void (^CLButtonAction)(UIButton *sender);
 
 @interface UIButton (CLButton)
@@ -86,11 +91,25 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (void)cl_setNormalButtonWithImage:(UIImage *)image;
 
 /**
+ 设置UIButton Normal状态下的纯色图片
+
+ @param color UIColor
+ */
+- (void)cl_setNormalButtonImageWithColor:(UIColor *)color;
+
+/**
  设置UIButton Highlighted状态下的图片
  
  @param image UIImage
  */
 - (void)cl_setHighlightedButtonWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Highlighted状态下的纯色图片
+ 
+ @param color UIColor
+ */
+- (void)cl_setHighlightedButtonImageWithColor:(UIColor *)color;
 
 /**
  设置UIButton Selected状态下的图片
@@ -100,12 +119,27 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (void)cl_setSelectedButtonWithImage:(UIImage *)image;
 
 /**
+ 设置UIButton Selected状态下的纯色图片
+ 
+ @param color UIColor
+ */
+- (void)cl_setSelectedButtonImageWithColor:(UIColor *)color;
+
+/**
  设置UIButton Disabled状态下的图片
  
  @param image UIImage
  */
 - (void)cl_setDisabledButtonWithImage:(UIImage *)image;
 
+/**
+ 设置UIButton Disabled状态下的纯色图片
+ 
+ @param color UIColor
+ */
+- (void)cl_setDisabledButtonImageWithColor:(UIColor *)color;
+
+#pragma mark - 设置UIButton背景图片
 /**
  设置UIButton Normal状态下的背景图片
  
@@ -163,6 +197,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
  */
 - (UIImage *)cl_getDisabledButtonImage;
 
+#pragma mark - 获取UIButton的背景图片
 /**
  获取UIButton Normal状态下的背景图片
 
@@ -255,28 +290,28 @@ typedef void (^CLButtonAction)(UIButton *sender);
  
  @param color UIColor
  */
-- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color;
+- (void)cl_setNormalTitleWithColor:(UIColor *)color;
 
 /**
  设置UIButton Highlighted状态下的标题颜色
  
  @param color UIColor
  */
-- (void)cl_setHighlightedButtonWithColor:(UIColor *)color;
+- (void)cl_setHighlightedTitleWithColor:(UIColor *)color;
 
 /**
  设置UIButton Selected状态下的标题颜色
  
  @param color UIColor
  */
-- (void)cl_setSelectedButtonWithColor:(UIColor *)color;
+- (void)cl_setSelectedTitleWithColor:(UIColor *)color;
 
 /**
  设置UIButton Disabled状态下的标题颜色
  
  @param color UIColor
  */
-- (void)cl_setDisabledButtonWithColor:(UIColor *)color;
+- (void)cl_setDisabledTitleWithColor:(UIColor *)color;
 
 #pragma mark - 获取UIButton标题颜色
 /**
