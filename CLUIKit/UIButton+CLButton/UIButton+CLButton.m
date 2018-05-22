@@ -429,4 +429,50 @@ static NSString *const kHideActivityIndicatorKey = @"kHideActivityIndicatorKey";
     return [self titleColorForState:UIControlStateDisabled];
 }
 
+#pragma mark - 设置UIButton的NSAttributedString标题
+- (void)cl_setNormalButtonWithAttributedStringTitle:(NSAttributedString *)attributedString {
+    
+    [self setAttributedTitle:attributedString
+                    forState:UIControlStateNormal];
+}
+
+- (void)cl_setHighlightedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString {
+    
+    [self setAttributedTitle:attributedString
+                    forState:UIControlStateHighlighted];
+}
+
+- (void)cl_setSelectedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString {
+    
+    [self setAttributedTitle:attributedString
+                    forState:UIControlStateSelected];
+}
+
+- (void)cl_setDisabledButtonWithAttributedStringTitle:(NSAttributedString *)attributedString {
+    
+    [self setAttributedTitle:attributedString
+                    forState:UIControlStateDisabled];
+}
+
+#pragma mark - 获取UIButton标题
+- (NSAttributedString *)cl_getNormalButtonAttributedStringTitle {
+    
+    return [self attributedTitleForState:UIControlStateNormal];
+}
+
+- (NSAttributedString *)cl_getHighlightedButtonAttributedStringTitle {
+    
+    return [self attributedTitleForState:UIControlStateHighlighted];
+}
+
+- (NSAttributedString *)cl_getSelectedButtonAttributedStringTitle {
+    
+    return [self attributedTitleForState:UIControlStateSelected];
+}
+
+- (NSAttributedString *)cl_getDisabledButtonAttributedStringTitle {
+    
+    return [self attributedTitleForState:UIControlStateDisabled];
+}
+
 @end

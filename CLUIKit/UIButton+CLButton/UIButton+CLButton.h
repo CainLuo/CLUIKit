@@ -342,4 +342,62 @@ typedef void (^CLButtonAction)(UIButton *sender);
  */
 - (UIColor *)cl_getDisabledButtonTitleColor;
 
+#pragma mark - 设置UIButton的NSAttributedString标题
+/**
+ 设置UIButton Normal状态下的NSAttributedString标题
+
+ @param attributedString NSAttributedString
+ */
+- (void)cl_setNormalButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+/**
+ 设置UIButton Highlighted状态下的NSAttributedString标题
+ 
+ @param attributedString NSAttributedString
+ */
+- (void)cl_setHighlightedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+/**
+ 设置UIButton Selected状态下的NSAttributedString标题
+ 
+ @param attributedString NSAttributedString
+ */
+- (void)cl_setSelectedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+/**
+ 设置UIButton Disabled状态下的NSAttributedString标题
+ 
+ @param attributedString NSAttributedString
+ */
+- (void)cl_setDisabledButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+#pragma mark - 获取UIButton标题
+/**
+ 获取UIButton Normal状态下的NSAttributedString标题
+ 
+ @return NSAttributedString
+ */
+- (NSAttributedString *)cl_getNormalButtonAttributedStringTitle;
+
+/**
+ 获取UIButton Highlighted状态下的NSAttributedString标题
+ 
+ @return NSAttributedString
+ */
+- (NSAttributedString *)cl_getHighlightedButtonAttributedStringTitle;
+
+/**
+ 获取UIButton Selected状态下的NSAttributedString标题
+ 
+ @return NSAttributedString
+ */
+- (NSAttributedString *)cl_getSelectedButtonAttributedStringTitle;
+
+/**
+ 获取UIButton Disabled状态下的NSAttributedString标题
+ 
+ @return NSAttributedString
+ */
+- (NSAttributedString *)cl_getDisabledButtonAttributedStringTitle;
+
 @end

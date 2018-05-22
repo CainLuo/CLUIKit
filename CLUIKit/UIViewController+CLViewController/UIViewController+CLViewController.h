@@ -14,6 +14,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^CLAlertControlAction)(UIAlertAction *action, NSUInteger index);
+
 @protocol CLNavigationControllerBackItemProtocol <NSObject>
 @optional
 
@@ -27,8 +29,6 @@
 @end
 
 @interface UIViewController (CLViewController) <CLNavigationControllerBackItemProtocol>
-
-@property (nonatomic, strong) UIAlertController *cl_alertController;
 
 /**
  检测UIViewController的UINavigationController返回事件
@@ -51,21 +51,23 @@
  */
 - (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools;
 
+#pragma mark - 呼叫手机
 /**
  呼叫手机号
  
- @param phoneNumber 输入对应的手机号
- @param title 标题语
+ @param phoneNumber NSString
+ @param title NSString
  */
 - (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber
                             message:(NSString *)message
                              titile:(NSString *)title;
 
+#pragma mark - UIAlertController自定义
 /**
  调用UIAlertController, UIAlertControllerStyleAlert样式
  
- @param title 标题语
- @param message 提示信息
+ @param title NSString
+ @param message NSString
  */
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
@@ -74,27 +76,40 @@
 /**
  调用UIAlertController, UIAlertControllerStyleActionSheet样式
  
- @param title 标题语
- @param message 提示信息
- @param actionTitles NSString数组
- @param handler UIAlertActiod响应事件
+ @param title NSString
+ @param message NSString
+ @param actionTitles NSArray<NSString *>
+ @param complete UIAlertAction响应事件
  */
 - (void)cl_showSheetViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                actionTitles:(NSArray<NSString *> *)actionTitles
-                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler;
+                                   complete:(CLAlertControlAction)complete;
+
+/**
+ 调用UIAlertController, UIAlertControllerStyleAlert样式
+
+ @param title NSString
+ @param message NSString
+ @param actionTitles NSArray<NSString *>
+ @param complete UIAlertAction响应事件
+ */
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                               actionTitles:(NSArray<NSString *> *)actionTitles
+                                   complete:(CLAlertControlAction)complete;
 
 /**
  自定义调用UIAlertController
  
- @param title 标题语
- @param message 提示信息
- @param actions UIAlertAction数组
+ @param title NSString
+ @param message NSString
+ @param actions NSArray<NSString *>
  @param preferredStyle UIAlertControllerStyle
  */
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
-                                    actions:(NSArray<UIAlertAction *> *) actions
+                                    actions:(NSArray<UIAlertAction *> *)actions
                              preferredStyle:(UIAlertControllerStyle)preferredStyle;
 
 

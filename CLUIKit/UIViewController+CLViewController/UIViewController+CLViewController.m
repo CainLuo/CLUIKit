@@ -45,10 +45,11 @@ static void *AlertControllerKey = &AlertControllerKey;
     return objc_getAssociatedObject(self, AlertControllerKey);
 }
 
+#pragma mark - 呼叫手机
 - (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber
                             message:(NSString *)message
                              titile:(NSString *)title {
-        
+    
     UIAlertAction *cl_cancelAction = [UIAlertAction actionWithTitle:@"取消"
                                                               style:UIAlertActionStyleCancel
                                                             handler:^(UIAlertAction *action) {}];
@@ -66,9 +67,10 @@ static void *AlertControllerKey = &AlertControllerKey;
                                preferredStyle:UIAlertControllerStyleAlert];
 }
 
+#pragma mark - UIAlertController自定义
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
-                                buttonTitle:(NSString *)buttonTitle{
+                                buttonTitle:(NSString *)buttonTitle {
     
     UIAlertAction *cl_otherAction = [UIAlertAction actionWithTitle:buttonTitle
                                                              style:UIAlertActionStyleDefault
@@ -81,59 +83,88 @@ static void *AlertControllerKey = &AlertControllerKey;
                                preferredStyle:UIAlertControllerStyleAlert];
 }
 
-- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
-                                    message:(NSString *)message
-                                    actions:(NSArray<UIAlertAction *> *) actions
-                             preferredStyle:(UIAlertControllerStyle)preferredStyle {
-    
-    self.cl_alertController = [UIAlertController alertControllerWithTitle:title
-                                                                  message:message
-                                                           preferredStyle:preferredStyle];
-    
-    if (actions) {
-        
-        for (UIAlertAction *cl_alertAction in actions) {
-            
-            [self.cl_alertController addAction:cl_alertAction];
-        }
-    }
-    
-    [self presentViewController:self.cl_alertController
-                       animated:YES
-                     completion:nil];
-}
-
 - (void)cl_showSheetViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                actionTitles:(NSArray<NSString *> *)actionTitles
-                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler {
+                                   complete:(CLAlertControlAction)complete {
     
-    self.cl_alertController = [UIAlertController alertControllerWithTitle:title
-                                                                  message:message
-                                                           preferredStyle:UIAlertControllerStyleActionSheet];
-
+    UIAlertController *cl_alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                message:message
+                                                                         preferredStyle:UIAlertControllerStyleActionSheet];
+    
     [actionTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         UIAlertAction *fs_sheetAction = [UIAlertAction actionWithTitle:obj
                                                                  style:UIAlertActionStyleDefault
                                                                handler:^(UIAlertAction * _Nonnull action) {
                                                                    
-                                                                   if (handler) {
+                                                                   if (complete) {
                                                                        
-                                                                       handler(action, idx);
+                                                                       complete(action, idx);
                                                                    }
                                                                }];
         
-        [self.cl_alertController addAction:fs_sheetAction];
+        [cl_alertController addAction:fs_sheetAction];
     }];
     
-    UIAlertAction *fs_cancelAlertAction = [UIAlertAction actionWithTitle:@"取消"
+    UIAlertAction *cl_cancelAlertAction = [UIAlertAction actionWithTitle:@"取消"
                                                                    style:UIAlertActionStyleCancel
                                                                  handler:nil];
-
-    [self.cl_alertController addAction:fs_cancelAlertAction];
     
-    [self presentViewController:self.cl_alertController
+    [cl_alertController addAction:cl_cancelAlertAction];
+    
+    [self presentViewController:cl_alertController
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                               actionTitles:(NSArray<NSString *> *)actionTitles
+                                   complete:(CLAlertControlAction)complete {
+    
+    UIAlertController *cl_alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                message:message
+                                                                         preferredStyle:UIAlertControllerStyleAlert];
+    
+    [actionTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        UIAlertAction *cl_alertAction = [UIAlertAction actionWithTitle:obj
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * _Nonnull action) {
+                                                                   
+                                                                   if (complete) {
+                                                                       
+                                                                       complete(action, idx);
+                                                                   }
+                                                               }];
+        
+        [cl_alertController addAction:cl_alertAction];
+    }];
+    
+    [self presentViewController:cl_alertController
+                       animated:YES
+                     completion:nil];
+}
+
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                                    actions:(NSArray<UIAlertAction *> *) actions
+                             preferredStyle:(UIAlertControllerStyle)preferredStyle {
+    
+    UIAlertController *cl_alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                message:message
+                                                                         preferredStyle:preferredStyle];
+    
+    if (actions) {
+        
+        for (UIAlertAction *cl_alertAction in actions) {
+            
+            [cl_alertController addAction:cl_alertAction];
+        }
+    }
+    
+    [self presentViewController:cl_alertController
                        animated:YES
                      completion:nil];
 }

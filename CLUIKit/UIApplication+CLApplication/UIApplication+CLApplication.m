@@ -101,6 +101,11 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cl_emailAddress]];
 }
 
++ (void)cl_goToAppSetting {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
+
 #pragma mark - App相关
 + (UIImage *)cl_getApplicationLaunchImage {
     

@@ -77,6 +77,11 @@ typedef void (^CLPermissionBlock)(BOOL granted);
  */
 + (void)cl_sendEmailWithEmailAddress:(NSString *)emailAddress;
 
+/**
+ 打开App的系统设置页面
+ */
++ (void)cl_goToAppSetting;
+
 #pragma mark - App相关
 /**
  获取App启动图
