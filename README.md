@@ -79,6 +79,11 @@
 - [UINavigationItem+CLNavigationItem@](#UINavigationItem+CLNavigationItem)
 - [UIScreen+CLScreen@](#UIScreen+CLScreen)
 - [UITableView+CLTableView@](#UITableView+CLTableView)
+  - [UITableView+CLTableView占位代理@](#UITableView+CLTableView占位代理@)
+  - [UITableView+CLTableView刷新@](#UITableView+CLTableView刷新@)
+  - [UITableView+CLTableView显示IndexPath@](#UITableView+CLTableView显示IndexPath@)
+  - [UITableView+CLTableView插入IndexPath@](#UITableView+CLTableView插入IndexPath@)
+  - [UITableView+CLTableView删除IndexPath@](#UITableView+CLTableView删除IndexPath@)
 - [UIView+CLView@](#UIView+CLView)
 - [UIViewController+CLViewController@](#UIViewController+CLViewController)
   - [UIViewControllerBackItem检测代理@](#UIViewControllerBackItem检测代理)
@@ -242,6 +247,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 `CLNavigationController`默认重载了`pushViewController:animated:`, 会在`pushViewController`的时候自动隐藏掉`UITarBar`.
 
+
+
 ## CLScanQRCodeController@
 
 `CLScanQRCodeController`是基于`AVFoundation`进行封装的`QRCode`扫描库, 系统默认识别十三种编码:
@@ -288,15 +295,11 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_hiddenScrollIndicator;
 ```
 
-
-
 ### UIScrollView代理@
 
 ```objective-c
 - (void)cl_setScrollViewDelegate:(_Nullable id <UIScrollViewDelegate>)delegate;
 ```
-
-
 
 ### CLScrollViewViewModel
 
@@ -305,8 +308,6 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 - (instancetype)initScrollViewDelegateWithController:(CLScrollViewController *)controller;
 ```
-
-
 
 
 
@@ -554,7 +555,11 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 
 + (void)cl_sendEmailWithEmailAddress:(NSString *)emailAddress;
 
++ (void)cl_goToAppSetting;
+
 + (UIImage *)cl_getApplicationLaunchImage;
+
++ (CGFloat)cl_getStatusBarHeight;
 ```
 
 
@@ -573,27 +578,42 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 
 typedef void (^CLButtonAction)(UIButton *sender);
 
+@interface UIButton (CLButton)
+
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
 @property (nonatomic, assign, readonly) BOOL cl_isSubmitting;
 
+#pragma mark - 倒计时方法
 - (void)cl_starButtonWithTime:(NSInteger)time
                      complete:(CLButtonStar)complete;
 
+#pragma mark - 添加UIButton点击方法
 - (void)cl_addButtonActionComplete:(CLButtonAction)complete;
 
+#pragma mark - 用UIActivityIndicatorView代替文字
 - (void)cl_showActivityIndicatorViewWithStyle:(UIActivityIndicatorViewStyle)style;
 
 - (void)cl_hideActivityIndicatorView;
 
+#pragma mark - 设置UIButton图片
 - (void)cl_setNormalButtonWithImage:(UIImage *)image;
+
+- (void)cl_setNormalButtonImageWithColor:(UIColor *)color;
 
 - (void)cl_setHighlightedButtonWithImage:(UIImage *)image;
 
+- (void)cl_setHighlightedButtonImageWithColor:(UIColor *)color;
+
 - (void)cl_setSelectedButtonWithImage:(UIImage *)image;
+
+- (void)cl_setSelectedButtonImageWithColor:(UIColor *)color;
 
 - (void)cl_setDisabledButtonWithImage:(UIImage *)image;
 
+- (void)cl_setDisabledButtonImageWithColor:(UIColor *)color;
+
+#pragma mark - 设置UIButton背景图片
 - (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image;
 
 - (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image;
@@ -602,6 +622,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image;
 
+#pragma mark - 获取UIButton的图片
 - (UIImage *)cl_getNormalButtonImage;
 
 - (UIImage *)cl_getHighlightedButtonImage;
@@ -610,6 +631,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (UIImage *)cl_getDisabledButtonImage;
 
+#pragma mark - 获取UIButton的背景图片
 - (UIImage *)cl_getNormalButtonBackgroundImage;
 
 - (UIImage *)cl_getHighlightedButtonBackgroundImage;
@@ -618,6 +640,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (UIImage *)cl_getDisabledButtonBackgroundImage;
 
+#pragma mark - 设置UIButton标题
 - (void)cl_setNormalButtonWithTitle:(NSString *)title;
 
 - (void)cl_setHighlightedButtonWithTitle:(NSString *)title;
@@ -626,6 +649,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (void)cl_setDisabledButtonWithTitle:(NSString *)title;
 
+#pragma mark - 获取UIButton标题
 - (NSString *)cl_getNormalButtonTitle;
 
 - (NSString *)cl_getHighlightedButtonTitle;
@@ -634,14 +658,16 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (NSString *)cl_getDisabledButtonTitle;
 
-- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color;
+#pragma mark - 设置UIButton标题
+- (void)cl_setNormalTitleWithColor:(UIColor *)color;
 
-- (void)cl_setHighlightedButtonWithColor:(UIColor *)color;
+- (void)cl_setHighlightedTitleWithColor:(UIColor *)color;
 
-- (void)cl_setSelectedButtonWithColor:(UIColor *)color;
+- (void)cl_setSelectedTitleWithColor:(UIColor *)color;
 
-- (void)cl_setDisabledButtonWithColor:(UIColor *)color;
+- (void)cl_setDisabledTitleWithColor:(UIColor *)color;
 
+#pragma mark - 获取UIButton标题颜色
 - (UIColor *)cl_getNormalButtonTitleColor;
 
 - (UIColor *)cl_getHighlightedButtonTitleColor;
@@ -649,6 +675,24 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (UIColor *)cl_getSelectedButtonTitleColor;
 
 - (UIColor *)cl_getDisabledButtonTitleColor;
+
+#pragma mark - 设置UIButton的NSAttributedString标题
+- (void)cl_setNormalButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+- (void)cl_setHighlightedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+- (void)cl_setSelectedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+- (void)cl_setDisabledButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+#pragma mark - 获取UIButton标题
+- (NSAttributedString *)cl_getNormalButtonAttributedStringTitle;
+
+- (NSAttributedString *)cl_getHighlightedButtonAttributedStringTitle;
+
+- (NSAttributedString *)cl_getSelectedButtonAttributedStringTitle;
+
+- (NSAttributedString *)cl_getDisabledButtonAttributedStringTitle;
 ```
 
 
@@ -739,7 +783,12 @@ typedef void(^CLControlAction)(id sender);
 - (void)cl_addControlActionWithEvents:(UIControlEvents)controlEvents
                              complete:(CLControlAction)complete;
 
+- (void)cl_setControlActionWithEvents:(UIControlEvents)controlEvents
+                             complete:(CLControlAction)complete;
+
 - (void)cl_removeControlActionWithEvents:(UIControlEvents)controlEvents;
+
+- (void)cl_removeAllActions;
 
 @end
 ```
@@ -845,6 +894,17 @@ typedef void(^CLControlAction)(id sender);
 
 + (UIFont *)cl_fitMonospacedDigitSystemFontOfSize:(CGFloat)fontSize
                                            weight:(UIFontWeight)weight NS_AVAILABLE_IOS(9_0);
+
++ (BOOL)cl_loadFontWithPath:(NSString *)path;
+
++ (void)cl_unloadFontWithPath:(NSString *)path;
+
++ (UIFont *)cl_loadFontWithData:(NSData *)data;
+
++ (BOOL)cl_unloadFontWithData:(UIFont *)font;
+
++ (UIFont *)cl_fitCustomFontWithName:(NSString *)name
+                            fontSize:(CGFloat)fontSize;
 ```
 
 
@@ -899,6 +959,10 @@ typedef void(^CLControlAction)(id sender);
 
 + (void)cl_asyncLoadGIFImageWithData:(NSData *)data
                           completion:(CLImage)completion;
+
++ (BOOL)cl_isAnimatedGIFWithData:(NSData *)data;
+
++ (BOOL)cl_isAnimatedGIFWithFilePath:(NSString *)filePath;
 ```
 
 
@@ -989,6 +1053,8 @@ typedef void(^CLControlAction)(id sender);
 
 - (NSArray *)cl_popToViewControllerWithLevel:(NSUInteger)level
                                     animated:(BOOL)animated;
+
+- (CGFloat)cl_getNavigationBarHeight;
 ```
 
 
@@ -1006,7 +1072,11 @@ typedef void(^CLControlAction)(id sender);
 针对`UIKit`的`UIScreen`进行系统外的方法补充:
 
 ```objective-c
++ (CGFloat)cl_getScreenScale;
+
 + (CGSize)cl_getScreenSize;
+
++ (CGRect)cl_getCurrentScreenBounds;
 
 + (CGFloat)cl_getScreenWidth;
 
@@ -1044,7 +1114,7 @@ typedef void(^CLControlAction)(id sender);
 针对`UIKit`的`UITableView`进行系统外的方法补充:
 
 
-### UITableView占位代理@
+### UITableView+CLTableView占位代理@
 
 ```objective-c
 @protocol CLTableViewPlaceholderDelegate <NSObject>
@@ -1061,15 +1131,80 @@ typedef void(^CLControlAction)(id sender);
 
 @end
 
+- (void)cl_removePlaceholderViewWithSuperView;
 ```
 
 
-### UITableView刷新@
+
+### UITableView+CLTableView刷新@
 
 ```objective-c
+typedef void(^CLTableViewUpdateBlock)(UITableView *tableView);
+
 - (void)cl_reloadData;
 
-- (void)cl_removePlaceholderViewWithSuperView;
+
+- (void)cl_updateTableViewWithComplete:(CLTableViewUpdateBlock)complete;
+
+- (void)cl_reloadRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_reloadWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_reloadWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation;
+```
+
+
+
+### UITableView+CLTableView显示IndexPath
+
+```objective-c
+- (void)cl_scrollToIndexPath:(NSIndexPath *)indexPath
+              scrollPosition:(UITableViewScrollPosition)scrollPosition
+                    animated:(BOOL)animated;
+
+- (void)cl_scrollToRow:(NSUInteger)row
+               section:(NSUInteger)section
+        scrollPosition:(UITableViewScrollPosition)scrollPosition
+              animated:(BOOL)animated;
+```
+
+
+
+### UITableView+CLTableView插入IndexPath@
+
+```objective-c
+- (void)cl_insertRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_insertWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_insertWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation;
+
+```
+
+
+
+### UITableView+CLTableView删除IndexPath@
+
+```objective-c
+- (void)cl_deleteRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_deleteWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_deleteWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_resetSelectedRowsAnimated:(BOOL)animated;
 ```
 
 
@@ -1138,10 +1273,12 @@ typedef void (^CLGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
 
 - (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools;
 
+#pragma mark - 呼叫手机
 - (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber
                             message:(NSString *)message
                              titile:(NSString *)title;
 
+#pragma mark - UIAlertController自定义
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                 buttonTitle:(NSString *)buttonTitle;
@@ -1149,11 +1286,16 @@ typedef void (^CLGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
 - (void)cl_showSheetViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                actionTitles:(NSArray<NSString *> *)actionTitles
-                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler;
+                                   complete:(CLAlertControlAction)complete;
 
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
-                                    actions:(NSArray<UIAlertAction *> *) actions
+                               actionTitles:(NSArray<NSString *> *)actionTitles
+                                   complete:(CLAlertControlAction)complete;
+
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                                    actions:(NSArray<UIAlertAction *> *)actions
                              preferredStyle:(UIAlertControllerStyle)preferredStyle;
 ```
 
