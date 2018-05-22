@@ -93,7 +93,7 @@
     [self cl_showSheetViewControllerWithTitle:@"设置图片"
                                       message:@"设置您的图片"
                                  actionTitles:ex_sheetArray
-                                      handler:^(UIAlertAction *action, NSUInteger index) {
+                                     complete:^(UIAlertAction *action, NSUInteger index) {
         
                                           [self ex_changeImageViewWithIndex:index];
                                       }];

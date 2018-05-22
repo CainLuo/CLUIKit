@@ -22,7 +22,9 @@
                                     @{@"title":@"CLAlertTypeAlertSheet",
                                       @"alertType":@(EXAlertTypeAlertSheet)},
                                     @{@"title":@"CLAlertTypeCustom",
-                                      @"alertType":@(EXAlertTypeCustom)}];
+                                      @"alertType":@(EXAlertTypeCustom)},
+                                    @{@"title":@"CLAlertTypeCustomTitles",
+                                      @"alertType":@(EXAlertTypeCustomTitles)}];
     
     [self.cl_dataSource addObjectsFromArray:[NSArray yy_modelArrayWithClass:[EXAlertBaseModel class]
                                                                        json:ex_dataSourceArray]];

@@ -36,6 +36,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             
             [self ex_customAlertController];
             break;
+        case EXAlertTypeCustomTitles:
+            
+            [self ex_customAlertTitlesController];
+            break;
         default:
             break;
     }
@@ -57,10 +61,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)ex_alertActionSheet {
     
+    
+    
     [self.cl_viewModel.cl_tableViewController cl_showSheetViewControllerWithTitle:@"温馨提示"
                                                                           message:@"这是Message"
                                                                      actionTitles:@[@"标题一", @"标题二"]
-                                                                          handler:^(UIAlertAction *action, NSUInteger index) {
+                                                                          complete:^(UIAlertAction *action, NSUInteger index) {
                                                                               
                                                                               NSLog(@"点击了第%lu个, 标题为: %@", (unsigned long)index, action.title);
                                                                           }];
@@ -86,6 +92,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                                           message:@"这是Message"
                                                                           actions:@[cl_cancel, cl_define]
                                                                    preferredStyle:UIAlertControllerStyleAlert];
+}
+
+- (void)ex_customAlertTitlesController {
+    
+    [self.cl_viewModel.cl_tableViewController cl_showAlertViewControllerWithTitle:@"温馨提示"
+                                                                          message:@"这是Message"
+                                                                     actionTitles:@[@"取消", @"好的"]
+                                                                         complete:^(UIAlertAction *action, NSUInteger index) {
+        
+                                                                             NSLog(@"点击了第%lu个, 标题为: %@", (unsigned long)index, action.title);
+                                                                         }];
 }
 
 @end

@@ -13,7 +13,8 @@ typedef NS_ENUM(NSInteger, EXAlertType) {
     EXAlertTypePhone = 0,
     EXAlertTypeAlert,
     EXAlertTypeAlertSheet,
-    EXAlertTypeCustom
+    EXAlertTypeCustom,
+    EXAlertTypeCustomTitles
 };
 
 @interface EXAlertBaseModel : NSObject
