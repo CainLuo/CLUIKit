@@ -112,5 +112,4 @@ typedef void(^CLAlertControlAction)(UIAlertAction *action, NSUInteger index);
                                     actions:(NSArray<UIAlertAction *> *)actions
                              preferredStyle:(UIAlertControllerStyle)preferredStyle;
 
-
 @end
