@@ -23,14 +23,10 @@
 
 @implementation CLWebViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self cl_addConstraintsWithSuperView];
+    [self.view addSubview:self.cl_webView];
 }
 
 - (void)cl_setWebViewUIDelegate:(id<WKUIDelegate>)UIDelegate
@@ -42,16 +38,12 @@
 
 - (WKWebView *)cl_webView {
     
-    CL_GET_METHOD_RETURN_OBJC(_cl_webView);
-    
-    _cl_webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    if (!_cl_webView) {
+        
+        _cl_webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    }
     
     return _cl_webView;
-}
-
-- (void)cl_addConstraintsWithSuperView {
-    
-    [self.view addSubview:self.cl_webView];
 }
 
 @end
