@@ -17,11 +17,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+NS_CLASS_AVAILABLE_IOS(10_0) @interface CLAnimatorManager : NSObject
+
 typedef void(^CLAnimatorManagerBlock)(void);
 typedef void(^CLAnimatorManagerCompleteBlock)(UIViewAnimatingPosition finalPosition);
 typedef void(^CLAnimatorManagerStatusBlock)(UIViewAnimatingState state);
-
-NS_CLASS_AVAILABLE_IOS(10_0) @interface CLAnimatorManager : NSObject
 
 @property (nonatomic, strong, readonly) UIViewPropertyAnimator *cl_viewPropertyAnimator;
 
