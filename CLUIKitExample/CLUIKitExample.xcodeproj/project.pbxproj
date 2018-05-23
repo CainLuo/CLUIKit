@@ -79,6 +79,7 @@
 		BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DB206E064800E0E19C /* CLCollectionViewDragDelegate.m */; };
 		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
 		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
+		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
 		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
 		BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */; };
 		BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */; };
@@ -244,6 +245,8 @@
 		BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDropDelegate.m; sourceTree = "<group>"; };
 		BF28A4E2206E090700E0E19C /* CLTableViewDragDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTableViewDragDelegate.h; sourceTree = "<group>"; };
 		BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDragDelegate.m; sourceTree = "<group>"; };
+		BF2B453620B54EAB00BDAA0B /* CLAnimatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAnimatorManager.h; sourceTree = "<group>"; };
+		BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAnimatorManager.m; sourceTree = "<group>"; };
 		BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
 		BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
 		BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigationController.h"; sourceTree = "<group>"; };
@@ -611,6 +614,7 @@
 				A4AB1D18203CEE9C005026E8 /* CLResource.bundle */,
 				A4DB7142203802FC0015964F /* CLUIKit.h */,
 				A4DB7187203802FC0015964F /* Info.plist */,
+				BF2B453520B54E8400BDAA0B /* CLAnimatorManager */,
 				A4DB718E203802FC0015964F /* CLButton */,
 				A4DB714F203802FC0015964F /* CLCollectionViewController */,
 				A4DB7174203802FC0015964F /* CLNavigationController */,
@@ -1162,6 +1166,15 @@
 			path = CLTableViewDragDelegate;
 			sourceTree = "<group>";
 		};
+		BF2B453520B54E8400BDAA0B /* CLAnimatorManager */ = {
+			isa = PBXGroup;
+			children = (
+				BF2B453620B54EAB00BDAA0B /* CLAnimatorManager.h */,
+				BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */,
+			);
+			path = CLAnimatorManager;
+			sourceTree = "<group>";
+		};
 		BFC89ACB205F679600A04A58 /* UIControl+CLControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1584,6 +1597,7 @@
 				A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */,
 				A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */,
 				A4DB71A9203802FC0015964F /* CLButton.m in Sources */,
+				BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */,
 				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
 				BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */,
 				A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */,
