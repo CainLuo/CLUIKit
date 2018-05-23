@@ -91,6 +91,14 @@
 		BFD49E682094565900A9C252 /* EXScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E672094565900A9C252 /* EXScrollViewController.m */; };
 		BFD49E6D2094567800A9C252 /* EXScrollViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E6C2094567800A9C252 /* EXScrollViewViewModel.m */; };
 		BFD49E702094568300A9C252 /* EXScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E6F2094568300A9C252 /* EXScrollViewDelegate.m */; };
+		BFDCB65E20B4FFB600405637 /* CLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB65D20B4FFB600405637 /* CLWebViewController.m */; };
+		BFDCB66420B500AB00405637 /* CLWebViewNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB66320B500AB00405637 /* CLWebViewNavigationDelegate.m */; };
+		BFDCB66720B500B100405637 /* CLWebViewUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB66620B500B100405637 /* CLWebViewUIDelegate.m */; };
+		BFDCB66B20B5015400405637 /* CLWebViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB66A20B5015400405637 /* CLWebViewViewModel.m */; };
+		BFDCB67020B5098B00405637 /* EXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB66F20B5098B00405637 /* EXWebViewController.m */; };
+		BFDCB67520B50BD200405637 /* EXWebViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB67420B50BD200405637 /* EXWebViewViewModel.m */; };
+		BFDCB67920B50BF300405637 /* EXWebViewNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB67820B50BF300405637 /* EXWebViewNavigationDelegate.m */; };
+		BFDCB67D20B50C1600405637 /* EXWebViewUIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB67C20B50C1600405637 /* EXWebViewUIDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -260,6 +268,22 @@
 		BFD49E6C2094567800A9C252 /* EXScrollViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScrollViewViewModel.m; sourceTree = "<group>"; };
 		BFD49E6E2094568300A9C252 /* EXScrollViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScrollViewDelegate.h; sourceTree = "<group>"; };
 		BFD49E6F2094568300A9C252 /* EXScrollViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScrollViewDelegate.m; sourceTree = "<group>"; };
+		BFDCB65C20B4FFB600405637 /* CLWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLWebViewController.h; sourceTree = "<group>"; };
+		BFDCB65D20B4FFB600405637 /* CLWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLWebViewController.m; sourceTree = "<group>"; };
+		BFDCB66220B500AB00405637 /* CLWebViewNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLWebViewNavigationDelegate.h; sourceTree = "<group>"; };
+		BFDCB66320B500AB00405637 /* CLWebViewNavigationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLWebViewNavigationDelegate.m; sourceTree = "<group>"; };
+		BFDCB66520B500B100405637 /* CLWebViewUIDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLWebViewUIDelegate.h; sourceTree = "<group>"; };
+		BFDCB66620B500B100405637 /* CLWebViewUIDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLWebViewUIDelegate.m; sourceTree = "<group>"; };
+		BFDCB66920B5015400405637 /* CLWebViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLWebViewViewModel.h; sourceTree = "<group>"; };
+		BFDCB66A20B5015400405637 /* CLWebViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLWebViewViewModel.m; sourceTree = "<group>"; };
+		BFDCB66E20B5098B00405637 /* EXWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXWebViewController.h; sourceTree = "<group>"; };
+		BFDCB66F20B5098B00405637 /* EXWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXWebViewController.m; sourceTree = "<group>"; };
+		BFDCB67320B50BD200405637 /* EXWebViewViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXWebViewViewModel.h; sourceTree = "<group>"; };
+		BFDCB67420B50BD200405637 /* EXWebViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXWebViewViewModel.m; sourceTree = "<group>"; };
+		BFDCB67720B50BF300405637 /* EXWebViewNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXWebViewNavigationDelegate.h; sourceTree = "<group>"; };
+		BFDCB67820B50BF300405637 /* EXWebViewNavigationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXWebViewNavigationDelegate.m; sourceTree = "<group>"; };
+		BFDCB67B20B50C1600405637 /* EXWebViewUIDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXWebViewUIDelegate.h; sourceTree = "<group>"; };
+		BFDCB67C20B50C1600405637 /* EXWebViewUIDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXWebViewUIDelegate.m; sourceTree = "<group>"; };
 		E79C28E490808A645BCBF48F /* Pods-CLUIKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLUIKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLUIKitExample/Pods-CLUIKitExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -596,6 +620,7 @@
 				A4DB718B203802FC0015964F /* CLTextField */,
 				A4DB7149203802FC0015964F /* CLToolBarListView */,
 				A4DB717A203802FC0015964F /* CLViewController */,
+				BFDCB65A20B4FF8200405637 /* CLWebViewController */,
 				A4BA313D204CE508002E0ED7 /* UIApplication+CLApplication */,
 				BFD49E442094415300A9C252 /* UIBarButtonItem+CLBarButtonItem */,
 				A4DB714C203802FC0015964F /* UIButton+CLButton */,
@@ -893,6 +918,7 @@
 				BFD49E632094560300A9C252 /* EXScrollView */,
 				A4DB71F4203ACFBD0015964F /* EXTableView */,
 				A4AB1CE9203C46AA005026E8 /* EXTextField */,
+				BFDCB66C20B5094C00405637 /* EXWebView */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1289,6 +1315,116 @@
 			path = EXScrollViewViewModel;
 			sourceTree = "<group>";
 		};
+		BFDCB65A20B4FF8200405637 /* CLWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB65B20B4FF8B00405637 /* Controller */,
+				BFDCB65F20B5004900405637 /* ViewModels */,
+			);
+			path = CLWebViewController;
+			sourceTree = "<group>";
+		};
+		BFDCB65B20B4FF8B00405637 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB65C20B4FFB600405637 /* CLWebViewController.h */,
+				BFDCB65D20B4FFB600405637 /* CLWebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFDCB65F20B5004900405637 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB66120B5006300405637 /* CLWebViewNavigationDelegate */,
+				BFDCB66020B5005900405637 /* CLWebViewUIDelegate */,
+				BFDCB66820B5014A00405637 /* CLWebViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFDCB66020B5005900405637 /* CLWebViewUIDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB66520B500B100405637 /* CLWebViewUIDelegate.h */,
+				BFDCB66620B500B100405637 /* CLWebViewUIDelegate.m */,
+			);
+			path = CLWebViewUIDelegate;
+			sourceTree = "<group>";
+		};
+		BFDCB66120B5006300405637 /* CLWebViewNavigationDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB66220B500AB00405637 /* CLWebViewNavigationDelegate.h */,
+				BFDCB66320B500AB00405637 /* CLWebViewNavigationDelegate.m */,
+			);
+			path = CLWebViewNavigationDelegate;
+			sourceTree = "<group>";
+		};
+		BFDCB66820B5014A00405637 /* CLWebViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB66920B5015400405637 /* CLWebViewViewModel.h */,
+				BFDCB66A20B5015400405637 /* CLWebViewViewModel.m */,
+			);
+			path = CLWebViewViewModel;
+			sourceTree = "<group>";
+		};
+		BFDCB66C20B5094C00405637 /* EXWebView */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB66D20B5097800405637 /* Controller */,
+				BFDCB67120B50BB100405637 /* ViewModels */,
+			);
+			path = EXWebView;
+			sourceTree = "<group>";
+		};
+		BFDCB66D20B5097800405637 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB66E20B5098B00405637 /* EXWebViewController.h */,
+				BFDCB66F20B5098B00405637 /* EXWebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFDCB67120B50BB100405637 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB67620B50BD500405637 /* EXWebViewNavigationDelegate */,
+				BFDCB67A20B50C0600405637 /* EXWebViewUIDelegate */,
+				BFDCB67220B50BC400405637 /* EXWebViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFDCB67220B50BC400405637 /* EXWebViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB67320B50BD200405637 /* EXWebViewViewModel.h */,
+				BFDCB67420B50BD200405637 /* EXWebViewViewModel.m */,
+			);
+			path = EXWebViewViewModel;
+			sourceTree = "<group>";
+		};
+		BFDCB67620B50BD500405637 /* EXWebViewNavigationDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB67720B50BF300405637 /* EXWebViewNavigationDelegate.h */,
+				BFDCB67820B50BF300405637 /* EXWebViewNavigationDelegate.m */,
+			);
+			path = EXWebViewNavigationDelegate;
+			sourceTree = "<group>";
+		};
+		BFDCB67A20B50C0600405637 /* EXWebViewUIDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB67B20B50C1600405637 /* EXWebViewUIDelegate.h */,
+				BFDCB67C20B50C1600405637 /* EXWebViewUIDelegate.m */,
+			);
+			path = EXWebViewUIDelegate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1414,6 +1550,7 @@
 				BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */,
 				A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */,
 				A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */,
+				BFDCB67D20B50C1600405637 /* EXWebViewUIDelegate.m in Sources */,
 				BFD49E702094568300A9C252 /* EXScrollViewDelegate.m in Sources */,
 				A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */,
 				BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */,
@@ -1424,6 +1561,7 @@
 				A4DB71B5203812060015964F /* EXRootBaseModel.m in Sources */,
 				A42FEFE1203D017C0054C8A3 /* EXScanQRCodeController.m in Sources */,
 				A4DB71F0203A86250015964F /* EXCollectionViewDelegate.m in Sources */,
+				BFDCB67020B5098B00405637 /* EXWebViewController.m in Sources */,
 				A4DB71EA203A86060015964F /* EXCollectionViewController.m in Sources */,
 				A4DB71D120381AA80015964F /* EXAlertBaseModel.m in Sources */,
 				A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */,
@@ -1464,6 +1602,7 @@
 				A4D750BA207E727300F6F63A /* UIButton+CLButton.m in Sources */,
 				A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */,
 				BFD49E472094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m in Sources */,
+				BFDCB67920B50BF300405637 /* EXWebViewNavigationDelegate.m in Sources */,
 				A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */,
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
@@ -1473,20 +1612,25 @@
 				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
 				BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */,
 				BFD49E4B2094446300A9C252 /* EXBarButtonItemController.m in Sources */,
+				BFDCB67520B50BD200405637 /* EXWebViewViewModel.m in Sources */,
+				BFDCB65E20B4FFB600405637 /* CLWebViewController.m in Sources */,
 				A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */,
 				A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */,
 				A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */,
 				A4AB1CC6203BF09B005026E8 /* EXImageController.m in Sources */,
+				BFDCB66B20B5015400405637 /* CLWebViewViewModel.m in Sources */,
 				A4D750B7207E725800F6F63A /* UIImage+CLImage.m in Sources */,
 				A4AB1CE2203C34D1005026E8 /* EXFontDelegate.m in Sources */,
 				A4DB71B2203806D10015964F /* EXRootController.m in Sources */,
 				A4AB1CC2203BD4C8005026E8 /* EXColorController.m in Sources */,
 				A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				A4DB712A203800530015964F /* AppDelegate.m in Sources */,
+				BFDCB66420B500AB00405637 /* CLWebViewNavigationDelegate.m in Sources */,
 				BFD49E6D2094567800A9C252 /* EXScrollViewViewModel.m in Sources */,
 				A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */,
 				A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */,
 				A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */,
+				BFDCB66720B500B100405637 /* CLWebViewUIDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
