@@ -25,51 +25,133 @@
 
 #pragma mark - UICubicTimingParameters
 - (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
-                                       curve:(UIViewAnimationCurve)curve {
+                                       curve:(UIViewAnimationCurve)curve
+                                  animations:(CLAnimatorManagerBlock)animations {
+    
+    [self cl_cubicTimingParametersWithDuration:duration
+                                         curve:curve
+                                    animations:animations
+                                    completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                                       curve:(UIViewAnimationCurve)curve
+                                  animations:(CLAnimatorManagerBlock)animations
+                                  completion:(CLAnimatorManagerCompleteBlock)completion {
     
     UICubicTimingParameters *cl_cubicTimingParameters = [[UICubicTimingParameters alloc] initWithAnimationCurve:curve];
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                    timingParameters:cl_cubicTimingParameters];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
                                controlPoint1:(CGPoint)controlPoint1
-                               controlPoint2:(CGPoint)controlPoint2 {
+                               controlPoint2:(CGPoint)controlPoint2
+                                  animations:(CLAnimatorManagerBlock)animations {
+    
+    [self cl_cubicTimingParametersWithDuration:duration
+                                 controlPoint1:controlPoint1
+                                 controlPoint2:controlPoint2
+                                    animations:animations
+                                    completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                               controlPoint1:(CGPoint)controlPoint1
+                               controlPoint2:(CGPoint)controlPoint2
+                                  animations:(CLAnimatorManagerBlock)animations
+                                  completion:(CLAnimatorManagerCompleteBlock)completion {
     
     UICubicTimingParameters *cl_cubicTimingParameters = [[UICubicTimingParameters alloc] initWithControlPoint1:controlPoint1
                                                                                                  controlPoint2:controlPoint2];
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                    timingParameters:cl_cubicTimingParameters];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 #pragma mark - UISpringTimingParameters
 - (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
-                                 dampingRatio:(CGFloat)dampingRatio {
+                                 dampingRatio:(CGFloat)dampingRatio
+                                   animations:(CLAnimatorManagerBlock)animations {
+    
+    [self cl_springTimingParametersWithDuration:duration
+                                   dampingRatio:dampingRatio
+                                     animations:animations
+                                     completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion {
     
     UISpringTimingParameters *cl_springTimingParameters = [[UISpringTimingParameters alloc] initWithDampingRatio:dampingRatio];
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                    timingParameters:cl_springTimingParameters];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
                                  dampingRatio:(CGFloat)dampingRatio
-                                     velocity:(CGVector)velocity {
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations {
+    
+    [self cl_springTimingParametersWithDuration:duration
+                                   dampingRatio:dampingRatio
+                                       velocity:velocity
+                                     animations:animations
+                                     completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion {
     
     UISpringTimingParameters *cl_springTimingParameters = [[UISpringTimingParameters alloc] initWithDampingRatio:dampingRatio
                                                                                                  initialVelocity:velocity];
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                    timingParameters:cl_springTimingParameters];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
                                          mass:(CGFloat)mass
                                     stiffness:(CGFloat)stiffness
                                       damping:(CGFloat)damping
-                                     velocity:(CGVector)velocity {
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations {
+    
+    [self cl_springTimingParametersWithDuration:duration
+                                           mass:mass
+                                      stiffness:stiffness
+                                        damping:damping
+                                       velocity:velocity
+                                     animations:animations
+                                     completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                         mass:(CGFloat)mass
+                                    stiffness:(CGFloat)stiffness
+                                      damping:(CGFloat)damping
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion {
     
     UISpringTimingParameters *cl_springTimingParameters = [[UISpringTimingParameters alloc] initWithMass:mass
                                                                                                stiffness:stiffness
@@ -78,74 +160,118 @@
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                    timingParameters:cl_springTimingParameters];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 #pragma mark - UIViewPropertyAnimator
 - (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
-                           timingParameters:(id <UITimingCurveProvider>)parameters {
+                           timingParameters:(id <UITimingCurveProvider>)parameters
+                                 animations:(CLAnimatorManagerBlock)animations {
+    
+    [self cl_viewPropertyAnimatorWithDuration:duration
+                             timingParameters:parameters
+                                   animations:animations
+                                   completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                           timingParameters:(id <UITimingCurveProvider>)parameters
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion {
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                    timingParameters:parameters];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
                                       curve:(UIViewAnimationCurve)curve
-                                   complete:(CLAnimatorManagerBlock)complete {
+                                 animations:(CLAnimatorManagerBlock)animations {
     
+    [self cl_viewPropertyAnimatorWithDuration:duration
+                                 dampingRatio:curve
+                                   animations:animations
+                                   completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                      curve:(UIViewAnimationCurve)curve
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion {
+
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                               curve:curve
-                                                                         animations:complete];
+                                                                         animations:animations];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
                               controlPoint1:(CGPoint)point1
                               controlPoint2:(CGPoint)point2
-                                   complete:(CLAnimatorManagerBlock)complete {
-    
+                                 animations:(CLAnimatorManagerBlock)animations {
+ 
+    [self cl_viewPropertyAnimatorWithDuration:duration
+                                controlPoint1:point1
+                                controlPoint2:point2
+                                   animations:animations
+                                   completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                              controlPoint1:(CGPoint)point1
+                              controlPoint2:(CGPoint)point2
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion {
+
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                       controlPoint1:point1
                                                                       controlPoint2:point2
-                                                                         animations:complete];
+                                                                         animations:animations];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
                                dampingRatio:(CGFloat)ratio
-                                   complete:(CLAnimatorManagerBlock)complete {
+                                 animations:(CLAnimatorManagerBlock)animations {
+
+    [self cl_viewPropertyAnimatorWithDuration:duration
+                                 dampingRatio:ratio
+                                   animations:animations
+                                   completion:^(UIViewAnimatingPosition finalPosition) {}];
+}
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                               dampingRatio:(CGFloat)ratio
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion {
     
     self.cl_viewPropertyAnimator = [[UIViewPropertyAnimator alloc] initWithDuration:duration
                                                                        dampingRatio:ratio
-                                                                         animations:complete];
+                                                                         animations:animations];
+    
+    [self.cl_viewPropertyAnimator addAnimations:animations];
+    [self.cl_viewPropertyAnimator addCompletion:completion];
 }
 
 - (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
                                  afterDelay:(NSTimeInterval)delay
                                     options:(UIViewAnimationOptions)options
                                  animations:(CLAnimatorManagerBlock)animations
-                                   complete:(CLAnimatorManagerCompleteBlock)complete {
+                                 completion:(CLAnimatorManagerCompleteBlock)completion {
     
     self.cl_viewPropertyAnimator = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:duration
                                                                                          delay:delay
                                                                                        options:options
                                                                                     animations:animations
-                                                                                    completion:complete];
-}
-
-- (void)cl_viewPropertyAnimatorAddnimationsWithDelayFactor:(NSTimeInterval)delayFactor
-                                                  complete:(CLAnimatorManagerStatusBlock)complete {
-    
-    __weak __typeof(&*self)weakSelf = self;
-    
-    if (self.cl_viewPropertyAnimator) {
-        
-        [self.cl_viewPropertyAnimator addAnimations:^{
-            
-            if (complete) {
-                
-                complete(weakSelf.cl_viewPropertyAnimator.state);
-            }
-        }
-                                        delayFactor:delayFactor];
-    }
+                                                                                    completion:completion];
 }
 
 #pragma mark - UIViewPropertyAnimator控制相关
