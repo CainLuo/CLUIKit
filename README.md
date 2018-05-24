@@ -22,6 +22,11 @@
 
 ## 目录
 
+- [CLAnimatorManager@](#CLAnimatorManager)
+  - [UICubicTimingParameters@](#UICubicTimingParameters)
+  - [UISpringTimingParameters@](#UISpringTimingParameters)
+  - [UIViewPropertyAnimator@](#UIViewPropertyAnimator)
+  - [UIViewPropertyAnimator控制相关@](#UIViewPropertyAnimator控制相关)
 - [CLButton@](#CLButton)
 - [CLCollectionViewController@](#CLCollectionViewController)
   - [UICollectionView与MJRefresh@](#UICollectionView与MJRefresh)
@@ -91,6 +96,141 @@
 - [UIViewController+CLViewController@](#UIViewController+CLViewController)
   - [UIViewControllerBackItem检测代理@](#UIViewControllerBackItem检测代理)
   - [UIViewController+CLViewController方法@](#UIViewController+CLViewController方法)
+
+## CLAnimatorManager
+
+`CLAnimatorManager`是针对系统的`UIViewPropertyAnimator `封装的一个类库, 只支持`iOS 10`之后的系统.
+
+### UICubicTimingParameters
+
+```objective-c
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                                       curve:(UIViewAnimationCurve)curve
+                                  animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                                       curve:(UIViewAnimationCurve)curve
+                                  animations:(CLAnimatorManagerBlock)animations
+                                  completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                               controlPoint1:(CGPoint)controlPoint1
+                               controlPoint2:(CGPoint)controlPoint2
+                                  animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                               controlPoint1:(CGPoint)controlPoint1
+                               controlPoint2:(CGPoint)controlPoint2
+                                  animations:(CLAnimatorManagerBlock)animations
+                                  completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+```
+
+### UISpringTimingParameters
+
+```objective-c
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                   animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                         mass:(CGFloat)mass
+                                    stiffness:(CGFloat)stiffness
+                                      damping:(CGFloat)damping
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                         mass:(CGFloat)mass
+                                    stiffness:(CGFloat)stiffness
+                                      damping:(CGFloat)damping
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+```
+
+### UIViewPropertyAnimator
+
+```objective-c
+typedef void(^CLAnimatorManagerBlock)(void);
+typedef void(^CLAnimatorManagerCompleteBlock)(UIViewAnimatingPosition finalPosition);
+typedef void(^CLAnimatorManagerStatusBlock)(UIViewAnimatingState state);
+
+@property (nonatomic, strong, readonly) UIViewPropertyAnimator *cl_viewPropertyAnimator;
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                           timingParameters:(id <UITimingCurveProvider>)parameters
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                           timingParameters:(id <UITimingCurveProvider>)parameters
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                      curve:(UIViewAnimationCurve)curve
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                      curve:(UIViewAnimationCurve)curve
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                              controlPoint1:(CGPoint)point1
+                              controlPoint2:(CGPoint)point2
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                              controlPoint1:(CGPoint)point1
+                              controlPoint2:(CGPoint)point2
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                               dampingRatio:(CGFloat)ratio
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                               dampingRatio:(CGFloat)ratio
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                 afterDelay:(NSTimeInterval)delay
+                                    options:(UIViewAnimationOptions)options
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+```
+
+### UIViewPropertyAnimator控制相关
+
+```objective-c
+- (void)cl_starViewPropertyAnimator;
+
+- (void)cl_starViewPropertyAnimatorAfterDelay:(NSTimeInterval)delay;
+
+- (void)cl_pauseViewPropertyAnimator;
+
+- (void)cl_stopViewPropertyAnimator:(BOOL)stop;
+
+- (void)cl_finishViewPropertyAnimatorWithPosition:(UIViewAnimatingPosition)position;
+```
 
 
 
