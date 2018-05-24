@@ -75,6 +75,7 @@
 		A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */; };
 		A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71F6203ACFD10015964F /* EXTableViewController.m */; };
 		BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */; };
+		BF0FF8C520B65ACB00E6915A /* EXAnimatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0FF8C420B65ACB00E6915A /* EXAnimatorController.m */; };
 		BF28A4D8206E038600E0E19C /* CLCollectionViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4D7206E038600E0E19C /* CLCollectionViewDropDelegate.m */; };
 		BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DB206E064800E0E19C /* CLCollectionViewDragDelegate.m */; };
 		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
@@ -237,6 +238,8 @@
 		A4DB71F2203A86320015964F /* EXCollectionViewViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXCollectionViewViewModel.m; sourceTree = "<group>"; };
 		A4DB71F5203ACFD10015964F /* EXTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewController.h; sourceTree = "<group>"; };
 		A4DB71F6203ACFD10015964F /* EXTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewController.m; sourceTree = "<group>"; };
+		BF0FF8C320B65ACB00E6915A /* EXAnimatorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAnimatorController.h; sourceTree = "<group>"; };
+		BF0FF8C420B65ACB00E6915A /* EXAnimatorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAnimatorController.m; sourceTree = "<group>"; };
 		BF28A4D6206E038600E0E19C /* CLCollectionViewDropDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDropDelegate.h; sourceTree = "<group>"; };
 		BF28A4D7206E038600E0E19C /* CLCollectionViewDropDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewDropDelegate.m; sourceTree = "<group>"; };
 		BF28A4DA206E064800E0E19C /* CLCollectionViewDragDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLCollectionViewDragDelegate.h; sourceTree = "<group>"; };
@@ -908,6 +911,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DB71C820381A0A0015964F /* EXAlert */,
+				BF0FF8C220B65AA200E6915A /* EXAnimator */,
 				A4BA3141204CF1A2002E0ED7 /* EXApplication */,
 				BFD49E482094444800A9C252 /* EXBarButtonItem */,
 				A4DB71DE20386EFE0015964F /* EXButton */,
@@ -1128,6 +1132,15 @@
 				A4AB1CB2203AD134005026E8 /* ViewModels */,
 			);
 			path = EXTableView;
+			sourceTree = "<group>";
+		};
+		BF0FF8C220B65AA200E6915A /* EXAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				BF0FF8C320B65ACB00E6915A /* EXAnimatorController.h */,
+				BF0FF8C420B65ACB00E6915A /* EXAnimatorController.m */,
+			);
+			path = EXAnimator;
 			sourceTree = "<group>";
 		};
 		BF28A4D5206E036C00E0E19C /* CLCollectionViewDropDelegate */ = {
@@ -1595,6 +1608,7 @@
 				A4DB71A8203802FC0015964F /* CLTextField.m in Sources */,
 				BFD49E622094519300A9C252 /* CLScrollViewViewModel.m in Sources */,
 				A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */,
+				BF0FF8C520B65ACB00E6915A /* EXAnimatorController.m in Sources */,
 				A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */,
 				A4DB71A9203802FC0015964F /* CLButton.m in Sources */,
 				BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */,
