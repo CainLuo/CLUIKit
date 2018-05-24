@@ -148,11 +148,25 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image;
 
 /**
+ 设置UIButton Normal状态下的背景纯色图片
+ 
+ @param color UIColor
+ */
+- (void)cl_setNormalButtonBackgroundImageWithColor:(UIColor *)color;
+
+/**
  设置UIButton Highlighted状态下的背景图片
  
  @param image UIImage
  */
 - (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Highlighted状态下的背景纯色图片
+ 
+ @param color UIColor
+ */
+- (void)cl_setHighlightedButtonBackgroundImageWithColor:(UIColor *)color;
 
 /**
  设置UIButton Selected状态下的背景图片
@@ -162,11 +176,25 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (void)cl_setSelectedButtonBackgroundImageWithImage:(UIImage *)image;
 
 /**
+ 设置UIButton Selected状态下的背景纯色图片
+ 
+ @param color UIColor
+ */
+- (void)cl_setSelectedButtonBackgroundImageWithColor:(UIColor *)color;
+
+/**
  设置UIButton Disabled状态下的背景图片
  
  @param image UIImage
  */
 - (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image;
+
+/**
+ 设置UIButton Disabled状态下的背景纯色图片
+
+ @param color UIColor
+ */
+- (void)cl_setDisabledButtonBackgroundImageWithColor:(UIColor *)color;
 
 #pragma mark - 获取UIButton的图片
 /**
