@@ -40,7 +40,9 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
                                  @(CLButtonImageLeftStyle),
                                  @(CLButtonImageBottomStyle),
                                  @(CLButtonImageRightStyle)];
-    
+
+    CL_WEAK_SELF(weakSelf);
+
     [ex_buttonStyles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         CLButtonStyle ex_buttonStyle = (CLButtonStyle)[obj integerValue];
@@ -59,7 +61,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
             
             NSLog(@"UIButton Normal状态下的图片: %@", [sender cl_getNormalButtonImage]);
 
-            [self ex_buttonActions:sender];
+            [weakSelf ex_buttonActions:sender];
         }];
 
         [self.view addSubview:ex_button];
@@ -86,6 +88,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
 - (UIButton *)ex_starButton {
     
     CL_GET_METHOD_RETURN_OBJC(_ex_starButton);
+    CL_WEAK_SELF(weakSelf);
 
     _ex_starButton = [[UIButton alloc] init];
     
@@ -97,7 +100,7 @@ typedef NS_ENUM(NSInteger, EXButtonType) {
     
     [_ex_starButton cl_addButtonActionComplete:^(UIButton *sender) {
         
-        [self ex_buttonActions:sender];
+        [weakSelf ex_buttonActions:sender];
     }];
 
     return _ex_starButton;
