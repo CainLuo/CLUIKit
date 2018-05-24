@@ -11,7 +11,7 @@ DEPENDENCIES:
   - YYModel
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - CLFoundation
     - Masonry
     - MJRefresh
@@ -25,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7bb1c2dac981a3484c8335bc0f0795595f0fa608
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
