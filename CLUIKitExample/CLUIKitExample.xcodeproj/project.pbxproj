@@ -81,6 +81,12 @@
 		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
 		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
 		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
+		BFAE1BC320BF974E002B6230 /* CLAMapViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1BBC20BF974E002B6230 /* CLAMapViewModel.m */; };
+		BFAE1BC420BF974E002B6230 /* CLAMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1BBE20BF974E002B6230 /* CLAMapDelegate.m */; };
+		BFAE1BC520BF974E002B6230 /* CLAMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1BC120BF974E002B6230 /* CLAMapViewController.m */; };
+		BFAE1BD320BF9B78002B6230 /* CLGoogleMapViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1BCB20BF9B78002B6230 /* CLGoogleMapViewViewModel.m */; };
+		BFAE1BD420BF9B78002B6230 /* CLGoogleMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1BCE20BF9B78002B6230 /* CLGoogleMapViewDelegate.m */; };
+		BFAE1BD520BF9B78002B6230 /* CLGoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1BD120BF9B78002B6230 /* CLGoogleMapViewController.m */; };
 		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
 		BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */; };
 		BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */; };
@@ -250,6 +256,20 @@
 		BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDragDelegate.m; sourceTree = "<group>"; };
 		BF2B453620B54EAB00BDAA0B /* CLAnimatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAnimatorManager.h; sourceTree = "<group>"; };
 		BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAnimatorManager.m; sourceTree = "<group>"; };
+		BFAE1BB820BF974E002B6230 /* CLAMap3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAMap3D.h; sourceTree = "<group>"; };
+		BFAE1BBB20BF974E002B6230 /* CLAMapViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAMapViewModel.h; sourceTree = "<group>"; };
+		BFAE1BBC20BF974E002B6230 /* CLAMapViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAMapViewModel.m; sourceTree = "<group>"; };
+		BFAE1BBE20BF974E002B6230 /* CLAMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAMapDelegate.m; sourceTree = "<group>"; };
+		BFAE1BBF20BF974E002B6230 /* CLAMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAMapDelegate.h; sourceTree = "<group>"; };
+		BFAE1BC120BF974E002B6230 /* CLAMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLAMapViewController.m; sourceTree = "<group>"; };
+		BFAE1BC220BF974E002B6230 /* CLAMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLAMapViewController.h; sourceTree = "<group>"; };
+		BFAE1BCA20BF9B78002B6230 /* CLGoogleMapViewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGoogleMapViewViewModel.h; sourceTree = "<group>"; };
+		BFAE1BCB20BF9B78002B6230 /* CLGoogleMapViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGoogleMapViewViewModel.m; sourceTree = "<group>"; };
+		BFAE1BCD20BF9B78002B6230 /* CLGoogleMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGoogleMapViewDelegate.h; sourceTree = "<group>"; };
+		BFAE1BCE20BF9B78002B6230 /* CLGoogleMapViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGoogleMapViewDelegate.m; sourceTree = "<group>"; };
+		BFAE1BD020BF9B78002B6230 /* CLGoogleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGoogleMapViewController.h; sourceTree = "<group>"; };
+		BFAE1BD120BF9B78002B6230 /* CLGoogleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGoogleMapViewController.m; sourceTree = "<group>"; };
+		BFAE1BD220BF9B78002B6230 /* CLGoogleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGoogleMap.h; sourceTree = "<group>"; };
 		BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
 		BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
 		BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigationController.h"; sourceTree = "<group>"; };
@@ -617,9 +637,11 @@
 				A4AB1D18203CEE9C005026E8 /* CLResource.bundle */,
 				A4DB7142203802FC0015964F /* CLUIKit.h */,
 				A4DB7187203802FC0015964F /* Info.plist */,
+				BFAE1BB620BF974E002B6230 /* CLAMap3D */,
 				BF2B453520B54E8400BDAA0B /* CLAnimatorManager */,
 				A4DB718E203802FC0015964F /* CLButton */,
 				A4DB714F203802FC0015964F /* CLCollectionViewController */,
+				BFAE1BC620BF9B78002B6230 /* CLGoogleMap */,
 				A4DB7174203802FC0015964F /* CLNavigationController */,
 				A4AB1D12203CEA80005026E8 /* CLScanQRCode */,
 				BFD49E552094502600A9C252 /* CLScrollViewController */,
@@ -1188,6 +1210,114 @@
 			path = CLAnimatorManager;
 			sourceTree = "<group>";
 		};
+		BFAE1BB620BF974E002B6230 /* CLAMap3D */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BB820BF974E002B6230 /* CLAMap3D.h */,
+				BFAE1BB720BF974E002B6230 /* CLAMapViewController */,
+			);
+			path = CLAMap3D;
+			sourceTree = "<group>";
+		};
+		BFAE1BB720BF974E002B6230 /* CLAMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BC020BF974E002B6230 /* Controller */,
+				BFAE1BB920BF974E002B6230 /* ViewModels */,
+			);
+			path = CLAMapViewController;
+			sourceTree = "<group>";
+		};
+		BFAE1BB920BF974E002B6230 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BBA20BF974E002B6230 /* CLAMapViewModel */,
+				BFAE1BBD20BF974E002B6230 /* CLAMapDelegate */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFAE1BBA20BF974E002B6230 /* CLAMapViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BBB20BF974E002B6230 /* CLAMapViewModel.h */,
+				BFAE1BBC20BF974E002B6230 /* CLAMapViewModel.m */,
+			);
+			path = CLAMapViewModel;
+			sourceTree = "<group>";
+		};
+		BFAE1BBD20BF974E002B6230 /* CLAMapDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BBF20BF974E002B6230 /* CLAMapDelegate.h */,
+				BFAE1BBE20BF974E002B6230 /* CLAMapDelegate.m */,
+			);
+			path = CLAMapDelegate;
+			sourceTree = "<group>";
+		};
+		BFAE1BC020BF974E002B6230 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BC220BF974E002B6230 /* CLAMapViewController.h */,
+				BFAE1BC120BF974E002B6230 /* CLAMapViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFAE1BC620BF9B78002B6230 /* CLGoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BD220BF9B78002B6230 /* CLGoogleMap.h */,
+				BFAE1BC720BF9B78002B6230 /* CLGoogleMapViewController */,
+			);
+			path = CLGoogleMap;
+			sourceTree = "<group>";
+		};
+		BFAE1BC720BF9B78002B6230 /* CLGoogleMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BCF20BF9B78002B6230 /* Controller */,
+				BFAE1BC820BF9B78002B6230 /* ViewModels */,
+			);
+			path = CLGoogleMapViewController;
+			sourceTree = "<group>";
+		};
+		BFAE1BC820BF9B78002B6230 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BCC20BF9B78002B6230 /* CLGoogleMapViewDelegate */,
+				BFAE1BC920BF9B78002B6230 /* CLGoogleMapViewViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BFAE1BC920BF9B78002B6230 /* CLGoogleMapViewViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BCA20BF9B78002B6230 /* CLGoogleMapViewViewModel.h */,
+				BFAE1BCB20BF9B78002B6230 /* CLGoogleMapViewViewModel.m */,
+			);
+			path = CLGoogleMapViewViewModel;
+			sourceTree = "<group>";
+		};
+		BFAE1BCC20BF9B78002B6230 /* CLGoogleMapViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BCD20BF9B78002B6230 /* CLGoogleMapViewDelegate.h */,
+				BFAE1BCE20BF9B78002B6230 /* CLGoogleMapViewDelegate.m */,
+			);
+			path = CLGoogleMapViewDelegate;
+			sourceTree = "<group>";
+		};
+		BFAE1BCF20BF9B78002B6230 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1BD020BF9B78002B6230 /* CLGoogleMapViewController.h */,
+				BFAE1BD120BF9B78002B6230 /* CLGoogleMapViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BFC89ACB205F679600A04A58 /* UIControl+CLControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -1618,12 +1748,16 @@
 				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
 				A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */,
 				A4AB1CE8203C34E5005026E8 /* EXFontViewModel.m in Sources */,
+				BFAE1BD520BF9B78002B6230 /* CLGoogleMapViewController.m in Sources */,
 				A4AB1CD6203C2DCF005026E8 /* EXFontController.m in Sources */,
 				BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */,
+				BFAE1BC420BF974E002B6230 /* CLAMapDelegate.m in Sources */,
 				A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */,
 				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
 				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
 				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
+				BFAE1BC520BF974E002B6230 /* CLAMapViewController.m in Sources */,
+				BFAE1BD420BF9B78002B6230 /* CLGoogleMapViewDelegate.m in Sources */,
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
 				BFD49E5D2094510600A9C252 /* CLScrollViewDelegate.m in Sources */,
 				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,
@@ -1635,6 +1769,7 @@
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
 				A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */,
+				BFAE1BD320BF9B78002B6230 /* CLGoogleMapViewViewModel.m in Sources */,
 				BF28A4D8206E038600E0E19C /* CLCollectionViewDropDelegate.m in Sources */,
 				BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */,
 				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
@@ -1658,6 +1793,7 @@
 				A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */,
 				A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */,
 				A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */,
+				BFAE1BC320BF974E002B6230 /* CLAMapViewModel.m in Sources */,
 				BFDCB66720B500B100405637 /* CLWebViewUIDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

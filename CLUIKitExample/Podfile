@@ -9,5 +9,11 @@ target 'CLUIKitExample' do
     pod 'CLFoundation'
     pod 'YYModel'
     pod 'Masonry'
+    
+    # 高德地图
+#    pod 'AMap3DMap'
+    # 谷歌地图
+#    pod 'GoogleMaps'
 
 end
+
