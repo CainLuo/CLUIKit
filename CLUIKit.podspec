@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CLUIKit"
-  spec.version      = "2.2.0"
+  spec.version      = "2.2.1"
   spec.summary      = "CLUIKit for iOS"
   spec.homepage     = "https://github.com/CainLuo/CLUIKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
@@ -27,14 +27,14 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'AMap3DMap' do |aMap3DMap|
 
-    aMap3DMap.source_files = "CLUIKit/CLAMap3D/**/*.{h,m}"
+    aMap3DMap.source_files = "CLAMap3D/**/*.{h,m}"
 
     aMap3DMap.dependency "AMap3DMap"
   end
 
   spec.subspec 'GoogleMap' do |googleMap|
 
-    googleMap.source_files = "CLUIKit/CLGoogleMap/**/*.{h,m}"
+    googleMap.source_files = "CLGoogleMap/**/*.{h,m}"
 
     googleMap.dependency "GoogleMaps"
   end
