@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A42FEFE1203D017C0054C8A3 /* EXScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE0203D017C0054C8A3 /* EXScanQRCodeController.m */; };
-		A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE3203DC44C0054C8A3 /* UIView+CLView.m */; };
-		A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */; };
 		A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CB7203AD1C8005026E8 /* EXTableViewDelegate.m */; };
 		A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CBA203AD1D2005026E8 /* EXTableViewDataSource.m */; };
 		A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1CBD203AD1EA005026E8 /* EXTableViewViewModel.m */; };
@@ -27,17 +25,12 @@
 		A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1D16203CEAB1005026E8 /* CLScanQRCodeController.m */; };
 		A4AB1D19203CEE9D005026E8 /* CLResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4AB1D18203CEE9C005026E8 /* CLResource.bundle */; };
 		A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */; };
-		A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */; };
 		A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */; };
 		A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3147204CF253002E0ED7 /* EXApplicationController.m */; };
-		A4D750B7207E725800F6F63A /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D750B6207E725800F6F63A /* UIImage+CLImage.m */; };
-		A4D750BA207E727300F6F63A /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D750B8207E727300F6F63A /* UIButton+CLButton.m */; };
 		A4DB712A203800530015964F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7129203800530015964F /* AppDelegate.m */; };
 		A4DB7132203800530015964F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7131203800530015964F /* Assets.xcassets */; };
 		A4DB7135203800530015964F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7133203800530015964F /* LaunchScreen.storyboard */; };
 		A4DB7138203800530015964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7137203800530015964F /* main.m */; };
-		A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */; };
-		A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */; };
 		A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB714B203802FC0015964F /* CLToolBarListView.m */; };
 		A4DB7195203802FC0015964F /* CLCollectionViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */; };
 		A4DB7196203802FC0015964F /* CLCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7155203802FC0015964F /* CLCollectionViewDataSource.m */; };
@@ -47,15 +40,10 @@
 		A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7164203802FC0015964F /* CLTableViewDataSource.m */; };
 		A4DB719B203802FC0015964F /* CLTableViewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7167203802FC0015964F /* CLTableViewViewModel.m */; };
 		A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB716D203802FC0015964F /* CLTableViewController.m */; };
-		A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7170203802FC0015964F /* UIFont+CLFont.m */; };
 		A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7176203802FC0015964F /* CLNavigationController.m */; };
-		A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7179203802FC0015964F /* UIColor+CLColor.m */; };
 		A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */; };
 		A4DB71A3203802FC0015964F /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717F203802FC0015964F /* CLViewController.m */; };
-		A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7183203802FC0015964F /* UIScreen+CLScreen.m */; };
-		A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7185203802FC0015964F /* UITableView+CLTableView.m */; };
 		A4DB71A6203802FC0015964F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7187203802FC0015964F /* Info.plist */; };
-		A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7189203802FC0015964F /* UICollectionView+CLCollectionView.m */; };
 		A4DB71A8203802FC0015964F /* CLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB718D203802FC0015964F /* CLTextField.m */; };
 		A4DB71A9203802FC0015964F /* CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7190203802FC0015964F /* CLButton.m */; };
 		A4DB71B2203806D10015964F /* EXRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71B1203806D10015964F /* EXRootController.m */; };
@@ -81,10 +69,22 @@
 		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
 		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
 		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
-		BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */; };
-		BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */; };
-		BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */; };
-		BFD49E472094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E462094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m */; };
+		BFAE1C3A20BFB032002B6230 /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C0920BFB032002B6230 /* UIButton+CLButton.m */; };
+		BFAE1C3B20BFB032002B6230 /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C0D20BFB032002B6230 /* UIImage+CLImage.m */; };
+		BFAE1C3C20BFB032002B6230 /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C0F20BFB032002B6230 /* UINavigationController+CLNavigationController.m */; };
+		BFAE1C3D20BFB032002B6230 /* UIDevice+CLDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C1320BFB032002B6230 /* UIDevice+CLDevice.m */; };
+		BFAE1C3E20BFB032002B6230 /* UINavigationItem+CLNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C1520BFB032002B6230 /* UINavigationItem+CLNavigationItem.m */; };
+		BFAE1C3F20BFB032002B6230 /* UIControl+CLControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C1820BFB032002B6230 /* UIControl+CLControl.m */; };
+		BFAE1C4020BFB032002B6230 /* UIApplication+CLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C1B20BFB032002B6230 /* UIApplication+CLApplication.m */; };
+		BFAE1C4120BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C1E20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.m */; };
+		BFAE1C4220BFB032002B6230 /* UIViewController+CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C2220BFB032002B6230 /* UIViewController+CLViewController.m */; };
+		BFAE1C4320BFB032002B6230 /* UICollectionView+CLCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C2420BFB032002B6230 /* UICollectionView+CLCollectionView.m */; };
+		BFAE1C4420BFB032002B6230 /* UIScrollView+CLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C2820BFB032002B6230 /* UIScrollView+CLScrollView.m */; };
+		BFAE1C4520BFB032002B6230 /* UITableView+CLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C2C20BFB032002B6230 /* UITableView+CLTableView.m */; };
+		BFAE1C4620BFB032002B6230 /* UIScreen+CLScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C2E20BFB032002B6230 /* UIScreen+CLScreen.m */; };
+		BFAE1C4720BFB032002B6230 /* UIFont+CLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C3220BFB032002B6230 /* UIFont+CLFont.m */; };
+		BFAE1C4820BFB032002B6230 /* UIColor+CLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C3620BFB032002B6230 /* UIColor+CLColor.m */; };
+		BFAE1C4920BFB032002B6230 /* UIView+CLView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C3820BFB032002B6230 /* UIView+CLView.m */; };
 		BFD49E4B2094446300A9C252 /* EXBarButtonItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E4A2094446300A9C252 /* EXBarButtonItemController.m */; };
 		BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E4F2094488100A9C252 /* UIViewController+EXViewController.m */; };
 		BFD49E5A2094505500A9C252 /* CLScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD49E592094505500A9C252 /* CLScrollViewController.m */; };
@@ -108,10 +108,6 @@
 		9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLUIKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FEFDF203D017C0054C8A3 /* EXScanQRCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXScanQRCodeController.h; sourceTree = "<group>"; };
 		A42FEFE0203D017C0054C8A3 /* EXScanQRCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXScanQRCodeController.m; sourceTree = "<group>"; };
-		A42FEFE3203DC44C0054C8A3 /* UIView+CLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLView.m"; sourceTree = "<group>"; };
-		A42FEFE4203DC44C0054C8A3 /* UIView+CLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLView.h"; sourceTree = "<group>"; };
-		A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CLNavigationItem.m"; sourceTree = "<group>"; };
-		A42FEFEC203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CLNavigationItem.h"; sourceTree = "<group>"; };
 		A4AB1CB6203AD1C8005026E8 /* EXTableViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewDelegate.h; sourceTree = "<group>"; };
 		A4AB1CB7203AD1C8005026E8 /* EXTableViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTableViewDelegate.m; sourceTree = "<group>"; };
 		A4AB1CB9203AD1D2005026E8 /* EXTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTableViewDataSource.h; sourceTree = "<group>"; };
@@ -144,16 +140,10 @@
 		A4AB1D18203CEE9C005026E8 /* CLResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLResource.bundle; sourceTree = "<group>"; };
 		A4AB1D1A203CEF16005026E8 /* CLScanQRCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLScanQRCodeView.h; sourceTree = "<group>"; };
 		A4AB1D1B203CEF16005026E8 /* CLScanQRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLScanQRCodeView.m; sourceTree = "<group>"; };
-		A4BA313E204CE528002E0ED7 /* UIApplication+CLApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+CLApplication.h"; sourceTree = "<group>"; };
-		A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+CLApplication.m"; sourceTree = "<group>"; };
 		A4BA3143204CF21D002E0ED7 /* EXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXBaseViewController.m; sourceTree = "<group>"; };
 		A4BA3144204CF21D002E0ED7 /* EXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXBaseViewController.h; sourceTree = "<group>"; };
 		A4BA3146204CF253002E0ED7 /* EXApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXApplicationController.h; sourceTree = "<group>"; };
 		A4BA3147204CF253002E0ED7 /* EXApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXApplicationController.m; sourceTree = "<group>"; };
-		A4D750B5207E725700F6F63A /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
-		A4D750B6207E725800F6F63A /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
-		A4D750B8207E727300F6F63A /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
-		A4D750B9207E727300F6F63A /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
 		A4DB7125203800530015964F /* CLUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DB7128203800530015964F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4DB7129203800530015964F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -163,10 +153,6 @@
 		A4DB7137203800530015964F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4DB7140203802C80015964F /* CLUIKitExample-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLUIKitExample-PrefixHeader.pch"; sourceTree = "<group>"; };
 		A4DB7142203802FC0015964F /* CLUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUIKit.h; sourceTree = "<group>"; };
-		A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLViewController.m"; sourceTree = "<group>"; };
-		A4DB7145203802FC0015964F /* UIViewController+CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLViewController.h"; sourceTree = "<group>"; };
-		A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CLDevice.m"; sourceTree = "<group>"; };
-		A4DB7148203802FC0015964F /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
 		A4DB714A203802FC0015964F /* CLToolBarListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLToolBarListView.h; sourceTree = "<group>"; };
 		A4DB714B203802FC0015964F /* CLToolBarListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLToolBarListView.m; sourceTree = "<group>"; };
 		A4DB7152203802FC0015964F /* CLCollectionViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCollectionViewViewModel.m; sourceTree = "<group>"; };
@@ -185,23 +171,13 @@
 		A4DB7167203802FC0015964F /* CLTableViewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewViewModel.m; sourceTree = "<group>"; };
 		A4DB716C203802FC0015964F /* CLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableViewController.h; sourceTree = "<group>"; };
 		A4DB716D203802FC0015964F /* CLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableViewController.m; sourceTree = "<group>"; };
-		A4DB716F203802FC0015964F /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
-		A4DB7170203802FC0015964F /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
 		A4DB7175203802FC0015964F /* CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLNavigationController.h; sourceTree = "<group>"; };
 		A4DB7176203802FC0015964F /* CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLNavigationController.m; sourceTree = "<group>"; };
-		A4DB7178203802FC0015964F /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
-		A4DB7179203802FC0015964F /* UIColor+CLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CLColor.m"; sourceTree = "<group>"; };
 		A4DB717C203802FC0015964F /* CLViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerViewModel.h; sourceTree = "<group>"; };
 		A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerViewModel.m; sourceTree = "<group>"; };
 		A4DB717F203802FC0015964F /* CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
 		A4DB7180203802FC0015964F /* CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
-		A4DB7182203802FC0015964F /* UIScreen+CLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CLScreen.h"; sourceTree = "<group>"; };
-		A4DB7183203802FC0015964F /* UIScreen+CLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CLScreen.m"; sourceTree = "<group>"; };
-		A4DB7185203802FC0015964F /* UITableView+CLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CLTableView.m"; sourceTree = "<group>"; };
-		A4DB7186203802FC0015964F /* UITableView+CLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CLTableView.h"; sourceTree = "<group>"; };
 		A4DB7187203802FC0015964F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4DB7189203802FC0015964F /* UICollectionView+CLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CLCollectionView.m"; sourceTree = "<group>"; };
-		A4DB718A203802FC0015964F /* UICollectionView+CLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CLCollectionView.h"; sourceTree = "<group>"; };
 		A4DB718C203802FC0015964F /* CLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTextField.h; sourceTree = "<group>"; };
 		A4DB718D203802FC0015964F /* CLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTextField.m; sourceTree = "<group>"; };
 		A4DB718F203802FC0015964F /* CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLButton.h; sourceTree = "<group>"; };
@@ -250,14 +226,38 @@
 		BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDragDelegate.m; sourceTree = "<group>"; };
 		BF2B453620B54EAB00BDAA0B /* CLAnimatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAnimatorManager.h; sourceTree = "<group>"; };
 		BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAnimatorManager.m; sourceTree = "<group>"; };
-		BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
-		BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
-		BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigationController.h"; sourceTree = "<group>"; };
-		BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CLNavigationController.m"; sourceTree = "<group>"; };
-		BFD172D3206A0AB2003C2E2F /* UIScrollView+CLScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CLScrollView.h"; sourceTree = "<group>"; };
-		BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CLScrollView.m"; sourceTree = "<group>"; };
-		BFD49E452094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CLBarButtonItem.h"; sourceTree = "<group>"; };
-		BFD49E462094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CLBarButtonItem.m"; sourceTree = "<group>"; };
+		BFAE1C0920BFB032002B6230 /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
+		BFAE1C0A20BFB032002B6230 /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
+		BFAE1C0C20BFB032002B6230 /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
+		BFAE1C0D20BFB032002B6230 /* UIImage+CLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CLImage.m"; sourceTree = "<group>"; };
+		BFAE1C0F20BFB032002B6230 /* UINavigationController+CLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CLNavigationController.m"; sourceTree = "<group>"; };
+		BFAE1C1020BFB032002B6230 /* UINavigationController+CLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLNavigationController.h"; sourceTree = "<group>"; };
+		BFAE1C1220BFB032002B6230 /* UIDevice+CLDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+CLDevice.h"; sourceTree = "<group>"; };
+		BFAE1C1320BFB032002B6230 /* UIDevice+CLDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+CLDevice.m"; sourceTree = "<group>"; };
+		BFAE1C1520BFB032002B6230 /* UINavigationItem+CLNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CLNavigationItem.m"; sourceTree = "<group>"; };
+		BFAE1C1620BFB032002B6230 /* UINavigationItem+CLNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CLNavigationItem.h"; sourceTree = "<group>"; };
+		BFAE1C1820BFB032002B6230 /* UIControl+CLControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CLControl.m"; sourceTree = "<group>"; };
+		BFAE1C1920BFB032002B6230 /* UIControl+CLControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CLControl.h"; sourceTree = "<group>"; };
+		BFAE1C1B20BFB032002B6230 /* UIApplication+CLApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+CLApplication.m"; sourceTree = "<group>"; };
+		BFAE1C1C20BFB032002B6230 /* UIApplication+CLApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+CLApplication.h"; sourceTree = "<group>"; };
+		BFAE1C1E20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CLBarButtonItem.m"; sourceTree = "<group>"; };
+		BFAE1C1F20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CLBarButtonItem.h"; sourceTree = "<group>"; };
+		BFAE1C2120BFB032002B6230 /* UIViewController+CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLViewController.h"; sourceTree = "<group>"; };
+		BFAE1C2220BFB032002B6230 /* UIViewController+CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLViewController.m"; sourceTree = "<group>"; };
+		BFAE1C2420BFB032002B6230 /* UICollectionView+CLCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CLCollectionView.m"; sourceTree = "<group>"; };
+		BFAE1C2520BFB032002B6230 /* UICollectionView+CLCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CLCollectionView.h"; sourceTree = "<group>"; };
+		BFAE1C2820BFB032002B6230 /* UIScrollView+CLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CLScrollView.m"; sourceTree = "<group>"; };
+		BFAE1C2920BFB032002B6230 /* UIScrollView+CLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CLScrollView.h"; sourceTree = "<group>"; };
+		BFAE1C2B20BFB032002B6230 /* UITableView+CLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CLTableView.h"; sourceTree = "<group>"; };
+		BFAE1C2C20BFB032002B6230 /* UITableView+CLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CLTableView.m"; sourceTree = "<group>"; };
+		BFAE1C2E20BFB032002B6230 /* UIScreen+CLScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CLScreen.m"; sourceTree = "<group>"; };
+		BFAE1C2F20BFB032002B6230 /* UIScreen+CLScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CLScreen.h"; sourceTree = "<group>"; };
+		BFAE1C3120BFB032002B6230 /* UIFont+CLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CLFont.h"; sourceTree = "<group>"; };
+		BFAE1C3220BFB032002B6230 /* UIFont+CLFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CLFont.m"; sourceTree = "<group>"; };
+		BFAE1C3520BFB032002B6230 /* UIColor+CLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CLColor.h"; sourceTree = "<group>"; };
+		BFAE1C3620BFB032002B6230 /* UIColor+CLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CLColor.m"; sourceTree = "<group>"; };
+		BFAE1C3820BFB032002B6230 /* UIView+CLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLView.m"; sourceTree = "<group>"; };
+		BFAE1C3920BFB032002B6230 /* UIView+CLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLView.h"; sourceTree = "<group>"; };
 		BFD49E492094446300A9C252 /* EXBarButtonItemController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBarButtonItemController.h; sourceTree = "<group>"; };
 		BFD49E4A2094446300A9C252 /* EXBarButtonItemController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBarButtonItemController.m; sourceTree = "<group>"; };
 		BFD49E4E2094488100A9C252 /* UIViewController+EXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EXViewController.h"; sourceTree = "<group>"; };
@@ -329,24 +329,6 @@
 				A42FEFE0203D017C0054C8A3 /* EXScanQRCodeController.m */,
 			);
 			path = EXScanQRCode;
-			sourceTree = "<group>";
-		};
-		A42FEFE2203DC44C0054C8A3 /* UIView+CLView */ = {
-			isa = PBXGroup;
-			children = (
-				A42FEFE4203DC44C0054C8A3 /* UIView+CLView.h */,
-				A42FEFE3203DC44C0054C8A3 /* UIView+CLView.m */,
-			);
-			path = "UIView+CLView";
-			sourceTree = "<group>";
-		};
-		A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */ = {
-			isa = PBXGroup;
-			children = (
-				A42FEFEC203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.h */,
-				A42FEFEB203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m */,
-			);
-			path = "UINavigationItem+CLNavigationItem";
 			sourceTree = "<group>";
 		};
 		A4AB1CB1203AD12C005026E8 /* Controller */ = {
@@ -532,15 +514,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A4BA313D204CE508002E0ED7 /* UIApplication+CLApplication */ = {
-			isa = PBXGroup;
-			children = (
-				A4BA313E204CE528002E0ED7 /* UIApplication+CLApplication.h */,
-				A4BA313F204CE528002E0ED7 /* UIApplication+CLApplication.m */,
-			);
-			path = "UIApplication+CLApplication";
-			sourceTree = "<group>";
-		};
 		A4BA3141204CF1A2002E0ED7 /* EXApplication */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +555,7 @@
 			children = (
 				A4DB713F203802530015964F /* AppDelegate */,
 				A4BA3142204CF21D002E0ED7 /* Base */,
+				BFAE1C0620BFB032002B6230 /* Category */,
 				A4DB7141203802FC0015964F /* CLUIKit */,
 				A4DB71AA203805A70015964F /* Module */,
 				A4DB713E203802490015964F /* Resource */,
@@ -628,43 +602,9 @@
 				A4DB7149203802FC0015964F /* CLToolBarListView */,
 				A4DB717A203802FC0015964F /* CLViewController */,
 				BFDCB65A20B4FF8200405637 /* CLWebViewController */,
-				A4BA313D204CE508002E0ED7 /* UIApplication+CLApplication */,
-				BFD49E442094415300A9C252 /* UIBarButtonItem+CLBarButtonItem */,
-				A4DB714C203802FC0015964F /* UIButton+CLButton */,
-				A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */,
-				A4DB7177203802FC0015964F /* UIColor+CLColor */,
-				BFC89ACB205F679600A04A58 /* UIControl+CLControl */,
-				A4DB7146203802FC0015964F /* UIDevice+CLDevice */,
-				A4DB716E203802FC0015964F /* UIFont+CLFont */,
-				A4DB7171203802FC0015964F /* UIImage+CLImage */,
-				BFD172CA2069E90C003C2E2F /* UINavigationController+CLNavigationController */,
-				A42FEFEA203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem */,
-				A4DB7181203802FC0015964F /* UIScreen+CLScreen */,
-				BFD172D2206A0A9A003C2E2F /* UIScrollView+CLScrollView */,
-				A4DB7184203802FC0015964F /* UITableView+CLTableView */,
-				A42FEFE2203DC44C0054C8A3 /* UIView+CLView */,
-				A4DB7143203802FC0015964F /* UIViewController+CLViewController */,
 			);
 			name = CLUIKit;
 			path = ../../CLUIKit;
-			sourceTree = "<group>";
-		};
-		A4DB7143203802FC0015964F /* UIViewController+CLViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB7145203802FC0015964F /* UIViewController+CLViewController.h */,
-				A4DB7144203802FC0015964F /* UIViewController+CLViewController.m */,
-			);
-			path = "UIViewController+CLViewController";
-			sourceTree = "<group>";
-		};
-		A4DB7146203802FC0015964F /* UIDevice+CLDevice */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB7148203802FC0015964F /* UIDevice+CLDevice.h */,
-				A4DB7147203802FC0015964F /* UIDevice+CLDevice.m */,
-			);
-			path = "UIDevice+CLDevice";
 			sourceTree = "<group>";
 		};
 		A4DB7149203802FC0015964F /* CLToolBarListView */ = {
@@ -674,15 +614,6 @@
 				A4DB714B203802FC0015964F /* CLToolBarListView.m */,
 			);
 			path = CLToolBarListView;
-			sourceTree = "<group>";
-		};
-		A4DB714C203802FC0015964F /* UIButton+CLButton */ = {
-			isa = PBXGroup;
-			children = (
-				A4D750B9207E727300F6F63A /* UIButton+CLButton.h */,
-				A4D750B8207E727300F6F63A /* UIButton+CLButton.m */,
-			);
-			path = "UIButton+CLButton";
 			sourceTree = "<group>";
 		};
 		A4DB714F203802FC0015964F /* CLCollectionViewController */ = {
@@ -799,24 +730,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A4DB716E203802FC0015964F /* UIFont+CLFont */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB716F203802FC0015964F /* UIFont+CLFont.h */,
-				A4DB7170203802FC0015964F /* UIFont+CLFont.m */,
-			);
-			path = "UIFont+CLFont";
-			sourceTree = "<group>";
-		};
-		A4DB7171203802FC0015964F /* UIImage+CLImage */ = {
-			isa = PBXGroup;
-			children = (
-				A4D750B5207E725700F6F63A /* UIImage+CLImage.h */,
-				A4D750B6207E725800F6F63A /* UIImage+CLImage.m */,
-			);
-			path = "UIImage+CLImage";
-			sourceTree = "<group>";
-		};
 		A4DB7174203802FC0015964F /* CLNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,15 +737,6 @@
 				A4DB7176203802FC0015964F /* CLNavigationController.m */,
 			);
 			path = CLNavigationController;
-			sourceTree = "<group>";
-		};
-		A4DB7177203802FC0015964F /* UIColor+CLColor */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB7178203802FC0015964F /* UIColor+CLColor.h */,
-				A4DB7179203802FC0015964F /* UIColor+CLColor.m */,
-			);
-			path = "UIColor+CLColor";
 			sourceTree = "<group>";
 		};
 		A4DB717A203802FC0015964F /* CLViewController */ = {
@@ -860,33 +764,6 @@
 				A4DB717F203802FC0015964F /* CLViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		A4DB7181203802FC0015964F /* UIScreen+CLScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB7182203802FC0015964F /* UIScreen+CLScreen.h */,
-				A4DB7183203802FC0015964F /* UIScreen+CLScreen.m */,
-			);
-			path = "UIScreen+CLScreen";
-			sourceTree = "<group>";
-		};
-		A4DB7184203802FC0015964F /* UITableView+CLTableView */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB7186203802FC0015964F /* UITableView+CLTableView.h */,
-				A4DB7185203802FC0015964F /* UITableView+CLTableView.m */,
-			);
-			path = "UITableView+CLTableView";
-			sourceTree = "<group>";
-		};
-		A4DB7188203802FC0015964F /* UICollectionView+CLCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				A4DB718A203802FC0015964F /* UICollectionView+CLCollectionView.h */,
-				A4DB7189203802FC0015964F /* UICollectionView+CLCollectionView.m */,
-			);
-			path = "UICollectionView+CLCollectionView";
 			sourceTree = "<group>";
 		};
 		A4DB718B203802FC0015964F /* CLTextField */ = {
@@ -1188,40 +1065,196 @@
 			path = CLAnimatorManager;
 			sourceTree = "<group>";
 		};
-		BFC89ACB205F679600A04A58 /* UIControl+CLControl */ = {
+		BFAE1C0620BFB032002B6230 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				BFC89ACC205F67B700A04A58 /* UIControl+CLControl.h */,
-				BFC89ACD205F67B700A04A58 /* UIControl+CLControl.m */,
+				BFAE1C0720BFB032002B6230 /* UIBezierPath+CLBezierPath */,
+				BFAE1C0820BFB032002B6230 /* UIButton+CLButton */,
+				BFAE1C0B20BFB032002B6230 /* UIImage+CLImage */,
+				BFAE1C0E20BFB032002B6230 /* UINavigationController+CLNavigationController */,
+				BFAE1C1120BFB032002B6230 /* UIDevice+CLDevice */,
+				BFAE1C1420BFB032002B6230 /* UINavigationItem+CLNavigationItem */,
+				BFAE1C1720BFB032002B6230 /* UIControl+CLControl */,
+				BFAE1C1A20BFB032002B6230 /* UIApplication+CLApplication */,
+				BFAE1C1D20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem */,
+				BFAE1C2020BFB032002B6230 /* UIViewController+CLViewController */,
+				BFAE1C2320BFB032002B6230 /* UICollectionView+CLCollectionView */,
+				BFAE1C2620BFB032002B6230 /* UIResponder+CLResponder */,
+				BFAE1C2720BFB032002B6230 /* UIScrollView+CLScrollView */,
+				BFAE1C2A20BFB032002B6230 /* UITableView+CLTableView */,
+				BFAE1C2D20BFB032002B6230 /* UIScreen+CLScreen */,
+				BFAE1C3020BFB032002B6230 /* UIFont+CLFont */,
+				BFAE1C3320BFB032002B6230 /* UILabel+CLLabel */,
+				BFAE1C3420BFB032002B6230 /* UIColor+CLColor */,
+				BFAE1C3720BFB032002B6230 /* UIView+CLView */,
 			);
-			path = "UIControl+CLControl";
+			name = Category;
+			path = ../../Category;
 			sourceTree = "<group>";
 		};
-		BFD172CA2069E90C003C2E2F /* UINavigationController+CLNavigationController */ = {
+		BFAE1C0720BFB032002B6230 /* UIBezierPath+CLBezierPath */ = {
 			isa = PBXGroup;
 			children = (
-				BFD172CB2069E924003C2E2F /* UINavigationController+CLNavigationController.h */,
-				BFD172CC2069E924003C2E2F /* UINavigationController+CLNavigationController.m */,
+			);
+			path = "UIBezierPath+CLBezierPath";
+			sourceTree = "<group>";
+		};
+		BFAE1C0820BFB032002B6230 /* UIButton+CLButton */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C0920BFB032002B6230 /* UIButton+CLButton.m */,
+				BFAE1C0A20BFB032002B6230 /* UIButton+CLButton.h */,
+			);
+			path = "UIButton+CLButton";
+			sourceTree = "<group>";
+		};
+		BFAE1C0B20BFB032002B6230 /* UIImage+CLImage */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C0C20BFB032002B6230 /* UIImage+CLImage.h */,
+				BFAE1C0D20BFB032002B6230 /* UIImage+CLImage.m */,
+			);
+			path = "UIImage+CLImage";
+			sourceTree = "<group>";
+		};
+		BFAE1C0E20BFB032002B6230 /* UINavigationController+CLNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C0F20BFB032002B6230 /* UINavigationController+CLNavigationController.m */,
+				BFAE1C1020BFB032002B6230 /* UINavigationController+CLNavigationController.h */,
 			);
 			path = "UINavigationController+CLNavigationController";
 			sourceTree = "<group>";
 		};
-		BFD172D2206A0A9A003C2E2F /* UIScrollView+CLScrollView */ = {
+		BFAE1C1120BFB032002B6230 /* UIDevice+CLDevice */ = {
 			isa = PBXGroup;
 			children = (
-				BFD172D3206A0AB2003C2E2F /* UIScrollView+CLScrollView.h */,
-				BFD172D4206A0AB2003C2E2F /* UIScrollView+CLScrollView.m */,
+				BFAE1C1220BFB032002B6230 /* UIDevice+CLDevice.h */,
+				BFAE1C1320BFB032002B6230 /* UIDevice+CLDevice.m */,
+			);
+			path = "UIDevice+CLDevice";
+			sourceTree = "<group>";
+		};
+		BFAE1C1420BFB032002B6230 /* UINavigationItem+CLNavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C1520BFB032002B6230 /* UINavigationItem+CLNavigationItem.m */,
+				BFAE1C1620BFB032002B6230 /* UINavigationItem+CLNavigationItem.h */,
+			);
+			path = "UINavigationItem+CLNavigationItem";
+			sourceTree = "<group>";
+		};
+		BFAE1C1720BFB032002B6230 /* UIControl+CLControl */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C1820BFB032002B6230 /* UIControl+CLControl.m */,
+				BFAE1C1920BFB032002B6230 /* UIControl+CLControl.h */,
+			);
+			path = "UIControl+CLControl";
+			sourceTree = "<group>";
+		};
+		BFAE1C1A20BFB032002B6230 /* UIApplication+CLApplication */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C1B20BFB032002B6230 /* UIApplication+CLApplication.m */,
+				BFAE1C1C20BFB032002B6230 /* UIApplication+CLApplication.h */,
+			);
+			path = "UIApplication+CLApplication";
+			sourceTree = "<group>";
+		};
+		BFAE1C1D20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C1E20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.m */,
+				BFAE1C1F20BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.h */,
+			);
+			path = "UIBarButtonItem+CLBarButtonItem";
+			sourceTree = "<group>";
+		};
+		BFAE1C2020BFB032002B6230 /* UIViewController+CLViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C2120BFB032002B6230 /* UIViewController+CLViewController.h */,
+				BFAE1C2220BFB032002B6230 /* UIViewController+CLViewController.m */,
+			);
+			path = "UIViewController+CLViewController";
+			sourceTree = "<group>";
+		};
+		BFAE1C2320BFB032002B6230 /* UICollectionView+CLCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C2420BFB032002B6230 /* UICollectionView+CLCollectionView.m */,
+				BFAE1C2520BFB032002B6230 /* UICollectionView+CLCollectionView.h */,
+			);
+			path = "UICollectionView+CLCollectionView";
+			sourceTree = "<group>";
+		};
+		BFAE1C2620BFB032002B6230 /* UIResponder+CLResponder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UIResponder+CLResponder";
+			sourceTree = "<group>";
+		};
+		BFAE1C2720BFB032002B6230 /* UIScrollView+CLScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C2820BFB032002B6230 /* UIScrollView+CLScrollView.m */,
+				BFAE1C2920BFB032002B6230 /* UIScrollView+CLScrollView.h */,
 			);
 			path = "UIScrollView+CLScrollView";
 			sourceTree = "<group>";
 		};
-		BFD49E442094415300A9C252 /* UIBarButtonItem+CLBarButtonItem */ = {
+		BFAE1C2A20BFB032002B6230 /* UITableView+CLTableView */ = {
 			isa = PBXGroup;
 			children = (
-				BFD49E452094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.h */,
-				BFD49E462094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m */,
+				BFAE1C2B20BFB032002B6230 /* UITableView+CLTableView.h */,
+				BFAE1C2C20BFB032002B6230 /* UITableView+CLTableView.m */,
 			);
-			path = "UIBarButtonItem+CLBarButtonItem";
+			path = "UITableView+CLTableView";
+			sourceTree = "<group>";
+		};
+		BFAE1C2D20BFB032002B6230 /* UIScreen+CLScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C2E20BFB032002B6230 /* UIScreen+CLScreen.m */,
+				BFAE1C2F20BFB032002B6230 /* UIScreen+CLScreen.h */,
+			);
+			path = "UIScreen+CLScreen";
+			sourceTree = "<group>";
+		};
+		BFAE1C3020BFB032002B6230 /* UIFont+CLFont */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C3120BFB032002B6230 /* UIFont+CLFont.h */,
+				BFAE1C3220BFB032002B6230 /* UIFont+CLFont.m */,
+			);
+			path = "UIFont+CLFont";
+			sourceTree = "<group>";
+		};
+		BFAE1C3320BFB032002B6230 /* UILabel+CLLabel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UILabel+CLLabel";
+			sourceTree = "<group>";
+		};
+		BFAE1C3420BFB032002B6230 /* UIColor+CLColor */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C3520BFB032002B6230 /* UIColor+CLColor.h */,
+				BFAE1C3620BFB032002B6230 /* UIColor+CLColor.m */,
+			);
+			path = "UIColor+CLColor";
+			sourceTree = "<group>";
+		};
+		BFAE1C3720BFB032002B6230 /* UIView+CLView */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C3820BFB032002B6230 /* UIView+CLView.m */,
+				BFAE1C3920BFB032002B6230 /* UIView+CLView.h */,
+			);
+			path = "UIView+CLView";
 			sourceTree = "<group>";
 		};
 		BFD49E482094444800A9C252 /* EXBarButtonItem */ = {
@@ -1571,11 +1604,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAE1C3A20BFB032002B6230 /* UIButton+CLButton.m in Sources */,
 				A4AB1CCE203C19B2005026E8 /* EXScreenController.m in Sources */,
 				A4DB7197203802FC0015964F /* CLCollectionViewDelegate.m in Sources */,
-				BFD172D5206A0AB2003C2E2F /* UIScrollView+CLScrollView.m in Sources */,
 				A4AB1CBE203AD1EA005026E8 /* EXTableViewViewModel.m in Sources */,
-				A42FEFE5203DC44C0054C8A3 /* UIView+CLView.m in Sources */,
+				BFAE1C3B20BFB032002B6230 /* UIImage+CLImage.m in Sources */,
 				BFDCB67D20B50C1600405637 /* EXWebViewUIDelegate.m in Sources */,
 				BFD49E702094568300A9C252 /* EXScrollViewDelegate.m in Sources */,
 				A4AB1CBB203AD1D2005026E8 /* EXTableViewDataSource.m in Sources */,
@@ -1590,72 +1623,72 @@
 				BFDCB67020B5098B00405637 /* EXWebViewController.m in Sources */,
 				A4DB71EA203A86060015964F /* EXCollectionViewController.m in Sources */,
 				A4DB71D120381AA80015964F /* EXAlertBaseModel.m in Sources */,
-				A4DB7191203802FC0015964F /* UIViewController+CLViewController.m in Sources */,
 				A4DB7138203800530015964F /* main.m in Sources */,
-				BFC89ACE205F67B700A04A58 /* UIControl+CLControl.m in Sources */,
-				A4DB719E203802FC0015964F /* UIFont+CLFont.m in Sources */,
 				BFD49E5A2094505500A9C252 /* CLScrollViewController.m in Sources */,
 				A4DB71F3203A86320015964F /* EXCollectionViewViewModel.m in Sources */,
+				BFAE1C4520BFB032002B6230 /* UITableView+CLTableView.m in Sources */,
+				BFAE1C3C20BFB032002B6230 /* UINavigationController+CLNavigationController.m in Sources */,
 				BFD49E682094565900A9C252 /* EXScrollViewController.m in Sources */,
 				A4DB71C1203812700015964F /* EXRootDataSource.m in Sources */,
 				A4DB71CB20381A2A0015964F /* EXAlertController.m in Sources */,
 				A4DB7196203802FC0015964F /* CLCollectionViewDataSource.m in Sources */,
 				A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */,
+				BFAE1C4120BFB032002B6230 /* UIBarButtonItem+CLBarButtonItem.m in Sources */,
+				BFAE1C4820BFB032002B6230 /* UIColor+CLColor.m in Sources */,
 				A4AB1CEC203C46BB005026E8 /* EXTextFieldController.m in Sources */,
+				BFAE1C4920BFB032002B6230 /* UIView+CLView.m in Sources */,
 				A4DB71F7203ACFD10015964F /* EXTableViewController.m in Sources */,
-				A4BA3140204CE528002E0ED7 /* UIApplication+CLApplication.m in Sources */,
 				A4DB71DA20381ADD0015964F /* EXAlertDelegate.m in Sources */,
 				A4DB71A8203802FC0015964F /* CLTextField.m in Sources */,
+				BFAE1C4420BFB032002B6230 /* UIScrollView+CLScrollView.m in Sources */,
 				BFD49E622094519300A9C252 /* CLScrollViewViewModel.m in Sources */,
-				A4DB71A5203802FC0015964F /* UITableView+CLTableView.m in Sources */,
 				BF0FF8C520B65ACB00E6915A /* EXAnimatorController.m in Sources */,
 				A4AB1D1C203CEF16005026E8 /* CLScanQRCodeView.m in Sources */,
 				A4DB71A9203802FC0015964F /* CLButton.m in Sources */,
+				BFAE1C4220BFB032002B6230 /* UIViewController+CLViewController.m in Sources */,
 				BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */,
 				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
 				BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */,
-				A4DB71A1203802FC0015964F /* UIColor+CLColor.m in Sources */,
 				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
 				A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */,
 				A4AB1CE8203C34E5005026E8 /* EXFontViewModel.m in Sources */,
 				A4AB1CD6203C2DCF005026E8 /* EXFontController.m in Sources */,
+				BFAE1C3E20BFB032002B6230 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */,
 				A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */,
 				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
-				A4DB71A4203802FC0015964F /* UIScreen+CLScreen.m in Sources */,
 				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
+				BFAE1C4720BFB032002B6230 /* UIFont+CLFont.m in Sources */,
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
 				BFD49E5D2094510600A9C252 /* CLScrollViewDelegate.m in Sources */,
 				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,
-				A4D750BA207E727300F6F63A /* UIButton+CLButton.m in Sources */,
 				A4AB1D17203CEAB1005026E8 /* CLScanQRCodeController.m in Sources */,
-				BFD49E472094418A00A9C252 /* UIBarButtonItem+CLBarButtonItem.m in Sources */,
 				BFDCB67920B50BF300405637 /* EXWebViewNavigationDelegate.m in Sources */,
 				A4BA3148204CF253002E0ED7 /* EXApplicationController.m in Sources */,
 				A4DB7199203802FC0015964F /* CLTableViewDelegate.m in Sources */,
 				A4AB1CD2203C276A005026E8 /* EXDeviceController.m in Sources */,
 				A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */,
+				BFAE1C4020BFB032002B6230 /* UIApplication+CLApplication.m in Sources */,
 				BF28A4D8206E038600E0E19C /* CLCollectionViewDropDelegate.m in Sources */,
 				BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */,
+				BFAE1C3D20BFB032002B6230 /* UIDevice+CLDevice.m in Sources */,
 				A4DB719A203802FC0015964F /* CLTableViewDataSource.m in Sources */,
-				BFD172CD2069E924003C2E2F /* UINavigationController+CLNavigationController.m in Sources */,
 				BFD49E4B2094446300A9C252 /* EXBarButtonItemController.m in Sources */,
 				BFDCB67520B50BD200405637 /* EXWebViewViewModel.m in Sources */,
 				BFDCB65E20B4FFB600405637 /* CLWebViewController.m in Sources */,
-				A4DB71A7203802FC0015964F /* UICollectionView+CLCollectionView.m in Sources */,
-				A4DB7192203802FC0015964F /* UIDevice+CLDevice.m in Sources */,
+				BFAE1C3F20BFB032002B6230 /* UIControl+CLControl.m in Sources */,
 				A4DB71DD20381AE90015964F /* EXAlertDataSource.m in Sources */,
 				A4AB1CC6203BF09B005026E8 /* EXImageController.m in Sources */,
 				BFDCB66B20B5015400405637 /* CLWebViewViewModel.m in Sources */,
-				A4D750B7207E725800F6F63A /* UIImage+CLImage.m in Sources */,
 				A4AB1CE2203C34D1005026E8 /* EXFontDelegate.m in Sources */,
+				BFAE1C4320BFB032002B6230 /* UICollectionView+CLCollectionView.m in Sources */,
 				A4DB71B2203806D10015964F /* EXRootController.m in Sources */,
 				A4AB1CC2203BD4C8005026E8 /* EXColorController.m in Sources */,
-				A42FEFED203DD9E70054C8A3 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				A4DB712A203800530015964F /* AppDelegate.m in Sources */,
 				BFDCB66420B500AB00405637 /* CLWebViewNavigationDelegate.m in Sources */,
 				BFD49E6D2094567800A9C252 /* EXScrollViewViewModel.m in Sources */,
 				A4DB71B9203812340015964F /* EXRootViewModel.m in Sources */,
+				BFAE1C4620BFB032002B6230 /* UIScreen+CLScreen.m in Sources */,
 				A4BA3145204CF21E002E0ED7 /* EXBaseViewController.m in Sources */,
 				A4AB1CB8203AD1C8005026E8 /* EXTableViewDelegate.m in Sources */,
 				BFDCB66720B500B100405637 /* CLWebViewUIDelegate.m in Sources */,
