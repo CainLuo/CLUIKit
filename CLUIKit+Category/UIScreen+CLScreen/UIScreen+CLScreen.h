@@ -45,12 +45,20 @@
 + (CGFloat)cl_getScreenHeight;
 
 /**
- iPhone是以 (iPhone 6)750x1334 为基准, iPad是以 (iPad Air)2048×1536 为基准
+ iPhone是以 (iPhone 6)1334x750 为基准, iPad是以 (iPad Pro 10.5)2224x1668 为基准
 
  @param value UI原始值
  @return CGFloat
  */
 + (CGFloat)cl_fitScreen:(CGFloat)value;
+
+/**
+ 适配iPhone Plus机型的尺寸
+
+ @param value UI原始值
+ @return CGFloat
+ */
++ (CGFloat)cl_fitPlusScreen:(CGFloat)value;
 
 /**
  获取UITabBar的高度

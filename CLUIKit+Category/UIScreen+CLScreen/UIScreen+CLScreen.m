@@ -40,10 +40,15 @@
 + (CGFloat)cl_fitScreen:(CGFloat)value {
     
     if ([[UIDevice cl_getDeviceModelType] isEqualToString:@"iPad"]) {
-        return ceilf([self cl_getScreenWidth] / (1535.0f / 2)  * (value / 2.0f));
+        return ceilf([self cl_getScreenWidth] / (1668.0f / 2)  * (value / 2.0f));
     } else {
         return ceilf([self cl_getScreenWidth] / (750.0f / 2)  * (value / 2.0f));
     }
+}
+
++ (CGFloat)cl_fitPlusScreen:(CGFloat)value {
+    
+    return ceilf([self cl_getScreenWidth] / (1080.0f / 2)  * (value / 2.0f));
 }
 
 #pragma mark - 获取UITabBar的高度
