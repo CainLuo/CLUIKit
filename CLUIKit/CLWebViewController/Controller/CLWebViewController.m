@@ -23,9 +23,9 @@
 
 @implementation CLWebViewController
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
+- (void)viewDidLoad {
+    [super viewDidLoad];
+        
     [self.view addSubview:self.cl_webView];
 }
 

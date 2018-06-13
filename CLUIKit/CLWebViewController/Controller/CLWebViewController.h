@@ -13,11 +13,11 @@
 //  Copyright © 2018年 Cain Luo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CLViewController.h"
 #import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface CLWebViewController : UIViewController
+@interface CLWebViewController : CLViewController
 
 /**
  只读的WKWebView
