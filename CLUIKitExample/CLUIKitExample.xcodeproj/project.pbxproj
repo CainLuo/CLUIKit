@@ -1217,8 +1217,8 @@
 		BFAE1CB220BFC727002B6230 /* UIScreen+CLScreen */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1CB320BFC727002B6230 /* UIScreen+CLScreen.m */,
 				BFAE1CB420BFC727002B6230 /* UIScreen+CLScreen.h */,
+				BFAE1CB320BFC727002B6230 /* UIScreen+CLScreen.m */,
 			);
 			path = "UIScreen+CLScreen";
 			sourceTree = "<group>";
