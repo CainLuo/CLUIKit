@@ -1,5 +1,7 @@
 PODS:
-  - CLFoundation (1.7.0)
+  - CLFoundation (1.7.2):
+    - "CLFoundation/CLFoundation+Category (= 1.7.2)"
+  - "CLFoundation/CLFoundation+Category (1.7.2)"
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - YYModel (1.0.4)
@@ -18,7 +20,7 @@ SPEC REPOS:
     - YYModel
 
 SPEC CHECKSUMS:
-  CLFoundation: 6e97a2fb51d31537f31cf37a1059d09c15c2115a
+  CLFoundation: d329a9f578ae0654022d811f160db8ac404346c7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
