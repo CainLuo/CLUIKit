@@ -1068,7 +1068,6 @@
 		BFAE1C8B20BFC727002B6230 /* CLUIKit+Category */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1C8C20BFC727002B6230 /* UIBezierPath+CLBezierPath */,
 				BFAE1C8D20BFC727002B6230 /* UIButton+CLButton */,
 				BFAE1C9020BFC727002B6230 /* UIImage+CLImage */,
 				BFAE1C9320BFC727002B6230 /* UINavigationController+CLNavigationController */,
@@ -1079,24 +1078,15 @@
 				BFAE1CA220BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem */,
 				BFAE1CA520BFC727002B6230 /* UIViewController+CLViewController */,
 				BFAE1CA820BFC727002B6230 /* UICollectionView+CLCollectionView */,
-				BFAE1CAB20BFC727002B6230 /* UIResponder+CLResponder */,
 				BFAE1CAC20BFC727002B6230 /* UIScrollView+CLScrollView */,
 				BFAE1CAF20BFC727002B6230 /* UITableView+CLTableView */,
 				BFAE1CB220BFC727002B6230 /* UIScreen+CLScreen */,
 				BFAE1CB520BFC727002B6230 /* UIFont+CLFont */,
-				BFAE1CB820BFC727002B6230 /* UILabel+CLLabel */,
 				BFAE1CB920BFC727002B6230 /* UIColor+CLColor */,
 				BFAE1CBC20BFC727002B6230 /* UIView+CLView */,
 			);
 			name = "CLUIKit+Category";
 			path = "../../CLUIKit+Category";
-			sourceTree = "<group>";
-		};
-		BFAE1C8C20BFC727002B6230 /* UIBezierPath+CLBezierPath */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UIBezierPath+CLBezierPath";
 			sourceTree = "<group>";
 		};
 		BFAE1C8D20BFC727002B6230 /* UIButton+CLButton */ = {
@@ -1189,13 +1179,6 @@
 			path = "UICollectionView+CLCollectionView";
 			sourceTree = "<group>";
 		};
-		BFAE1CAB20BFC727002B6230 /* UIResponder+CLResponder */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UIResponder+CLResponder";
-			sourceTree = "<group>";
-		};
 		BFAE1CAC20BFC727002B6230 /* UIScrollView+CLScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1230,13 +1213,6 @@
 				BFAE1CB720BFC727002B6230 /* UIFont+CLFont.m */,
 			);
 			path = "UIFont+CLFont";
-			sourceTree = "<group>";
-		};
-		BFAE1CB820BFC727002B6230 /* UILabel+CLLabel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UILabel+CLLabel";
 			sourceTree = "<group>";
 		};
 		BFAE1CB920BFC727002B6230 /* UIColor+CLColor */ = {
