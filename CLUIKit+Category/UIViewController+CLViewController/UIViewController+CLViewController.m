@@ -34,6 +34,13 @@ static void *AlertControllerKey = &AlertControllerKey;
     self.tabBarController.tabBar.translucent = bools;
 }
 
+- (void)cl_setNavigationBarInteractivePopGestureRecognizerWithEnabled:(BOOL)enabled {
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = enabled;
+    }
+}
+
 #pragma mark - AlertController
 - (void)setCl_alertController:(UIAlertController *)cl_alertController {
     
