@@ -16,6 +16,22 @@
 
 @implementation EXDeviceController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"禁止右侧滑动返回");
+    
+    [self cl_setNavigationBarInteractivePopGestureRecognizerWithEnabled:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    NSLog(@"可以右侧滑动返回");
+
+    [self cl_setNavigationBarInteractivePopGestureRecognizerWithEnabled:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self ex_addConstraintsWithSuperView];
