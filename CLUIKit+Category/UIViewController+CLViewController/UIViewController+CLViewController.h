@@ -31,6 +31,11 @@ typedef void(^CLAlertControlAction)(UIAlertAction *action, NSUInteger index);
 @interface UIViewController (CLViewController) <CLNavigationControllerBackItemProtocol>
 
 /**
+ 设置Modal转场动画时的UIViewController高度
+ */
+@property (assign, nonatomic) CGFloat cl_presentationViewHeight;
+
+/**
  检测UIViewController的UINavigationController返回事件
  
  @return BOOL
