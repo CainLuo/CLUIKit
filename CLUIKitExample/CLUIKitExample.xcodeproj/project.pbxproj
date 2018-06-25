@@ -68,6 +68,7 @@
 		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
 		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
 		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
+		BF6C331120E14F7B00049F5B /* CLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C331020E14F7B00049F5B /* CLPresentationController.m */; };
 		BFAE1CC120BFC728002B6230 /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */; };
 		BFAE1CC220BFC728002B6230 /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C9220BFC727002B6230 /* UIImage+CLImage.m */; };
 		BFAE1CC320BFC728002B6230 /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C9420BFC727002B6230 /* UINavigationController+CLNavigationController.m */; };
@@ -225,6 +226,8 @@
 		BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDragDelegate.m; sourceTree = "<group>"; };
 		BF2B453620B54EAB00BDAA0B /* CLAnimatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAnimatorManager.h; sourceTree = "<group>"; };
 		BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAnimatorManager.m; sourceTree = "<group>"; };
+		BF6C330F20E14F7B00049F5B /* CLPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPresentationController.h; sourceTree = "<group>"; };
+		BF6C331020E14F7B00049F5B /* CLPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPresentationController.m; sourceTree = "<group>"; };
 		BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
 		BFAE1C8F20BFC727002B6230 /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
 		BFAE1C9120BFC727002B6230 /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
@@ -595,6 +598,7 @@
 				A4DB718E203802FC0015964F /* CLButton */,
 				A4DB714F203802FC0015964F /* CLCollectionViewController */,
 				A4DB7174203802FC0015964F /* CLNavigationController */,
+				BF6C330E20E14F7B00049F5B /* CLPresentationController */,
 				A4AB1D12203CEA80005026E8 /* CLScanQRCode */,
 				BFD49E552094502600A9C252 /* CLScrollViewController */,
 				A4DB715D203802FC0015964F /* CLTableViewController */,
@@ -1063,6 +1067,15 @@
 				BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */,
 			);
 			path = CLAnimatorManager;
+			sourceTree = "<group>";
+		};
+		BF6C330E20E14F7B00049F5B /* CLPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				BF6C330F20E14F7B00049F5B /* CLPresentationController.h */,
+				BF6C331020E14F7B00049F5B /* CLPresentationController.m */,
+			);
+			path = CLPresentationController;
 			sourceTree = "<group>";
 		};
 		BFAE1C8B20BFC727002B6230 /* CLUIKit+Category */ = {
@@ -1635,6 +1648,7 @@
 				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
 				BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */,
 				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
+				BF6C331120E14F7B00049F5B /* CLPresentationController.m in Sources */,
 				A4DB719D203802FC0015964F /* CLTableViewController.m in Sources */,
 				A4AB1CE8203C34E5005026E8 /* EXFontViewModel.m in Sources */,
 				A4AB1CD6203C2DCF005026E8 /* EXFontController.m in Sources */,

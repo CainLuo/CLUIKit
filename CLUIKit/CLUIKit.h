@@ -30,6 +30,9 @@
 #pragma mark - CLNavigationController
 #import "CLNavigationController.h"
 
+#pragma mark - CLPresentationController
+#import "CLPresentationController.h"
+
 #pragma mark - CLScanQRCodeController
 #import "CLScanQRCodeController.h"
 
