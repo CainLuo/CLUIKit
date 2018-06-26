@@ -69,6 +69,9 @@
 		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
 		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
 		BF6C331120E14F7B00049F5B /* CLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C331020E14F7B00049F5B /* CLPresentationController.m */; };
+		BFA979B520E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA979B320E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m */; };
+		BFA979C420E1DC7E003FD73F /* EXRootTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA979C320E1DC7E003FD73F /* EXRootTransitioningDelegate.m */; };
+		BFA979C820E1DDD7003FD73F /* EXPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA979C720E1DDD7003FD73F /* EXPresentationController.m */; };
 		BFAE1CC120BFC728002B6230 /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */; };
 		BFAE1CC220BFC728002B6230 /* UIImage+CLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C9220BFC727002B6230 /* UIImage+CLImage.m */; };
 		BFAE1CC320BFC728002B6230 /* UINavigationController+CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C9420BFC727002B6230 /* UINavigationController+CLNavigationController.m */; };
@@ -228,6 +231,12 @@
 		BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAnimatorManager.m; sourceTree = "<group>"; };
 		BF6C330F20E14F7B00049F5B /* CLPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPresentationController.h; sourceTree = "<group>"; };
 		BF6C331020E14F7B00049F5B /* CLPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPresentationController.m; sourceTree = "<group>"; };
+		BFA979B320E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerTransitioningDelegate.m; sourceTree = "<group>"; };
+		BFA979B420E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerTransitioningDelegate.h; sourceTree = "<group>"; };
+		BFA979C220E1DC7E003FD73F /* EXRootTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootTransitioningDelegate.h; sourceTree = "<group>"; };
+		BFA979C320E1DC7E003FD73F /* EXRootTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootTransitioningDelegate.m; sourceTree = "<group>"; };
+		BFA979C620E1DDD7003FD73F /* EXPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPresentationController.h; sourceTree = "<group>"; };
+		BFA979C720E1DDD7003FD73F /* EXPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXPresentationController.m; sourceTree = "<group>"; };
 		BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CLButton.m"; sourceTree = "<group>"; };
 		BFAE1C8F20BFC727002B6230 /* UIButton+CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CLButton.h"; sourceTree = "<group>"; };
 		BFAE1C9120BFC727002B6230 /* UIImage+CLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CLImage.h"; sourceTree = "<group>"; };
@@ -755,8 +764,8 @@
 		A4DB717B203802FC0015964F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				A4DB717C203802FC0015964F /* CLViewControllerViewModel.h */,
-				A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */,
+				BFA979B220E1C7B1003FD73F /* CLViewControllerTransitioningDelegate */,
+				BFA979A920E1C496003FD73F /* CLViewControllerViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -791,6 +800,7 @@
 		A4DB71AA203805A70015964F /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				BFA979C520E1DDC9003FD73F /* EXPresentationController */,
 				A4DB71C820381A0A0015964F /* EXAlert */,
 				BF0FF8C220B65AA200E6915A /* EXAnimator */,
 				A4BA3141204CF1A2002E0ED7 /* EXApplication */,
@@ -836,6 +846,7 @@
 			children = (
 				A4DB71BA2038124B0015964F /* EXRootDataSource */,
 				A4DB71BB203812560015964F /* EXRootDelegate */,
+				BFA979C120E1DC65003FD73F /* EXRootTransitioningDelegate */,
 				A4DB71B6203812240015964F /* EXRootViewModel */,
 			);
 			path = ViewModels;
@@ -1076,6 +1087,42 @@
 				BF6C331020E14F7B00049F5B /* CLPresentationController.m */,
 			);
 			path = CLPresentationController;
+			sourceTree = "<group>";
+		};
+		BFA979A920E1C496003FD73F /* CLViewControllerViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB717C203802FC0015964F /* CLViewControllerViewModel.h */,
+				A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */,
+			);
+			path = CLViewControllerViewModel;
+			sourceTree = "<group>";
+		};
+		BFA979B220E1C7B1003FD73F /* CLViewControllerTransitioningDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFA979B420E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.h */,
+				BFA979B320E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m */,
+			);
+			path = CLViewControllerTransitioningDelegate;
+			sourceTree = "<group>";
+		};
+		BFA979C120E1DC65003FD73F /* EXRootTransitioningDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BFA979C220E1DC7E003FD73F /* EXRootTransitioningDelegate.h */,
+				BFA979C320E1DC7E003FD73F /* EXRootTransitioningDelegate.m */,
+			);
+			path = EXRootTransitioningDelegate;
+			sourceTree = "<group>";
+		};
+		BFA979C520E1DDC9003FD73F /* EXPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				BFA979C620E1DDD7003FD73F /* EXPresentationController.h */,
+				BFA979C720E1DDD7003FD73F /* EXPresentationController.m */,
+			);
+			path = EXPresentationController;
 			sourceTree = "<group>";
 		};
 		BFAE1C8B20BFC727002B6230 /* CLUIKit+Category */ = {
@@ -1617,8 +1664,10 @@
 				A4DB7195203802FC0015964F /* CLCollectionViewViewModel.m in Sources */,
 				A4DB71B5203812060015964F /* EXRootBaseModel.m in Sources */,
 				A42FEFE1203D017C0054C8A3 /* EXScanQRCodeController.m in Sources */,
+				BFA979B520E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m in Sources */,
 				A4DB71F0203A86250015964F /* EXCollectionViewDelegate.m in Sources */,
 				BFDCB67020B5098B00405637 /* EXWebViewController.m in Sources */,
+				BFA979C820E1DDD7003FD73F /* EXPresentationController.m in Sources */,
 				A4DB71EA203A86060015964F /* EXCollectionViewController.m in Sources */,
 				A4DB71D120381AA80015964F /* EXAlertBaseModel.m in Sources */,
 				A4DB7138203800530015964F /* main.m in Sources */,
@@ -1646,6 +1695,7 @@
 				BFAE1CC920BFC728002B6230 /* UIViewController+CLViewController.m in Sources */,
 				BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */,
 				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
+				BFA979C420E1DC7E003FD73F /* EXRootTransitioningDelegate.m in Sources */,
 				BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */,
 				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
 				BF6C331120E14F7B00049F5B /* CLPresentationController.m in Sources */,

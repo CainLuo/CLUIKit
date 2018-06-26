@@ -7,7 +7,10 @@
 //
 
 #import "CLTableViewController.h"
+#import "EXRootTransitioningDelegate.h"
 
 @interface EXRootController : CLTableViewController
+
+@property (nonatomic, strong, readonly) EXRootTransitioningDelegate *ex_rootTransitioningDelegate;
 
 @end

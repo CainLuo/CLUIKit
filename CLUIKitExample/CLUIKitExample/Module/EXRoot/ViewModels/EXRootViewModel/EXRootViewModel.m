@@ -46,7 +46,9 @@
                                     @{@"title":@"EXTextFieldController",
                                       @"controller":@"EXTextFieldController"},
                                     @{@"title":@"EXWebViewController",
-                                      @"controller":@"EXWebViewController"}];
+                                      @"controller":@"EXWebViewController"},
+                                    @{@"title":@"EXPresentationController",
+                                      @"controller":@"EXPresentationController"}];
     
     [self.cl_dataSource addObjectsFromArray:[NSArray yy_modelArrayWithClass:[EXRootBaseModel class]
                                                                        json:ex_dataSourceArray]];
