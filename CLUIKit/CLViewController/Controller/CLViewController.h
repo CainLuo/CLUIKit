@@ -31,5 +31,12 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
  */
 - (instancetype)initCLViewControllerWith:(CLViewControllerStyle)style;
 
+/**
+ 设置CLViewController的UIViewControllerTransitioningDelegate
+
+ @param delegate id<UIViewControllerTransitioningDelegate>
+ */
+- (void)cl_setViewControllerTransitioningDelegate:(id<UIViewControllerTransitioningDelegate>)delegate;
+
 @end
 NS_ASSUME_NONNULL_END

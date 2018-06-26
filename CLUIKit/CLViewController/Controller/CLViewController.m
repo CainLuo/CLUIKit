@@ -41,4 +41,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+- (void)cl_setViewControllerTransitioningDelegate:(id<UIViewControllerTransitioningDelegate>)delegate {
+    
+    self.transitioningDelegate = delegate;
+}
+
 @end
