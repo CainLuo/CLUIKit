@@ -11,6 +11,8 @@
 
 #import "EXRootController.h"
 
+#import "EXPresentationController.h"
+
 @implementation EXRootDelegate
 
 - (void)tableView:(UITableView *)tableView
@@ -20,21 +22,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     EXRootBaseModel *ex_rootBaseModel = self.cl_viewModel.cl_dataSource[indexPath.row];
 
-    UIViewController *ex_controller = [[NSClassFromString(ex_rootBaseModel.controller) alloc] init];
-    
     if ([ex_rootBaseModel.controller isEqualToString:@"EXPresentationController"]) {
         
         EXRootController *ex_rootController = (EXRootController *)self.cl_viewModel.cl_tableViewController;
+        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] initViewControllerWithTransitioningDelegate:ex_rootController.ex_rootTransitioningDelegate];
         
-        ex_controller.modalTransitionStyle      = UIModalPresentationCustom;
-        ex_controller.transitioningDelegate     = ex_rootController.ex_rootTransitioningDelegate;
-        ex_controller.cl_presentationViewHeight = 300;
+        ex_presentationController.modalPresentationStyle    = UIModalPresentationCustom;
+        ex_presentationController.cl_presentationViewHeight = 200;
+//        ex_presentationController.transitioningDelegate     = ex_rootController.ex_rootTransitioningDelegate;
         
-        [self.cl_viewModel.cl_tableViewController presentViewController:ex_controller
+        [self.cl_viewModel.cl_tableViewController presentViewController:ex_presentationController
                                                                animated:YES
                                                              completion:nil];
     } else {
         
+        UIViewController *ex_controller = [[NSClassFromString(ex_rootBaseModel.controller) alloc] init];
+
         ex_controller.title = ex_rootBaseModel.title;
      
         [self.cl_viewModel.cl_tableViewController.navigationController pushViewController:ex_controller
