@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, CLPresentationViewStyle) {
 @property (nonatomic, assign) CGFloat cl_animationDuration;
 
 /**
- 是否需要UITapGestureRecognizer收拾
+ 是否需要UITapGestureRecognizer手势, 默认为YES
  */
 @property (nonatomic, assign) BOOL cl_isNeedTapGestureRecognizer;
 

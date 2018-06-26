@@ -39,10 +39,11 @@
         
         BOOL cl_isHasPresentationViewHeight = (presentedViewController.cl_presentationViewHeight == 0);
         
-        self.cl_presentationViewHeight = cl_isHasPresentationViewHeight ? [UIScreen mainScreen].bounds.size.height : presentedViewController.cl_presentationViewHeight;
-        self.cl_presentationViewStyle = CLPresentationViewStyleNormal;
-        self.cl_animationDuration     = 0.5f;
-        self.cl_backgroundColor       = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+        self.cl_backgroundColor            = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+        self.cl_animationDuration          = 0.5f;
+        self.cl_presentationViewStyle      = CLPresentationViewStyleNormal;
+        self.cl_presentationViewHeight     = cl_isHasPresentationViewHeight ? [UIScreen mainScreen].bounds.size.height : presentedViewController.cl_presentationViewHeight;
+        self.cl_isNeedTapGestureRecognizer = YES;
     }
     
     return self;
