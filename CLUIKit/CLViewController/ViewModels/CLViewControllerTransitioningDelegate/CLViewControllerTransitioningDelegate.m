@@ -17,7 +17,7 @@
 
 @interface CLViewControllerTransitioningDelegate ()
 
-@property (nonatomic, weak, readwrite) CLViewController *controller;
+@property (nonatomic, weak, readwrite) CLViewController *cl_controller;
 
 @end
 
@@ -29,7 +29,7 @@
     
     if (self) {
         
-        self.controller = controller;
+        self.cl_controller = controller;
     }
     
     return self;

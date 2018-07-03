@@ -58,6 +58,7 @@
 #pragma mark - CLViewController
 #import "CLViewController.h"
 #import "CLViewControllerViewModel.h"
+#import "CLViewControllerTransitioningDelegate.h"
 
 #pragma mark - CLWebViewController
 #import "CLWebViewController.h"

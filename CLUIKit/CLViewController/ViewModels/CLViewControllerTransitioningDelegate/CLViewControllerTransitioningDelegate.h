@@ -21,7 +21,7 @@
 /**
  只读的CLViewControllerViewModel
  */
-@property (nonatomic, weak, readonly) CLViewController *controller;
+@property (nonatomic, weak, readonly) CLViewController *cl_controller;
 
 /**
  初始化CLViewControllerTransitioningDelegate
