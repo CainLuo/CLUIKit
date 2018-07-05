@@ -1,14 +1,14 @@
 //
-//  EXRootTransitioningDelegate.m
+//  EXPresentationTransitioningDelegate.m
 //  CLUIKitExample
 //
-//  Created by Cain Luo on 2018/6/26.
+//  Created by Cain Luo on 2018/7/3.
 //  Copyright © 2018年 Cain Luo. All rights reserved.
 //
 
-#import "EXRootTransitioningDelegate.h"
+#import "EXPresentationTransitioningDelegate.h"
 
-@implementation EXRootTransitioningDelegate
+@implementation EXPresentationTransitioningDelegate
 
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented
                                                       presentingViewController:(UIViewController *)presenting

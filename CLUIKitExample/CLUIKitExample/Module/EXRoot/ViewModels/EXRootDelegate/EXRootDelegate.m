@@ -25,8 +25,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([ex_rootBaseModel.controller isEqualToString:@"EXPresentationController"]) {
         
         EXRootController *ex_rootController = (EXRootController *)self.cl_viewModel.cl_tableViewController;
-        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] initViewControllerWithTransitioningDelegate:ex_rootController.ex_rootTransitioningDelegate];
-        
+//        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] initViewControllerWithTransitioningDelegate:ex_rootController.ex_rootTransitioningDelegate];
+        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] init];
+
         ex_presentationController.modalPresentationStyle    = UIModalPresentationCustom;
         ex_presentationController.cl_presentationViewHeight = 200;
 //        ex_presentationController.transitioningDelegate     = ex_rootController.ex_rootTransitioningDelegate;
