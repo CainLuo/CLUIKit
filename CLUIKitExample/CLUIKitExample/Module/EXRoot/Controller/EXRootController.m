@@ -17,8 +17,6 @@
 @property (nonatomic, strong) EXRootDataSource *ex_rootDataSource;
 @property (nonatomic, strong) EXRootViewModel  *ex_rootViewModel;
 
-@property (nonatomic, strong, readwrite) EXRootTransitioningDelegate *ex_rootTransitioningDelegate;
-
 @end
 
 @implementation EXRootController
@@ -69,15 +67,6 @@
     _ex_rootViewModel = [[EXRootViewModel alloc] initTableViewBaseModelWithController:self];
     
     return _ex_rootViewModel;
-}
-
-- (EXRootTransitioningDelegate *)ex_rootTransitioningDelegate {
-    
-    CL_GET_METHOD_RETURN_OBJC(_ex_rootTransitioningDelegate);
-    
-    _ex_rootTransitioningDelegate = [[EXRootTransitioningDelegate alloc] initViewControllerTransitioningDelegateWithController:self];
-    
-    return _ex_rootTransitioningDelegate;
 }
 
 - (void)ex_addConstraintsWithSuperView {
