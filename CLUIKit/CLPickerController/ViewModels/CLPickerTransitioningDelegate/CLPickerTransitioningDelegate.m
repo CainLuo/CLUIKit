@@ -7,6 +7,7 @@
 //
 
 #import "CLPickerTransitioningDelegate.h"
+#import "CLPresentationController.h"
 
 @implementation CLPickerTransitioningDelegate
 

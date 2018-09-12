@@ -7,6 +7,8 @@
 //
 
 #import "CLPickerToolView.h"
+#import "UIColor+CLColor.h"
+#import "UIButton+CLButton.h"
 
 @interface CLPickerToolView ()
 

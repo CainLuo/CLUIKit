@@ -8,6 +8,7 @@
 
 #import "CLPickerController.h"
 #import "CLPickerTransitioningDelegate.h"
+#import "UIViewController+CLViewController.h"
 
 @interface CLPickerController ()
 
