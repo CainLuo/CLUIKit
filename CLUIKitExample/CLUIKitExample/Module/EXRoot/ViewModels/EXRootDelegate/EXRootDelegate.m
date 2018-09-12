@@ -12,6 +12,7 @@
 #import "EXRootController.h"
 
 #import "EXPresentationController.h"
+#import "EXPickerController.h"
 
 @implementation EXRootDelegate
 
@@ -24,17 +25,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if ([ex_rootBaseModel.controller isEqualToString:@"EXPresentationController"]) {
         
-        EXRootController *ex_rootController = (EXRootController *)self.cl_viewModel.cl_tableViewController;
+//        EXRootController *ex_rootController = (EXRootController *)self.cl_viewModel.cl_tableViewController;
 //        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] initViewControllerWithTransitioningDelegate:ex_rootController.ex_rootTransitioningDelegate];
-        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] init];
+//        EXPresentationController *ex_presentationController = [[EXPresentationController alloc] init];
 
-        ex_presentationController.modalPresentationStyle    = UIModalPresentationCustom;
-        ex_presentationController.cl_presentationViewHeight = 200;
 //        ex_presentationController.transitioningDelegate     = ex_rootController.ex_rootTransitioningDelegate;
         
-        [self.cl_viewModel.cl_tableViewController presentViewController:ex_presentationController
+//        [self.cl_viewModel.cl_tableViewController presentViewController:ex_presentationController
+//                                                               animated:YES
+//                                                             completion:nil];
+        
+        EXPickerController *ex_pickerController = [[EXPickerController alloc] initPickerControllerWithHeight:244];
+
+        [self.cl_viewModel.cl_tableViewController presentViewController:ex_pickerController
                                                                animated:YES
                                                              completion:nil];
+        
     } else {
         
         UIViewController *ex_controller = [[NSClassFromString(ex_rootBaseModel.controller) alloc] init];
