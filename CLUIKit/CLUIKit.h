@@ -30,6 +30,9 @@
 #pragma mark - CLNavigationController
 #import "CLNavigationController.h"
 
+#pragma mark - CLPickerController
+#import "CLPickerController.h"
+
 #pragma mark - CLPresentationController
 #import "CLPresentationController.h"
 

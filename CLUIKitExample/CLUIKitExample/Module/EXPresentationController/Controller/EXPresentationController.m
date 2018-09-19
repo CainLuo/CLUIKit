@@ -22,7 +22,9 @@
     
     if (self) {
         
-        self.transitioningDelegate = self.ex_presentationTransitioningDelegate;
+        self.transitioningDelegate     = self.ex_presentationTransitioningDelegate;
+        self.modalPresentationStyle    = UIModalPresentationCustom;
+        self.cl_presentationViewHeight = 200;
     }
     
     return self;
