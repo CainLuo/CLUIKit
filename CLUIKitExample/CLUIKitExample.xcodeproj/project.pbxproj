@@ -42,7 +42,6 @@
 		A4DB71A0203802FC0015964F /* CLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7176203802FC0015964F /* CLNavigationController.m */; };
 		A4DB71A2203802FC0015964F /* CLViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */; };
 		A4DB71A3203802FC0015964F /* CLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB717F203802FC0015964F /* CLViewController.m */; };
-		A4DB71A6203802FC0015964F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4DB7187203802FC0015964F /* Info.plist */; };
 		A4DB71A8203802FC0015964F /* CLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB718D203802FC0015964F /* CLTextField.m */; };
 		A4DB71A9203802FC0015964F /* CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB7190203802FC0015964F /* CLButton.m */; };
 		A4DB71B2203806D10015964F /* EXRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DB71B1203806D10015964F /* EXRootController.m */; };
@@ -68,6 +67,8 @@
 		BF28A4E0206E08F700E0E19C /* CLTableViewDropDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4DF206E08F700E0E19C /* CLTableViewDropDelegate.m */; };
 		BF28A4E4206E090700E0E19C /* CLTableViewDragDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */; };
 		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
+		BF4E71F12151EA3700DD5A8C /* CALayer+CLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4E71F02151EA3700DD5A8C /* CALayer+CLLayer.m */; };
+		BF4E71F52151F34C00DD5A8C /* UIBarItem+CLBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4E71F42151F34C00DD5A8C /* UIBarItem+CLBarItem.m */; };
 		BF6C331120E14F7B00049F5B /* CLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C331020E14F7B00049F5B /* CLPresentationController.m */; };
 		BF83864220EB0F48005EC657 /* EXPresentationTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF83864120EB0F48005EC657 /* EXPresentationTransitioningDelegate.m */; };
 		BFA979B520E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA979B320E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m */; };
@@ -180,7 +181,6 @@
 		A4DB717D203802FC0015964F /* CLViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerViewModel.m; sourceTree = "<group>"; };
 		A4DB717F203802FC0015964F /* CLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewController.m; sourceTree = "<group>"; };
 		A4DB7180203802FC0015964F /* CLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewController.h; sourceTree = "<group>"; };
-		A4DB7187203802FC0015964F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DB718C203802FC0015964F /* CLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTextField.h; sourceTree = "<group>"; };
 		A4DB718D203802FC0015964F /* CLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTextField.m; sourceTree = "<group>"; };
 		A4DB718F203802FC0015964F /* CLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLButton.h; sourceTree = "<group>"; };
@@ -229,6 +229,10 @@
 		BF28A4E3206E090700E0E19C /* CLTableViewDragDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTableViewDragDelegate.m; sourceTree = "<group>"; };
 		BF2B453620B54EAB00BDAA0B /* CLAnimatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAnimatorManager.h; sourceTree = "<group>"; };
 		BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAnimatorManager.m; sourceTree = "<group>"; };
+		BF4E71EF2151EA3700DD5A8C /* CALayer+CLLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+CLLayer.h"; sourceTree = "<group>"; };
+		BF4E71F02151EA3700DD5A8C /* CALayer+CLLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CLLayer.m"; sourceTree = "<group>"; };
+		BF4E71F32151F34C00DD5A8C /* UIBarItem+CLBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarItem+CLBarItem.h"; sourceTree = "<group>"; };
+		BF4E71F42151F34C00DD5A8C /* UIBarItem+CLBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarItem+CLBarItem.m"; sourceTree = "<group>"; };
 		BF6C330F20E14F7B00049F5B /* CLPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPresentationController.h; sourceTree = "<group>"; };
 		BF6C331020E14F7B00049F5B /* CLPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPresentationController.m; sourceTree = "<group>"; };
 		BF83864020EB0F48005EC657 /* EXPresentationTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPresentationTransitioningDelegate.h; sourceTree = "<group>"; };
@@ -602,7 +606,6 @@
 			isa = PBXGroup;
 			children = (
 				A4DB7142203802FC0015964F /* CLUIKit.h */,
-				A4DB7187203802FC0015964F /* Info.plist */,
 				BF2B453520B54E8400BDAA0B /* CLAnimatorManager */,
 				A4DB718E203802FC0015964F /* CLButton */,
 				A4DB714F203802FC0015964F /* CLCollectionViewController */,
@@ -1079,6 +1082,24 @@
 			path = CLAnimatorManager;
 			sourceTree = "<group>";
 		};
+		BF4E71EE2151EA2100DD5A8C /* CALayer+CLLayer */ = {
+			isa = PBXGroup;
+			children = (
+				BF4E71EF2151EA3700DD5A8C /* CALayer+CLLayer.h */,
+				BF4E71F02151EA3700DD5A8C /* CALayer+CLLayer.m */,
+			);
+			path = "CALayer+CLLayer";
+			sourceTree = "<group>";
+		};
+		BF4E71F22151F33800DD5A8C /* UIBarItem+CLBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				BF4E71F32151F34C00DD5A8C /* UIBarItem+CLBarItem.h */,
+				BF4E71F42151F34C00DD5A8C /* UIBarItem+CLBarItem.m */,
+			);
+			path = "UIBarItem+CLBarItem";
+			sourceTree = "<group>";
+		};
 		BF6C330E20E14F7B00049F5B /* CLPresentationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,22 +1157,24 @@
 		BFAE1C8B20BFC727002B6230 /* CLUIKit+Category */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1C8D20BFC727002B6230 /* UIButton+CLButton */,
-				BFAE1C9020BFC727002B6230 /* UIImage+CLImage */,
-				BFAE1C9320BFC727002B6230 /* UINavigationController+CLNavigationController */,
-				BFAE1C9620BFC727002B6230 /* UIDevice+CLDevice */,
-				BFAE1C9920BFC727002B6230 /* UINavigationItem+CLNavigationItem */,
-				BFAE1C9C20BFC727002B6230 /* UIControl+CLControl */,
+				BF4E71EE2151EA2100DD5A8C /* CALayer+CLLayer */,
 				BFAE1C9F20BFC727002B6230 /* UIApplication+CLApplication */,
 				BFAE1CA220BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem */,
-				BFAE1CA520BFC727002B6230 /* UIViewController+CLViewController */,
+				BF4E71F22151F33800DD5A8C /* UIBarItem+CLBarItem */,
+				BFAE1C8D20BFC727002B6230 /* UIButton+CLButton */,
 				BFAE1CA820BFC727002B6230 /* UICollectionView+CLCollectionView */,
+				BFAE1CB920BFC727002B6230 /* UIColor+CLColor */,
+				BFAE1C9C20BFC727002B6230 /* UIControl+CLControl */,
+				BFAE1C9620BFC727002B6230 /* UIDevice+CLDevice */,
+				BFAE1CB520BFC727002B6230 /* UIFont+CLFont */,
+				BFAE1C9020BFC727002B6230 /* UIImage+CLImage */,
+				BFAE1C9320BFC727002B6230 /* UINavigationController+CLNavigationController */,
+				BFAE1C9920BFC727002B6230 /* UINavigationItem+CLNavigationItem */,
+				BFAE1CB220BFC727002B6230 /* UIScreen+CLScreen */,
 				BFAE1CAC20BFC727002B6230 /* UIScrollView+CLScrollView */,
 				BFAE1CAF20BFC727002B6230 /* UITableView+CLTableView */,
-				BFAE1CB220BFC727002B6230 /* UIScreen+CLScreen */,
-				BFAE1CB520BFC727002B6230 /* UIFont+CLFont */,
-				BFAE1CB920BFC727002B6230 /* UIColor+CLColor */,
 				BFAE1CBC20BFC727002B6230 /* UIView+CLView */,
+				BFAE1CA520BFC727002B6230 /* UIViewController+CLViewController */,
 			);
 			name = "CLUIKit+Category";
 			path = "../../CLUIKit+Category";
@@ -1160,8 +1183,8 @@
 		BFAE1C8D20BFC727002B6230 /* UIButton+CLButton */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */,
 				BFAE1C8F20BFC727002B6230 /* UIButton+CLButton.h */,
+				BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */,
 			);
 			path = "UIButton+CLButton";
 			sourceTree = "<group>";
@@ -1223,8 +1246,8 @@
 		BFAE1CA220BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1CA320BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem.m */,
 				BFAE1CA420BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem.h */,
+				BFAE1CA320BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem.m */,
 			);
 			path = "UIBarButtonItem+CLBarButtonItem";
 			sourceTree = "<group>";
@@ -1295,8 +1318,8 @@
 		BFAE1CBC20BFC727002B6230 /* UIView+CLView */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1CBD20BFC727002B6230 /* UIView+CLView.m */,
 				BFAE1CBE20BFC727002B6230 /* UIView+CLView.h */,
+				BFAE1CBD20BFC727002B6230 /* UIView+CLView.m */,
 			);
 			path = "UIView+CLView";
 			sourceTree = "<group>";
@@ -1597,7 +1620,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4DB71A6203802FC0015964F /* Info.plist in Resources */,
 				A4DB7135203800530015964F /* LaunchScreen.storyboard in Resources */,
 				A4DB7132203800530015964F /* Assets.xcassets in Resources */,
 				BFAE1CD120BFC728002B6230 /* CLResource.bundle in Resources */,
@@ -1714,8 +1736,10 @@
 				BF28A4DC206E064800E0E19C /* CLCollectionViewDragDelegate.m in Sources */,
 				A4DB7193203802FC0015964F /* CLToolBarListView.m in Sources */,
 				A4AB1CE5203C34DB005026E8 /* EXFontDateSource.m in Sources */,
+				BF4E71F12151EA3700DD5A8C /* CALayer+CLLayer.m in Sources */,
 				A4DB71BE203812630015964F /* EXRootDelegate.m in Sources */,
 				BFAE1CCE20BFC728002B6230 /* UIFont+CLFont.m in Sources */,
+				BF4E71F52151F34C00DD5A8C /* UIBarItem+CLBarItem.m in Sources */,
 				A4DB7198203802FC0015964F /* CLCollectionViewController.m in Sources */,
 				BFD49E5D2094510600A9C252 /* CLScrollViewDelegate.m in Sources */,
 				A4DB71E120386F180015964F /* EXButtonController.m in Sources */,

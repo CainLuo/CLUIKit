@@ -72,6 +72,12 @@
 #pragma mark - UIBarButtonItem+CLBarButtonItem
 #import "UIBarButtonItem+CLBarButtonItem.h"
 
+#pragma mark - UIBarItem+CLBarItem
+#import "UIBarItem+CLBarItem.h"
+
+#pragma mark - CALayer+CLLayer
+#import "CALayer+CLLayer.h"
+
 #pragma mark - UIButton+CLButton
 #import "UIButton+CLButton.h"
 

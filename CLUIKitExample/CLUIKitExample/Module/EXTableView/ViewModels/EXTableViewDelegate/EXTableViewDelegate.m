@@ -8,6 +8,8 @@
 
 #import "EXTableViewDelegate.h"
 
+#import "EXRootController.h"
+
 @implementation EXTableViewDelegate
 
 - (void)tableView:(UITableView *)tableView
@@ -39,6 +41,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 //    [tableView cl_resetSelectedRowsAnimated:YES];
 //    [tableView cl_scrollViewToBottomWithAnimated:YES];
+    
+    UIPresentationController *ex_presentationController = [[UIPresentationController alloc] initWithPresentedViewController:[EXRootController new]
+                                                                                                   presentingViewController:self.cl_viewModel.cl_tableViewController];
+    
+    [ex_presentationController presentationTransitionWillBegin];
 }
 
 - (UIView *)cl_placeholderView {
