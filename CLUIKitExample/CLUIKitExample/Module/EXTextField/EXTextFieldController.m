@@ -23,6 +23,17 @@
     [self cl_addConstraintsWithSuperView];
     
     NSLog(@"%@", [self.view cl_getFirstResponder]);
+    
+    CALayer *es_backgroundLayer = [CALayer layer];
+    
+    es_backgroundLayer.frame           = CGRectMake(100, 30, 100, 100);
+    es_backgroundLayer.backgroundColor = [UIColor redColor].CGColor;
+    
+    [self.view.layer addSublayer:es_backgroundLayer];
+    
+    [self.view.layer cl_sendLayerBackWithSubLayer:es_backgroundLayer];
+    
+//    [self.view.layer cl_bringLayerFrontWithSublayer:es_backgroundLayer];
 }
 
 - (CLTextField *)cl_lineTextField {
