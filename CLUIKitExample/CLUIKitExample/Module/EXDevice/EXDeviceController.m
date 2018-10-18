@@ -52,6 +52,7 @@
     [cl_mutableString appendFormat:@"获取设备是否是iPad: %@\n", [UIDevice cl_isPad] ? @"YES" : @"NO"];
     [cl_mutableString appendFormat:@"获取设备是否是模拟器: %@\n", [UIDevice cl_isSimulator] ? @"YES" : @"NO"];
     [cl_mutableString appendFormat:@"获取设备是否是已越狱: %@\n", [UIDevice cl_isJailbroken] ? @"YES" : @"NO"];
+    [cl_mutableString appendFormat:@"获取设备是否是X系列: %@\n", [UIDevice cl_isXDeviceModel] ? @"YES" : @"NO"];
     
     [cl_mutableString appendFormat:@"\n----------CPU相关----------\n"];
     [cl_mutableString appendFormat:@"获取设备的CPU数量: %lu\n", (unsigned long)[UIDevice cl_getCurrentDeviceCPUCount]];
