@@ -69,55 +69,23 @@
 #import "CLWebViewUIDelegate.h"
 #import "CLWebViewViewModel.h"
 
-#pragma mark - UIApplication+CLApplication
-#import "UIApplication+CLApplication.h"
-
-#pragma mark - UIBarButtonItem+CLBarButtonItem
-#import "UIBarButtonItem+CLBarButtonItem.h"
-
-#pragma mark - UIBarItem+CLBarItem
-#import "UIBarItem+CLBarItem.h"
-
-#pragma mark - CALayer+CLLayer
-#import "CALayer+CLLayer.h"
-
-#pragma mark - UIButton+CLButton
-#import "UIButton+CLButton.h"
-
-#pragma mark - UICollectionView+CLCollectionView
-#import "UICollectionView+CLCollectionView.h"
-
-#pragma mark - UIColor+CLColor
-#import "UIColor+CLColor.h"
-
-#pragma mark - UIControl+CLControl
-#import "UIControl+CLControl.h"
-
-#pragma mark - UIDevice+CLDevice
-#import "UIDevice+CLDevice.h"
-
-#pragma mark - UIFont+CLFont
-#import "UIFont+CLFont.h"
-
-#pragma mark - UIImage+CLImage
-#import "UIImage+CLImage.h"
-
-#pragma mark - UINavigationController+CLNavigationController
-#import "UINavigationController+CLNavigationController.h"
-
-#pragma mark - 控制UINavigationBarItem是否显示标题
-#import "UINavigationItem+CLNavigationItem.h"
-
-#pragma mark - UIScreen+CLScreen
-#import "UIScreen+CLScreen.h"
-
-#import "UIScrollView+CLScrollView.h"
-
 #pragma mark - Category
+#import "UIApplication+CLApplication.h"
+#import "UIBarButtonItem+CLBarButtonItem.h"
+#import "UIBarItem+CLBarItem.h"
+#import "CALayer+CLLayer.h"
+#import "UIButton+CLButton.h"
+#import "UICollectionView+CLCollectionView.h"
+#import "UIColor+CLColor.h"
+#import "UIControl+CLControl.h"
+#import "UIDevice+CLDevice.h"
+#import "UIFont+CLFont.h"
+#import "UIImage+CLImage.h"
+#import "UILabel+CLLabel.h"
+#import "UINavigationController+CLNavigationController.h"
+#import "UINavigationItem+CLNavigationItem.h"
+#import "UIScreen+CLScreen.h"
+#import "UIScrollView+CLScrollView.h"
 #import "UITableView+CLTableView.h"
-
-#pragma mark - UIView+CLView
 #import "UIView+CLView.h"
-
-#pragma mark - UIViewController+CLViewController
 #import "UIViewController+CLViewController.h"

@@ -109,17 +109,40 @@
     [self addSubview:self.cl_titleLabel];
     [self addSubview:self.cl_defineButton];
     
-    CGFloat cl_buttonW = 50;
-    CGFloat cl_buttonH = 44;
-    CGFloat cl_viewW   = CGRectGetWidth(self.frame);
-    CGFloat cl_viewH   = CGRectGetHeight(self.frame);
-
-    CGFloat cl_titleLabelX = cl_buttonW + 10;
-
-    self.cl_lineLayer.frame    = CGRectMake(0, cl_viewH - 1, cl_viewW, 1);
-    self.cl_cancelButton.frame = CGRectMake(10, 0, cl_buttonW, cl_buttonH);
-    self.cl_titleLabel.frame   = CGRectMake(cl_titleLabelX, 0, cl_viewW - (cl_titleLabelX * 2), CGRectGetHeight(self.frame));
-    self.cl_defineButton.frame = CGRectMake(cl_viewW - cl_buttonW - 10, 0, cl_buttonW, cl_buttonH);
+    self.cl_lineLayer.frame = CGRectMake(0, CGRectGetWidth(self.frame) - 1, CGRectGetHeight(self.frame), 1);
+    
+    [self.cl_cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        (void)make.centerY;
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.left.equalTo(self.mas_safeAreaLayoutGuideLeft).offset([UIScreen cl_fitPlusScreen:30]);
+        } else {
+            
+            make.left.offset([UIScreen cl_fitPlusScreen:30]);
+        }
+    }];
+    
+    [self.cl_defineButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        (void)make.centerY;
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.right.equalTo(self.mas_safeAreaLayoutGuideRight).offset(-[UIScreen cl_fitPlusScreen:30]);
+        } else {
+            
+            make.right.offset(-[UIScreen cl_fitPlusScreen:30]);
+        }
+    }];
+    
+    [self.cl_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        (void)make.center;
+        make.left.offset([UIScreen cl_fitPlusScreen:200]);
+        make.right.offset(-[UIScreen cl_fitPlusScreen:200]);
+    }];
 }
 
 @end

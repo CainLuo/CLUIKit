@@ -27,12 +27,12 @@
     
     if (self) {
         
-        self.transitioningDelegate     = self.cl_pickerTransitioningDelegate;
-        self.modalPresentationStyle    = UIModalPresentationCustom;
+        self.transitioningDelegate  = self.cl_pickerTransitioningDelegate;
+        self.modalPresentationStyle = UIModalPresentationCustom;
         
         if (height == 0) {
             
-            height = 264;
+            height = [UIScreen cl_fitPlusScreen:800];
         }
         
         self.cl_presentationViewHeight = height;
@@ -58,12 +58,7 @@
     
     if (!_cl_pickerView) {
         
-        CGFloat cl_pickerViewH = self.cl_presentationViewHeight - CGRectGetHeight(self.cl_pickerToolView.frame);
-        
-        _cl_pickerView = [[CLPickerView alloc] initWithFrame:CGRectMake(0,
-                                                                        CGRectGetMaxY(self.cl_pickerToolView.frame),
-                                                                        CGRectGetWidth(self.view.frame),
-                                                                        cl_pickerViewH)];
+        _cl_pickerView = [[CLPickerView alloc] init];
         
         _cl_pickerView.showsSelectionIndicator = YES;
     }
@@ -75,9 +70,7 @@
     
     if(!_cl_pickerToolView) {
         
-        CGFloat cl_pickerToolViewH = self.cl_hiddenToolView ? 0 : 44;
-        
-        _cl_pickerToolView = [[CLPickerToolView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), cl_pickerToolViewH)];
+        _cl_pickerToolView = [[CLPickerToolView alloc] init];
         
         _cl_pickerToolView.hidden = self.cl_hiddenToolView;
     }
@@ -116,6 +109,38 @@
 - (void)cl_addConstraintsWithSuperView {
     
     [self cl_configPickerToolViewActions];
+    
+    CGFloat cl_pickerToolViewH = self.cl_hiddenToolView ? 0 : [UIScreen cl_fitPlusScreen:132];
+    
+    [self.cl_pickerToolView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(self.cl_pickerView.mas_top);
+        make.height.mas_equalTo(cl_pickerToolViewH);
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        } else {
+            
+            (void)make.left.right;
+        }
+    }];
+    
+    [self.cl_pickerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.height.mas_equalTo(self.cl_presentationViewHeight - cl_pickerToolViewH);
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        } else {
+            
+            (void)make.left.bottom.right;
+        }
+    }];
 }
 
 @end
