@@ -110,13 +110,13 @@
     [self addSubview:self.cl_titleLabel];
     [self addSubview:self.cl_defineButton];
     
-    CGFloat cl_titleLabelX   = self.cl_width / 2 - [UIScreen cl_fitPlusScreen:100];
-    CGFloat cl_defineButtonX = self.cl_width - [UIScreen cl_fitPlusScreen:160];
+    CGFloat cl_titleLabelX   = self.cl_width / 2 - 50;
+    CGFloat cl_defineButtonX = self.cl_width - 60;
 
     self.cl_lineLayer.frame    = CGRectMake(0, CGRectGetWidth(self.frame) - 1, CGRectGetHeight(self.frame), 1);
-    self.cl_cancelButton.frame = CGRectMake([UIScreen cl_fitPlusScreen:30], 0, [UIScreen cl_fitPlusScreen:130], self.cl_height);
-    self.cl_defineButton.frame = CGRectMake(cl_defineButtonX, 0, [UIScreen cl_fitPlusScreen:130], self.cl_height);
-    self.cl_titleLabel.frame   = CGRectMake(cl_titleLabelX, 0, [UIScreen cl_fitPlusScreen:200], self.cl_height);
+    self.cl_cancelButton.frame = CGRectMake(10, 0, 50, self.cl_height);
+    self.cl_defineButton.frame = CGRectMake(cl_defineButtonX, 0, 50, self.cl_height);
+    self.cl_titleLabel.frame   = CGRectMake(cl_titleLabelX, 0, 100, self.cl_height);
 }
 
 @end
