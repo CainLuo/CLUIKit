@@ -9,6 +9,7 @@
 #import "CLPickerToolView.h"
 #import "UIColor+CLColor.h"
 #import "UIButton+CLButton.h"
+#import "UIView+CLView.h"
 
 @interface CLPickerToolView ()
 
@@ -109,40 +110,13 @@
     [self addSubview:self.cl_titleLabel];
     [self addSubview:self.cl_defineButton];
     
-    self.cl_lineLayer.frame = CGRectMake(0, CGRectGetWidth(self.frame) - 1, CGRectGetHeight(self.frame), 1);
-    
-    [self.cl_cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        (void)make.centerY;
-        
-        if (@available(iOS 11.0, *)) {
-            
-            make.left.equalTo(self.mas_safeAreaLayoutGuideLeft).offset([UIScreen cl_fitPlusScreen:30]);
-        } else {
-            
-            make.left.offset([UIScreen cl_fitPlusScreen:30]);
-        }
-    }];
-    
-    [self.cl_defineButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        (void)make.centerY;
-        
-        if (@available(iOS 11.0, *)) {
-            
-            make.right.equalTo(self.mas_safeAreaLayoutGuideRight).offset(-[UIScreen cl_fitPlusScreen:30]);
-        } else {
-            
-            make.right.offset(-[UIScreen cl_fitPlusScreen:30]);
-        }
-    }];
-    
-    [self.cl_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        (void)make.center;
-        make.left.offset([UIScreen cl_fitPlusScreen:200]);
-        make.right.offset(-[UIScreen cl_fitPlusScreen:200]);
-    }];
+    CGFloat cl_titleLabelX   = self.cl_width / 2 - [UIScreen cl_fitPlusScreen:100];
+    CGFloat cl_defineButtonX = self.cl_width - [UIScreen cl_fitPlusScreen:160];
+
+    self.cl_lineLayer.frame    = CGRectMake(0, CGRectGetWidth(self.frame) - 1, CGRectGetHeight(self.frame), 1);
+    self.cl_cancelButton.frame = CGRectMake([UIScreen cl_fitPlusScreen:30], 0, [UIScreen cl_fitPlusScreen:130], self.cl_height);
+    self.cl_defineButton.frame = CGRectMake(cl_defineButtonX, 0, [UIScreen cl_fitPlusScreen:130], self.cl_height);
+    self.cl_titleLabel.frame   = CGRectMake(cl_titleLabelX, 0, [UIScreen cl_fitPlusScreen:200], self.cl_height);
 }
 
 @end
