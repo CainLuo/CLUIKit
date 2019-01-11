@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CLUIKit"
-  spec.version      = "2.5.0"
+  spec.version      = "2.5.1"
   spec.summary      = "CLUIKit for iOS"
   spec.homepage     = "https://github.com/CainLuo/CLUIKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
@@ -11,6 +11,7 @@ Pod::Spec.new do |spec|
   spec.source_files = "CLUIKit/**/*.{h,m}"
   spec.requires_arc = true
   spec.frameworks   = 'UIKit', 'Foundation'
+  spec.library      = "libresolv"
 
   spec.resource     = 'CLUIKit+Resource/CLResource.bundle'
 
