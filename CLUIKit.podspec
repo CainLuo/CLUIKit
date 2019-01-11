@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.source_files = "CLUIKit/**/*.{h,m}"
   spec.requires_arc = true
   spec.frameworks   = 'UIKit', 'Foundation'
-  spec.library      = "libresolv"
+  spec.library      = "resolv"
 
   spec.resource     = 'CLUIKit+Resource/CLResource.bundle'
 
