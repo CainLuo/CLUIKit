@@ -82,6 +82,7 @@
 		BF86CE142148E576000A811A /* EXPickerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86CE132148E576000A811A /* EXPickerDataSource.m */; };
 		BF86CE192148EAEF000A811A /* CLPickerToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86CE182148EAEF000A811A /* CLPickerToolView.m */; };
 		BF86CE212148F882000A811A /* CLPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86CE202148F882000A811A /* CLPickerView.m */; };
+		BF99E1CB21E846A200EE4D5C /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF99E1CA21E846A200EE4D5C /* libresolv.tbd */; };
 		BFA979B520E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA979B320E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m */; };
 		BFA979C820E1DDD7003FD73F /* EXPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA979C720E1DDD7003FD73F /* EXPresentationController.m */; };
 		BFAE1CC120BFC728002B6230 /* UIButton+CLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C8E20BFC727002B6230 /* UIButton+CLButton.m */; };
@@ -272,6 +273,7 @@
 		BF86CE182148EAEF000A811A /* CLPickerToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPickerToolView.m; sourceTree = "<group>"; };
 		BF86CE1F2148F882000A811A /* CLPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPickerView.h; sourceTree = "<group>"; };
 		BF86CE202148F882000A811A /* CLPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPickerView.m; sourceTree = "<group>"; };
+		BF99E1CA21E846A200EE4D5C /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		BFA979B320E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLViewControllerTransitioningDelegate.m; sourceTree = "<group>"; };
 		BFA979B420E1C7B1003FD73F /* CLViewControllerTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLViewControllerTransitioningDelegate.h; sourceTree = "<group>"; };
 		BFA979C620E1DDD7003FD73F /* EXPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPresentationController.h; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF99E1CB21E846A200EE4D5C /* libresolv.tbd in Frameworks */,
 				BA642643DC18292EDC80EB08 /* Pods_CLUIKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +366,7 @@
 		3D175041727141B34A6D5DBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF99E1CA21E846A200EE4D5C /* libresolv.tbd */,
 				9D846A8DABF69529A247E84D /* Pods_CLUIKitExample.framework */,
 			);
 			name = Frameworks;

@@ -60,9 +60,11 @@
     [cl_mutableString appendFormat:@"获取设备单个CPU使用率: %@\n", [UIDevice cl_getCurrentDeviceSingleCoreCPUUse]];
     
     [cl_mutableString appendFormat:@"\n----------网络相关----------\n"];
+    [cl_mutableString appendFormat:@"获取Mac地址: %@\n", [UIDevice cl_getMacAddress]];
     [cl_mutableString appendFormat:@"获取设备网络运营商: %@\n", [UIDevice cl_getCarrierName]];
     [cl_mutableString appendFormat:@"获取设备网络类型: %@\n", [UIDevice cl_getCurrentRadioAccessTechnology]];
     [cl_mutableString appendFormat:@"获取设备IP地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddresses]];
+    [cl_mutableString appendFormat:@"获取设备DNS服务器IP地址: %@\n", [UIDevice cl_getCurrentDNSServers]];
     [cl_mutableString appendFormat:@"获取设备WiFi地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddressWithWiFi]];
     [cl_mutableString appendFormat:@"获取设备单元网络地址: %@\n", [UIDevice cl_getCurrentDeviceIPAddressWithCell]];
     

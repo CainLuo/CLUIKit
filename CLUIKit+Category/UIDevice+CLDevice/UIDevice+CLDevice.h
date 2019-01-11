@@ -125,6 +125,13 @@
 
 #pragma mark - 网络相关
 /**
+ 获取当前连接的WiFi Mac地址
+ 
+ @return NSString
+ */
++ (NSString *)cl_getMacAddress;
+
+/**
  获取当前网络运营商的名称
  
  @return 中国移动/中国联通/中国电信或者其他运营商
@@ -157,6 +164,13 @@
  @return NSString
  */
 + (NSString *)cl_getCurrentDeviceIPAddresses;
+
+/**
+ 获取当前DNS服务器IP地址
+
+ @return NSString
+ */
++ (NSString *)cl_getCurrentDNSServers;
 
 /**
  获取当前设备的WiFi地址

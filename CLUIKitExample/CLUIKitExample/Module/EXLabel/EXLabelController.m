@@ -42,8 +42,10 @@
     
     _ex_contentLabel = [[UILabel alloc] init];
     
-    _ex_contentLabel.text          = @"qweqweqweqweqweqwe\nqweqweqweqweqweqweqwe";
-    _ex_contentLabel.numberOfLines = 0;
+    _ex_contentLabel.text                      = @"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
+    _ex_contentLabel.numberOfLines             = 2;
+    _ex_contentLabel.minimumScaleFactor        = 0.5;
+    _ex_contentLabel.adjustsFontSizeToFitWidth = YES;
 
     return _ex_contentLabel;
 }
