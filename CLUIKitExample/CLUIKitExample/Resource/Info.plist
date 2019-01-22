@@ -15,15 +15,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.5.1</string>
+	<string>2.6.0</string>
 	<key>CFBundleVersion</key>
-	<string>201901111427</string>
+	<string>201901221512</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>App需要您的同意才能使用相机</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>App需要您的同意才能使用麦克风</string>
+	<key>NSMotionUsageDescription</key>
+	<string>使用传感器</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

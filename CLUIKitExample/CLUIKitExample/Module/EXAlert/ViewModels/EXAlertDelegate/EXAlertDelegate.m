@@ -40,6 +40,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             
             [self ex_customAlertTitlesController];
             break;
+        case EXAlertTypeCategoryAlert:
+            
+            [self ex_categoryAlert];
+            break;
+        case EXAlertTypeCategorySheet:
+            
+            [self ex_categorySheet];
+            break;
+        case EXAlertTypeCategoryCustom:
+            
+            [self ex_catergoryCustom];
+            break;
         default:
             break;
     }
@@ -100,9 +112,52 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                                           message:@"这是Message"
                                                                      actionTitles:@[@"取消", @"好的"]
                                                                          complete:^(UIAlertAction *action, NSUInteger index) {
-        
+
                                                                              NSLog(@"点击了第%lu个, 标题为: %@", (unsigned long)index, action.title);
                                                                          }];
+}
+
+- (void)ex_categoryAlert {
+    
+    UIAlertController *cl_alertController = [UIAlertController cl_showAlertControllerWithTitle:@"温馨提示"
+                                                                                       message:@"这是Message"
+                                                                                   actionTitle:@"好的"];
+    
+    [self.cl_viewModel.cl_tableViewController presentViewController:cl_alertController
+                                                           animated:YES
+                                                         completion:nil];
+}
+
+- (void)ex_categorySheet {
+    
+    UIAlertController *cl_alertController = [UIAlertController cl_showSheetControllerWithTitle:@"温馨提示"
+                                                                                       message:@"这是Message"
+                                                                                   cancelTitle:@"取消"
+                                                                                  actionTitles:@[@"相册", @"相机"]
+                                                                                      complete:^(UIAlertAction *action, NSUInteger index) {
+        
+                                                                                          NSLog(@"%@ - %ld", action, index);
+                                                                                      }];
+    
+    [self.cl_viewModel.cl_tableViewController presentViewController:cl_alertController
+                                                           animated:YES
+                                                         completion:nil];
+}
+
+- (void)ex_catergoryCustom {
+    
+    UIAlertController *cl_alertController = [UIAlertController cl_showAlertControllerWithTitle:@"温馨提示"
+                                                                                       message:@"这是Message"
+                                                                                   cancelTitle:@"取消"
+                                                                                  actionTitles:@[@"相册", @"相机"]
+                                                                                preferredStyle:UIAlertControllerStyleAlert complete:^(UIAlertAction *action, NSUInteger index) {
+        
+                                                                                    NSLog(@"%@ - %ld", action, index);
+                                                                                }];
+    
+    [self.cl_viewModel.cl_tableViewController presentViewController:cl_alertController
+                                                           animated:YES
+                                                         completion:nil];
 }
 
 @end

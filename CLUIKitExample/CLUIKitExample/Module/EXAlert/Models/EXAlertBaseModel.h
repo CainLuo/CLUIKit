@@ -14,7 +14,10 @@ typedef NS_ENUM(NSInteger, EXAlertType) {
     EXAlertTypeAlert,
     EXAlertTypeAlertSheet,
     EXAlertTypeCustom,
-    EXAlertTypeCustomTitles
+    EXAlertTypeCustomTitles,
+    EXAlertTypeCategoryAlert,
+    EXAlertTypeCategorySheet,
+    EXAlertTypeCategoryCustom,
 };
 
 @interface EXAlertBaseModel : NSObject

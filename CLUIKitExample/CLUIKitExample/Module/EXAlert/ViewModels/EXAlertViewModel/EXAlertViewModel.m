@@ -24,7 +24,13 @@
                                     @{@"title":@"CLAlertTypeCustom",
                                       @"alertType":@(EXAlertTypeCustom)},
                                     @{@"title":@"CLAlertTypeCustomTitles",
-                                      @"alertType":@(EXAlertTypeCustomTitles)}];
+                                      @"alertType":@(EXAlertTypeCustomTitles)},
+                                    @{@"title":@"Category+Alert",
+                                      @"alertType":@(EXAlertTypeCategoryAlert)},
+                                    @{@"title":@"Category+Sheet",
+                                      @"alertType":@(EXAlertTypeCategorySheet)},
+                                    @{@"title":@"Category+Custom",
+                                      @"alertType":@(EXAlertTypeCategoryCustom)}];
     
     [self.cl_dataSource addObjectsFromArray:[NSArray yy_modelArrayWithClass:[EXAlertBaseModel class]
                                                                        json:ex_dataSourceArray]];

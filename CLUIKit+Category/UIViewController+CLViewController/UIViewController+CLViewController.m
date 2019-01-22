@@ -109,7 +109,7 @@ static void *AlertControllerKey = &AlertControllerKey;
     
     [actionTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        UIAlertAction *fs_sheetAction = [UIAlertAction actionWithTitle:obj
+        UIAlertAction *cl_alertAction = [UIAlertAction actionWithTitle:obj
                                                                  style:UIAlertActionStyleDefault
                                                                handler:^(UIAlertAction * _Nonnull action) {
                                                                    
@@ -119,7 +119,7 @@ static void *AlertControllerKey = &AlertControllerKey;
                                                                    }
                                                                }];
         
-        [cl_alertController addAction:fs_sheetAction];
+        [cl_alertController addAction:cl_alertAction];
     }];
     
     UIAlertAction *cl_cancelAlertAction = [UIAlertAction actionWithTitle:@"取消"

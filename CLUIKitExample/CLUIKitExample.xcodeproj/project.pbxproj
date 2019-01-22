@@ -69,6 +69,7 @@
 		BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2B453720B54EAB00BDAA0B /* CLAnimatorManager.m */; };
 		BF4E71F12151EA3700DD5A8C /* CALayer+CLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4E71F02151EA3700DD5A8C /* CALayer+CLLayer.m */; };
 		BF4E71F52151F34C00DD5A8C /* UIBarItem+CLBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4E71F42151F34C00DD5A8C /* UIBarItem+CLBarItem.m */; };
+		BF5E211A21F6F22D004B2C29 /* UIAlertController+CLAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5E211921F6F22D004B2C29 /* UIAlertController+CLAlertController.m */; };
 		BF6C331120E14F7B00049F5B /* CLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C331020E14F7B00049F5B /* CLPresentationController.m */; };
 		BF83864220EB0F48005EC657 /* EXPresentationTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF83864120EB0F48005EC657 /* EXPresentationTransitioningDelegate.m */; };
 		BF86CDF12148DC23000A811A /* CLPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF86CDF02148DC23000A811A /* CLPickerController.m */; };
@@ -247,6 +248,8 @@
 		BF4E71F02151EA3700DD5A8C /* CALayer+CLLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CLLayer.m"; sourceTree = "<group>"; };
 		BF4E71F32151F34C00DD5A8C /* UIBarItem+CLBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarItem+CLBarItem.h"; sourceTree = "<group>"; };
 		BF4E71F42151F34C00DD5A8C /* UIBarItem+CLBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarItem+CLBarItem.m"; sourceTree = "<group>"; };
+		BF5E211821F6F22D004B2C29 /* UIAlertController+CLAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CLAlertController.h"; sourceTree = "<group>"; };
+		BF5E211921F6F22D004B2C29 /* UIAlertController+CLAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CLAlertController.m"; sourceTree = "<group>"; };
 		BF6C330F20E14F7B00049F5B /* CLPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPresentationController.h; sourceTree = "<group>"; };
 		BF6C331020E14F7B00049F5B /* CLPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPresentationController.m; sourceTree = "<group>"; };
 		BF83864020EB0F48005EC657 /* EXPresentationTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXPresentationTransitioningDelegate.h; sourceTree = "<group>"; };
@@ -1146,6 +1149,15 @@
 			path = "UIBarItem+CLBarItem";
 			sourceTree = "<group>";
 		};
+		BF5E211721F6F202004B2C29 /* UIAlertController+CLAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				BF5E211821F6F22D004B2C29 /* UIAlertController+CLAlertController.h */,
+				BF5E211921F6F22D004B2C29 /* UIAlertController+CLAlertController.m */,
+			);
+			path = "UIAlertController+CLAlertController";
+			sourceTree = "<group>";
+		};
 		BF6C330E20E14F7B00049F5B /* CLPresentationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1352,6 +1364,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4E71EE2151EA2100DD5A8C /* CALayer+CLLayer */,
+				BF5E211721F6F202004B2C29 /* UIAlertController+CLAlertController */,
 				BFAE1C9F20BFC727002B6230 /* UIApplication+CLApplication */,
 				BFAE1CA220BFC727002B6230 /* UIBarButtonItem+CLBarButtonItem */,
 				BF4E71F22151F33800DD5A8C /* UIBarItem+CLBarItem */,
@@ -1944,6 +1957,7 @@
 				A4DB71A9203802FC0015964F /* CLButton.m in Sources */,
 				BFAE1CC920BFC728002B6230 /* UIViewController+CLViewController.m in Sources */,
 				BF2B453820B54EAB00BDAA0B /* CLAnimatorManager.m in Sources */,
+				BF5E211A21F6F22D004B2C29 /* UIAlertController+CLAlertController.m in Sources */,
 				A4DB71D720381AD20015964F /* EXAlertViewModel.m in Sources */,
 				BFD49E502094488100A9C252 /* UIViewController+EXViewController.m in Sources */,
 				A4DB71A3203802FC0015964F /* CLViewController.m in Sources */,
